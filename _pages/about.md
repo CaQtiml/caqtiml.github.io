@@ -13,7 +13,7 @@ Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me with 
 
 For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers". Some feel weird with my nickname, but I don't really want to change it or use another name. Thanks for your understanding!
 
-I am currently a second-year master student in Computer Science at Uppsala Univeristy, Sweden. My CS program allows me to choose the track(s) after admitting to the program. After I have changed my plan so many times before starting my first semester, I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
+I am currently a second-year master student in Computer Science at Uppsala Univeristy, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. After I have changed my plan so many times before starting my first semester, I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
 - [Functional Programming I](https://www.uu.se/en/study/course?query=1DL330) and [Advanced Functional Programming](https://www.uu.se/en/study/course?query=1DL450)
 - [Semantics of Programming Languages](https://www.uu.se/en/study/course?query=1DL311)
 - [Low-Level Parallel Programming](https://www.uu.se/en/study/course?query=1DT116)
@@ -35,23 +35,13 @@ I also took some courses relating to Software Engineering and Data Science.
 - Artificial Intelligence and Machine Learning
 - Data Structure and Algorithm
 
-My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail in the [portfolio](/_portfolio/) page, which is also still underconstruction. Fortunately, you can read my [thesis defense's slide](https://drive.google.com/file/d/1oBXmJiB0K7qM4DEo7563skMKwUgrEpkB/view) while you are waiting for that page to be written. This is the informal summary of my thesis.
-
-```text
-As part of our B.Eng Thesis project, our team of three successfully implemented an End-to-End machine learning system for the financial market. The project has two primary components: operational implementation, guided by Microsoft MLOps standards, and model experimentation aimed at training robust models. Although we focused on cryptocurrency data, the concepts are broadly applicable to other financial products and fields.
-
-We utilized AWS and DigitalOcean as our cloud providers, managing almost all infrastructure with Terraform, which the state file was stored in S3 and DynamoDB was applied to help the lock management. Data ingestion was automated via Lambda and EventBridge Rules, while data transformation leveraged ETL pipelines created with Mage.ai. MLFlow, hosted on an EC2, managed our model experiments, and experiment data and models are stored in RDS PostgreSQL and S3. Model performance was monitored through a Streamlit dashboard. API were built as a Docker image automatically using BentoML and GitHub Actions and served using DigitalOcean's App Platform. Notably, the MLFlow Alias feature allowed us to change deployed models without rebuilding the image.
-
-Our model experimentation involved minute-scale training data, using features such as closing price, SMA, and SMA differences. We applied various algorithms to train the models and evaluated results using MSE and classification reports.
-
-The final outcome was a functional E2E machine learning system, adaptable to other use cases. While some models didn't perform as robustly as intended, they successfully captured price trends. The system leverages free-tier services, making it accessible for companies with limited budgets. Therefore, organizations starting to use machine learning can use our project as a guideline to implement the systems according to their needs.
-```
+My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail in the [portfolio](/portfolio/) page, which is also still underconstruction. Fortunately, you can read my [thesis defense's slide](https://drive.google.com/file/d/1oBXmJiB0K7qM4DEo7563skMKwUgrEpkB/view) while you are waiting for that page to be written.
 
 My Other Interests
 ==========================
 I also have an interest in human behavior and psychology. I took two psychology courses during my bachelor as general education courses. One is about the social psychology, and another is about the psychology to improve our work and study life. During my free time, I also read non-fiction books on this topic, such as "Thinking Fast and Slow" (such a classical book) and "Think Like a Freak".
 
-I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well...I now live in Sweden, so I guess I should, isn't it? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är A2, men jag förstår fortfarande inte talad svenska. Den är för snabb. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
+I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well, I now live in Sweden, so I guess I should, isn't it? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är A2, men jag förstår fortfarande inte talad svenska. Den är för snabb. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
 
 I want to add some more things to this part, but I am too tired now.
 
