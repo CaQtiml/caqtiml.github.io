@@ -22,10 +22,10 @@ repository               : "caqtiml.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile1.jpg"
   name             : "Sivakorn (Mil) Lerttripinyo"
   pronouns         : # example: "she/her"  
-  bio              : "M.Sc. Computer Science"
+  bio              : "MSc Computer Science"
   location         : "Uppsala, Sweden"
   employer         : "Uppsala University"
   uri              : # URL
@@ -120,7 +120,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
