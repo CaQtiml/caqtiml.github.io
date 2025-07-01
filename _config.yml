@@ -24,8 +24,11 @@ author:
   # Biographic information
   avatar           : "profile1.jpg"
   name             : "Sivakorn (Mil) Lerttripinyo"
-  pronouns         : # example: "she/her"  
-  bio              : "MSc Computer Science"
+  pronouns         : "He/Him"  
+  # bio              : |
+  #   BEng Information and Communication Engineering
+  #   MSc Computer Science
+  bio              : A computer science student focusing on big data and high-performance computing, along with a passion to understand more on a human behaviour.
   location         : "Uppsala, Sweden"
   employer         : "Uppsala University"
   uri              : # URL
