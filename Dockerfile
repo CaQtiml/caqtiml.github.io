@@ -33,4 +33,5 @@ RUN bundle install
 
 # Command to serve the Jekyll site
 CMD ["jekyll", "serve", "-H", "0.0.0.0", "-w"]
+# CMD ["jekyll", "serve", "-H", "localhost", "-w"]
 
