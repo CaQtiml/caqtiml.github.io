@@ -7,13 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-Finally, I have my personal website after several years of procrastination! I would like to say thank you to my friend, Pontus Holma, for introducing me to this awesome tool. This website is still underconstruction. I write this start page very quickly because I don't want to leave the template text to be here for too long.
+Finally, I have my personal website after several years of procrastination. I would like to say thank you to my friend, Pontus Holma, for introducing me to this awesome framework. This website is still underconstruction. I write this start page very quickly because I don't want to leave the template text to be here for too long.
 
-Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me with my nickname <b>"Mil"</b>. Apart from visiting official place, no one in Thailand calls each other with their first name. You may wonder how we (Thai people) choose our nickname. The answer is "Just randomly pick any word"! So, you can normally meet Thai people with the nickname such as "Best", "Ball", "Earth", etc. Don't be surprised!
+Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me <b>"Mil"</b>, which is my nickname. Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we have our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname "Best", "Earth", "Ice", etc. Don't feel surprised!
 
 For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers". Some feel weird with my nickname, but I don't really want to change it or use another name. Thanks for your understanding!
 
-I am currently a second-year master student in Computer Science at Uppsala Univeristy, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. After I have changed my plan so many times before starting my first semester, I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
+I am currently a second-year master student in Computer Science at Uppsala Univerisity, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
 - [Functional Programming I](https://www.uu.se/en/study/course?query=1DL330) and [Advanced Functional Programming](https://www.uu.se/en/study/course?query=1DL450)
 - [Semantics of Programming Languages](https://www.uu.se/en/study/course?query=1DL311)
 - [Low-Level Parallel Programming](https://www.uu.se/en/study/course?query=1DT116)
@@ -43,7 +43,7 @@ I also have an interest in human behavior and psychology. I took two psychology 
 
 I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well, I now live in Sweden, so I guess I should, isn't it? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är A2, men jag förstår fortfarande inte talad svenska. Den är för snabb. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
 
-I want to add some more things to this part, but I am too tired now.
+There are still more parts I want to add here, but I am too tired now.
 
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
