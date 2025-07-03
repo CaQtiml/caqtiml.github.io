@@ -21,7 +21,7 @@ I am currently a second-year master student in Computer Science at Uppsala Unive
 - [Data Engineering I](https://www.uu.se/en/study/course?query=1TD169) and [Data Engineering II](https://www.uu.se/en/study/course?query=1TD076)
 
 My Former Study
-==========================
+-----------------
 I hold a bachelor's degree in Information and Communication Engineering from Chulalongkorn University, Thailand. This degree is an integration program between a computer and an electrical engineering focusing on a communication and network system. These are some (chosen to be listed here) courses I have taken.
 - Principle of Data Communication
 - Netcentric Architecture
@@ -38,7 +38,7 @@ I also took some courses relating to Software Engineering and Data Science.
 My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail in the [portfolio](/portfolio/) page, which is also still underconstruction. Fortunately, you can read my [thesis defense's slide](https://drive.google.com/file/d/1oBXmJiB0K7qM4DEo7563skMKwUgrEpkB/view) while you are waiting for that page to be written.
 
 My Other Interests
-==========================
+--------------------
 I also have an interest in human behavior and psychology. I took two psychology courses during my bachelor as general education courses. One is about the social psychology, and another is about the psychology to improve our work and study life. During my free time, I also read non-fiction books on this topic, such as "Thinking Fast and Slow" (such a classical book) and "Think Like a Freak".
 
 I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well, I now live in Sweden, so I guess I should, isn't it? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är A2, men jag förstår fortfarande inte talad svenska. Den är för snabb. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
