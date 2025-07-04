@@ -12,7 +12,7 @@ This is a one-year compulsory final project for obtaining BEng Information and C
 2. Krittapasa Boontaveekul
 3. Wirachapong Suwanphibun
 
-This project is graded by three people, including one project advisor and two committees.
+This project is graded by three faculty members, including one project advisor and two committees.
 1. Advisor : Assoc. Prof. Chotirat Ratanamahatana, Ph.D
 2. Committee Member : Asst. Prof. Kunwadee Sripanidkulchai, Ph.D
 3. Committee Member : Lect. Aung Pyae, Ph.D
@@ -20,6 +20,15 @@ This project is graded by three people, including one project advisor and two co
 This blog will explain this project in an informal way, and in-depth details will be omitted. 
 
 Although this project has already been concluded, this blog is not finished yet. Unfinished part in this blog will be filled with `--Underconstruction--`. However, you can read the slide I (and my friends) used for presenting the project [here](/files/slide_Machine_Learning_Bot_for_Financial_Market_final.pdf).
+
+## A Concise Informal Project Summary
+As part of our B.Eng Thesis project, our team of three successfully implemented an End-to-End machine learning system for the financial market. The project has two primary components: operational implementation, guided by Microsoft MLOps standards, and model experimentation aimed at training robust models. Although we focused on cryptocurrency data, the concepts are broadly applicable to other financial products and fields.
+
+We utilized AWS and DigitalOcean as our cloud providers. Almost all infrastructure under these cloud providers were managed by Terraform, which the state file was stored in S3; and DynamoDB was applied to do the state file's lock management. Data ingestion was automated via Lambda and EventBridge Rules, while data transformation used ETL pipelines using Mage.ai as a data pipeline tool. MLFlow, hosted on an EC2, managed our model experiments. Experiment data and models are stored in RDS PostgreSQL and S3. Model performance was monitored through a Streamlit dashboard. APIs for serving the selected model were automatically built as a Docker image using BentoML and GitHub Actions and deployed using DigitalOcean's App Platform. Notably, the MLFlow Alias feature allowed us to change the deployed model without rebuilding the image.
+
+Our model experimentation involved minute-scale training data. After performing a feature engineering, closing price, SMA, and SMA differences were used to train the model. We applied various machine learning algorithms and evaluated the model performance using MSE and classification reports.
+
+The final outcome was a functional E2E machine learning system, adaptable to other use cases. While the best model we can achieve didn't perform as robustly as intended, they successfully captured price trends. The system leverages free-tier services, making it accessible for companies with limited budgets. Therefore, organizations starting to use machine learning can use our project as a guideline to implement the systems according to their needs.
 
 
 ## Project Background
@@ -70,18 +79,17 @@ This project attempts to achieve features from Microsoft’s MLOps Level 2: Auto
 - Application code has unit tests.
 - Basic integration tests exist for the model.
 
-### Design Detailed Description
-#### Infrastructure as Code (IaC)
+### Infrastructure as Code (IaC)
 --Underconstruction--
-#### Database
+### Database
 --Underconstruction--
-#### Data Ingestion
+### Data Ingestion
 --Underconstruction--
-#### Data Transformation
+### Data Transformation
 --Underconstruction--
-#### Training Management System
+### Training Management System
 --Underconstruction--
-#### Model Monitoring
+### Model Monitoring
 --Underconstruction--
-#### Model Building and Serving
+### Model Building and Serving
 --Underconstruction--
