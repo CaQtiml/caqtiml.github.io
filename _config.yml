@@ -93,7 +93,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
@@ -237,8 +237,8 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
-      type: posts
+      path: "" # This applies the layout: single and comments: true to every file in _posts/, no matter what subfolder it's in.
+      type: posts # Applies only to files in _posts/
     values:
       layout: single
       author_profile: true
