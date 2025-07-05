@@ -3,6 +3,7 @@ title: 'Cache Coherency Series: Part 2 — Cache Coherence Protocol'
 date: 2025-06-19
 permalink: /posts/2025/06/cache-coherence-series-part-2-cache-coherence-protocol/
 author_profile: false # set to false to not show your profile in this blog page.
+excerpt: How to explain cache coherence mechanism in a more precise way and how to optimize it.
 tags:
   - Computer Architecture
   - Parallel Programming

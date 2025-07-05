@@ -3,6 +3,7 @@ title: 'Cache Coherency Series: Part 1 — Introduction'
 date: 2025-06-16
 permalink: /posts/2025/06/cache-coherence-series-part-1-introduction/
 author_profile: false # set to false to not show your profile in this blog page.
+excerpt: An introduction to cache coherency. What it is and why it matters.
 tags:
   - Computer Architecture
   - Parallel Programming
