@@ -1,6 +1,6 @@
 ---
 title: 'Cache Coherency Series: Part 3 — False Sharing'
-date: 2025-06-19
+date: 2025-06-26
 permalink: /posts/2025/06/cache-coherence-series-part-3-false-sharing/
 author_profile: false # set to false to not show your profile in this blog page.
 tags:
