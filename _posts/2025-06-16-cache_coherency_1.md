@@ -6,6 +6,7 @@ author_profile: false # set to false to not show your profile in this blog page.
 tags:
   - Computer Architecture
   - Parallel Programming
+  - Cache Coherency Series
 ---
 
 Modern CPUs are extremely fast — so fast, in fact, that executing a single instruction often takes less time than accessing data from main memory (RAM). To avoid the bottleneck of accessing data from RAM, processors utilize caches, which are small and fast memory located near each CPU core. Having the cache can significantly reduce an amount of time to access some data from RAM.
@@ -71,7 +72,6 @@ The short answer is “accessing RAM is slow”. But how can we decrease this la
 
 If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.com/caqtiml/tip). Thank you for reading until here and see you then!
 
-SIDE NOTE: When referring to RAM and main memory, they are mostly DRAM, while the cache is made from SRAM. SRAM is faster than DRAM.
-{: .notice}
+> SIDE NOTE: When referring to RAM and main memory, they are mostly DRAM, while the cache is made from SRAM. SRAM is faster than DRAM.
 
-This blog is originally published in [Medium](https://medium.com/@caqtiml/cache-coherency-series-part-1-introduction-8eb9fed8d23d). I copy it to here. Therefore, this blog may still contains some errors from copying process. I haven't proofreaded this blog once more yet.
+This blog is originally published in [Medium](https://medium.com/@caqtiml/cache-coherency-series-part-1-introduction-8eb9fed8d23d). I copy it to here. Therefore, this blog may still contain some errors from copying process. I haven't proofreaded this blog once more yet.
