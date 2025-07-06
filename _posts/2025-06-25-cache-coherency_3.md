@@ -143,7 +143,7 @@ However, my padding still has a problem. What happen if I want to create an arra
 ```cpp
 struct Compact {
   int x;
-  struct padding[60]
+  char padding[60]
   int y;
 }
 
@@ -191,4 +191,4 @@ Finally, this is the end of this part. This part is the final part of the cache 
 
 If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.com/caqtiml/tip). Thank you for reading until here and see you then!
 
-This blog is originally published in [Medium](https://caqtiml.medium.com/cache-coherency-series-part-3-false-sharing-39875123aa5b). I copy it to here. Therefore, this blog may still contain some errors from copying process. I haven't proofreaded this blog once more yet.
+This blog is originally published in [Medium](https://caqtiml.medium.com/cache-coherency-series-part-3-false-sharing-39875123aa5b).

@@ -173,4 +173,4 @@ However, the content in this part is still essential if you really want to deep 
 
 If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.com/caqtiml/tip). Thank you for reading until here and see you then!
 
-This blog is originally published in [Medium](https://caqtiml.medium.com/cache-coherency-series-part-2-cache-coherence-protocol-0e3e12346202). I copy it to here. Therefore, this blog may still contain some errors from copying process. I haven't proofreaded this blog once more yet.
+This blog is originally published in [Medium](https://caqtiml.medium.com/cache-coherency-series-part-2-cache-coherence-protocol-0e3e12346202).

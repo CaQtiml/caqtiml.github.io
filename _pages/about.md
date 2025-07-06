@@ -35,7 +35,7 @@ I also took some courses relating to Software Engineering and Data Science.
 - Artificial Intelligence and Machine Learning
 - Data Structure and Algorithm
 
-My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail in the [portfolio](/portfolio/) page, which is also still underconstruction. Fortunately, you can read my [thesis defense's slide](https://drive.google.com/file/d/1oBXmJiB0K7qM4DEo7563skMKwUgrEpkB/view) while you are waiting for that page to be written.
+My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail in the [portfolio](/portfolio/) page.
 
 My Other Interests
 --------------------

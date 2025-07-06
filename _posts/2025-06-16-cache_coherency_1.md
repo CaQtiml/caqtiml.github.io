@@ -75,4 +75,4 @@ If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.
 
 > SIDE NOTE: When referring to RAM and main memory, they are mostly DRAM, while the cache is made from SRAM. SRAM is faster than DRAM.
 
-This blog is originally published in [Medium](https://medium.com/@caqtiml/cache-coherency-series-part-1-introduction-8eb9fed8d23d). I copy it to here. Therefore, this blog may still contain some errors from copying process. I haven't proofreaded this blog once more yet.
+This blog is originally published in [Medium](https://medium.com/@caqtiml/cache-coherency-series-part-1-introduction-8eb9fed8d23d).
