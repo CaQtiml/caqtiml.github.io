@@ -9,11 +9,13 @@ redirect_from:
 
 Finally, I have my personal website after several years of procrastination. I would like to say thank you to my friend, Pontus Holma, for introducing me to this awesome framework. This website is still underconstruction. I write this start page very quickly because I don't want to leave the template text to be here for too long.
 
-Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me <b>"Mil"</b>, which is my nickname. Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we have our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname "Best", "Earth", "Ice", etc. Don't feel surprised!
+Let's start by allowing me to introduce myself. Sound boring? I know. I will try my best to make it not boring.
+
+Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me **"Mil"**, which is my nickname. Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we get our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname like "Best", "Earth", "Ice", etc. Don't feel surprised!
 
 For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers". Some feel weird with my nickname, but I don't really want to change it or use another name. Thanks for your understanding!
 
-I am currently a second-year master student in Computer Science at Uppsala Univerisity, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
+I am currently a second-year master student in Computer Science at Uppsala University, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
 - [Functional Programming I](https://www.uu.se/en/study/course?query=1DL330) and [Advanced Functional Programming](https://www.uu.se/en/study/course?query=1DL450)
 - [Semantics of Programming Languages](https://www.uu.se/en/study/course?query=1DL311)
 - [Low-Level Parallel Programming](https://www.uu.se/en/study/course?query=1DT116)
@@ -22,26 +24,24 @@ I am currently a second-year master student in Computer Science at Uppsala Unive
 
 My Former Study
 -----------------
-I hold a bachelor's degree in Information and Communication Engineering from Chulalongkorn University, Thailand. This degree is an integration program between a computer and an electrical engineering focusing on a communication and network system. These are some (chosen to be listed here) courses I have taken.
-- Principle of Data Communication
-- Netcentric Architecture
-- Ubiquitous Computing
-- Teletraffic Engineering and Network Optimization
+I hold a bachelor's degree in Information and Communication Engineering from Chulalongkorn University, Thailand. This degree is an integration program between a computer and an electrical engineering focusing on designing and understanding a communication and network system.
 
-I also took some courses relating to Software Engineering and Data Science.
-- Software Engineering
-- Database Systems
-- Data Warehousing
-- Artificial Intelligence and Machine Learning
-- Data Structure and Algorithm
+My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail [here](/portfolio/senior_proj/).
 
-My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail in the [portfolio](/portfolio/) page.
+My Interests
+--------------------
+- **Data Engineering and MLOps**: This interest leads me to do [my bachelor thesis](/portfolio/senior_proj/) on this topic.
+- **Machine Learning and Deep Learning**. Computer Vision, to be more scoped: I did one of my internships on this topic.
+- **Programming Language Theory**: I took several courses on this topic during my first year of master study, and I found it interesting. I am now reading [Crafting Interpreters](https://craftinginterpreters.com/). I also start to learn Rust this month (Jul 2025), so I decide to learn Rust the very hard way by writing [a first interpreter of this book in Rust](https://github.com/CaQtiml/rlox) instead of Java used by the book author.
+- **Computer Architecture, Parallel Programming, and GPU Programming**: When I first learned these topics, I understood nothing; however, after I can get them, they become so interesting! I have already published some blogs about [a cache coherency](/tags/#cache-coherency-series) and [a CUDA programming](/tags/#cuda-series).
 
 My Other Interests
 --------------------
 I also have an interest in human behavior and psychology. I took two psychology courses during my bachelor as general education courses. One is about the social psychology, and another is about the psychology to improve our work and study life. During my free time, I also read non-fiction books on this topic, such as "Thinking Fast and Slow" (such a classical book) and "Think Like a Freak".
 
-I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well, I now live in Sweden, so I guess I should, isn't it? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är A2, men jag förstår fortfarande inte talad svenska. Den är för snabb. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
+I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well, I now live in Sweden, so I guess I should, shouldn't I? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. 
+
+I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är [A2](/files/A2_SELang.pdf), men jag förstår fortfarande inte talad svenska. Den är för snabb. Om du vill testa min svenska, så är det bara att hälsa och fortsätta prata med mig på svenska! Jag utmanar dig att byt inte till engelska. Jag ser fram emot att, inte plåga utan, öva min svenska med dig. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
 
 There are still more parts I want to add here, but I am too tired now.
 
