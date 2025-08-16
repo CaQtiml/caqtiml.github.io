@@ -24,7 +24,7 @@ I am currently a second-year master student in Computer Science at Uppsala Unive
 
 My Former Study
 -----------------
-I hold a bachelor's degree in Information and Communication Engineering from Chulalongkorn University, Thailand. This degree is an integration program between a computer and an electrical engineering focusing on designing and understanding a communication and network system.
+I hold a bachelor's degree in [Information and Communication Engineering](http://www.ise.eng.chula.ac.th/academics/ice/61) from Chulalongkorn University, Thailand. This degree is an integration program between a computer and an electrical engineering focusing on designing and understanding a communication and network system.
 
 My bachelor thesis topic is "Machine Learning for Financial Market". You can read its detail [here](/portfolio/senior_proj/).
 
