@@ -9,7 +9,7 @@ redirect_from:
 
 Finally, I have my personal website after several years of procrastination. I would like to say thank you to my friend, Pontus Holma, for introducing me to this awesome framework. This website is still underconstruction. I write this start page very quickly because I don't want to leave the template text to be here for too long.
 
-Let's start by allowing me to introduce myself. Sound boring? I know. I will try my best to make it not boring.
+Let's start by allowing me to introduce myself. Sound boring? I know. I will try my best to make it more interesting.
 
 Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me **"Mil"**, which is my nickname. Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we get our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname like "Best", "Earth", "Ice", etc. Don't feel surprised!
 
