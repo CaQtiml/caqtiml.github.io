@@ -33,7 +33,7 @@ My Interests
 - **Data Engineering and MLOps**: This interest leads me to do [my bachelor thesis](/portfolio/senior_proj/) on this topic.
 - **Machine Learning and Deep Learning**. Computer Vision, to be more scoped: I did one of my internships on this topic.
 - **Programming Language Theory**: I took several courses on this topic during my first year of master study, and I found it interesting. I am now reading [Crafting Interpreters](https://craftinginterpreters.com/). I also start to learn Rust this month (Jul 2025), so I decide to learn Rust the very hard way by writing [a first interpreter of this book in Rust](https://github.com/CaQtiml/rlox) instead of Java used by the book author.
-- **Computer Architecture, Parallel Programming, and GPU Programming**: When I first learned these topics, I understood nothing; however, after I can get them, they become so interesting! I have already published some blogs about [a cache coherency](/tags/#cache-coherency-series) and [a CUDA programming](/tags/#cuda-series).
+- **Computer Architecture, Parallel Programming, and GPU Programming**: When I first learned these topics, I understood nothing; however, after I can get them, they become so interesting! I have already published some blogs about [a cache coherency](/tags/#cache-coherency-series) and [a CUDA programming](/tags/#cuda-series). I write these blogs with the intention that these blogs are exactly what I need when I start learning these topics. I have put a lot of effort to write these blogs to make it as much easy-to-understand as possible. So, I would be really appreciated if you read and like them! I always welcome any feedback, and you can send it to my E-mail.
 
 My Other Interests
 --------------------
@@ -43,7 +43,11 @@ I am also studying Swedish language as well. To be honest, I am not that good la
 
 I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är [A2](/files/A2_SELang.pdf), men jag förstår fortfarande inte talad svenska. Den är för snabb. Om du vill testa min svenska, så är det bara att hälsa och fortsätta prata med mig på svenska! Jag utmanar dig att byt inte till engelska. Jag ser fram emot att, inte plåga utan, öva min svenska med dig. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
 
-There are still more parts I want to add here, but I am too tired now.
+Support Me!
+--------------------
+I currently start to write interesting blogs about programming and my exciting adventure I experienced during studying abroad. A little support goes a long way! If you want to help me keep writing awesome blogs, you can do so by clicking here.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/caqtiml/tip)
 
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!

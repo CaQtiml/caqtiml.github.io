@@ -73,6 +73,8 @@ The short answer is “accessing RAM is slow”. But how can we decrease this la
 
 If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.com/caqtiml/tip). Thank you for reading until here and see you then!
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/caqtiml/tip)
+
 > SIDE NOTE: When referring to RAM and main memory, they are mostly DRAM, while the cache is made from SRAM. SRAM is faster than DRAM.
 
 This blog is originally published in [Medium](https://medium.com/@caqtiml/cache-coherency-series-part-1-introduction-8eb9fed8d23d).

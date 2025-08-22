@@ -191,4 +191,6 @@ Finally, this is the end of this part. This part is the final part of the cache 
 
 If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.com/caqtiml/tip). Thank you for reading until here and see you then!
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/caqtiml/tip)
+
 This blog is originally published in [Medium](https://caqtiml.medium.com/cache-coherency-series-part-3-false-sharing-39875123aa5b).
