@@ -1,7 +1,7 @@
 ---
 title: 'Cache Coherency Series: Part 3 — False Sharing'
 date: 2025-06-26
-permalink: /posts/2025/06/cache-coherence-series-part-3-false-sharing/
+permalink: /posts/cache-coherence-series-part-3-false-sharing/
 author_profile: false # set to false to not show your profile in this blog page.
 excerpt: What is false sharing? How can it impact the program performance? This part covers this problem.
 tags:
@@ -10,7 +10,7 @@ tags:
   - Cache Coherency Series
 ---
 
-Let’s review a bit what we covered in the [previous part](/posts/2025/06/cache-coherence-series-part-2-cache-coherence-protocol/). We talked about
+Let’s review a bit what we covered in the [previous part](/posts/cache-coherence-series-part-2-cache-coherence-protocol/). We talked about
 
 1. How to formalize the cache coherence mechanism from part 1 by defining states, CPU operations, and bus transaction signals and using them to explain the mechanism.
 2. Pointing out how it is inefficient.

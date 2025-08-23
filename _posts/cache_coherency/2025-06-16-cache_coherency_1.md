@@ -1,7 +1,7 @@
 ---
 title: 'Cache Coherency Series: Part 1 — Introduction'
 date: 2025-06-16
-permalink: /posts/2025/06/cache-coherence-series-part-1-introduction/
+permalink: /posts/cache-coherence-series-part-1-introduction/
 author_profile: false # set to false to not show your profile in this blog page.
 excerpt: An introduction to cache coherency. What it is and why it matters.
 tags:
@@ -69,7 +69,7 @@ No, it doesn’t. Of course, this mechanism provides a consistent view of data t
 ![FinalQ](/images/cache-coherence/part1/cc_part1/cache_coherency_final_q.jpg)  
 *My face when I learned the cache coherence mechanism for the first time in Parallel Programming class.*
 
-The short answer is “accessing RAM is slow”. But how can we decrease this latency? In the next part (part 2), I will rewrite this mechanism in a more formal way and discuss how to optimize it.
+The short answer is “accessing RAM is slow”. But how can we decrease this latency? In the [next part (part 2)](/posts/cache-coherence-series-part-2-cache-coherence-protocol), I will rewrite this mechanism in a more formal way and discuss how to optimize it.
 
 If you enjoy this blog, you can support me with [a cup of coffee](https://ko-fi.com/caqtiml/tip). Thank you for reading until here and see you then!
 

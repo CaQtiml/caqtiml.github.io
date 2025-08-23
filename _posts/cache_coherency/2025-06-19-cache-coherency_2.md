@@ -1,7 +1,7 @@
 ---
 title: 'Cache Coherency Series: Part 2 — Cache Coherence Protocol'
 date: 2025-06-19
-permalink: /posts/2025/06/cache-coherence-series-part-2-cache-coherence-protocol/
+permalink: /posts/cache-coherence-series-part-2-cache-coherence-protocol/
 author_profile: false # set to false to not show your profile in this blog page.
 excerpt: How to explain cache coherence mechanism in a more precise way and how to optimize it.
 tags:
@@ -10,7 +10,7 @@ tags:
   - Cache Coherency Series
 ---
 
-Let’s review a bit what we covered in the [previous part](/posts/2025/06/cache-coherence-series-part-1-introduction/). We talked about
+Let’s review a bit what we covered in the [previous part](/posts/cache-coherence-series-part-1-introduction/). We talked about
 
 1. How a core retrieves data from RAM.
 2. The problem occurs in multicore programming.
@@ -165,7 +165,7 @@ What is the problem here?
 
 ![cache_coherency_9_false_sharing_problem_question](/images/cache-coherence/part2/cc_part2/cache_coherency_9_false_sharing_problem_question.gif)
 
-In the next part, I will cover this “false sharing” problem. If you feel confused and overwhelmed by the content of this part, you can still follow my next part. I will not use and mention any state, CPU operations, and bus transaction to explain other further problems in the remaining parts.
+In the [next part](/posts/cache-coherence-series-part-3-false-sharing/), I will cover this “false sharing” problem. If you feel confused and overwhelmed by the content of this part, you can still follow my next part. I will not use and mention any state, CPU operations, and bus transaction to explain other further problems in the remaining parts.
 
 The purpose of this part is only to introduce a formal and precise way to explain the cache coherence mechanism. However, we can still explain related problems without using this level of formality and precision!
 
