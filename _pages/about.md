@@ -11,7 +11,8 @@ Finally, I have my personal website after several years of procrastination. I wo
 
 Let's start by allowing me to introduce myself. Sound boring? I know. I will try my best to make it more interesting.
 
-Hello everyone! My name is Sivakorn Lerttripinyo, but you can just call me **"Mil"**, which is my nickname. Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we get our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname like "Best", "Earth", "Ice", etc. Don't feel surprised!
+Hello everyone! You can just call me **"Mil"** (To my friend: "Miu" or "Mew" is okay too!), which is my nickname. 
+Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we get our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname like "Best", "Earth", "Ice", etc. Don't feel surprised!
 
 For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers". Some feel weird with my nickname, but I don't really want to change it or use another name. Thanks for your understanding!
 
