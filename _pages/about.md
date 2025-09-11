@@ -11,7 +11,7 @@ Finally, I have my personal website after several years of procrastination. I wo
 
 Let's start by allowing me to introduce myself. Sound boring? I know. I will try my best to make it more interesting.
 
-Hello everyone! You can just call me **"Mil"** (To my friend: "Miu" or "Mew" is okay too!), which is my nickname. 
+Hello everyone! You can just call me **"Mil"** ("Miu" or "Mew" is okay too!), which is my nickname. 
 Apart from formal situations, no one in Thailand calls each other with their first name. You may wonder how we get our nickname. The answer is that our parent just randomly picks any word. So, you can normally meet Thai people with the nickname like "Best", "Earth", "Ice", etc. Don't feel surprised!
 
 For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers". Some feel weird with my nickname, but I don't really want to change it or use another name. Thanks for your understanding!
@@ -19,6 +19,7 @@ For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers
 I am currently a second-year master student in Computer Science at Uppsala University, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
 - [Functional Programming I](https://www.uu.se/en/study/course?query=1DL330) and [Advanced Functional Programming](https://www.uu.se/en/study/course?query=1DL450)
 - [Semantics of Programming Languages](https://www.uu.se/en/study/course?query=1DL311)
+- [Programming Theory](https://www.uu.se/en/study/course?query=1DT034)
 - [Low-Level Parallel Programming](https://www.uu.se/en/study/course?query=1DT116)
 - [Advanced Computer Architecture](https://www.uu.se/en/study/course?query=1DT024)
 - [Data Engineering I](https://www.uu.se/en/study/course?query=1TD169) and [Data Engineering II](https://www.uu.se/en/study/course?query=1TD076)
