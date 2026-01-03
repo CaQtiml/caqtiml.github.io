@@ -7,7 +7,7 @@ collection: portfolio
 {% include toc %}
 
 ## About this Project
-This is a one-year compulsory final project for obtaining BEng Information and Communication Engineering from a Faculty of Engineering, Chulalongkorn U., Thailand. It is done in a group of three people, consisting of 
+This is a one-year compulsory final project for obtaining B.Eng Information and Communication Engineering from a Faculty of Engineering, Chulalongkorn University, Thailand. It is done in a group of three people, consisting of 
 1. Sivakorn Lerttripinyo (which is me!)
 2. Krittapasa Boontaveekul
 3. Wirachapong Suwanphibun
@@ -17,7 +17,7 @@ This project is graded by three faculty members, including one project advisor a
 2. Committee Member : Asst. Prof. Kunwadee Sripanidkulchai, Ph.D
 3. Committee Member : Lect. Aung Pyae, Ph.D
 
-This blog will explain this project in an informal way, and in-depth details will be omitted. 
+This blog will explain this project in an informal way, and in-depth details will be omitted. My main responsibility in this project is to design and implement the system component, which is the infrastructure and system for supporting the machine learning experiment. Therefore, this blog will mainly focus on the system component. The model training component, which is about how to do a feature engineering, choose and tune the ML algorithms, and evaluate the training result, will be briefly explained.
 
 Although this project has already been concluded, this blog is not finished yet. Unfinished part in this blog will be filled with `--Underconstruction--`. However, you can read the slide I (and my friends) used for presenting the project [here](/files/slide_Machine_Learning_Bot_for_Financial_Market_final.pdf).
 
@@ -47,7 +47,7 @@ However, implementing a robust machine learning model is, in fact, not a simple 
 
 So, this project is intended to design and implement the system going beyond the machine learning experiment. The system will show the system for ingesting and preparing data; systematically tracking the conducted experiments and storing related metadata including but not limited to training results, hyperparameters, and models; and deploying selected version of model to the real-world application.
 
-This project chooses to use cryptocurrency data to implement the system, but it can be easily adapted to be used with other financial products, such as a stock price, as well. I mean the system is the same, but you just only change the dataset.
+This project chooses to use cryptocurrency data to implement the system, but it can be easily adapted to be used with other financial products, such as a stock price, as well. I mean the system is the same, but you just only need to change the dataset.
 
 ## Overview of this Project Structure
 This project consists of two main components.
@@ -96,14 +96,75 @@ is used to store the state file. AWS S3 is chosen to be the remote backend, and 
 Although requiring to have more infrastructures to only manage Terraform seems troublesome, it allows the collaboration on managing the infrastructure from other members, and the state is safely stored and managed. Moreover, both S3 and DynamoDB are covered by AWS Free Tier. So, only little additional cost incurs after 12 months for the AWS S3. DynamoDB's free tier lasts forever if the usage does not exceed the limit.
 
 ### Database
---Underconstruction--
+
+The main purpose of this system is to provide a clean and reliable source of data for conducting the model experiment and being used by other components. 
+
+There are two types of data consisting of raw data and derived data. Raw data is ingested from external systems through various channels such as APIs and CSV files. For this project, the raw data is mainly a set of datetime and price of each currency. For example, raw data is a set of closing prices, opening prices, and volumes of BTCUSDT from 28 Apr 2019 to 31 Jun 2023. Derived data is the data that is derived and transformed from the raw data. For example, a moving average(MA) price can be derived from a set of closing price from a specific currency.
+
+For raw data, the attributes are fixed, which are datetime, currency name, open price, close price, highest price, lowest price, and volume. Duplicate data in the storage is not allowed as one datetime and one currency must have only a single set of data. After considering the requirements, a relational database is chosen as it can handle fixed schema, prevent duplicate data by applying a primary key as `(datetime, currency)`, determine a data type for each attribute, and enforce constraints such as `NOT NULL` easily.
+
+The design for storing derived data is one table for each model. When deploying the model, each model can use different set of indicators. For example, one model may use MA 5 minutes and MA 7 minutes as indicators, while another model may use MA 30 minutes and MA 60 minutes as indicators. So, the decision is that each model uses data from each own table. Although there is a scenario that two models use the same indicator, they are stored redundantly in both tables. Therefore, each table has a fixed schema. The relational database is chosen to store the derived data.
+
+PostgreSQL hosted on AWS RDS is chosen to be the database server. The database provisioned here is further used in other parts of the project as well.
+
+![Raw DB](/images/senior_proj/rawdb.png)
+![Derived DB](/images/senior_proj/inddb.png)
+
 ### Data Ingestion
---Underconstruction--
+Raw data is ingested and inserted in two approaches including historical data and new data. Historical data ingestion is performed to a new currency data that is not already available in the database. After that, newly-generated data needs to be inserted periodically to keep the data in the database updated.
+
+Historical data, which is a historical price of a particular currency, is inserted manually because it is an only one-time operation and involves a large amount of data. The dataset can be downloaded, and a bulk insertion can be performed instead of having the automated system to perform a loop to insert data row by row. The bulk insertion is more efficient and consumes less time to insert all historical data.
+
+The automation system is implemented to automatically insert newly-generated data, which is smaller than the historical data, into the raw-data database. This system can eliminate the work to manually keep the data in the database up-to-date.
+
+AWS Lambda is chosen to implement the data ingestion system. The function, which hosts the script, does not need to be working all of the time. It is designed to be triggered only at a designated point of time. So, AWS Lambda is an appropriate service as no instance has to be provisioned and run at all time. AWS EventBridge rule is used to trigger the function at a specified time. 
+
+![Data Ingestion](/images/senior_proj/dataing.png)
+
+However, managing dependencies in Lambda is difficult. If the script requires libraries not included in the environment, the layer containing necessary libraries must be manually created and inserted into the function. Therefore, AWS Lambda can be an inappropriate tool for performing operations requiring several extra dependencies.
+
+For the data ingestion, the function requires only receiving new data, performing a schema mapping between a response and the table in the database, and inserting into the table. However, for the data transformation, many complex transformations may be performed before storing into the database. Using AWS Lambda environment can be difficult to test and debug the function. So, finding data pipeline tool can be more suitable for the higher transformation workload.
+
 ### Data Transformation
---Underconstruction--
+
+Deriving and storing indicators from the historical data is done manually. Raw data is queried from the raw-data database and simultaneously derived into all indicators. Finally, the indicators are stored in the database. The reason this operation is done manually is that it is a one-time operation that involves a large amount of data. Million rows of historical raw data can be involved in the process of deriving indicators. Configuring the tool for supporting a processing of the large chunk of data, which runs only one time, is not worthwhile. 
+
+However, newly-generated data is automatically queried, transformed, and stored. Because this operation can involve complex data transformation, data pipeline tool is utilized instead.
+
+Apache Airflow is one of the first tools that people may think of; however, it is inappropriate for a small project for a reason. Although Airflow provides a lot of features and allows a lot of customization, the learning curve for using it is significant. Moreover, it requires a high specification of the instance to host on to work properly, and it is difficult to set up. This tool is worth using for larger projects.  
+
+Therefore, a simpler tool, Mage, is considered. In a nutshell, Mage is a tool for creating data pipelines. This tool requires less infrastructure specification, and it is easy to install and use. Its functionality is less than Airflow, but it contains all necessary features for a smaller project size.
+
+![Mage Pipeline](/images/senior_proj/datatrans.png)
+
 ### Training Management System
---Underconstruction--
+
+The purpose of this system is to track experiments, record relevant information, and be a central position for distributing models. MLFlow is a tool that fits the requirements as it focuses on the entire lifecycle of machine learning projects, ensuring that each phase is manageable, traceable, and reproducible. 
+
+MLFlow is hosted on an AWS EC2 instance. To use it to track experiments, destination for storing a backend store, which stores metadata for each run and experiment, and an artifact store, which store artifacts for each run such as model and data files, must be configured. Initially, its default value is the local device, which is the instance used for hosting MLFlow; however, if any failure occurs to the instance, all data can be lost. Therefore, configuring MLFlow to store metadata and artifact to other appropriate location is a better choice. PostgreSQL and AWS S3 are used to store metadata and artifacts of MLFlow, respectively.
+
+![MLFlow Architecture](/images/senior_proj/mlflow-link.png)
+
 ### Model Monitoring
---Underconstruction--
+
+To continuously monitor the model performance, all related metrics and graphs are needed to be plotted and displayed. Although creating a Jupyter notebook to do this task is possible, it can be inconvenient to open it every time to monitor the performance. It can be more convenient if there is a webpage to show all related metrics and graphs. Only opening the webpage by inputting the URL to the browser from anywhere and any device can be more simple than opening the notebook from only the computer. Moreover, sharing the URL to other people is easier than sharing the Jupyter notebook. 
+
+The main requirement for this webpage is to display metrics and graphs. Because of the simple usage, a complex library or framework, which requires high learning curve and high amount of implementing time such as React and Angular, is unnecessary. Streamlit is chosen because it uses Python, which is the programming language already used in this project, and it is well integrated to visualization libraries, such as Matplotlib. The webpage is hosted on the instance and set to be able to be accessed by any browser.
+
 ### Model Building and Serving
---Underconstruction--
+
+Deploying the model to an application is not a trivial task. In order to connect the gap between the model and the application, the intermediate format containing all model dependencies is required so that the model can be run in this environment. Therefore, the process for serving the model is separated into two parts including building and deploying, respectively. 
+
+An intermediate artifact should be an object that all dependencies are packed and ready to be deployed. The tool chosen to help build this artifact is BentoML. The following figure summarizes the model building and serving system.
+
+![Model Serving Architecture](/images/senior_proj/modelserve.png)
+
+The model serving APIs are implemented in `service.py`, which retrieves the models from the MLFlow. The `bentofile.yaml` is used to define required dependencies and python scripts to be bundled into the intermediate artifact. These files are then used to build the `bento` through the BentoML command line interface. `bento` is the intermediate artifact which prepares all necessary environments for running the model and locks the version of API service to be easily converted into a docker image. It can be used to serve the APIs service when the necessary dependencies are installed in the environment. For the ease of deployment, the `bento` is then converted into a docker image through the BentoML `containerize` command.
+
+The DigitalOcean App platform is utilized to deploy the service. The image is built and stored in an image registry provided by DigitalOcean. App platform retrieves the image to deploy the service automatically from this registry. Deployed APIs can be tested through an autogenerated Swagger UI, which is accessed by a link provided by App.
+
+![Swagger UI](/images/senior_proj/swagger.png)
+
+Finally, performing these steps, starting from building `bento` to pushing the image into the image registry, manually can be a tedious task and error-prone. Therefore, they are automated by implementing a GitHub workflow script to trigger GitHub action to automate them when there is any commit updated into the main branch. Three files used to build the `bento` are initially stored and edited in another branch in GitHub. After passing the local testing, it is merged into the main branch to trigger the automation.
+
+![GitHub Action](/images/senior_proj/ci_success.png)
