@@ -80,7 +80,21 @@ This project attempts to achieve features from Microsoft’s MLOps Level 2: Auto
 - Basic integration tests exist for the model.
 
 ### Infrastructure as Code (IaC)
---Underconstruction--
+
+Most infrastructures used in this project are provisioned through running Terraform scripts. Scripts are stored in the GitHub so that all people in the project can collaborate on.
+
+Terraform generates a state file to manage infrastructures and configurations. With its default configuration, the state file is generated and stored in a local machine. However, it should not be stored and managed by using GitHub due to reasons as follows.
+- Manual Error: Any collaborator in the project can forget to pull down or push up the latest state file. As a result, any person can accidentally run Terraform with the outdated state file.
+- Lack of Locking: Multiple collaborators may accidentally simultaneously run `terraform apply` on the same state file.
+- Lack of Secret Management: All data in the state file is stored as a plain text, which is dangerous for storing sensitive data.
+
+![TF state](/images/senior_proj/plaintextintf.png)
+
+So, the Terraform state for this project is managed by using Terraform’s built-in support for remote backends instead. The Terraform backend is responsible for loading and storing state, and the remote backend
+is used to store the state file. AWS S3 is chosen to be the remote backend, and AWS DynamoDB is chosen to manage the state locking.
+
+Although requiring to have more infrastructures to only manage Terraform seems troublesome, it allows the collaboration on managing the infrastructure from other members, and the state is safely stored and managed. Moreover, both S3 and DynamoDB are covered by AWS Free Tier. So, only little additional cost incurs after 12 months for the AWS S3. DynamoDB's free tier lasts forever if the usage does not exceed the limit.
+
 ### Database
 --Underconstruction--
 ### Data Ingestion
