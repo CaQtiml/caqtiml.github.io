@@ -99,16 +99,17 @@ Although requiring to have more infrastructures to only manage Terraform seems t
 
 The main purpose of this system is to provide a clean and reliable source of data for conducting the model experiment and being used by other components. 
 
-There are two types of data consisting of raw data and derived data. Raw data is ingested from external systems through various channels such as APIs and CSV files. For this project, the raw data is mainly a set of datetime and price of each currency. For example, raw data is a set of closing prices, opening prices, and volumes of BTCUSDT from 28 Apr 2019 to 31 Jun 2023. Derived data is the data that is derived and transformed from the raw data. For example, a moving average(MA) price can be derived from a set of closing price from a specific currency.
+There are two types of data consisting of raw data and derived data. **Raw data** is ingested from external systems through various channels such as APIs and CSV files. For this project, the raw data is mainly a set of datetime and price of each currency. For example, raw data is a set of closing prices, opening prices, and volumes of BTCUSDT from 28 Apr 2019 to 31 Jun 2023. **Derived data** is the data that is derived and transformed from the raw data. For example, a moving average(MA) price can be derived from a set of closing price from a specific currency.
 
 For raw data, the attributes are fixed, which are datetime, currency name, open price, close price, highest price, lowest price, and volume. Duplicate data in the storage is not allowed as one datetime and one currency must have only a single set of data. After considering the requirements, a relational database is chosen as it can handle fixed schema, prevent duplicate data by applying a primary key as `(datetime, currency)`, determine a data type for each attribute, and enforce constraints such as `NOT NULL` easily.
 
+![Raw DB](/images/senior_proj/rawdb.png)
+
 The design for storing derived data is one table for each model. When deploying the model, each model can use different set of indicators. For example, one model may use MA 5 minutes and MA 7 minutes as indicators, while another model may use MA 30 minutes and MA 60 minutes as indicators. So, the decision is that each model uses data from each own table. Although there is a scenario that two models use the same indicator, they are stored redundantly in both tables. Therefore, each table has a fixed schema. The relational database is chosen to store the derived data.
 
-PostgreSQL hosted on AWS RDS is chosen to be the database server. The database provisioned here is further used in other parts of the project as well.
-
-![Raw DB](/images/senior_proj/rawdb.png)
 ![Derived DB](/images/senior_proj/inddb.png)
+
+PostgreSQL hosted on AWS RDS is chosen to be the database server. The database provisioned here is further used in other parts of the project as well.
 
 ### Data Ingestion
 Raw data is ingested and inserted in two approaches including historical data and new data. Historical data ingestion is performed to a new currency data that is not already available in the database. After that, newly-generated data needs to be inserted periodically to keep the data in the database updated.
@@ -120,6 +121,7 @@ The automation system is implemented to automatically insert newly-generated dat
 AWS Lambda is chosen to implement the data ingestion system. The function, which hosts the script, does not need to be working all of the time. It is designed to be triggered only at a designated point of time. So, AWS Lambda is an appropriate service as no instance has to be provisioned and run at all time. AWS EventBridge rule is used to trigger the function at a specified time. 
 
 ![Data Ingestion](/images/senior_proj/dataing.png)
+![Lambda Implementation](/images/senior_proj/lambda_arch.png)
 
 However, managing dependencies in Lambda is difficult. If the script requires libraries not included in the environment, the layer containing necessary libraries must be manually created and inserted into the function. Therefore, AWS Lambda can be an inappropriate tool for performing operations requiring several extra dependencies.
 
@@ -137,6 +139,60 @@ Therefore, a simpler tool, Mage, is considered. In a nutshell, Mage is a tool fo
 
 ![Mage Pipeline](/images/senior_proj/datatrans.png)
 
+This is an example of the data pipeline implemented in Mage. The pipeline contains several blocks connected with each other as a directed acyclic graph(DAG).
+
+![Mage Pipeline Example](/images/senior_proj/pipelinesample.png)
+
+Mage includes a unit test capability to each block. So, the unit test can be implemented in each block to ensure that it works as intended. For example, the following code is one of the blocks in the data pipeline used to derive moving average indicators. There are two testcases included, which the test functions are decorated by `@test`. If there is any value contradicts the intended value, the testing function returns an error, which causes the pipeline to be failed. According to the code snippet, it validates whether the function `df_ma_x_hour` and `df_ma_x_day` provides the correct result and check whether the output of this block is not `None`.
+
+```python
+# <omit previous unrelated code>
+
+def df_ma_x_hour(inp_df, window_size, col_name, round_decimal=10, idx_name='time'):
+    df_ma_x_h_p = inp_df.groupby(inp_df.index.minute).rolling(window=window_size)[col_name].mean().round(round_decimal)
+    df_ma_x_h = df_ma_x_h_p.droplevel(0).reset_index().set_index(idx_name).sort_index()
+    return df_ma_x_h
+
+def df_ma_x_day(inp_df, window_size, col_name, round_decimal=10, idx_name='time'):
+    df_ma_x_d_p = inp_df.groupby([inp_df.index.hour, inp_df.index.minute]).rolling(window=window_size)[col_name].mean().round(round_decimal)
+    df_ma_x_d = df_ma_x_d_p.droplevel([0,1]).reset_index().set_index(idx_name).sort_index()
+    return df_ma_x_d
+
+def generate_dataframe_hour(x_hours: int):
+    dt_range = pd.date_range(start="2023-01-01", periods=x_hours*60, freq='T')
+    values = range(1, len(dt_range) + 1)
+    df = pd.DataFrame(data=values, index=dt_range, columns=['close'])
+    return df
+
+def generate_dataframe_day(x_days: int):
+    dt_range = pd.date_range(start="2023-01-01", periods=x_days*24*60, freq='T')
+    values = range(1, len(dt_range) + 1)
+    df = pd.DataFrame(data=values, index=dt_range, columns=['close'])
+    return df
+
+@transformer
+def transform(df, *args, **kwargs):
+    df_ma7h = df_ma_x_hour(inp_df=df, window_size=7, col_name='close', idx_name='time')
+    df_ma25h = df_ma_x_hour(inp_df=df, window_size=25, col_name='close', idx_name='time')
+    df_ma99h = df_ma_x_hour(inp_df=df, window_size=99, col_name='close', idx_name='time')
+    df_ma7d = df_ma_x_day(inp_df=df, window_size=7, col_name='close', idx_name='time')
+    df_ma25d = df_ma_x_day(inp_df=df, window_size=25, col_name='close', idx_name='time')
+    return [df, df_ma7h, df_ma25h, df_ma99h, df_ma7d, df_ma25d]
+
+@test
+def test_output(output, *args) -> None:
+    assert output is not None, 'The output is undefined'
+
+@test
+def test_func_ma_finder(output, *args) -> None:
+    test_h = generate_dataframe_hour(7)
+    res_test_h = df_ma_x_hour(inp_df=test_h, window_size=7, col_name='close', idx_name='index').dropna()
+    assert np.isclose(res_test_h.iloc[0],181.0)[0], "df_ma_x_hour may provides a wrong result"
+    test_d = generate_dataframe_day(7)
+    res_test_d = df_ma_x_day(inp_df=test_d, window_size=7, col_name='close', idx_name='index').dropna()
+    assert np.isclose(res_test_d.iloc[0],4321.0)[0], "df_ma_x_day may provides a wrong result"
+```
+
 ### Training Management System
 
 The purpose of this system is to track experiments, record relevant information, and be a central position for distributing models. MLFlow is a tool that fits the requirements as it focuses on the entire lifecycle of machine learning projects, ensuring that each phase is manageable, traceable, and reproducible. 
@@ -145,11 +201,44 @@ MLFlow is hosted on an AWS EC2 instance. To use it to track experiments, destina
 
 ![MLFlow Architecture](/images/senior_proj/mlflow-link.png)
 
+Here is the example of the code snippet for training and logging the model into MLFlow. 
+
+```python
+TRACKING_SERVER_HOST = "..."
+mlflow.set_tracking_uri(f"http://{TRACKING_SERVER_HOST}:<port>")
+mlflow.set_experiment("...")
+with mlflow.start_run(run_name="..."):
+    params = {
+            "colsample_bytree": 0.3,
+            "learning_rate": 0.1,
+            <more params can be added>
+        }
+    mlflow.log_params(params)
+    xg_reg = xgb.XGBRegressor(**params)
+    xg_reg.fit(X_train, y_train)
+    y_test_pred = xg_reg.predict(X_test)
+    test_mse = mean_squared_error(y_test, y_test_pred)
+    mlflow.log_metric("test_mse", test_mse)
+    mlflow.xgboost.log_model(xg_reg, "model")
+```
+
+The experiment information is recorded to MLFlow. From the example, there are three runs in this experiment.
+
+![MLFlow Experiment](/images/senior_proj/mlflow_all_display.png)
+
+This is the details of one of the runs named **BTCUSDT_1**.
+
+![MLFlow Run Detail](/images/senior_proj/mlflow_ind_result.png)
+
 ### Model Monitoring
 
 To continuously monitor the model performance, all related metrics and graphs are needed to be plotted and displayed. Although creating a Jupyter notebook to do this task is possible, it can be inconvenient to open it every time to monitor the performance. It can be more convenient if there is a webpage to show all related metrics and graphs. Only opening the webpage by inputting the URL to the browser from anywhere and any device can be more simple than opening the notebook from only the computer. Moreover, sharing the URL to other people is easier than sharing the Jupyter notebook. 
 
 The main requirement for this webpage is to display metrics and graphs. Because of the simple usage, a complex library or framework, which requires high learning curve and high amount of implementing time such as React and Angular, is unnecessary. Streamlit is chosen because it uses Python, which is the programming language already used in this project, and it is well integrated to visualization libraries, such as Matplotlib. The webpage is hosted on the instance and set to be able to be accessed by any browser.
+
+![Streamlit Dashboard](/images/senior_proj/streamlit_one.png)
+
+The webpage visualizes the performance of the model. The user can customize the currency to evaluate, the start datetime for evaluation, and the model algorithm. The result shows the start and end datetime of the evaluation, the predicted growth, the comparison between the predicted growth and the actual growth, and the MSE value calculated from this data using the specified model.
 
 ### Model Building and Serving
 
@@ -168,3 +257,23 @@ The DigitalOcean App platform is utilized to deploy the service. The image is bu
 Finally, performing these steps, starting from building `bento` to pushing the image into the image registry, manually can be a tedious task and error-prone. Therefore, they are automated by implementing a GitHub workflow script to trigger GitHub action to automate them when there is any commit updated into the main branch. Three files used to build the `bento` are initially stored and edited in another branch in GitHub. After passing the local testing, it is merged into the main branch to trigger the automation.
 
 ![GitHub Action](/images/senior_proj/ci_success.png)
+
+However, it is inefficient to rebuild the image and redeploy every time the new model is selected although the automation is implemented since all processes requires at least six minutes. Alias concept, which is a feature of MLFlow Model Registry, can solve this problem.
+
+Models can be registered as a version within a group.
+
+![MLFlow Model Registry](/images/senior_proj/mlflow_regis_xgr.png)
+
+For this example, four models are registered in `xgr` group as four different versions. The alias can be assigned to a particular model. The model can be retrieved by specifying the group name and alias name.
+
+![MLFlow Model Alias](/images/senior_proj/v3_xgr.png)
+
+the `production` alias is assigned to the model version 3 of `xgr` group.
+
+The model can be retrieved by using the URI `models:/{group-name}@{alias}`, such as `models:/xgr@production`. MLFlow has a function `mlflow.pyfunc.load_model(URI)` to load the model.
+
+![MLFlow Load Model](/images/senior_proj/v3-prod-diagram.png)
+
+If there is a better model available, it can be registered as a new version in the group, such as being a version 4 in `xgr` group. The `production` alias can be given to the new version instead. When the application requests the model with `production` alias in `xgr` group, MLFlow automatically retrieves the version 4 of the model and sends it to the image. As a result, the new model is applied and served without rebuilding the new image and container.
+
+![MLFlow Load New Model](/images/senior_proj/v4_xgr.png)
