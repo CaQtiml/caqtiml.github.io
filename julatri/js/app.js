@@ -2,6 +2,13 @@ const CITTA_GROUPS = [
   { id: "lobha-mula", label: "โลภมูลจิต ๘ (รากเหง้าคือโลภะ)", prefix: "ล", chunkSize: 4 },
   { id: "dosa-mula", label: "โทสมูลจิต ๒ (รากเหง้าคือโทสะ)", prefix: "ท" },
   { id: "moha-mula", label: "โมหมูลจิต ๒ (รากเหง้าคือโมหะ)", prefix: "ม" },
+  { id: "ahetuka", label: "อเหตุกจิต ๑๘ (ไม่มีเหตุ: ๗ อกุศลวิบาก, ๘ กุศลวิบาก, ๓ กิริยา)", prefix: "อห", rows: [7, 8, 3] },
+  { id: "mahakusala", label: "มหากุศลจิต ๘ (กามาวจรโสภณ)", prefix: "กศ", chunkSize: 4 },
+  { id: "mahavipaka", label: "มหาวิปากจิต ๘ (กามาวจรโสภณ)", prefix: "วบ", chunkSize: 4 },
+  { id: "mahakiriya", label: "มหากิริยาจิต ๘ (กามาวจรโสภณ)", prefix: "กร", chunkSize: 4 },
+  { id: "rupa-jhana", label: "รูปาวจรจิต ๑๕ (แถวละ กุศล/วิบาก/กิริยา × ฌาน ๑-๕)", prefix: "รป", chunkSize: 5 },
+  { id: "arupa-jhana", label: "อรูปาวจรจิต ๑๒ (แถวละ กุศล/วิบาก/กิริยา × อรูปฌาน ๔)", prefix: "อร", chunkSize: 4 },
+  { id: "lokuttara", label: "โลกุตตรจิต ๔๐ (พิสดาร, มรรค-ผล ๘ × ฌาน ๑-๕)", prefix: "ลก", chunkSize: 5 },
 ];
 
 const CETASIKA_GROUPS = [
@@ -12,6 +19,10 @@ const CETASIKA_GROUPS = [
   { id: "dosa-catuka", label: "โทจตุกเจตสิก ๔ — เฉพาะโทสมูลจิต" },
   { id: "thina-duka", label: "ถีทุกเจตสิก ๒ — เฉพาะจิตที่เป็นสสังขาริก" },
   { id: "vicikiccha", label: "วิจิกิจฉาเจตสิก ๑ — เฉพาะโมหมูลจิตดวงที่ ๑" },
+  { id: "sobhana-sadharana", label: "โสภณสาธารณเจตสิก ๑๙ — ประกอบกับจิตที่ดีงามทุกดวง" },
+  { id: "virati", label: "วิรตีเจตสิก ๓ — งดเว้นจากทุจริต (กุศล/กิริยาบางดวง)" },
+  { id: "appamanna", label: "อัปปมัญญาเจตสิก ๒ — แผ่ไปในสัตว์ไม่มีประมาณ" },
+  { id: "pannindriya", label: "ปัญญินทรีย์เจตสิก ๑ — ปัญญา" },
 ];
 
 let DATA = null;
@@ -45,16 +56,20 @@ function render() {
     const label = document.createElement("p");
     label.className = "group-label";
     label.textContent = g.label;
-    const chunkSize = g.chunkSize || members.length;
+    // `rows` gives explicit, possibly-uneven row sizes (e.g. [7, 8, 3]); falls
+    // back to uniform `chunkSize` rows, then to one single row.
+    const rowSizes = g.rows || (g.chunkSize ? Array(Math.ceil(members.length / g.chunkSize)).fill(g.chunkSize) : [members.length]);
     wrap.appendChild(label);
-    for (let i = 0; i < members.length; i += chunkSize) {
+    let i = 0;
+    rowSizes.forEach((size) => {
       const row = document.createElement("div");
       row.className = "circle-row";
-      members.slice(i, i + chunkSize).forEach((c, j) => {
+      members.slice(i, i + size).forEach((c, j) => {
         row.appendChild(makeNode("citta", c.id, `${g.prefix}.${i + j + 1}`, c.thai));
       });
+      i += size;
       wrap.appendChild(row);
-    }
+    });
     cittaGroupsEl.appendChild(wrap);
   });
 

@@ -1,16 +1,8 @@
-# เจตสิก (Cetasika) reference data
-# Only the 27 cetasikas used by the current pilot slice (อกุศลจิต) are listed.
-# Source: ปรมัตถโชติกะ ปริจเฉทที่ ๑-๒-๖ (จูฬตรี), pp. 36-38.
-#
-# group values used here:
-#   sabbacitta-sadharana  - สัพพจิตตสาธารณเจตสิก 7 (arise with every citta)
-#   pakinnaka             - ปกิณณกเจตสิก 6 (arise with most, but not all, citta)
-#   moha-catuka           - โมจตุกเจตสิก 4 (always with every akusala citta)
-#   lobha-tika            - โลติกเจตสิก 3 (greed-rooted only)
-#   dosa-catuka           - โทจตุกเจตสิก 4 (hatred-rooted only)
-#   thina-duka            - ถีทุกเจตสิก 2 (only in "prompted"/sasankharika cittas)
-#   vicikiccha            - วิจิกิจฉาเจตสิก 1 (only in the doubt-citta)
+# เจตสิก (Cetasika) reference data -- all 52 cetasikas.
+# Source: ปรมัตถโชติกะ ปริจเฉทที่ ๑-๒-๖ (จูฬตรี), pp. 36-39 (definitions),
+# grouping per the standard 13 อัญญสมานะ + 14 อกุศล + 25 โสภณ breakdown.
 
+# ---- สัพพจิตตสาธารณเจตสิก ๗ (arise with every citta) ----
 - id: phassa
   thai: ผัสสะ
   group: sabbacitta-sadharana
@@ -46,6 +38,7 @@
   group: sabbacitta-sadharana
   meaning: ธรรมชาติที่มุ่งและนำสัมปยุตตธรรมสู่อารมณ์
 
+# ---- ปกิณณกเจตสิก ๖ (arise with most, but not all, citta) ----
 - id: vitakka
   thai: วิตก
   group: pakinnaka
@@ -76,6 +69,7 @@
   group: pakinnaka
   meaning: ธรรมชาติที่ปรารถนาอารมณ์
 
+# ---- โมจตุกเจตสิก ๔ (always with every akusala citta) ----
 - id: moha
   thai: โมหะ
   group: moha-catuka
@@ -96,6 +90,7 @@
   group: moha-catuka
   meaning: ธรรมชาติที่ฟุ้งซ่าน คือรับอารมณ์ไม่มั่น
 
+# ---- โลติกเจตสิก ๓ (greed-rooted only) ----
 - id: lobha
   thai: โลภะ
   group: lobha-tika
@@ -111,6 +106,7 @@
   group: lobha-tika
   meaning: ธรรมชาติที่มีความเย่อหยิ่ง ถือตัว
 
+# ---- โทจตุกเจตสิก ๔ (hatred-rooted only) ----
 - id: dosa
   thai: โทสะ
   group: dosa-catuka
@@ -131,6 +127,7 @@
   group: dosa-catuka
   meaning: ธรรมชาติที่มีความรำคาญใจในทุจริตที่ได้ทำไปแล้ว และในสุจริตที่ยังไม่ได้ทำ
 
+# ---- ถีทุกเจตสิก ๒ (only in sasankharika akusala citta) ----
 - id: thina
   thai: ถีนะ
   group: thina-duka
@@ -141,7 +138,137 @@
   group: thina-duka
   meaning: ธรรมชาติที่ทำให้เจตสิกเซื่องซึม ท้อถอยจากอารมณ์
 
+# ---- วิจิกิจฉาเจตสิก ๑ (only in the doubt-citta) ----
 - id: vicikiccha
   thai: วิจิกิจฉา
   group: vicikiccha
   meaning: ธรรมชาติที่มีความสงสัย ไม่ตกลงใจ คือวิพากษ์วิจารณ์ในคุณพระพุทธ พระธรรม พระสงฆ์ เป็นต้น
+
+# ---- โสภณสาธารณเจตสิก ๑๙ (arise with every beautiful/sobhana citta) ----
+- id: saddha
+  thai: ศรัทธา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่มีความเชื่อและเลื่อมใสในพระพุทธ พระธรรม พระสงฆ์ ตามความเป็นจริง เชื่อในกรรมและผลของกรรม
+
+- id: sati
+  thai: สติ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่มีความระลึกในอารมณ์ที่เกี่ยวด้วยกุศลธรรม มีคุณของพระพุทธ พระธรรม พระสงฆ์ เป็นต้น
+
+- id: hiri
+  thai: หิริ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่มีความเกลียด และละอายต่อการงานอันเป็นทุจริต
+
+- id: ottappa
+  thai: โอตตัปปะ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่สะดุ้งกลัวต่อการงานอันเป็นทุจริต
+
+- id: alobha
+  thai: อโลภะ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่ไม่อยากได้ และไม่ติดอยู่ในกามคุณอารมณ์
+
+- id: adosa
+  thai: อโทสะ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่ไม่ประทุษร้ายในอารมณ์
+
+- id: tatramajjhattata
+  thai: ตัตรมัชฌัตตตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่ทำให้จิต เจตสิกสม่ำเสมอในกิจของตนๆ ไม่ให้มีการยิ่งหย่อน
+
+- id: kayapassaddhi
+  thai: กายปัสสัทธิ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความสงบของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+
+- id: cittapassaddhi
+  thai: จิตตปัสสัทธิ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความสงบของจิต ในการงานอันเป็นกุศล
+
+- id: kayalahuta
+  thai: กายลหุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความเบาของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+
+- id: cittalahuta
+  thai: จิตตลหุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความเบาของจิต ในการงานอันเป็นกุศล
+
+- id: kayamuduta
+  thai: กายมุทุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความอ่อนของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+
+- id: cittamuduta
+  thai: จิตตมุทุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความอ่อนของจิต ในการงานอันเป็นกุศล
+
+- id: kayakammannata
+  thai: กายกัมมัญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความควรของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+
+- id: cittakammannata
+  thai: จิตตกัมมัญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความควรของจิต ในการงานอันเป็นกุศล
+
+- id: kayapagunnata
+  thai: กายปาคุญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความคล่องแคล่วของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+
+- id: cittapagunnata
+  thai: จิตตปาคุญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความคล่องแคล่วของจิต ในการงานอันเป็นกุศล
+
+- id: kayujukata
+  thai: กายุชุกตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความซื่อตรงของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+
+- id: cittujukata
+  thai: จิตตุชุกตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความซื่อตรงของจิต ในการงานอันเป็นกุศล
+
+# ---- วิรตีเจตสิก ๓ (abstinences -- active in kusala/some kiriya, never in vipaka) ----
+- id: samma_vaca
+  thai: สัมมาวาจา
+  group: virati
+  meaning: การกล่าววาจาที่เว้นจากวจีทุจริต ๔ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ
+
+- id: samma_kammanta
+  thai: สัมมากัมมันตะ
+  group: virati
+  meaning: การกระทำที่เว้นจากกายทุจริต ๓ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ
+
+- id: samma_ajiva
+  thai: สัมมาอาชีวะ
+  group: virati
+  meaning: การประกอบอาชีพที่เว้นจากวจีทุจริต ๔ กายทุจริต ๓
+
+# ---- อัปปมัญญาเจตสิก ๒ (illimitables -- need a being as object; never in vipaka or 5th-jhana-and-above) ----
+- id: karuna
+  thai: กรุณา
+  group: appamanna
+  meaning: ธรรมชาติที่มีความสงสารต่อทุกขิตสัตว์ คือผู้ที่กำลังได้รับความลำบากอยู่ หรือ จะได้รับความลำบากในกาลข้างหน้า
+
+- id: mudita
+  thai: มุทิตา
+  group: appamanna
+  meaning: ธรรมชาติที่มีความยินดีต่อสุขิตสัตว์ คือ ผู้ที่กำลังได้รับความสุข หรือ ผู้ที่จะได้รับความสุขในกาลข้างหน้า
+
+# ---- ปัญญินทรีย์เจตสิก ๑ (wisdom -- fixed per citta type, not situational) ----
+- id: panna
+  thai: ปัญญา
+  group: pannindriya
+  meaning: ธรรมชาติที่รู้สภาพธรรมโดยทั่วๆ ไป ตามความเป็นจริง

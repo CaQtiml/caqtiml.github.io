@@ -77,9 +77,9 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 280px 1fr;
+  grid-template-columns: 1.4fr 280px 1fr;
   gap: 1rem;
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 1rem 2rem;
   align-items: start;
@@ -87,6 +87,7 @@ main {
 @media (max-width: 860px) {
   main { grid-template-columns: 1fr; }
   .info-panel { order: -1; position: static; }
+  #cetasika-panel { position: static; max-height: none; overflow-y: visible; }
 }
 
 .panel {
@@ -155,6 +156,15 @@ main {
   min-height: 8rem;
   position: sticky;
   top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+#cetasika-panel {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
 }
 .info-placeholder { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
 .info-title { margin: 0 0 0.3rem; font-size: 1.1rem; }
