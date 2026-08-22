@@ -202,14 +202,33 @@ main {
   right: 1.25rem;
   z-index: 1000;
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.ink-visibility-toggle {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.5rem 0.6rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
+
+.ink-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.ink-panel[hidden] {
+  display: none;
+}
+
 .ink-toggle {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -220,6 +239,7 @@ main {
   color: var(--text);
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .ink-toggle.active {
   background: var(--accent);
@@ -228,6 +248,54 @@ main {
 }
 .ink-tools {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.6rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.ink-tools[hidden], .ink-colors[hidden] {
+  display: none;
+}
+.ink-tool-tabs {
+  display: flex;
+  gap: 0.4rem;
+}
+.ink-tool-tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ink-tool-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.ink-color-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text);
+  cursor: pointer;
+}
+.ink-color-toggle.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.ink-colors {
+  display: flex;
   align-items: center;
   gap: 0.45rem;
 }
@@ -235,31 +303,12 @@ main {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  border: 2px solid transparent;
+  border: 1px solid var(--border);
   background: var(--c);
   cursor: pointer;
   padding: 0;
 }
 .ink-color.active {
-  border-color: var(--text);
+  border: 2px solid var(--text);
   box-shadow: 0 0 0 2px var(--surface);
-}
-.ink-eraser {
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  background: var(--surface);
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.7rem;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-.ink-eraser.active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
 }

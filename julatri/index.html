@@ -52,14 +52,25 @@
 </footer>
 
 <div class="ink-toolbar" id="ink-toolbar">
-  <button id="ink-toggle" class="ink-toggle" type="button">โหมดวาด</button>
-  <div class="ink-tools" id="ink-tools" hidden>
-    <button class="ink-color active" data-color="#1a1a1a" style="--c:#1a1a1a" title="ปากกาสีดำ" type="button"></button>
-    <button class="ink-color" data-color="#d64545" style="--c:#d64545" title="ปากกาสีแดง" type="button"></button>
-    <button class="ink-color" data-color="#2f6fed" style="--c:#2f6fed" title="ปากกาสีน้ำเงิน" type="button"></button>
-    <button class="ink-color" data-color="#2f9e59" style="--c:#2f9e59" title="ปากกาสีเขียว" type="button"></button>
-    <button class="ink-color" data-color="#e0a52c" style="--c:#e0a52c" title="ปากกาสีเหลือง" type="button"></button>
-    <button id="ink-eraser" class="ink-eraser" type="button" title="ยางลบ">ลบ</button>
+  <button id="ink-visibility-toggle" class="ink-visibility-toggle" type="button" title="ซ่อน/แสดงแถบเครื่องมือวาด">▾ คำอธิบายภาพ</button>
+  <div class="ink-panel" id="ink-panel">
+    <button id="ink-toggle" class="ink-toggle" type="button">โหมดวาด</button>
+    <div class="ink-tools" id="ink-tools" hidden>
+      <div class="ink-tool-tabs">
+        <button class="ink-tool-tab active" data-tool="pen" type="button">ปากกา</button>
+        <button class="ink-tool-tab" data-tool="eraser" type="button" title="ลบเฉพาะจุดที่ยางลบสัมผัส">ยางลบ</button>
+        <button class="ink-tool-tab" data-tool="eraser-connected" type="button" title="คลิกเพื่อลบเส้นที่เชื่อมกันทั้งหมด">ลบทั้งเส้น</button>
+      </div>
+      <button id="ink-color-toggle" class="ink-color-toggle" type="button">สี</button>
+      <div class="ink-colors" id="ink-colors" hidden>
+        <button class="ink-color active" data-color="#1a1a1a" style="--c:#1a1a1a" title="ปากกาสีดำ" type="button"></button>
+        <button class="ink-color" data-color="#d64545" style="--c:#d64545" title="ปากกาสีแดง" type="button"></button>
+        <button class="ink-color" data-color="#2f6fed" style="--c:#2f6fed" title="ปากกาสีน้ำเงิน" type="button"></button>
+        <button class="ink-color" data-color="#2f9e59" style="--c:#2f9e59" title="ปากกาสีเขียว" type="button"></button>
+        <button class="ink-color" data-color="#e0a52c" style="--c:#e0a52c" title="ปากกาสีเหลือง" type="button"></button>
+        <button class="ink-color" data-color="#ffffff" style="--c:#ffffff" title="ปากกาสีขาว" type="button"></button>
+      </div>
+    </div>
   </div>
 </div>
 
