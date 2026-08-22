@@ -43,6 +43,34 @@ function byId(list, id) {
   return list.find((x) => x.id === id);
 }
 
+// The number shown on a เจตสิก circle depends on the active mode: the
+// สัมปโยคนัย count (how many จิต it occurs in) normally, but the
+// ตทุภยมิสสกนัย count (how many OTHER เจตสิก it co-occurs with) in that mode,
+// since that's the relation ตทุภยมิสสกนัย actually measures.
+function cetasikaCircleLabel(id) {
+  const list = mode === "tadubhaya" ? DATA.cooccurrence[id] : DATA.cetasikaToCittas[id];
+  return String((list || []).length);
+}
+
+// ตทุภยมิสสกนัย is a เจตสิก<->เจตสิก relation - จิต isn't part of what it
+// measures, so its circles show no number in that mode (they're only ever
+// dimmed context there, never a value-bearing target).
+function cittaCircleLabel(citta) {
+  return mode === "tadubhaya" ? "" : String(citta.count);
+}
+
+function updateCittaLabels() {
+  document.querySelectorAll('.node[data-type="citta"]').forEach((el) => {
+    el.textContent = cittaCircleLabel(byId(DATA.cittas, el.dataset.id));
+  });
+}
+
+function updateCetasikaLabels() {
+  document.querySelectorAll('.node[data-type="cetasika"]').forEach((el) => {
+    el.textContent = cetasikaCircleLabel(el.dataset.id);
+  });
+}
+
 function render() {
   document.getElementById("citta-count").textContent = `(${DATA.cittas.length})`;
   document.getElementById("cetasika-count").textContent = `(${DATA.cetasikas.length})`;
@@ -65,7 +93,7 @@ function render() {
       const row = document.createElement("div");
       row.className = "circle-row";
       members.slice(i, i + size).forEach((c, j) => {
-        row.appendChild(makeNode("citta", c.id, `${g.prefix}.${i + j + 1}`, c.thai));
+        row.appendChild(makeNode("citta", c.id, cittaCircleLabel(c), c.thai));
       });
       i += size;
       wrap.appendChild(row);
@@ -85,7 +113,7 @@ function render() {
     const row = document.createElement("div");
     row.className = "circle-row";
     members.forEach((c) => {
-      row.appendChild(makeNode("cetasika", c.id, c.thai, c.thai));
+      row.appendChild(makeNode("cetasika", c.id, cetasikaCircleLabel(c.id), c.thai));
     });
     wrap.appendChild(label);
     wrap.appendChild(row);
@@ -226,10 +254,10 @@ function showTadubhayaInfo(id, relatedCittaIds, relatedCetasikaIds) {
   infoPanel.innerHTML = `
     <h3 class="info-title">${ceta.thai}</h3>
     <p class="info-meaning">${ceta.meaning}</p>
-    <p class="info-related-label">ประกอบได้ในจิต ${relatedCittaIds.length} ดวง (สัมปโยคนัย):</p>
-    <ul class="info-related-list">${cittaNames.map((n) => `<li>${n}</li>`).join("")}</ul>
     <p class="info-related-label">เจตสิกที่ประกอบร่วมกันได้ ${relatedCetasikaIds.length} ดวง (ตทุภยมิสสกนัย):</p>
     <ul class="info-related-list">${cetaNames.map((n) => `<li>${n}</li>`).join("")}</ul>
+    <p class="info-related-label">ประกอบได้ในจิต ${relatedCittaIds.length} ดวง (สัมปโยคนัย):</p>
+    <ul class="info-related-list">${cittaNames.map((n) => `<li>${n}</li>`).join("")}</ul>
   `;
 }
 
@@ -244,6 +272,8 @@ document.querySelectorAll(".mode-btn").forEach((btn) => {
     mode = btn.dataset.mode;
     pinned = null;
     updateActivePanelStyling();
+    updateCetasikaLabels();
+    updateCittaLabels();
     applyHighlight(null);
   });
 });
