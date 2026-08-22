@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>อภิธรรมชั้นจูฬตรี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>อภิธรรมชั้นจูฬตรี</h1>
+  <p class="subtitle">จิต · เจตสิก · สัมปโยคนัย · สังคหนัย · ตทุภยมิสสกนัย</p>
+</header>
+
+<nav class="mode-switch" role="tablist" aria-label="เลือกนัยที่ต้องการดู">
+  <button class="mode-btn active" data-mode="sangaha" role="tab" aria-selected="true">
+    สังคหนัย
+    <span class="mode-hint">จิต → เจตสิก</span>
+  </button>
+  <button class="mode-btn" data-mode="sampayoga" role="tab" aria-selected="false">
+    สัมปโยคนัย
+    <span class="mode-hint">เจตสิก → จิต</span>
+  </button>
+  <button class="mode-btn" data-mode="tadubhaya" role="tab" aria-selected="false">
+    ตทุภยมิสสกนัย
+    <span class="mode-hint">เจตสิก → จิต + เจตสิก</span>
+  </button>
+</nav>
+
+<main>
+  <section class="panel" id="citta-panel">
+    <h2>จิต <span class="panel-count" id="citta-count"></span></h2>
+    <div class="citta-groups" id="citta-groups"></div>
+  </section>
+
+  <aside class="info-panel" id="info-panel">
+    <p class="info-placeholder">ชี้หรือคลิกที่วงกลมจิตหรือเจตสิก เพื่อดูความสัมพันธ์</p>
+  </aside>
+
+  <section class="panel" id="cetasika-panel">
+    <h2>เจตสิก <span class="panel-count" id="cetasika-count"></span></h2>
+    <div class="cetasika-groups" id="cetasika-groups"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>ข้อมูลอ้างอิงจาก ปรมัตถโชติกะ ปริจเฉทที่ ๑-๒-๖ (จูฬตรี) — ปัจจุบันแสดงเฉพาะ อกุศลจิต ๑๒ (ชุดทดลอง)</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

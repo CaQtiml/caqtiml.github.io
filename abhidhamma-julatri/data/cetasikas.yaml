@@ -1,0 +1,147 @@
+# เจตสิก (Cetasika) reference data
+# Only the 27 cetasikas used by the current pilot slice (อกุศลจิต) are listed.
+# Source: ปรมัตถโชติกะ ปริจเฉทที่ ๑-๒-๖ (จูฬตรี), pp. 36-38.
+#
+# group values used here:
+#   sabbacitta-sadharana  - สัพพจิตตสาธารณเจตสิก 7 (arise with every citta)
+#   pakinnaka             - ปกิณณกเจตสิก 6 (arise with most, but not all, citta)
+#   moha-catuka           - โมจตุกเจตสิก 4 (always with every akusala citta)
+#   lobha-tika            - โลติกเจตสิก 3 (greed-rooted only)
+#   dosa-catuka           - โทจตุกเจตสิก 4 (hatred-rooted only)
+#   thina-duka            - ถีทุกเจตสิก 2 (only in "prompted"/sasankharika cittas)
+#   vicikiccha            - วิจิกิจฉาเจตสิก 1 (only in the doubt-citta)
+
+- id: phassa
+  thai: ผัสสะ
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่กระทบอารมณ์
+
+- id: vedana
+  thai: เวทนา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่เสวยอารมณ์
+
+- id: sanna
+  thai: สัญญา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่จำอารมณ์
+
+- id: cetana
+  thai: เจตนา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่กระตุ้นเตือนและชักชวนสัมปยุตตธรรมในอารมณ์เพื่อให้ทำหน้าที่ของตนๆ
+
+- id: ekaggata
+  thai: เอกัคคตา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่สงบและให้สัมปยุตตธรรมตั้งอยู่ในอารมณ์เดียว
+
+- id: jivitindriya
+  thai: ชีวิตินทรีย์
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่รักษาสัมปยุตตธรรม
+
+- id: manasikara
+  thai: มนสิการ
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่มุ่งและนำสัมปยุตตธรรมสู่อารมณ์
+
+- id: vitakka
+  thai: วิตก
+  group: pakinnaka
+  meaning: ธรรมชาติที่ยกสัมปยุตตธรรมขึ้นสู่อารมณ์ คือคิดอารมณ์
+
+- id: vicara
+  thai: วิจาร
+  group: pakinnaka
+  meaning: ธรรมชาติที่มีการเคล้าคลึงอารมณ์
+
+- id: adhimokkha
+  thai: อธิโมกข์
+  group: pakinnaka
+  meaning: ธรรมชาติที่ตัดสินอารมณ์
+
+- id: viriya
+  thai: วิริยะ
+  group: pakinnaka
+  meaning: ธรรมชาติที่มีความพยายามในอารมณ์
+
+- id: piti
+  thai: ปีติ
+  group: pakinnaka
+  meaning: ธรรมชาติที่มีความชื่นชมยินดีในอารมณ์
+
+- id: chanda
+  thai: ฉันทะ
+  group: pakinnaka
+  meaning: ธรรมชาติที่ปรารถนาอารมณ์
+
+- id: moha
+  thai: โมหะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่บังสภาพตามความเป็นจริงของอารมณ์ไว้ คือ หลง
+
+- id: ahirika
+  thai: อหิริกะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่ไม่มีความละอายต่อทุจริต
+
+- id: anottappa
+  thai: อโนตตัปปะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่ไม่กลัวต่อทุจริต
+
+- id: uddhacca
+  thai: อุทธัจจะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่ฟุ้งซ่าน คือรับอารมณ์ไม่มั่น
+
+- id: lobha
+  thai: โลภะ
+  group: lobha-tika
+  meaning: ธรรมชาติที่มีความต้องการ และติดใจในกามคุณอารมณ์
+
+- id: ditthi
+  thai: ทิฏฐิ
+  group: lobha-tika
+  meaning: ธรรมชาติที่มีความเห็นผิดในอารมณ์
+
+- id: mana
+  thai: มานะ
+  group: lobha-tika
+  meaning: ธรรมชาติที่มีความเย่อหยิ่ง ถือตัว
+
+- id: dosa
+  thai: โทสะ
+  group: dosa-catuka
+  meaning: ธรรมชาติที่ประทุษร้ายในอารมณ์
+
+- id: issa
+  thai: อิสสา
+  group: dosa-catuka
+  meaning: ธรรมชาติที่มีความไม่พอใจในสมบัติหรือคุณความดีของผู้อื่น
+
+- id: macchariya
+  thai: มัจฉริยะ
+  group: dosa-catuka
+  meaning: ธรรมชาติที่มีความหวงแหนทรัพย์สมบัติหรือคุณความดีของตน
+
+- id: kukkucca
+  thai: กุกกุจจะ
+  group: dosa-catuka
+  meaning: ธรรมชาติที่มีความรำคาญใจในทุจริตที่ได้ทำไปแล้ว และในสุจริตที่ยังไม่ได้ทำ
+
+- id: thina
+  thai: ถีนะ
+  group: thina-duka
+  meaning: ธรรมชาติที่ทำให้จิตเซื่องซึม ท้อถอยจากอารมณ์
+
+- id: middha
+  thai: มิทธะ
+  group: thina-duka
+  meaning: ธรรมชาติที่ทำให้เจตสิกเซื่องซึม ท้อถอยจากอารมณ์
+
+- id: vicikiccha
+  thai: วิจิกิจฉา
+  group: vicikiccha
+  meaning: ธรรมชาติที่มีความสงสัย ไม่ตกลงใจ คือวิพากษ์วิจารณ์ในคุณพระพุทธ พระธรรม พระสงฆ์ เป็นต้น

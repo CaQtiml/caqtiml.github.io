@@ -1,0 +1,174 @@
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --text: #2b241c;
+  --text-muted: #6f6455;
+  --border: #e4dccc;
+  --accent: #a6532c;
+  --accent-soft: #f0dcc9;
+  --citta-color: #6b4ea0;
+  --citta-soft: #e6def2;
+  --cetasika-color: #2c7a5b;
+  --cetasika-soft: #d9ede2;
+  --dim-opacity: 0.25;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1712;
+    --surface: #262019;
+    --text: #ece4d8;
+    --text-muted: #a99f8e;
+    --border: #3c3327;
+    --accent: #d98a5e;
+    --accent-soft: #4a3626;
+    --citta-color: #b79ce0;
+    --citta-soft: #3a3050;
+    --cetasika-color: #7fd3ac;
+    --cetasika-soft: #234236;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans Thai", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+.site-header h1 { margin: 0 0 0.25rem; font-size: 1.8rem; }
+.subtitle { margin: 0; color: var(--text-muted); }
+
+.mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0 1rem 1.5rem;
+}
+.mode-btn {
+  font-family: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+.mode-btn .mode-hint { font-size: 0.72rem; color: var(--text-muted); }
+.mode-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.mode-btn.active .mode-hint { color: #fff; opacity: 0.85; }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 280px 1fr;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  main { grid-template-columns: 1fr; }
+  .info-panel { order: -1; position: static; }
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.panel h2 { margin: 0 0 0.75rem; font-size: 1.1rem; }
+.panel-count { font-weight: normal; color: var(--text-muted); font-size: 0.85rem; }
+
+.citta-group, .cetasika-group { margin-bottom: 1rem; }
+.group-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+.circle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.circle-row + .circle-row {
+  margin-top: 0.5rem;
+}
+
+.node {
+  --node-color: var(--citta-color);
+  --node-soft: var(--citta-soft);
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  border: 2px solid var(--node-color);
+  background: var(--node-soft);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.1;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease, background 0.15s ease;
+  padding: 0.2rem;
+}
+.node.cetasika { --node-color: var(--cetasika-color); --node-soft: var(--cetasika-soft); }
+
+.node:hover { transform: scale(1.08); }
+
+.node.is-dim { opacity: var(--dim-opacity); }
+.node.is-related {
+  background: var(--node-color);
+  color: #fff;
+}
+.node.is-selected {
+  background: var(--node-color);
+  color: #fff;
+  box-shadow: 0 0 0 3px var(--node-soft), 0 0 0 5px var(--node-color);
+}
+
+.info-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 8rem;
+  position: sticky;
+  top: 1rem;
+}
+.info-placeholder { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+.info-title { margin: 0 0 0.3rem; font-size: 1.1rem; }
+.info-pali { margin: 0 0 0.6rem; color: var(--text-muted); font-size: 0.85rem; font-style: italic; }
+.info-meaning { margin: 0 0 0.75rem; font-size: 0.9rem; }
+.info-related-label { font-size: 0.8rem; color: var(--text-muted); margin: 0 0 0.3rem; }
+.info-related-list { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
+.info-related-list li { margin-bottom: 0.15rem; }
+
+.panel.inactive-panel h2 { color: var(--text-muted); }
+
+.site-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  padding: 1rem;
+}

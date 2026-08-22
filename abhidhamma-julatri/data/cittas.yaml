@@ -1,0 +1,137 @@
+# จิต (Citta) reference data
+# Pilot slice: the 12 อกุศลจิต only (โลภมูลจิต 8, โทสมูลจิต 2, โมหมูลจิต 2).
+# Each citta's `cetasikas` list is the สังคหนัย (citta -> cetasika) data,
+# verified page-by-page against the official textbook (pp. 50-51).
+# `count` is redundant with len(cetasikas) - the build script checks they agree,
+# so a typo here (or in the list) gets caught instead of silently shipped.
+#
+# สัมปโยคนัย (cetasika -> citta) and ตทุภยมิสสกนัย (cetasika -> cetasika) are NOT
+# stored here - they're computed by scripts/build_data.py from this same data.
+
+- id: lobhamula-1
+  group: lobha-mula
+  order: 1
+  thai: โลภมูลจิต ดวงที่ ๑
+  pali: โสมนัสสสหคตัง ทิฏฐิคตสัมปยุตตัง อสังขาริกัง
+  count: 19
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, piti, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, ditthi]
+
+- id: lobhamula-2
+  group: lobha-mula
+  order: 2
+  thai: โลภมูลจิต ดวงที่ ๒
+  pali: โสมนัสสสหคตัง ทิฏฐิคตสัมปยุตตัง สสังขาริกัง
+  count: 21
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, piti, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, ditthi,
+              thina, middha]
+
+- id: lobhamula-3
+  group: lobha-mula
+  order: 3
+  thai: โลภมูลจิต ดวงที่ ๓
+  pali: โสมนัสสสหคตัง ทิฏฐิคตวิปปยุตตัง อสังขาริกัง
+  count: 19
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, piti, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, mana]
+
+- id: lobhamula-4
+  group: lobha-mula
+  order: 4
+  thai: โลภมูลจิต ดวงที่ ๔
+  pali: โสมนัสสสหคตัง ทิฏฐิคตวิปปยุตตัง สสังขาริกัง
+  count: 21
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, piti, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, mana,
+              thina, middha]
+
+- id: lobhamula-5
+  group: lobha-mula
+  order: 5
+  thai: โลภมูลจิต ดวงที่ ๕
+  pali: อุเบกขาสหคตัง ทิฏฐิคตสัมปยุตตัง อสังขาริกัง
+  count: 18
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, ditthi]
+
+- id: lobhamula-6
+  group: lobha-mula
+  order: 6
+  thai: โลภมูลจิต ดวงที่ ๖
+  pali: อุเบกขาสหคตัง ทิฏฐิคตสัมปยุตตัง สสังขาริกัง
+  count: 20
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, ditthi,
+              thina, middha]
+
+- id: lobhamula-7
+  group: lobha-mula
+  order: 7
+  thai: โลภมูลจิต ดวงที่ ๗
+  pali: อุเบกขาสหคตัง ทิฏฐิคตวิปปยุตตัง อสังขาริกัง
+  count: 18
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, mana]
+
+- id: lobhamula-8
+  group: lobha-mula
+  order: 8
+  thai: โลภมูลจิต ดวงที่ ๘
+  pali: อุเบกขาสหคตัง ทิฏฐิคตวิปปยุตตัง สสังขาริกัง
+  count: 20
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, chanda,
+              moha, ahirika, anottappa, uddhacca, lobha, mana,
+              thina, middha]
+
+- id: dosamula-1
+  group: dosa-mula
+  order: 9
+  thai: โทสมูลจิต ดวงที่ ๑
+  pali: โทมนัสสสหคตัง ปฏิฆสัมปยุตตัง อสังขาริกัง
+  count: 20
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, chanda,
+              moha, ahirika, anottappa, uddhacca,
+              dosa, issa, macchariya, kukkucca]
+
+- id: dosamula-2
+  group: dosa-mula
+  order: 10
+  thai: โทสมูลจิต ดวงที่ ๒
+  pali: โทมนัสสสหคตัง ปฏิฆสัมปยุตตัง สสังขาริกัง
+  count: 22
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya, chanda,
+              moha, ahirika, anottappa, uddhacca,
+              dosa, issa, macchariya, kukkucca,
+              thina, middha]
+
+- id: mohamula-1
+  group: moha-mula
+  order: 11
+  thai: โมหมูลจิต ดวงที่ ๑
+  pali: อุเบกขาสหคตัง วิจิกิจฉาสัมปยุตตัง
+  count: 15
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, viriya,
+              moha, ahirika, anottappa, uddhacca,
+              vicikiccha]
+
+- id: mohamula-2
+  group: moha-mula
+  order: 12
+  thai: โมหมูลจิต ดวงที่ ๒
+  pali: อุเบกขาสหคตัง อุทธัจจสัมปยุตตัง
+  count: 15
+  cetasikas: [phassa, vedana, sanna, cetana, ekaggata, jivitindriya, manasikara,
+              vitakka, vicara, adhimokkha, viriya,
+              moha, ahirika, anottappa, uddhacca]
