@@ -75,6 +75,28 @@ body {
 }
 .mode-btn.active .mode-hint { color: #fff; opacity: 0.85; }
 
+.lens-overlay[hidden] { display: none; }
+.lens-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0 1rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.lens-overlay select, .lens-overlay button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+}
+.lens-overlay button:not(:disabled) { cursor: pointer; }
+
 main {
   display: grid;
   grid-template-columns: 1.4fr 280px 1fr;
@@ -148,6 +170,29 @@ main {
   box-shadow: 0 0 0 3px var(--node-soft), 0 0 0 5px var(--node-color);
 }
 
+/* จำแนกนัย overlay: layered on top of whichever mode is active, independent of
+   is-dim/is-related/is-selected (see #lens-overlay in index.html). */
+.node.lens-match { box-shadow: 0 0 0 3px var(--accent); }
+.node.lens-nomatch { opacity: var(--dim-opacity); }
+
+/* นิยตโยคี/อนิยตโยคี overlay: a second, independent overlay (see #combo-overlay
+   in index.html) -- dashed outline instead of solid, so it stays visually
+   distinct if both overlays happen to be active on the same cetasika node. */
+.node.combo-match { outline: 3px dashed var(--accent); outline-offset: 2px; }
+.node.combo-nomatch { opacity: var(--dim-opacity); }
+
+.info-footnote {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 0.5rem;
+}
+.info-footnote summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+.info-footnote p { margin: 0.4rem 0 0; color: var(--text-muted); }
+
 .info-panel {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -173,6 +218,13 @@ main {
 .info-related-label { font-size: 0.8rem; color: var(--text-muted); margin: 0 0 0.3rem; }
 .info-related-list { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; }
 .info-related-list li { margin-bottom: 0.15rem; }
+.info-related-sublist {
+  margin: 0.2rem 0 0.3rem;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.info-related-sublist li { margin-bottom: 0.1rem; }
 
 .panel.inactive-panel h2 { color: var(--text-muted); }
 

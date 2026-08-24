@@ -31,6 +31,23 @@
   </button>
 </nav>
 
+<div class="lens-overlay" id="lens-overlay">
+  <label for="lens-select">เน้นตาม (จิต):</label>
+  <select id="lens-select">
+    <option value="">— ไม่เน้น —</option>
+  </select>
+  <select id="lens-category-select" disabled></select>
+  <button id="lens-clear" type="button" disabled>ล้าง</button>
+</div>
+
+<div class="lens-overlay" id="combo-overlay">
+  <label for="combo-select">เน้นตาม (เจตสิก - นิยตโยคี/อนิยตโยคี):</label>
+  <select id="combo-select">
+    <option value="">— ไม่เน้น —</option>
+  </select>
+  <button id="combo-clear" type="button" disabled>ล้าง</button>
+</div>
+
 <main>
   <section class="panel" id="citta-panel">
     <h2>จิต <span class="panel-count" id="citta-count"></span></h2>
@@ -49,6 +66,7 @@
 
 <footer class="site-footer">
   <p>ข้อมูลอ้างอิงจาก ปรมัตถโชติกะ ปริจเฉทที่ ๑-๒-๖ (จูฬตรี) — จิตทั้งหมด ๑๒๑ ดวง (โลกุตตรจิตแบบพิสดาร), เจตสิกทั้งหมด ๕๒ ดวง</p>
+  <p class="ai-disclaimer">เว็บไซต์นี้สร้างขึ้นโดยใช้ AI เป็นส่วนใหญ่ (ทั้งเนื้อหาและโค้ด) จึงอาจมีข้อผิดพลาดเกิดขึ้นได้ โปรดตรวจสอบกับต้นฉบับก่อนนำไปใช้อ้างอิง</p>
 </footer>
 
 <div class="ink-toolbar" id="ink-toolbar">

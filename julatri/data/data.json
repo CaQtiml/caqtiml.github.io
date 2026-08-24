@@ -4647,7 +4647,8 @@
       "id": "mana",
       "thai": "มานะ",
       "group": "lobha-tika",
-      "meaning": "ธรรมชาติที่มีความเย่อหยิ่ง ถือตัว"
+      "meaning": "ธรรมชาติที่มีความเย่อหยิ่ง ถือตัว",
+      "combination_type": "kadaci"
     },
     {
       "id": "dosa",
@@ -4659,31 +4660,48 @@
       "id": "issa",
       "thai": "อิสสา",
       "group": "dosa-catuka",
-      "meaning": "ธรรมชาติที่มีความไม่พอใจในสมบัติหรือคุณความดีของผู้อื่น"
+      "meaning": "ธรรมชาติที่มีความไม่พอใจในสมบัติหรือคุณความดีของผู้อื่น",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "macchariya",
+        "kukkucca"
+      ]
     },
     {
       "id": "macchariya",
       "thai": "มัจฉริยะ",
       "group": "dosa-catuka",
-      "meaning": "ธรรมชาติที่มีความหวงแหนทรัพย์สมบัติหรือคุณความดีของตน"
+      "meaning": "ธรรมชาติที่มีความหวงแหนทรัพย์สมบัติหรือคุณความดีของตน",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "issa",
+        "kukkucca"
+      ]
     },
     {
       "id": "kukkucca",
       "thai": "กุกกุจจะ",
       "group": "dosa-catuka",
-      "meaning": "ธรรมชาติที่มีความรำคาญใจในทุจริตที่ได้ทำไปแล้ว และในสุจริตที่ยังไม่ได้ทำ"
+      "meaning": "ธรรมชาติที่มีความรำคาญใจในทุจริตที่ได้ทำไปแล้ว และในสุจริตที่ยังไม่ได้ทำ",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "issa",
+        "macchariya"
+      ]
     },
     {
       "id": "thina",
       "thai": "ถีนะ",
       "group": "thina-duka",
-      "meaning": "ธรรมชาติที่ทำให้จิตเซื่องซึม ท้อถอยจากอารมณ์"
+      "meaning": "ธรรมชาติที่ทำให้จิตเซื่องซึม ท้อถอยจากอารมณ์",
+      "combination_type": "saha-kadaci"
     },
     {
       "id": "middha",
       "thai": "มิทธะ",
       "group": "thina-duka",
-      "meaning": "ธรรมชาติที่ทำให้เจตสิกเซื่องซึม ท้อถอยจากอารมณ์"
+      "meaning": "ธรรมชาติที่ทำให้เจตสิกเซื่องซึม ท้อถอยจากอารมณ์",
+      "combination_type": "saha-kadaci"
     },
     {
       "id": "vicikiccha",
@@ -4809,31 +4827,98 @@
       "id": "samma_vaca",
       "thai": "สัมมาวาจา",
       "group": "virati",
-      "meaning": "การกล่าววาจาที่เว้นจากวจีทุจริต ๔ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ"
+      "meaning": "การกล่าววาจาที่เว้นจากวจีทุจริต ๔ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "karuna",
+        "mudita"
+      ],
+      "footnotes": [
+        {
+          "title": "ทำไมวิรตี ๓ จึงไม่ประกอบกับมหาวิปากจิตและมหากริยาจิต",
+          "body": "วิรตีเจตสิก ๓ ที่เกิดขึ้นโดยเว้นจากทุจริตอันเป็นตทังคะในโลกียะนั้น ย่อมเป็นกุศลชาติเสมอ จะเป็นวิปากชาติหรือกริยาชาติไม่ได้ จึงไม่ประกอบกับมหาวิปากจิตและมหากริยาจิต ส่วนที่ไม่ประกอบกับมหัคคตจิตนั้น เพราะมหัคคตกุศล/กริยาเกิดขึ้นโดยอาศัยสมาธิจากกรรมฐาน ไม่ใช่เกิดจากการเว้นทุจริตซึ่งต้องมีวิรมิตัพพวัตถุเป็นอารมณ์ (ปรมัตถโชติกะ ปริจเฉทที่ ๒, ตอนสังคหนัย)"
+        }
+      ]
     },
     {
       "id": "samma_kammanta",
       "thai": "สัมมากัมมันตะ",
       "group": "virati",
-      "meaning": "การกระทำที่เว้นจากกายทุจริต ๓ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ"
+      "meaning": "การกระทำที่เว้นจากกายทุจริต ๓ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "karuna",
+        "mudita"
+      ],
+      "footnotes": [
+        {
+          "title": "ทำไมวิรตี ๓ จึงไม่ประกอบกับมหาวิปากจิตและมหากริยาจิต",
+          "body": "วิรตีเจตสิก ๓ ที่เกิดขึ้นโดยเว้นจากทุจริตอันเป็นตทังคะในโลกียะนั้น ย่อมเป็นกุศลชาติเสมอ จะเป็นวิปากชาติหรือกริยาชาติไม่ได้ จึงไม่ประกอบกับมหาวิปากจิตและมหากริยาจิต ส่วนที่ไม่ประกอบกับมหัคคตจิตนั้น เพราะมหัคคตกุศล/กริยาเกิดขึ้นโดยอาศัยสมาธิจากกรรมฐาน ไม่ใช่เกิดจากการเว้นทุจริตซึ่งต้องมีวิรมิตัพพวัตถุเป็นอารมณ์ (ปรมัตถโชติกะ ปริจเฉทที่ ๒, ตอนสังคหนัย)"
+        }
+      ]
     },
     {
       "id": "samma_ajiva",
       "thai": "สัมมาอาชีวะ",
       "group": "virati",
-      "meaning": "การประกอบอาชีพที่เว้นจากวจีทุจริต ๔ กายทุจริต ๓"
+      "meaning": "การประกอบอาชีพที่เว้นจากวจีทุจริต ๔ กายทุจริต ๓",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "karuna",
+        "mudita"
+      ],
+      "footnotes": [
+        {
+          "title": "ทำไมวิรตี ๓ จึงไม่ประกอบกับมหาวิปากจิตและมหากริยาจิต",
+          "body": "วิรตีเจตสิก ๓ ที่เกิดขึ้นโดยเว้นจากทุจริตอันเป็นตทังคะในโลกียะนั้น ย่อมเป็นกุศลชาติเสมอ จะเป็นวิปากชาติหรือกริยาชาติไม่ได้ จึงไม่ประกอบกับมหาวิปากจิตและมหากริยาจิต ส่วนที่ไม่ประกอบกับมหัคคตจิตนั้น เพราะมหัคคตกุศล/กริยาเกิดขึ้นโดยอาศัยสมาธิจากกรรมฐาน ไม่ใช่เกิดจากการเว้นทุจริตซึ่งต้องมีวิรมิตัพพวัตถุเป็นอารมณ์ (ปรมัตถโชติกะ ปริจเฉทที่ ๒, ตอนสังคหนัย)"
+        }
+      ]
     },
     {
       "id": "karuna",
       "thai": "กรุณา",
       "group": "appamanna",
-      "meaning": "ธรรมชาติที่มีความสงสารต่อทุกขิตสัตว์ คือผู้ที่กำลังได้รับความลำบากอยู่ หรือ จะได้รับความลำบากในกาลข้างหน้า"
+      "meaning": "ธรรมชาติที่มีความสงสารต่อทุกขิตสัตว์ คือผู้ที่กำลังได้รับความลำบากอยู่ หรือ จะได้รับความลำบากในกาลข้างหน้า",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "mudita",
+        "samma_vaca",
+        "samma_kammanta",
+        "samma_ajiva"
+      ],
+      "footnotes": [
+        {
+          "title": "เกจิวาทะ - อัปปมัญญาประกอบได้ ๒๐ ดวง หรือ ๒๘ ดวง?",
+          "body": "อาจารย์บางท่าน (เกจิวาทะ) เห็นว่ากรุณา/มุทิตาต้องเกิดกับจิตที่เป็นโสมนัสเท่านั้น (เพราะเป็นปฏิปักษ์กับโทสะและโทมนัสที่มีอิสสาเป็นประธาน) จึงประกอบได้เพียง ๒๐ ดวง (เว้นมหากุศล-มหากริยาที่เป็นอุเบกขา ๔ ดวง) แต่พระอรรถกถาจารย์ (สมานวาทะ) กล่าวว่าเห็นถูกครึ่งเดียว — ในขั้นปริกัมมภาวนาต้องเป็นโสมนัสจริง แต่เมื่อชำนาญถึงอุคคหนิมิตแล้ว ย่อมเกิดกับอุเบกขาได้ด้วย จึงประกอบได้ ๒๘ ดวงตามที่ใช้ในเว็บนี้ (ปรมัตถโชติกะ ปริจเฉทที่ ๒, อธิบายพิเศษท้ายตารางสัมปโยคนัย)"
+        },
+        {
+          "title": "ทำไมอัปปมัญญาจึงไม่ประกอบกับมหาวิปากจิตและโลกุตตรจิต",
+          "body": "กรุณา/มุทิตาต้องมีสัตวบัญญัติ (บุคคล/สัตว์) เป็นอารมณ์ แต่มหาวิปากจิตเกิดขึ้นโดยมีปรมัตถ์ที่เป็นกามอารมณ์ และโลกุตตรจิตเกิดขึ้นโดยมีนิพพานเป็นอารมณ์ ไม่ใช่สัตวบัญญัติ จึงไม่ประกอบทั้งสองกรณี (ปรมัตถโชติกะ ปริจเฉทที่ ๒, ตอนสังคหนัย)"
+        }
+      ]
     },
     {
       "id": "mudita",
       "thai": "มุทิตา",
       "group": "appamanna",
-      "meaning": "ธรรมชาติที่มีความยินดีต่อสุขิตสัตว์ คือ ผู้ที่กำลังได้รับความสุข หรือ ผู้ที่จะได้รับความสุขในกาลข้างหน้า"
+      "meaning": "ธรรมชาติที่มีความยินดีต่อสุขิตสัตว์ คือ ผู้ที่กำลังได้รับความสุข หรือ ผู้ที่จะได้รับความสุขในกาลข้างหน้า",
+      "combination_type": "nana-kadaci",
+      "excludes": [
+        "karuna",
+        "samma_vaca",
+        "samma_kammanta",
+        "samma_ajiva"
+      ],
+      "footnotes": [
+        {
+          "title": "เกจิวาทะ - อัปปมัญญาประกอบได้ ๒๐ ดวง หรือ ๒๘ ดวง?",
+          "body": "อาจารย์บางท่าน (เกจิวาทะ) เห็นว่ากรุณา/มุทิตาต้องเกิดกับจิตที่เป็นโสมนัสเท่านั้น (เพราะเป็นปฏิปักษ์กับโทสะและโทมนัสที่มีอิสสาเป็นประธาน) จึงประกอบได้เพียง ๒๐ ดวง (เว้นมหากุศล-มหากริยาที่เป็นอุเบกขา ๔ ดวง) แต่พระอรรถกถาจารย์ (สมานวาทะ) กล่าวว่าเห็นถูกครึ่งเดียว — ในขั้นปริกัมมภาวนาต้องเป็นโสมนัสจริง แต่เมื่อชำนาญถึงอุคคหนิมิตแล้ว ย่อมเกิดกับอุเบกขาได้ด้วย จึงประกอบได้ ๒๘ ดวงตามที่ใช้ในเว็บนี้ (ปรมัตถโชติกะ ปริจเฉทที่ ๒, อธิบายพิเศษท้ายตารางสัมปโยคนัย)"
+        },
+        {
+          "title": "ทำไมอัปปมัญญาจึงไม่ประกอบกับมหาวิปากจิตและโลกุตตรจิต",
+          "body": "กรุณา/มุทิตาต้องมีสัตวบัญญัติ (บุคคล/สัตว์) เป็นอารมณ์ แต่มหาวิปากจิตเกิดขึ้นโดยมีปรมัตถ์ที่เป็นกามอารมณ์ และโลกุตตรจิตเกิดขึ้นโดยมีนิพพานเป็นอารมณ์ ไม่ใช่สัตวบัญญัติ จึงไม่ประกอบทั้งสองกรณี (ปรมัตถโชติกะ ปริจเฉทที่ ๒, ตอนสังคหนัย)"
+        }
+      ]
     },
     {
       "id": "panna",
@@ -9268,8 +9353,6 @@
       "dosa",
       "ekaggata",
       "jivitindriya",
-      "kukkucca",
-      "macchariya",
       "manasikara",
       "middha",
       "moha",
@@ -9290,9 +9373,7 @@
       "chanda",
       "dosa",
       "ekaggata",
-      "issa",
       "jivitindriya",
-      "kukkucca",
       "manasikara",
       "middha",
       "moha",
@@ -9313,9 +9394,7 @@
       "chanda",
       "dosa",
       "ekaggata",
-      "issa",
       "jivitindriya",
-      "macchariya",
       "manasikara",
       "middha",
       "moha",
@@ -10154,7 +10233,6 @@
       "ekaggata",
       "hiri",
       "jivitindriya",
-      "karuna",
       "kayakammannata",
       "kayalahuta",
       "kayamuduta",
@@ -10162,7 +10240,6 @@
       "kayapassaddhi",
       "kayujukata",
       "manasikara",
-      "mudita",
       "ottappa",
       "panna",
       "phassa",
@@ -10193,7 +10270,6 @@
       "ekaggata",
       "hiri",
       "jivitindriya",
-      "karuna",
       "kayakammannata",
       "kayalahuta",
       "kayamuduta",
@@ -10201,7 +10277,6 @@
       "kayapassaddhi",
       "kayujukata",
       "manasikara",
-      "mudita",
       "ottappa",
       "panna",
       "phassa",
@@ -10232,7 +10307,6 @@
       "ekaggata",
       "hiri",
       "jivitindriya",
-      "karuna",
       "kayakammannata",
       "kayalahuta",
       "kayamuduta",
@@ -10240,7 +10314,6 @@
       "kayapassaddhi",
       "kayujukata",
       "manasikara",
-      "mudita",
       "ottappa",
       "panna",
       "phassa",
@@ -10278,15 +10351,11 @@
       "kayapassaddhi",
       "kayujukata",
       "manasikara",
-      "mudita",
       "ottappa",
       "panna",
       "phassa",
       "piti",
       "saddha",
-      "samma_ajiva",
-      "samma_kammanta",
-      "samma_vaca",
       "sanna",
       "sati",
       "tatramajjhattata",
@@ -10310,7 +10379,6 @@
       "ekaggata",
       "hiri",
       "jivitindriya",
-      "karuna",
       "kayakammannata",
       "kayalahuta",
       "kayamuduta",
@@ -10323,9 +10391,6 @@
       "phassa",
       "piti",
       "saddha",
-      "samma_ajiva",
-      "samma_kammanta",
-      "samma_vaca",
       "sanna",
       "sati",
       "tatramajjhattata",
@@ -10373,5 +10438,1217 @@
       "viriya",
       "vitakka"
     ]
+  },
+  "cittaLenses": {
+    "lobhamula-1": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "lobhamula-2": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "lobhamula-3": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "lobhamula-4": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "lobhamula-5": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "lobhamula-6": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "lobhamula-7": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "lobhamula-8": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "dosamula-1": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โทมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "dosamula-2": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โทมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mohamula-1": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mohamula-2": {
+      "jati": "อกุศล",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-cakkhu": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-sota": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-ghana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-jivha": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-kaya": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "ทุกข์",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-sampaticchana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-akusalavipaka-upekkhasantirana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-cakkhu": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-sota": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-ghana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-jivha": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-kaya": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "สุข",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-sampaticchana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-upekkhasantirana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-kusalavipaka-somanassasantirana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-pancadvaravajjana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-manodvaravajjana": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "ahetuka-hasituppada": {
+      "jati": "วิบาก/กริยา",
+      "bhumi": "กาม",
+      "sobhana": "อโสภณ",
+      "loka": "โลกีย",
+      "hetu": "อเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakusala-1": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakusala-2": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakusala-3": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakusala-4": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakusala-5": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakusala-6": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakusala-7": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakusala-8": {
+      "jati": "กุศล",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "mahavipaka-1": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahavipaka-2": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mahavipaka-3": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahavipaka-4": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mahavipaka-5": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mahavipaka-6": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "mahavipaka-7": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mahavipaka-8": {
+      "jati": "วิบาก",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakiriya-1": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakiriya-2": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakiriya-3": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakiriya-4": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakiriya-5": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakiriya-6": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "mahakiriya-7": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "อสังขาริก"
+    },
+    "mahakiriya-8": {
+      "jati": "กริยา",
+      "bhumi": "กาม",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "อฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ปฐมฌาน-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ทุติยฌาน-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ตติยฌาน-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-จตุตถฌาน-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ปัญจมฌาน-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ปฐมฌาน-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ทุติยฌาน-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ตติยฌาน-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-จตุตถฌาน-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ปัญจมฌาน-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ปฐมฌาน-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ทุติยฌาน-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ตติยฌาน-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-จตุตถฌาน-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "rupa-ปัญจมฌาน-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "รูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-akasanancayatana-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-vinnanancayatana-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-akincannayatana-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-nevasannanasannayatana-kusala": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-akasanancayatana-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-vinnanancayatana-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-akincannayatana-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-nevasannanasannayatana-vipaka": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-akasanancayatana-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-vinnanancayatana-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-akincannayatana-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arupa-nevasannanasannayatana-kiriya": {
+      "jati": "กุศล/วิบาก/กริยา",
+      "bhumi": "อรูป",
+      "sobhana": "โสภณ",
+      "loka": "โลกีย",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-magga-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-magga-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-magga-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-magga-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-magga-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-phala-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-phala-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-phala-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-phala-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sotapatti-phala-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-magga-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-magga-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-magga-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-magga-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-magga-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-phala-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-phala-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-phala-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-phala-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "sakadagami-phala-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-magga-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-magga-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-magga-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-magga-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-magga-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-phala-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-phala-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-phala-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-phala-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "anagami-phala-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-magga-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-magga-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-magga-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-magga-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-magga-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-phala-ปฐมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-phala-ทุติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-phala-ตติยฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-phala-จตุตถฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "โสมนัส",
+      "sankhara": "สสังขาริก"
+    },
+    "arahatta-phala-ปัญจมฌาน": {
+      "jati": "กุศล/วิบาก",
+      "bhumi": "โลกุตตร",
+      "sobhana": "โสภณ",
+      "loka": "โลกุตตร",
+      "hetu": "สเหตุก",
+      "jhana": "ฌาน",
+      "vedana": "อุเบกขา",
+      "sankhara": "สสังขาริก"
+    }
   }
 }
