@@ -78,9 +78,10 @@ const CITTA_GROUPS = [
 
 let DATA = null;
 let selectedId = null;
-let rupaMode = "summary"; // 'summary' | 'samutthana' | 'cittaja' | 'kalapa'
-let pinned = null; // { type: 'rupa'|'cause'|'activity'|'citta'|'kalapa', id: string } | null
+let rupaMode = "summary"; // 'summary' | 'samutthana' | 'cittaja' | 'kalapa' | 'rupapavatti'
+let pinned = null; // { type: 'rupa'|'cause'|'activity'|'citta'|'kalapa'|'bhumi'|'birthcontext'|'kalapabc', id: string } | null
 let kalapaRegion = ""; // '' (all) | 'upper' | 'middle' | 'lower'
+let rupapavattiSubview = "bhumi"; // 'bhumi' | 'kamnoet'
 
 const rupaGroupsEl = document.getElementById("rupa-groups");
 const infoPanel = document.getElementById("info-panel");
@@ -94,7 +95,18 @@ const cittajaCittaPanel = document.getElementById("cittaja-citta-panel");
 const cittajaCittaGroupsEl = document.getElementById("cittaja-citta-groups");
 const kalapaPanel = document.getElementById("kalapa-panel");
 const kalapaGroupsEl = document.getElementById("kalapa-groups");
+const kalapaPanelTitle = document.getElementById("kalapa-panel-title");
 const kalapaRegionFilter = document.getElementById("kalapa-region-filter");
+const bhumiPanel = document.getElementById("bhumi-panel");
+const bhumiGroupsEl = document.getElementById("bhumi-groups");
+const birthContextPanel = document.getElementById("birth-context-panel");
+const birthContextGroupsEl = document.getElementById("birth-context-groups");
+const kamnoetReferencePanel = document.getElementById("kamnoet-reference-panel");
+const kamnoetReferenceListEl = document.getElementById("kamnoet-reference-list");
+const patisandhiLegend = document.getElementById("patisandhi-legend");
+const rupapavattiSubtabs = document.getElementById("rupapavatti-subtabs");
+
+const BHUMI_ORDER = ["kama", "rupa", "asanna", "arupa"];
 
 function byId(id) {
   return DATA.rupas.find((r) => r.id === id);
@@ -183,7 +195,19 @@ function makeNode(rupa) {
       togglePinned("rupa", rupa.id);
     } else if (rupaMode === "kalapa") {
       togglePinned("rupa", rupa.id);
+    } else if (rupaMode === "rupapavatti" && rupapavattiSubview === "bhumi") {
+      togglePinned("rupa", rupa.id);
     }
+  });
+  el.addEventListener("mouseenter", () => {
+    if (rupaMode === "samutthana") applySamutthanaHighlight({ type: "rupa", id: rupa.id });
+    else if (rupaMode === "kalapa") applyKalapaHighlight({ type: "rupa", id: rupa.id });
+    else if (rupaMode === "rupapavatti" && rupapavattiSubview === "bhumi") applyBhumiHighlight({ type: "rupa", id: rupa.id });
+  });
+  el.addEventListener("mouseleave", () => {
+    if (rupaMode === "samutthana") applySamutthanaHighlight();
+    else if (rupaMode === "kalapa") applyKalapaHighlight();
+    else if (rupaMode === "rupapavatti" && rupapavattiSubview === "bhumi") applyBhumiHighlight();
   });
   return el;
 }
@@ -258,6 +282,10 @@ function togglePinned(type, id) {
   if (rupaMode === "samutthana") applySamutthanaHighlight();
   else if (rupaMode === "cittaja") applyCittajaHighlight();
   else if (rupaMode === "kalapa") applyKalapaHighlight();
+  else if (rupaMode === "rupapavatti") {
+    if (rupapavattiSubview === "bhumi") applyBhumiHighlight();
+    else if (rupapavattiSubview === "kamnoet") applyBirthContextHighlight();
+  }
 }
 
 // --- รูปสมุฏฐานนัย (causal origin, bidirectional) ---
@@ -271,6 +299,8 @@ function renderSamutthanaPanel() {
     el.title = cause.label;
     el.textContent = cause.label;
     el.addEventListener("click", () => togglePinned("cause", cause.key));
+    el.addEventListener("mouseenter", () => applySamutthanaHighlight({ type: "cause", id: cause.key }));
+    el.addEventListener("mouseleave", () => applySamutthanaHighlight());
     samutthanaGroupsEl.appendChild(el);
   });
 }
@@ -287,14 +317,26 @@ function applySamutthanaBorders(active) {
   });
 }
 
-function applySamutthanaHighlight() {
+// Always-on 2-way border coding for ปฏิสนธิกาล-capability, independent of
+// click state -- same "static classification" pattern as
+// applySamutthanaBorders above, shown only in the ภูมิ sub-view.
+function applyPatisandhiBorders(active) {
+  document.querySelectorAll(".rupa-node").forEach((el) => {
+    el.classList.remove("patisandhi-capable", "patisandhi-incapable");
+    if (!active) return;
+    const capable = DATA.rupaPatisandhiCapable[el.dataset.id];
+    el.classList.add(capable ? "patisandhi-capable" : "patisandhi-incapable");
+  });
+}
+
+function applySamutthanaHighlight(state = pinned) {
   clearNodeStates(".rupa-node");
   clearNodeStates(".cause-node");
-  if (!pinned) {
+  if (!state) {
     showInfoPlaceholder();
     return;
   }
-  const { type, id } = pinned;
+  const { type, id } = state;
   if (type === "rupa") {
     const causes = DATA.rupaSamutthana[id].causes;
     highlightSet(".rupa-node", [id], true);
@@ -381,6 +423,8 @@ function renderCittajaPanels() {
     el.title = activity.label;
     el.textContent = activity.label;
     el.addEventListener("click", () => togglePinned("activity", activity.key));
+    el.addEventListener("mouseenter", () => applyCittajaHighlight({ type: "activity", id: activity.key }));
+    el.addEventListener("mouseleave", () => applyCittajaHighlight());
     cittajaActivityGroupsEl.appendChild(el);
   });
 
@@ -411,6 +455,8 @@ function renderCittajaPanels() {
           el.classList.add("is-ineligible");
         } else {
           el.addEventListener("click", () => togglePinned("citta", c.id));
+          el.addEventListener("mouseenter", () => applyCittajaHighlight({ type: "citta", id: c.id }));
+          el.addEventListener("mouseleave", () => applyCittajaHighlight());
         }
         row.appendChild(el);
       });
@@ -421,14 +467,14 @@ function renderCittajaPanels() {
   });
 }
 
-function applyCittajaHighlight() {
+function applyCittajaHighlight(state = pinned) {
   clearNodeStates(".activity-node");
   clearNodeStates(".citta-node");
-  if (!pinned) {
+  if (!state) {
     showInfoPlaceholder();
     return;
   }
-  const { type, id } = pinned;
+  const { type, id } = state;
   if (type === "activity") {
     const activity = DATA.cittajaActivities.find((a) => a.key === id);
     highlightSet(".activity-node", [id], true);
@@ -471,12 +517,29 @@ function showCittajaCittaInfo(cittaId, activityKeys) {
 const KALAPA_CLASS_ORDER = ["kamma", "citta", "utu", "ahara"];
 
 function renderKalapaPanel() {
+  // In the รูปปวัตติกมนัย/กำเนิด sub-view, this same panel is reused to show
+  // only the 9 กัมมชกลาป (the only class the birth-context relation covers) --
+  // no region filter applies there (kalapaRegion is a รูปกลาปนัย-tab-only
+  // concept).
+  const inBirthContextView = rupaMode === "rupapavatti";
+  const classFilter = inBirthContextView ? "kamma" : null;
   const kalapas = DATA.kalapas
-    .filter((k) => !kalapaRegion || DATA.kalapaRegions[k.id].includes(kalapaRegion))
+    .filter((k) => !classFilter || k.class === classFilter)
     .slice()
     .sort((a, b) => a.order - b.order);
 
-  document.getElementById("kalapa-count").textContent = `(${kalapas.length}/${DATA.kalapas.length})`;
+  // กาย ๓ ส่วน region filter: rather than hiding non-matching กลาป (which
+  // shifted the grid around on every click), grey them out in place --
+  // same disabled-node treatment (.is-ineligible) already used for the 14
+  // always-ineligible จิต in จิตตชรูปนัย.
+  const eligibleIds = inBirthContextView || !kalapaRegion
+    ? null
+    : new Set(kalapas.filter((k) => DATA.kalapaRegions[k.id].includes(kalapaRegion)).map((k) => k.id));
+
+  kalapaPanelTitle.textContent = inBirthContextView ? "กัมมชกลาป" : "กลาป";
+  document.getElementById("kalapa-count").textContent = inBirthContextView
+    ? `(${kalapas.length})`
+    : `(${eligibleIds ? eligibleIds.size : kalapas.length}/${kalapas.length})`;
   kalapaGroupsEl.innerHTML = "";
 
   KALAPA_CLASS_ORDER.forEach((cls) => {
@@ -498,27 +561,43 @@ function renderKalapaPanel() {
       el.dataset.id = k.id;
       el.title = k.thai;
       el.textContent = k.thai;
-      el.addEventListener("click", () => togglePinned("kalapa", k.id));
+      if (eligibleIds && !eligibleIds.has(k.id)) {
+        el.classList.add("is-ineligible");
+      } else {
+        el.addEventListener("click", () => {
+          if (rupaMode === "kalapa") togglePinned("kalapa", k.id);
+          else if (rupaMode === "rupapavatti") togglePinned("kalapabc", k.id);
+        });
+        el.addEventListener("mouseenter", () => {
+          if (rupaMode === "kalapa") applyKalapaHighlight({ type: "kalapa", id: k.id });
+          else if (rupaMode === "rupapavatti") applyBirthContextHighlight({ type: "kalapabc", id: k.id });
+        });
+        el.addEventListener("mouseleave", () => {
+          if (rupaMode === "kalapa") applyKalapaHighlight();
+          else if (rupaMode === "rupapavatti") applyBirthContextHighlight();
+        });
+      }
       row.appendChild(el);
     });
     wrap.appendChild(row);
     kalapaGroupsEl.appendChild(wrap);
   });
 
-  // A previously-pinned กลาป may have just been filtered out of view.
-  if (pinned && pinned.type === "kalapa" && !kalapas.some((k) => k.id === pinned.id)) {
+  // A previously-pinned กลาป may have just become ineligible under the
+  // current filter.
+  if (pinned && (pinned.type === "kalapa" || pinned.type === "kalapabc") && eligibleIds && !eligibleIds.has(pinned.id)) {
     pinned = null;
   }
 }
 
-function applyKalapaHighlight() {
+function applyKalapaHighlight(state = pinned) {
   clearNodeStates(".rupa-node");
   clearNodeStates(".kalapa-node");
-  if (!pinned) {
+  if (!state) {
     showInfoPlaceholder();
     return;
   }
-  const { type, id } = pinned;
+  const { type, id } = state;
   if (type === "rupa") {
     const kalapaIds = DATA.rupaToKalapas[id].filter(
       (kid) => !kalapaRegion || DATA.kalapaRegions[kid].includes(kalapaRegion)
@@ -575,18 +654,197 @@ document.querySelectorAll(".region-btn").forEach((btn) => {
   });
 });
 
+// --- รูปปวัตติกมนัย (temporal arising/ceasing, 2 sub-views: ภูมิ / กำเนิด) ---
+
+function renderBhumiPanel() {
+  bhumiGroupsEl.innerHTML = "";
+  document.getElementById("bhumi-count").textContent = `(${BHUMI_ORDER.length})`;
+  BHUMI_ORDER.forEach((key) => {
+    const el = document.createElement("div");
+    el.className = "node cause-node";
+    el.dataset.id = key;
+    el.title = DATA.bhumiLabels[key];
+    el.textContent = DATA.bhumiLabels[key];
+    el.addEventListener("click", () => togglePinned("bhumi", key));
+    el.addEventListener("mouseenter", () => applyBhumiHighlight({ type: "bhumi", id: key }));
+    el.addEventListener("mouseleave", () => applyBhumiHighlight());
+    bhumiGroupsEl.appendChild(el);
+  });
+}
+
+function applyBhumiHighlight(state = pinned) {
+  clearNodeStates(".rupa-node");
+  clearNodeStates(".cause-node");
+  if (!state) {
+    showInfoPlaceholder();
+    return;
+  }
+  const { type, id } = state;
+  if (type === "rupa") {
+    const bhumiKeys = DATA.rupaBhumi[id];
+    highlightSet(".rupa-node", [id], true);
+    highlightSet(".cause-node", bhumiKeys, false);
+    dimUnrelated(".cause-node", bhumiKeys);
+    dimUnrelated(".rupa-node", [id]);
+    showBhumiRupaInfo(id, bhumiKeys);
+  } else if (type === "bhumi") {
+    const rupaIds = DATA.bhumiToRupa[id];
+    highlightSet(".cause-node", [id], true);
+    highlightSet(".rupa-node", rupaIds, false);
+    dimUnrelated(".rupa-node", rupaIds);
+    dimUnrelated(".cause-node", [id]);
+    showBhumiGroupInfo(id, rupaIds);
+  }
+}
+
+function showBhumiRupaInfo(rupaId, bhumiKeys) {
+  const rupa = byId(rupaId);
+  const labels = bhumiKeys.map((k) => DATA.bhumiLabels[k]);
+  const samutthana = DATA.rupaSamutthana[rupaId];
+  const causeLabels = samutthana.causes.map((k) => DATA.rupaSamutthanaCauses.find((c) => c.key === k).label);
+  const capable = DATA.rupaPatisandhiCapable[rupaId];
+  infoPanel.innerHTML = `
+    <h3 class="info-title">${rupa.thai}</h3>
+    <p class="info-related-label">เกิดในภูมิ:</p>
+    <ul class="info-related-list">${labels.map((l) => `<li>${l}</li>`).join("")}</ul>
+    <p class="info-related-label">ปฏิสนธิกาล:</p>
+    <p class="info-meaning">${capable ? "เกิดได้" : "เกิดไม่ได้"}</p>
+    <p class="info-related-label">สมุฏฐาน (สำหรับอ้างอิง):</p>
+    <p class="info-meaning">${samutthana.class}${causeLabels.length ? " — " + causeLabels.join(", ") : ""}</p>
+  `;
+}
+
+function showBhumiGroupInfo(bhumiKey, rupaIds) {
+  const groups = summarizeByGroup(rupaIds, RUPA_GROUPS, DATA.rupas);
+  infoPanel.innerHTML = `
+    <h3 class="info-title">${DATA.bhumiLabels[bhumiKey]}</h3>
+    <p class="info-related-label">มีรูป ${rupaIds.length} รูป (ตามหมวด):</p>
+    ${rupaIds.length ? renderGroupList(groups) : "<p class=\"info-meaning\">ไม่มีรูปเกิดในภูมินี้เลย</p>"}
+  `;
+}
+
+function renderBirthContextPanel() {
+  birthContextGroupsEl.innerHTML = "";
+  document.getElementById("birth-context-count").textContent = `(${DATA.birthContexts.length})`;
+  DATA.birthContexts.forEach((ctx) => {
+    const el = document.createElement("div");
+    el.className = "node cause-node";
+    el.dataset.id = ctx.id;
+    el.title = ctx.thai;
+    el.textContent = ctx.thai;
+    el.addEventListener("click", () => togglePinned("birthcontext", ctx.id));
+    el.addEventListener("mouseenter", () => applyBirthContextHighlight({ type: "birthcontext", id: ctx.id }));
+    el.addEventListener("mouseleave", () => applyBirthContextHighlight());
+    birthContextGroupsEl.appendChild(el);
+  });
+}
+
+const PHASE_LABELS = { patisandhi: "ปฏิสนธิกาล", pavatti: "ปวัตติกาล" };
+
+function applyBirthContextHighlight(state = pinned) {
+  clearNodeStates(".kalapa-node");
+  clearNodeStates(".cause-node");
+  if (!state) {
+    showInfoPlaceholder();
+    return;
+  }
+  const { type, id } = state;
+  if (type === "kalapabc") {
+    const edges = DATA.kalapaToBirthContexts[id];
+    const contextIds = edges.map((e) => e.contextId);
+    highlightSet(".kalapa-node", [id], true);
+    highlightSet(".cause-node", contextIds, false);
+    dimUnrelated(".cause-node", contextIds);
+    dimUnrelated(".kalapa-node", [id]);
+    showBirthContextKalapaInfo(id, edges);
+  } else if (type === "birthcontext") {
+    const ctx = DATA.birthContexts.find((c) => c.id === id);
+    const kalapaIds = ctx.edges.map((e) => e.kalapaId);
+    highlightSet(".cause-node", [id], true);
+    highlightSet(".kalapa-node", kalapaIds, false);
+    dimUnrelated(".kalapa-node", kalapaIds);
+    dimUnrelated(".cause-node", [id]);
+    showBirthContextInfo(ctx);
+  }
+}
+
+function showBirthContextKalapaInfo(kalapaId, edges) {
+  const kalapa = kalapaById(kalapaId);
+  const items = edges.map((e) => {
+    const ctxLabel = DATA.birthContexts.find((c) => c.id === e.contextId).thai;
+    return `${ctxLabel} (${PHASE_LABELS[e.phase]}${e.omissible ? ", ขาดตกบกพร่องได้บางกรณี" : ""})`;
+  });
+  infoPanel.innerHTML = `
+    <h3 class="info-title">${kalapa.thai}</h3>
+    <p class="info-related-label">พบในบริบทการเกิด:</p>
+    <ul class="info-related-list">${items.map((l) => `<li>${l}</li>`).join("")}</ul>
+  `;
+}
+
+function showBirthContextInfo(ctx) {
+  const items = ctx.edges.map((e) => {
+    const k = kalapaById(e.kalapaId);
+    return `${k.thai} (${PHASE_LABELS[e.phase]}${e.omissible ? ", ขาดตกบกพร่องได้บางกรณี" : ""})`;
+  });
+  infoPanel.innerHTML = `
+    <h3 class="info-title">${ctx.thai}</h3>
+    <p class="info-related-label">ประกอบด้วยกัมมชกลาป ${ctx.edges.length} รายการ:</p>
+    <ul class="info-related-list">${items.map((l) => `<li>${l}</li>`).join("")}</ul>
+    ${footnotesHtml(ctx)}
+  `;
+}
+
+function renderKamnoetReference() {
+  const items = DATA.kamnoetLabels.items
+    .map((k) => `<dt>${k.thai}</dt><dd>${k.gloss}</dd>`)
+    .join("");
+  kamnoetReferenceListEl.innerHTML = `${items}<p class="reference-note">${DATA.kamnoetLabels.altCountNote}</p>`;
+}
+
+document.querySelectorAll(".subtab-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".subtab-btn").forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-selected", "false");
+    });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
+    rupapavattiSubview = btn.dataset.subview;
+    pinned = null;
+    updateModeVisibility();
+    clearNodeStates(".rupa-node");
+    clearNodeStates(".kalapa-node");
+    clearNodeStates(".cause-node");
+    applyPatisandhiBorders(rupapavattiSubview === "bhumi");
+    if (rupapavattiSubview === "bhumi") {
+      applyBhumiHighlight();
+    } else {
+      renderKalapaPanel();
+      applyBirthContextHighlight();
+    }
+  });
+});
+
 // --- mode switching ---
 
 function updateModeVisibility() {
-  rupaPanel.hidden = rupaMode === "cittaja";
+  const inBhumi = rupaMode === "rupapavatti" && rupapavattiSubview === "bhumi";
+  const inKamnoet = rupaMode === "rupapavatti" && rupapavattiSubview === "kamnoet";
+  rupaPanel.hidden = rupaMode === "cittaja" || (rupaMode === "rupapavatti" && !inBhumi);
   samutthanaPanel.hidden = rupaMode !== "samutthana";
   cittajaActivityPanel.hidden = rupaMode !== "cittaja";
   cittajaCittaPanel.hidden = rupaMode !== "cittaja";
-  kalapaPanel.hidden = rupaMode !== "kalapa";
+  kalapaPanel.hidden = !(rupaMode === "kalapa" || inKamnoet);
+  bhumiPanel.hidden = !inBhumi;
+  birthContextPanel.hidden = !inKamnoet;
+  kamnoetReferencePanel.hidden = !inKamnoet;
   document.getElementById("rupa-lens-overlay").hidden = rupaMode !== "summary";
   samutthanaLegend.hidden = rupaMode !== "samutthana";
   kalapaRegionFilter.hidden = rupaMode !== "kalapa";
+  patisandhiLegend.hidden = !inBhumi;
+  rupapavattiSubtabs.hidden = rupaMode !== "rupapavatti";
   document.querySelector("main.rupa-main").classList.toggle("mode-cittaja", rupaMode === "cittaja");
+  document.querySelector("main.rupa-main").classList.toggle("mode-rupapavatti", rupaMode === "rupapavatti");
 }
 
 document.querySelectorAll(".mode-btn").forEach((btn) => {
@@ -600,9 +858,16 @@ document.querySelectorAll(".mode-btn").forEach((btn) => {
     rupaMode = btn.dataset.mode;
     selectedId = null;
     pinned = null;
+    rupapavattiSubview = "bhumi";
+    document.querySelectorAll(".subtab-btn").forEach((b) => {
+      b.classList.toggle("active", b.dataset.subview === "bhumi");
+      b.setAttribute("aria-selected", b.dataset.subview === "bhumi" ? "true" : "false");
+    });
     updateModeVisibility();
     clearNodeStates(".rupa-node");
+    clearNodeStates(".kalapa-node");
     applySamutthanaBorders(rupaMode === "samutthana");
+    applyPatisandhiBorders(rupaMode === "rupapavatti" && rupapavattiSubview === "bhumi");
     if (rupaMode === "summary") {
       applySelection();
       applyVibhagaOverlay();
@@ -613,6 +878,11 @@ document.querySelectorAll(".mode-btn").forEach((btn) => {
     } else if (rupaMode === "kalapa") {
       renderKalapaPanel();
       applyKalapaHighlight();
+    } else if (rupaMode === "rupapavatti") {
+      renderKalapaPanel();
+      renderBhumiPanel();
+      renderBirthContextPanel();
+      applyBhumiHighlight();
     }
   });
 });
@@ -679,6 +949,9 @@ fetch("data/data.json")
     renderSamutthanaPanel();
     renderCittajaPanels();
     renderKalapaPanel();
+    renderBhumiPanel();
+    renderBirthContextPanel();
+    renderKamnoetReference();
     updateModeVisibility();
   })
   .catch((err) => {

@@ -357,12 +357,56 @@ _EXPECTED_KALAPA_COUNTS = {
     "ahara-suddhatthaka": 8, "ahara-lahutadi-ekadasaka": 11,
 }
 
+# รูปปวัตติกมนัย (ch.6, lines 1119-1357, data/rupa_pavatti.yaml): the last
+# นัย for รูป. Only birthContexts (กัมมชกลาป-9 x birth-context) and
+# kamnoetLabels (plain กำเนิด glossary) are authored in yaml; ภูมิ-group
+# membership and the ปฏิสนธิกาล-incapable รูป set are hardcoded here instead,
+# same "small fully-explicit exception set" rationale as _KALAPA_REGIONS.
+
+# ภูมิ-group -> รูป membership (L1123-1138). กามภูมิ = all 28; รูปภูมิ (เว้น
+# อสัญญสัตต) excludes ฆานะ/ชิวหา/กายะ ปสาทรูป + ภาวรูป ๒ (L1132); อสัญญสัตตภูมิ
+# is a small fully-explicit 17-id set (L1136); อรูปภูมิ = none (L1138).
+_BHUMI_EXCLUDE_RUPABHUMI = {"ghana-pasada", "jivha-pasada", "kaya-pasada", "itthi-bhava", "purisa-bhava"}
+_BHUMI_ASANNA_IDS = {
+    "pathavi", "apo", "tejo", "vayo", "rupa-rammana", "gandha-rammana", "rasa-rammana", "kabalinkara-ahara",
+    "akasadhatu", "jivitindriya", "lahuta", "muduta", "kammannata",
+    "upacaya", "santati", "jarata", "aniccata",
+}
+_BHUMI_GROUPS = {
+    "kama": ("กามภูมิ", lambda all_ids: set(all_ids)),
+    "rupa": ("รูปภูมิ (เว้นอสัญญสัตต)", lambda all_ids: set(all_ids) - _BHUMI_EXCLUDE_RUPABHUMI),
+    "asanna": ("อสัญญสัตตภูมิ", lambda all_ids: set(_BHUMI_ASANNA_IDS)),
+    "arupa": ("อรูปภูมิ", lambda all_ids: set()),
+}
+_EXPECTED_BHUMI_TOTALS = {"kama": 28, "rupa": 23, "asanna": 17, "arupa": 0}
+
+# ปฏิสนธิกาล-incapable รูป (primary = 9, per the Atthakatha/Tika reading the
+# book itself resolves to, L1181; the Abhidhammatthasangaha's own count is 8,
+# same set minus สันตติ -- footnoted in rupa_pavatti.yaml's กำเนิด-glossary
+# sibling data, same "book's own resolved reading is primary" precedent as
+# the จิตตชกลาป ๖-หรือ-๘ decision. Confirmed with user 2026-08-25 session.
+_PATISANDHI_INCAPABLE = {
+    "sadda-rammana", "lahuta", "muduta", "kammannata", "kaya-vinnatti",
+    "vaci-vinnatti", "jarata", "aniccata", "santati",
+}
+_EXPECTED_PATISANDHI_TOTALS = {"incapable": 9, "capable": 19}
+
+# Per-birth-context patisandhi/pavatti กัมมชกลาป edge-count totals (L1229-1259),
+# cross-checked independently of rupa_pavatti.yaml's authored edges.
+_EXPECTED_BIRTHCONTEXT_TOTALS = {
+    "kama-sesa-oppa": {"patisandhi": 9, "pavatti": 0},
+    "rupa-brahma": {"patisandhi": 4, "pavatti": 0},
+    "asanna-brahma": {"patisandhi": 1, "pavatti": 0},
+    "gabbhaseyyaka": {"patisandhi": 4, "pavatti": 5},
+}
+
 
 def main():
     cittas = load("cittas.yaml")
     cetasikas = load("cetasikas.yaml")
     rupas = load("rupas.yaml")["rupas"]
     kalapas = load("kalapas.yaml")["kalapas"]
+    rupa_pavatti = load("rupa_pavatti.yaml")
     cetasika_ids = {c["id"] for c in cetasikas}
     cetasika_by_id = {c["id"]: c for c in cetasikas}
 
@@ -412,6 +456,15 @@ def main():
         is_pasada = rupa["group"] == _RUPA_PASADA_GROUP
         if has_kicha != is_pasada:
             errors.append(f"{rupa['id']}: กิจ field should be present only on ปสาทรูป entries (group={rupa['group']!r}, has_kicha={has_kicha})")
+
+    # รูปปวัตติกมนัย: structural validation of rupa_pavatti.yaml's birthContexts.
+    for ctx in rupa_pavatti["birthContexts"]:
+        edge_kalapa_ids = [e["kalapaId"] for e in ctx["edges"]]
+        if len(edge_kalapa_ids) != len(set(edge_kalapa_ids)):
+            errors.append(f"birth-context {ctx['id']!r}: has duplicate กลาป ids in its edges")
+        for e in ctx["edges"]:
+            if e["phase"] not in ("patisandhi", "pavatti"):
+                errors.append(f"birth-context {ctx['id']!r}: edge {e['kalapaId']!r} has unknown phase {e['phase']!r}")
 
     if not errors:
         from collections import Counter
@@ -515,6 +568,37 @@ def main():
                         f"รูปกลาปนัย region {region_key!r} ({region_label}): count {actual} != expected {expected}"
                     )
 
+        bhumi_membership = {key: fn(rupa_ids) for key, (_, fn) in _BHUMI_GROUPS.items()}
+        for key, ids in bhumi_membership.items():
+            unknown = ids - set(rupa_ids)
+            if unknown:
+                errors.append(f"ภูมิ-group {key!r}: unknown รูป id(s) {unknown}")
+            elif len(ids) != _EXPECTED_BHUMI_TOTALS[key]:
+                errors.append(f"ภูมิ-group {key!r}: count {len(ids)} != expected {_EXPECTED_BHUMI_TOTALS[key]}")
+
+        unknown_patisandhi = _PATISANDHI_INCAPABLE - set(rupa_ids)
+        if unknown_patisandhi:
+            errors.append(f"ปฏิสนธิกาล-incapable: unknown รูป id(s) {unknown_patisandhi}")
+        elif len(_PATISANDHI_INCAPABLE) != _EXPECTED_PATISANDHI_TOTALS["incapable"]:
+            errors.append(
+                f"ปฏิสนธิกาล-incapable count {len(_PATISANDHI_INCAPABLE)} != expected {_EXPECTED_PATISANDHI_TOTALS['incapable']}"
+            )
+
+        kamma_kalapa_ids = {k["id"] for k in kalapas if k["class"] == "kamma"}
+        if {c["id"] for c in rupa_pavatti["birthContexts"]} != set(_EXPECTED_BIRTHCONTEXT_TOTALS):
+            errors.append("rupa_pavatti.yaml: birthContexts ids don't match the expected 4 context ids")
+        else:
+            for ctx in rupa_pavatti["birthContexts"]:
+                unknown = {e["kalapaId"] for e in ctx["edges"]} - kamma_kalapa_ids
+                if unknown:
+                    errors.append(f"birth-context {ctx['id']!r}: unknown/non-kamma กลาป id(s) {unknown}")
+                    continue
+                phase_counts = Counter(e["phase"] for e in ctx["edges"])
+                actual = {"patisandhi": phase_counts.get("patisandhi", 0), "pavatti": phase_counts.get("pavatti", 0)}
+                expected = _EXPECTED_BIRTHCONTEXT_TOTALS[ctx["id"]]
+                if actual != expected:
+                    errors.append(f"birth-context {ctx['id']!r}: phase counts {actual} != expected {expected}")
+
     if errors:
         print("Data validation failed:", file=sys.stderr)
         for e in errors:
@@ -607,6 +691,23 @@ def main():
         for rid in kalapa["rupaIds"]:
             rupa_to_kalapas[rid].append(kalapa["id"])
 
+    # รูปปวัตติกมนัย: ภูมิ-group membership both directions (mirrors
+    # rupaToKalapas's shape), per-รูป ปฏิสนธิกาล-capability, and birth-context
+    # <-> กัมมชกลาป reverse index (mirrors rupaToKalapas again).
+    bhumi_membership = {key: fn([r["id"] for r in rupas]) for key, (_, fn) in _BHUMI_GROUPS.items()}
+    bhumi_labels = {k: v[0] for k, v in _BHUMI_GROUPS.items()}
+    rupa_to_bhumi = {r["id"]: [k for k, ids in bhumi_membership.items() if r["id"] in ids] for r in rupas}
+    bhumi_to_rupa = {k: sorted(ids) for k, ids in bhumi_membership.items()}
+    rupa_patisandhi_capable = {r["id"]: r["id"] not in _PATISANDHI_INCAPABLE for r in rupas}
+
+    birth_contexts_out = sorted(rupa_pavatti["birthContexts"], key=lambda c: c["order"])
+    kalapa_to_birth_contexts = {kid: [] for kid in kamma_kalapa_ids}
+    for ctx in birth_contexts_out:
+        for e in ctx["edges"]:
+            kalapa_to_birth_contexts[e["kalapaId"]].append(
+                {"contextId": ctx["id"], "phase": e["phase"], "omissible": e["omissible"]}
+            )
+
     output = {
         "cittas": cittas,
         "cetasikas": cetasikas,
@@ -624,6 +725,13 @@ def main():
         "kalapaRegions": kalapa_regions_out,
         "kalapaRegionLabels": {k: v[0] for k, v in _KALAPA_REGIONS.items()},
         "rupaToKalapas": rupa_to_kalapas,
+        "rupaBhumi": rupa_to_bhumi,
+        "bhumiToRupa": bhumi_to_rupa,
+        "bhumiLabels": bhumi_labels,
+        "rupaPatisandhiCapable": rupa_patisandhi_capable,
+        "birthContexts": birth_contexts_out,
+        "kalapaToBirthContexts": kalapa_to_birth_contexts,
+        "kamnoetLabels": rupa_pavatti["kamnoetLabels"],
     }
 
     out_path = DATA / "data.json"

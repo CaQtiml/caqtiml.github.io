@@ -35,6 +35,15 @@
     รูปกลาปนัย
     <span class="mode-hint">รูป → กลาป</span>
   </button>
+  <button class="mode-btn" data-mode="rupapavatti" role="tab" aria-selected="false">
+    รูปปวัตติกมนัย
+    <span class="mode-hint">ภูมิ / กำเนิด</span>
+  </button>
+</nav>
+
+<nav class="subtab-switch" id="rupapavatti-subtabs" role="tablist" aria-label="เลือกมุมมองรูปปวัตติกมนัย" hidden>
+  <button class="subtab-btn active" data-subview="bhumi" role="tab" aria-selected="true">ภูมิ</button>
+  <button class="subtab-btn" data-subview="kamnoet" role="tab" aria-selected="false">กำเนิด</button>
 </nav>
 
 <div class="lens-overlay" id="rupa-lens-overlay">
@@ -59,6 +68,12 @@
   <button class="region-btn" data-region="upper" type="button">อุปริมกาย</button>
   <button class="region-btn" data-region="middle" type="button">มัชฌิมกาย</button>
   <button class="region-btn" data-region="lower" type="button">เหฏฐิมกาย</button>
+</div>
+
+<div class="lens-overlay" id="patisandhi-legend" hidden>
+  <span>สี:</span>
+  <span class="legend-swatch patisandhi-capable">เกิดได้ในปฏิสนธิกาล (๑๙)</span>
+  <span class="legend-swatch patisandhi-incapable">เกิดไม่ได้ในปฏิสนธิกาล (๙)</span>
 </div>
 
 <main class="rupa-main">
@@ -87,13 +102,28 @@
   </section>
 
   <section class="panel" id="kalapa-panel" hidden>
-    <h2>กลาป <span class="panel-count" id="kalapa-count"></span></h2>
+    <h2><span id="kalapa-panel-title">กลาป</span> <span class="panel-count" id="kalapa-count"></span></h2>
     <div id="kalapa-groups"></div>
+  </section>
+
+  <section class="panel" id="bhumi-panel" hidden>
+    <h2>ภูมิ <span class="panel-count" id="bhumi-count"></span></h2>
+    <div class="circle-row" id="bhumi-groups"></div>
+  </section>
+
+  <section class="panel" id="birth-context-panel" hidden>
+    <h2>บริบทการเกิด <span class="panel-count" id="birth-context-count"></span></h2>
+    <div class="circle-row" id="birth-context-groups"></div>
+  </section>
+
+  <section class="panel" id="kamnoet-reference-panel" hidden>
+    <h2>กำเนิด ๔ (อ้างอิง)</h2>
+    <dl id="kamnoet-reference-list" class="reference-deflist"></dl>
   </section>
 </main>
 
 <footer class="site-footer">
-  <p>ข้อมูลอ้างอิงจาก ปรมัตถโชติกะ ปริจเฉทที่ ๖ (จูฬตรี) — รูปทั้งหมด ๒๘ รูป (แสดงเฉพาะรูปสมุทเทสนัย)</p>
+  <p>ข้อมูลอ้างอิงจาก ปรมัตถโชติกะ ปริจเฉทที่ ๖ (จูฬตรี) — รูปทั้งหมด ๒๘ รูป, ๕ นัย (รูปสมุทเทสนัย, รูปวิภาคนัย, รูปสมุฏฐานนัย, รูปกลาปนัย, รูปปวัตติกมนัย)</p>
   <p class="ai-disclaimer">เว็บไซต์นี้สร้างขึ้นโดยใช้ AI เป็นส่วนใหญ่ (ทั้งเนื้อหาและโค้ด) จึงอาจมีข้อผิดพลาดเกิดขึ้นได้ โปรดตรวจสอบกับต้นฉบับก่อนนำไปใช้อ้างอิง</p>
 </footer>
 

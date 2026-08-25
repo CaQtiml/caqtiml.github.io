@@ -1,0 +1,120 @@
+# รูปปวัตติกมนัย — 5th (last) นัย for รูป (ch.6 lines 1119-1357).
+# Only the parts authored here need yaml round-tripping: birthContexts (the
+# กัมมชกลาป-9 x birth-context relation) and kamnoetLabels (a plain 4-item
+# glossary). ภูมิ-group -> รูป membership and the ปฏิสนธิกาล-incapable รูป set
+# are NOT authored here -- both are small, fully-explicit exception sets
+# hardcoded directly in scripts/build_data.py instead, mirroring how
+# _KALAPA_REGIONS is hardcoded rather than round-tripped through yaml.
+#
+# "birth-context" here is a project-specific entity, distinct from กำเนิด
+# (see kamnoetLabels below) -- the source's own กัมมชกลาป-at-ปฏิสนธิ table
+# (L1229-1247) doesn't use the 4 กำเนิด as its rows: it splits โอปปาติกะ by
+# realm (กามภูมิ / รูปพรหม / อสัญญสัตตพรหม) and merges อัณฑชะ+ชลาพุชะ back into
+# คัพภเสยยกะ. Modeling these as the same entity would misstate the source, so
+# birth-context gets its own 4 ids here, confirmed with user 2026-08-25
+# session ("two separate entities" chosen over reusing กำเนิด directly).
+#
+# Each edge's `phase` (patisandhi | pavatti) states when in the birth-context
+# that กลาป first becomes possible; `omissible` flags a กลาป that some
+# individuals in that context may lack (the exact which-sub-population-misses-
+# what detail beneath that flag, e.g. "สังเสทชะ specifically misses 4, ทุคคติ-
+# โอปปาติกะ misses 3, ..." is prose-only, not modeled as further edges/
+# sub-entities -- confirmed with user, same "interactive = enumerable
+# relation, narrative nuance = text" scoping already used for จิตตชรูปนัย's
+# activity-label granularity cutoff).
+
+birthContexts:
+  # สังเสทชะกำเนิด + โอปปาติกะกำเนิด ที่เกิดอยู่ในกามภูมิ (L1231-1239).
+  # Source: "กัมมชกลาปทั้ง ๘ กลาป...ย่อมเกิดได้...โดยอุกกัฏฐนัย" (L1231, listing
+  # all 9 of this dataset's กัมมชกลาป ids since ภาวทสกกลาป is 1 named item
+  # there but 2 ids here). All literally patisandhi per that line.
+  - id: kama-sesa-oppa
+    thai: "สังเสทชะ + โอปปาติกะ (กามภูมิ)"
+    order: 1
+    edges:
+      - { kalapaId: kamma-cakkhu-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-sota-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-ghana-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-jivha-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-kaya-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-itthibhava-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-purisabhava-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-vatthu-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-jivita-navaka, phase: patisandhi, omissible: false }
+    footnotes:
+      - title: "ชีวิตนวกกลาปกับเลข ๘+๑=๘"
+        body: >-
+          บรรทัด L1231 ระบุกัมมชกลาป ๘ กลาป (รวมชีวิตนวกกลาป) ว่าเกิดได้ใน
+          ปฏิสนธิกาล แต่บรรทัด L1251 กลับระบุว่าในปวัตติกาล กัมมชกลาปเกิดได้อีก
+          ๑ คือ ชีวิตนวกกลาป และเมื่อรวมแล้วมี ๘ — ตัวเลขนี้จะสมเหตุสมผลก็ต่อเมื่อ
+          ชีวิตนวกกลาปยังไม่นับรวมอยู่ในปฏิสนธิกาลแต่แรก ซึ่งสอดคล้องกับที่ L1276
+          ระบุว่าชีวิตนวกกลาปของกลุ่มนี้เกิดขึ้น "ตั้งแต่ฐีติขณะของปฏิสนธิจิต" อันเป็น
+          ช่วงปวัตติกาลตามนิยามของหนังสือเอง (L1175) ไม่ใช่อุปปาทักขณะ ชุดข้อมูลนี้
+          ยังคงแสดงชีวิตนวกกลาปเป็น patisandhi ตามที่ L1231 ระบุไว้ตรงๆ (ไม่ตีความ
+          ใหม่เป็น pavatti) และหมายเหตุความคลาดเคลื่อนของเลข ๘+๑=๘ ไว้ที่นี่แทน
+          — ยืนยันกับผู้ใช้แล้ว (เซสชัน 2026-08-25)
+
+  # โอปปาติกะกำเนิด ที่เป็นรูปพรหม เว้นอสัญญสัตตพรหม (L1241).
+  - id: rupa-brahma
+    thai: "โอปปาติกะ (รูปพรหม เว้นอสัญญสัตต)"
+    order: 2
+    edges:
+      - { kalapaId: kamma-cakkhu-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-sota-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-vatthu-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-jivita-navaka, phase: patisandhi, omissible: false }
+
+  # โอปปาติกะกำเนิด ที่เป็นอสัญญสัตตพรหม (L1243).
+  - id: asanna-brahma
+    thai: "โอปปาติกะ (อสัญญสัตตพรหม)"
+    order: 3
+    edges:
+      - { kalapaId: kamma-jivita-navaka, phase: patisandhi, omissible: false }
+
+  # คัพภเสยยกะกำเนิด (L1245-1259): ปฏิสนธิ อุกกัฏฐนัย ๓ (โอมกนัย ๒, ภาวะ
+  # ขาดตกบกพร่องได้) + ปวัตติกาล ๕ เพิ่มเติม (จักขุ/โสต/ฆาน/ชิวหา/ชีวิตนวกกลาป,
+  # ขาดตกบกพร่องได้ ๓ คือ จักขุ/โสต/ฆาน — L1257).
+  - id: gabbhaseyyaka
+    thai: "คัพภเสยยกะ"
+    order: 4
+    edges:
+      - { kalapaId: kamma-kaya-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-itthibhava-dasaka, phase: patisandhi, omissible: true }
+      - { kalapaId: kamma-purisabhava-dasaka, phase: patisandhi, omissible: true }
+      - { kalapaId: kamma-vatthu-dasaka, phase: patisandhi, omissible: false }
+      - { kalapaId: kamma-cakkhu-dasaka, phase: pavatti, omissible: true }
+      - { kalapaId: kamma-sota-dasaka, phase: pavatti, omissible: true }
+      - { kalapaId: kamma-ghana-dasaka, phase: pavatti, omissible: true }
+      - { kalapaId: kamma-jivha-dasaka, phase: pavatti, omissible: false }
+      - { kalapaId: kamma-jivita-navaka, phase: pavatti, omissible: false }
+    footnotes:
+      - title: "ขาดตกบกพร่องได้ ๔ หรือ ๕ รายการ"
+        body: >-
+          แหล่งข้อมูลระบุว่ากลาปที่ขาดตกบกพร่องได้ในกลุ่มนี้มี ๔ (จักขุ โสตะ ฆานะ
+          ภาวะ — นับภาวทสกกลาปเป็น ๑ รายการ) แต่ชุดข้อมูลนี้แยกภาวทสกกลาปเป็น
+          อิตถีภาวทสกกลาป/ปุริสภาวทสกกลาป ๒ รายการเสมอ (เช่นเดียวกับที่ทำใน
+          รูปกลาปนัย) จึงมีรายการ omissible ๕ รายการในชุดข้อมูลนี้ ไม่ใช่ ๔ —
+          ไม่ใช่ข้อผิดพลาด (ยึดหลักการเดียวกับที่ทำให้ยอดรวมตามกาย ๓ ส่วนของ
+          รูปกลาปนัยเป็น ๘/๕/๔ แทนที่จะเป็น ๗/๔/๓ ตามต้นฉบับ)
+
+# กำเนิด (mode of birth) -- a plain glossary, no relation attached (see the
+# birthContexts note above for why the กัมมชกลาป table doesn't use these 4
+# ids directly). ch.6 L1187-1212.
+kamnoetLabels:
+  items:
+    - id: samsedaja
+      thai: "สังเสทชะกำเนิด"
+      gloss: "เกิดในที่ที่มียางเหนียว ไม่อาศัยบิดามารดา แต่ค่อยๆ เติบโตขึ้นคล้ายคัพภเสยยกะ"
+    - id: opapatika
+      thai: "โอปปาติกะกำเนิด"
+      gloss: "เกิดผุดขึ้นโตทันที อาศัยอดีตกรรมอย่างเดียว ไม่ผ่านลำดับครรภ์"
+    - id: andaja
+      thai: "อัณฑชะกำเนิด"
+      gloss: "เกิดในท้องมารดา แต่ต้องอยู่ในฟองก่อน แล้วจึงคลอดจากฟองอีกทีหนึ่ง"
+    - id: jalabuja
+      thai: "ชลาพุชะกำเนิด"
+      gloss: "เกิดในท้องมารดาโดยตรง ไม่มีฟองหุ้มห่อ"
+  altCountNote: >-
+    กำเนิดนับได้ ๔ (สังเสทชะ/โอปปาติกะ/อัณฑชะ/ชลาพุชะ) หรือ ๓
+    (สังเสทชะ/โอปปาติกะ/คัพภเสยยกะ) — อัณฑชะและชลาพุชะเป็นการแบ่งย่อยของ
+    คัพภเสยยกะกำเนิดตามลักษณะการคลอด ไม่ใช่กำเนิดที่ ๕ เพิ่มเข้ามา

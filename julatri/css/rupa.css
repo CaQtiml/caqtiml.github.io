@@ -18,7 +18,18 @@ main.rupa-main {
    in row 2 without this. */
 #rupa-panel, #cittaja-activity-panel { grid-column: 1; grid-row: 1; }
 #info-panel { grid-column: 2; grid-row: 1; }
-#samutthana-panel, #cittaja-citta-panel, #kalapa-panel { grid-column: 3; grid-row: 1; }
+#samutthana-panel, #cittaja-citta-panel, #kalapa-panel, #bhumi-panel, #birth-context-panel { grid-column: 3; grid-row: 1; }
+
+/* กำเนิด ๔ static reference block (รูปปวัตติกมนัย, กำเนิด sub-view) -- not a
+   selector column like the other right-side panels, so it spans the full
+   width below the two-panel row instead of joining column 3. */
+#kamnoet-reference-panel { grid-column: 1 / -1; grid-row: 2; }
+
+/* #kalapa-panel is reused as the LEFT panel of รูปปวัตติกมนัย's กำเนิด
+   sub-view (filtered to the 9 กัมมชกลาป), unlike its own รูปกลาปนัย tab where
+   it's the right panel -- override its column there, or it stacks on top of
+   #birth-context-panel in the same column-3 cell. */
+main.rupa-main.mode-rupapavatti #kalapa-panel { grid-column: 1; grid-row: 1; }
 
 /* cittaja mode's right panel (121 จิต, rows up to 8-wide) needs more room
    than the default narrow 1fr track, but not the full remaining space --
@@ -31,7 +42,8 @@ main.rupa-main.mode-cittaja {
 
 @media (max-width: 860px) {
   main.rupa-main { grid-template-columns: 1fr; }
-  #rupa-panel, #cittaja-activity-panel, #info-panel, #samutthana-panel, #cittaja-citta-panel, #kalapa-panel {
+  #rupa-panel, #cittaja-activity-panel, #info-panel, #samutthana-panel, #cittaja-citta-panel, #kalapa-panel,
+  #bhumi-panel, #birth-context-panel, #kamnoet-reference-panel {
     grid-column: 1;
   }
   .info-panel { order: -1; position: static; }
@@ -112,6 +124,54 @@ main.rupa-main.mode-cittaja {
   color: #fff;
 }
 
+/* รูปปวัตติกมนัย's nested sub-tab bar (ภูมิ / กำเนิด) -- deliberately a
+   distinct class from .mode-switch/.mode-btn (smaller, pill-shaped, using
+   the --rupa-cause-* vars instead of --accent) so it reads as one level
+   down from the top-level tab bar, not a clone of it. */
+.subtab-switch[hidden] { display: none; }
+.subtab-switch {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 1320px;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0 1rem;
+}
+.subtab-btn {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--rupa-cause-color);
+  background: transparent;
+  color: var(--rupa-cause-color);
+  cursor: pointer;
+}
+.subtab-btn.active {
+  background: var(--rupa-cause-soft);
+  font-weight: 600;
+}
+
+/* รูปปวัตติกมนัย's ปฏิสนธิกาล-capability border coding (ภูมิ sub-view only)
+   -- always-on, independent of click state, same pattern as
+   .samutthana-ekanta/.samutthana-nakutoci above. Reuses those same 2 colors
+   since the two border-coded tabs are never shown at once. */
+.rupa-node.patisandhi-capable { border-color: var(--accent); }
+.rupa-node.patisandhi-incapable { border-color: var(--text-muted); }
+
+.legend-swatch.patisandhi-capable::before { border-color: var(--accent); }
+.legend-swatch.patisandhi-incapable::before { border-color: var(--text-muted); }
+
+/* กำเนิด ๔ static reference block -- a plain definitions list, not a
+   clickable-node panel, so no .node-family styling needed. */
+.reference-deflist dt { font-weight: 600; margin-top: 0.6rem; }
+.reference-deflist dt:first-child { margin-top: 0; }
+.reference-deflist dd { margin: 0.15rem 0 0 1rem; color: var(--text-muted); }
+.reference-deflist .reference-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+}
+
 .node.is-ineligible {
   opacity: var(--dim-opacity);
   cursor: default;
@@ -123,7 +183,7 @@ main.rupa-main.mode-cittaja {
    to a long list (28 รูป / 121 จิต) -- without sticky they scroll out of
    view while the long list is still being scrolled, unlike #info-panel
    which already sticks. */
-#samutthana-panel, #cittaja-activity-panel, #kalapa-panel {
+#samutthana-panel, #cittaja-activity-panel, #kalapa-panel, #bhumi-panel, #birth-context-panel {
   position: sticky;
   top: 1rem;
   max-height: calc(100vh - 2rem);
@@ -131,5 +191,9 @@ main.rupa-main.mode-cittaja {
 }
 
 @media (max-width: 860px) {
-  #samutthana-panel, #cittaja-activity-panel, #kalapa-panel { position: static; max-height: none; overflow-y: visible; }
+  #samutthana-panel, #cittaja-activity-panel, #kalapa-panel, #bhumi-panel, #birth-context-panel {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
 }

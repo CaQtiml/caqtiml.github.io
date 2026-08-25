@@ -13819,5 +13819,561 @@
     "santati": [],
     "jarata": [],
     "aniccata": []
+  },
+  "rupaBhumi": {
+    "pathavi": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "apo": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "tejo": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "vayo": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "cakkhu-pasada": [
+      "kama",
+      "rupa"
+    ],
+    "sota-pasada": [
+      "kama",
+      "rupa"
+    ],
+    "ghana-pasada": [
+      "kama"
+    ],
+    "jivha-pasada": [
+      "kama"
+    ],
+    "kaya-pasada": [
+      "kama"
+    ],
+    "rupa-rammana": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "sadda-rammana": [
+      "kama",
+      "rupa"
+    ],
+    "gandha-rammana": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "rasa-rammana": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "itthi-bhava": [
+      "kama"
+    ],
+    "purisa-bhava": [
+      "kama"
+    ],
+    "hadaya-vatthu": [
+      "kama",
+      "rupa"
+    ],
+    "jivitindriya": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "kabalinkara-ahara": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "akasadhatu": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "kaya-vinnatti": [
+      "kama",
+      "rupa"
+    ],
+    "vaci-vinnatti": [
+      "kama",
+      "rupa"
+    ],
+    "lahuta": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "muduta": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "kammannata": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "upacaya": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "santati": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "jarata": [
+      "kama",
+      "rupa",
+      "asanna"
+    ],
+    "aniccata": [
+      "kama",
+      "rupa",
+      "asanna"
+    ]
+  },
+  "bhumiToRupa": {
+    "kama": [
+      "akasadhatu",
+      "aniccata",
+      "apo",
+      "cakkhu-pasada",
+      "gandha-rammana",
+      "ghana-pasada",
+      "hadaya-vatthu",
+      "itthi-bhava",
+      "jarata",
+      "jivha-pasada",
+      "jivitindriya",
+      "kabalinkara-ahara",
+      "kammannata",
+      "kaya-pasada",
+      "kaya-vinnatti",
+      "lahuta",
+      "muduta",
+      "pathavi",
+      "purisa-bhava",
+      "rasa-rammana",
+      "rupa-rammana",
+      "sadda-rammana",
+      "santati",
+      "sota-pasada",
+      "tejo",
+      "upacaya",
+      "vaci-vinnatti",
+      "vayo"
+    ],
+    "rupa": [
+      "akasadhatu",
+      "aniccata",
+      "apo",
+      "cakkhu-pasada",
+      "gandha-rammana",
+      "hadaya-vatthu",
+      "jarata",
+      "jivitindriya",
+      "kabalinkara-ahara",
+      "kammannata",
+      "kaya-vinnatti",
+      "lahuta",
+      "muduta",
+      "pathavi",
+      "rasa-rammana",
+      "rupa-rammana",
+      "sadda-rammana",
+      "santati",
+      "sota-pasada",
+      "tejo",
+      "upacaya",
+      "vaci-vinnatti",
+      "vayo"
+    ],
+    "asanna": [
+      "akasadhatu",
+      "aniccata",
+      "apo",
+      "gandha-rammana",
+      "jarata",
+      "jivitindriya",
+      "kabalinkara-ahara",
+      "kammannata",
+      "lahuta",
+      "muduta",
+      "pathavi",
+      "rasa-rammana",
+      "rupa-rammana",
+      "santati",
+      "tejo",
+      "upacaya",
+      "vayo"
+    ],
+    "arupa": []
+  },
+  "bhumiLabels": {
+    "kama": "กามภูมิ",
+    "rupa": "รูปภูมิ (เว้นอสัญญสัตต)",
+    "asanna": "อสัญญสัตตภูมิ",
+    "arupa": "อรูปภูมิ"
+  },
+  "rupaPatisandhiCapable": {
+    "pathavi": true,
+    "apo": true,
+    "tejo": true,
+    "vayo": true,
+    "cakkhu-pasada": true,
+    "sota-pasada": true,
+    "ghana-pasada": true,
+    "jivha-pasada": true,
+    "kaya-pasada": true,
+    "rupa-rammana": true,
+    "sadda-rammana": false,
+    "gandha-rammana": true,
+    "rasa-rammana": true,
+    "itthi-bhava": true,
+    "purisa-bhava": true,
+    "hadaya-vatthu": true,
+    "jivitindriya": true,
+    "kabalinkara-ahara": true,
+    "akasadhatu": true,
+    "kaya-vinnatti": false,
+    "vaci-vinnatti": false,
+    "lahuta": false,
+    "muduta": false,
+    "kammannata": false,
+    "upacaya": true,
+    "santati": false,
+    "jarata": false,
+    "aniccata": false
+  },
+  "birthContexts": [
+    {
+      "id": "kama-sesa-oppa",
+      "thai": "สังเสทชะ + โอปปาติกะ (กามภูมิ)",
+      "order": 1,
+      "edges": [
+        {
+          "kalapaId": "kamma-cakkhu-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-sota-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-ghana-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-jivha-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-kaya-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-itthibhava-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-purisabhava-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-vatthu-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-jivita-navaka",
+          "phase": "patisandhi",
+          "omissible": false
+        }
+      ],
+      "footnotes": [
+        {
+          "title": "ชีวิตนวกกลาปกับเลข ๘+๑=๘",
+          "body": "บรรทัด L1231 ระบุกัมมชกลาป ๘ กลาป (รวมชีวิตนวกกลาป) ว่าเกิดได้ใน ปฏิสนธิกาล แต่บรรทัด L1251 กลับระบุว่าในปวัตติกาล กัมมชกลาปเกิดได้อีก ๑ คือ ชีวิตนวกกลาป และเมื่อรวมแล้วมี ๘ — ตัวเลขนี้จะสมเหตุสมผลก็ต่อเมื่อ ชีวิตนวกกลาปยังไม่นับรวมอยู่ในปฏิสนธิกาลแต่แรก ซึ่งสอดคล้องกับที่ L1276 ระบุว่าชีวิตนวกกลาปของกลุ่มนี้เกิดขึ้น \"ตั้งแต่ฐีติขณะของปฏิสนธิจิต\" อันเป็น ช่วงปวัตติกาลตามนิยามของหนังสือเอง (L1175) ไม่ใช่อุปปาทักขณะ ชุดข้อมูลนี้ ยังคงแสดงชีวิตนวกกลาปเป็น patisandhi ตามที่ L1231 ระบุไว้ตรงๆ (ไม่ตีความ ใหม่เป็น pavatti) และหมายเหตุความคลาดเคลื่อนของเลข ๘+๑=๘ ไว้ที่นี่แทน — ยืนยันกับผู้ใช้แล้ว (เซสชัน 2026-08-25)"
+        }
+      ]
+    },
+    {
+      "id": "rupa-brahma",
+      "thai": "โอปปาติกะ (รูปพรหม เว้นอสัญญสัตต)",
+      "order": 2,
+      "edges": [
+        {
+          "kalapaId": "kamma-cakkhu-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-sota-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-vatthu-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-jivita-navaka",
+          "phase": "patisandhi",
+          "omissible": false
+        }
+      ]
+    },
+    {
+      "id": "asanna-brahma",
+      "thai": "โอปปาติกะ (อสัญญสัตตพรหม)",
+      "order": 3,
+      "edges": [
+        {
+          "kalapaId": "kamma-jivita-navaka",
+          "phase": "patisandhi",
+          "omissible": false
+        }
+      ]
+    },
+    {
+      "id": "gabbhaseyyaka",
+      "thai": "คัพภเสยยกะ",
+      "order": 4,
+      "edges": [
+        {
+          "kalapaId": "kamma-kaya-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-itthibhava-dasaka",
+          "phase": "patisandhi",
+          "omissible": true
+        },
+        {
+          "kalapaId": "kamma-purisabhava-dasaka",
+          "phase": "patisandhi",
+          "omissible": true
+        },
+        {
+          "kalapaId": "kamma-vatthu-dasaka",
+          "phase": "patisandhi",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-cakkhu-dasaka",
+          "phase": "pavatti",
+          "omissible": true
+        },
+        {
+          "kalapaId": "kamma-sota-dasaka",
+          "phase": "pavatti",
+          "omissible": true
+        },
+        {
+          "kalapaId": "kamma-ghana-dasaka",
+          "phase": "pavatti",
+          "omissible": true
+        },
+        {
+          "kalapaId": "kamma-jivha-dasaka",
+          "phase": "pavatti",
+          "omissible": false
+        },
+        {
+          "kalapaId": "kamma-jivita-navaka",
+          "phase": "pavatti",
+          "omissible": false
+        }
+      ],
+      "footnotes": [
+        {
+          "title": "ขาดตกบกพร่องได้ ๔ หรือ ๕ รายการ",
+          "body": "แหล่งข้อมูลระบุว่ากลาปที่ขาดตกบกพร่องได้ในกลุ่มนี้มี ๔ (จักขุ โสตะ ฆานะ ภาวะ — นับภาวทสกกลาปเป็น ๑ รายการ) แต่ชุดข้อมูลนี้แยกภาวทสกกลาปเป็น อิตถีภาวทสกกลาป/ปุริสภาวทสกกลาป ๒ รายการเสมอ (เช่นเดียวกับที่ทำใน รูปกลาปนัย) จึงมีรายการ omissible ๕ รายการในชุดข้อมูลนี้ ไม่ใช่ ๔ — ไม่ใช่ข้อผิดพลาด (ยึดหลักการเดียวกับที่ทำให้ยอดรวมตามกาย ๓ ส่วนของ รูปกลาปนัยเป็น ๘/๕/๔ แทนที่จะเป็น ๗/๔/๓ ตามต้นฉบับ)"
+        }
+      ]
+    }
+  ],
+  "kalapaToBirthContexts": {
+    "kamma-kaya-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "patisandhi",
+        "omissible": false
+      }
+    ],
+    "kamma-vatthu-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "rupa-brahma",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "patisandhi",
+        "omissible": false
+      }
+    ],
+    "kamma-ghana-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "pavatti",
+        "omissible": true
+      }
+    ],
+    "kamma-purisabhava-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "patisandhi",
+        "omissible": true
+      }
+    ],
+    "kamma-jivha-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "pavatti",
+        "omissible": false
+      }
+    ],
+    "kamma-jivita-navaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "rupa-brahma",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "asanna-brahma",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "pavatti",
+        "omissible": false
+      }
+    ],
+    "kamma-cakkhu-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "rupa-brahma",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "pavatti",
+        "omissible": true
+      }
+    ],
+    "kamma-itthibhava-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "patisandhi",
+        "omissible": true
+      }
+    ],
+    "kamma-sota-dasaka": [
+      {
+        "contextId": "kama-sesa-oppa",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "rupa-brahma",
+        "phase": "patisandhi",
+        "omissible": false
+      },
+      {
+        "contextId": "gabbhaseyyaka",
+        "phase": "pavatti",
+        "omissible": true
+      }
+    ]
+  },
+  "kamnoetLabels": {
+    "items": [
+      {
+        "id": "samsedaja",
+        "thai": "สังเสทชะกำเนิด",
+        "gloss": "เกิดในที่ที่มียางเหนียว ไม่อาศัยบิดามารดา แต่ค่อยๆ เติบโตขึ้นคล้ายคัพภเสยยกะ"
+      },
+      {
+        "id": "opapatika",
+        "thai": "โอปปาติกะกำเนิด",
+        "gloss": "เกิดผุดขึ้นโตทันที อาศัยอดีตกรรมอย่างเดียว ไม่ผ่านลำดับครรภ์"
+      },
+      {
+        "id": "andaja",
+        "thai": "อัณฑชะกำเนิด",
+        "gloss": "เกิดในท้องมารดา แต่ต้องอยู่ในฟองก่อน แล้วจึงคลอดจากฟองอีกทีหนึ่ง"
+      },
+      {
+        "id": "jalabuja",
+        "thai": "ชลาพุชะกำเนิด",
+        "gloss": "เกิดในท้องมารดาโดยตรง ไม่มีฟองหุ้มห่อ"
+      }
+    ],
+    "altCountNote": "กำเนิดนับได้ ๔ (สังเสทชะ/โอปปาติกะ/อัณฑชะ/ชลาพุชะ) หรือ ๓ (สังเสทชะ/โอปปาติกะ/คัพภเสยยกะ) — อัณฑชะและชลาพุชะเป็นการแบ่งย่อยของ คัพภเสยยกะกำเนิดตามลักษณะการคลอด ไม่ใช่กำเนิดที่ ๕ เพิ่มเข้ามา"
   }
 }
