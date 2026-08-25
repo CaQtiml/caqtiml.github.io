@@ -10,6 +10,8 @@
   --citta-soft: #e6def2;
   --cetasika-color: #2c7a5b;
   --cetasika-soft: #d9ede2;
+  --rupa-cause-color: #2c6e8a;
+  --rupa-cause-soft: #d9e9f0;
   --dim-opacity: 0.25;
 }
 
@@ -26,6 +28,8 @@
     --citta-soft: #3a3050;
     --cetasika-color: #7fd3ac;
     --cetasika-soft: #234236;
+    --rupa-cause-color: #7ec3e0;
+    --rupa-cause-soft: #223c48;
   }
 }
 
@@ -45,6 +49,14 @@ body {
 }
 .site-header h1 { margin: 0 0 0.25rem; font-size: 1.8rem; }
 .subtitle { margin: 0; color: var(--text-muted); }
+.site-nav-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.site-nav-link:hover { text-decoration: underline; }
 
 .mode-switch {
   display: flex;

@@ -11650,5 +11650,1349 @@
       "vedana": "อุเบกขา",
       "sankhara": "สสังขาริก"
     }
+  },
+  "rupas": [
+    {
+      "id": "pathavi",
+      "thai": "ปถวี",
+      "group": "mahabhuta",
+      "order": 1,
+      "ongkhatham": "รูปแข็ง และอ่อน",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "สหชาตรูปานิ ปตนฺติ ปติฏฺฐหนฺติ เอตฺถาติ = ปถวี — ธรรมชาติที่เป็นที่ตั้งที่อาศัยของสหชาตรูปทั้งหลาย",
+      "description": "ธาตุดิน มีลักษณะแข็งเมื่อเทียบกับมหาภูตรูปอื่น หรือปรากฏเป็นอ่อนเมื่อมีน้อย เป็นที่อาศัย/ที่ตั้งของรูปอื่นๆ ทั้งหมด หากปราศจากปถวีธาตุ รูปารมณ์ สัททารมณ์ คันธารมณ์ รสารมณ์ และโผฏฐัพพารมณ์ (เตโช/วาโย) ก็ปรากฏไม่ได้เลย"
+    },
+    {
+      "id": "apo",
+      "thai": "อาโป",
+      "group": "mahabhuta",
+      "order": 2,
+      "ongkhatham": "รูปที่ไหล หรือเกาะกุม",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "อาเปติ สหชาตรูเปสุ พฺยาเปตฺวา ติฏฺฐตีติ = อาโป — ธรรมชาติที่แผ่ซึมซาบและตั้งอยู่ในรูปที่เกิดร่วมกัน",
+      "description": "ธาตุน้ำ รู้ได้ด้วยใจเท่านั้น ไม่ใช่ด้วยตาหรือกายสัมผัส มีลักษณะไหลเมื่อมีมาก หรือเกาะกุมเป็นก้อนเมื่อมีน้อย เปรียบเหมือนยางเหนียวเชื่อมปรมาณูปถวีให้เป็น รูปร่างสัณฐาน มี ๒ อย่าง: อาพันธลักขณะ (เกาะกุมปกติ ไหลเมื่อถูกความร้อน เช่น เหล็ก/ทอง/ขี้ผึ้ง) และปัคฆรณลักขณะ (ไหลปกติ เกาะกุมเมื่อถูกความเย็น เช่น น้ำ)"
+    },
+    {
+      "id": "tejo",
+      "thai": "เตโช",
+      "group": "mahabhuta",
+      "order": 3,
+      "ongkhatham": "รูปที่เย็น ร้อน",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "เตเชติ ปริปาเจตีติ = เตโช — ธรรมชาติที่ทำให้สุก",
+      "description": "ธาตุไฟ มีทั้งลักษณะร้อน (อุณหเตโช) และเย็น (สีตเตโช) สภาวะเป็นไอเป็นลักษณะ ทำหน้าที่ให้สุกและละเอียดนุ่มนวล มี ๕ อย่าง: อุสุมาเตโช (ไออุ่นประจำกาย), สันตัปปนเตโช (ร้อนมาก), ทหนเตโช (ร้อนจัดจนเผาผลาญ), ชิรณเตโช (ทำให้ร่างกาย ทรุดโทรมแก่ลง), ปาจกเตโช (ย่อยอาหาร) — ๓ อย่างหลังเป็นอาการวิปริตของ อุสุมาเตโช ไม่ได้มีอยู่ประจำ"
+    },
+    {
+      "id": "vayo",
+      "thai": "วาโย",
+      "group": "mahabhuta",
+      "order": 4,
+      "ongkhatham": "รูปที่หย่อน ตึง",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "วายติ สหชาตธมฺเม อุปตฺถมฺเภติ กตฺวา วหตีติ = วาโย — ธาตุที่ทำให้รูปที่เกิดร่วมกันตั้งมั่นไม่เคลื่อนคลอน",
+      "description": "ธาตุลม มีลักษณะเคร่งตึง (วิตถัมภนวาโย — ทำให้ตั้งมั่นไม่คลอนแคลน) หรือ เคลื่อนไหว (สมีรณวาโย — ทำให้เคลื่อนไหวไปมา) มี ๖ อย่าง: อุทธังคมวาโย (พัดขึ้น), อโธคมวาโย (พัดลง), กุจฉิฏฐวาโย (ในช่องท้อง), โกฏฐาสยวาโย (ในลำไส้ใหญ่), องคมังคานุสารีวาโย (ทั่วร่างกาย), อัสสาสปัสสาสวาโย (ลมหายใจเข้าออก) — ภายในกายเรียกอัชฌัตตวาโย ภายนอกเรียกพหิทธวาโย"
+    },
+    {
+      "id": "cakkhu-pasada",
+      "thai": "จักขุปสาท",
+      "group": "pasada",
+      "order": 1,
+      "ongkhatham": "ความใสที่สามารถรับรูปารมณ์ได้",
+      "thiKoet": "เกิดอยู่ในลูกตา",
+      "etymology": "จกฺขุวิญฺญาณาธิฏฺฐิตํ...= จกฺขุ — เป็นที่ตั้งแห่งจักขุวิญญาณ และมีสภาพคล้ายบอกให้จักขุวิญญาณรู้อารมณ์",
+      "description": "รูปที่เกิดจากกรรม มีความใสดุจกระจกเงา รับรูปารมณ์ได้ ตั้งอยู่ระหว่างกลาง ตาดำ มีเยื่อตา ๗ ชั้นซับอยู่ โตประมาณเท่าหัวเหา",
+      "kicha": "ให้สำเร็จกิจ ๒ อย่าง: เป็นวัตถุอันเป็นที่ตั้งแห่งจักขุวิญญาณจิต และเป็นทวารอันเป็นที่เกิดแห่งจักขุทวารวิถีจิต"
+    },
+    {
+      "id": "sota-pasada",
+      "thai": "โสตปสาท",
+      "group": "pasada",
+      "order": 2,
+      "ongkhatham": "ความใสที่สามารถรับสัททารมณ์ได้",
+      "thiKoet": "เกิดอยู่ในรูหู",
+      "etymology": "โสตวิญฺญาณธิฏฺฐิตํ หุตฺวา สทฺทํ สุณาตีติ = โสตํ — เป็นที่ตั้งแห่งโสตวิญญาณและได้ยินเสียง",
+      "description": "รูปที่เกิดจากกรรม มีความใสบริสุทธิ์ รับเสียงต่างๆ ตั้งอยู่ในช่องหูรูป วงแหวน เป็นที่งอกแห่งขนแดงเส้นละเอียด",
+      "kicha": "ให้สำเร็จกิจ ๒ อย่าง: เป็นวัตถุอันเป็นที่ตั้งแห่งโสตวิญญาณจิต และเป็นทวารอันเป็นที่เกิดแห่งโสตทวารวิถีจิต"
+    },
+    {
+      "id": "ghana-pasada",
+      "thai": "ฆานปสาท",
+      "group": "pasada",
+      "order": 3,
+      "ongkhatham": "ความใสที่สามารถรับคันธารมณ์ได้",
+      "thiKoet": "เกิดอยู่ในรูจมูก",
+      "etymology": "ฆายตีติ = ฆานํ — สูดดมกลิ่น (แสดงโดยฐานยูปจารนัย คือนัยโดยอ้อม)",
+      "description": "รูปที่เกิดจากกรรม มีความใสบริสุทธิ์ รับกลิ่นต่างๆ ตั้งอยู่ภายในช่องจมูก ที่มีสัณฐานดังกีบแพะ",
+      "kicha": "ให้สำเร็จกิจ ๒ อย่าง: เป็นวัตถุอันเป็นที่ตั้งแห่งฆานวิญญาณจิต และเป็นทวารอันเป็นที่เกิดแห่งฆานทวารวิถีจิต"
+    },
+    {
+      "id": "jivha-pasada",
+      "thai": "ชิวหาปสาท",
+      "group": "pasada",
+      "order": 4,
+      "ongkhatham": "ความใสที่สามารถรับรสารมณ์ได้",
+      "thiKoet": "เกิดอยู่ที่ลิ้น",
+      "etymology": "ชีวิตํ อวฺหายตีติ = ชิวฺหา — มีสภาพคล้ายกับเรียกซึ่งรสที่เป็นเหตุให้อายุยืน",
+      "description": "รูปที่เกิดจากกรรม มีความใสบริสุทธิ์ รับรสต่างๆ ตั้งอยู่ในท่ามกลางลิ้น ที่มีสัณฐานเหมือนปลายกลีบดอกอุบล",
+      "kicha": "ให้สำเร็จกิจ ๒ อย่าง: เป็นวัตถุอันเป็นที่ตั้งแห่งชิวหาวิญญาณ และเป็นทวารอันเป็นที่เกิดแห่งชิวหาทวารวิถีจิต"
+    },
+    {
+      "id": "kaya-pasada",
+      "thai": "กายปสาท",
+      "group": "pasada",
+      "order": 5,
+      "ongkhatham": "ความใสที่สามารถรับโผฏฐัพพารมณ์ได้",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "กุจฺฉิตานํ เกสาทีนํ...อาโยติ = กาโย — ที่ประชุมแห่งส่วนต่างๆ ที่น่าเกลียดและอกุศลธรรม",
+      "description": "รูปที่เกิดจากกรรม มีความใสบริสุทธิ์ รับสัมผัส เย็น ร้อน อ่อน แข็ง หย่อน ตึง เกิดทั่วร่างกาย ยกเว้นปลายผม ขน เล็บ หนังที่หนา และบริเวณอาหารใหม่ ใต้ไส้ใหญ่อันเป็นที่ตั้งของปาจกเตโช",
+      "kicha": "ให้สำเร็จกิจ ๒ อย่าง: เป็นวัตถุอันเป็นที่ตั้งแห่งกายวิญญาณ และเป็นทวารอันเป็นที่เกิดแห่งกายทวารวิถีจิต"
+    },
+    {
+      "id": "rupa-rammana",
+      "thai": "รูปารมณ์",
+      "group": "visaya",
+      "order": 1,
+      "ongkhatham": "สีต่างๆ",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "รูปยติ หทยงฺคตภาวํ ปกาเสตีติ = รูปํ — แสดงความรู้สึกของจิตใจ หรือแสดงวัตถุสิ่งของให้ปรากฏ",
+      "description": "สีต่างๆ ที่ทำให้รูปร่างสัณฐานและความรู้สึกของสิ่งมีชีวิต/ไม่มีชีวิต ปรากฏให้ผู้อื่นรู้ได้"
+    },
+    {
+      "id": "sadda-rammana",
+      "thai": "สัททารมณ์",
+      "group": "visaya",
+      "order": 2,
+      "ongkhatham": "เสียงต่างๆ",
+      "thiKoet": "เกิดได้ในร่างกายทั่วไป",
+      "etymology": "สทฺทยติ อุจฺจารยตีติ = สทฺโท — เปล่งออกมาได้ (หรือ) สปฺปติ โสตวิญฺเญยฺยภาวํ คจฺฉตีติ = สทฺโท — ถึงสภาพที่โสตวิญญาณรู้ได้",
+      "description": "เสียงต่างๆ ทั้งที่สัตว์เปล่งออกมาและเสียงของสิ่งไม่มีชีวิต เป็นอารมณ์ ของโสตวิญญาณ"
+    },
+    {
+      "id": "gandha-rammana",
+      "thai": "คันธารมณ์",
+      "group": "visaya",
+      "order": 3,
+      "ongkhatham": "กลิ่นต่างๆ",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "คนฺธยติ อตฺตโน วตฺถุํ สูเจตีติ = คนฺโธ — แสดงให้ที่อาศัยของตนปรากฏ",
+      "description": "กลิ่นต่างๆ ที่แสดงให้รู้ถึงวัตถุที่ตนอาศัยอยู่ เมื่อแผ่ตัวออกมาย่อมทำให้ รู้ทันทีว่าเป็นกลิ่นอะไรและมาจากที่ใด"
+    },
+    {
+      "id": "rasa-rammana",
+      "thai": "รสารมณ์",
+      "group": "visaya",
+      "order": 4,
+      "ongkhatham": "รสต่างๆ",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "รสิยติ อสฺสาทิยตีติ = รโส — เป็นที่พอใจ (คือที่รู้) ของชิวหาวิญญาณ",
+      "description": "รสต่างๆ ไม่ว่าดีหรือไม่ดี ล้วนเป็นอารมณ์ที่ชิวหาวิญญาณย่อมรู้/ลิ้มรสได้ ทั้งสิ้น"
+    },
+    {
+      "id": "itthi-bhava",
+      "thai": "อิตถีภาวะ",
+      "group": "bhava",
+      "order": 1,
+      "ongkhatham": "รูปที่เป็นเหตุแห่งความเป็นหญิง",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไปของเพศหญิง",
+      "etymology": "อิตฺถิยา ภาโว = อิตฺถิภาโว — เหตุแห่งความเป็นหญิง",
+      "description": "รูปที่ปกครองลิงค์ (รูปร่างสัณฐาน), นิมิต (เครื่องหมาย เช่น หนวดเครา), กุต (นิสัย), และอากัปปะ (กิริยาอาการ) ให้เป็นไปในทางหญิง"
+    },
+    {
+      "id": "purisa-bhava",
+      "thai": "ปุริสภาวะ",
+      "group": "bhava",
+      "order": 2,
+      "ongkhatham": "รูปที่เป็นเหตุแห่งความเป็นชาย",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไปของเพศชาย",
+      "etymology": "ปุมสฺส ภาโว = ปุมฺภาโว — เหตุแห่งความเป็นชาย",
+      "description": "รูปที่ปกครองลิงค์ นิมิต กุต และอากัปปะ ให้เป็นไปในทางชาย"
+    },
+    {
+      "id": "hadaya-vatthu",
+      "thai": "หทยวัตถุ",
+      "group": "hadaya",
+      "order": 1,
+      "ongkhatham": "รูปที่เกิดอยู่ในหัวใจ และเป็นที่อาศัยเกิดของจิตเจตสิกทั้งหลาย",
+      "thiKoet": "เกิดอยู่ที่รูปหัวใจ",
+      "etymology": "หทนฺติ สตฺตา...เอเตนาติ = หทยํ — เหตุให้สัตว์ทำสิ่งที่เป็นประโยชน์และไม่เป็นประโยชน์",
+      "description": "กัมมชรูปชนิดหนึ่งที่เกิดอยู่ภายในมังสหทยรูป (หัวใจเนื้อ) ตั้งอยู่ในช่อง รูปคล้ายบ่อ โตประมาณเท่าเมล็ดดอกบุนนาค ภายในมีโลหิตหล่อเลี้ยงอยู่ประมาณ ๑ ซองมือ เป็นที่อาศัยเกิดของมโนธาตุและมโนวิญญาณธาตุ — ในปัญจโวการภูมิ ถ้าไม่มีหทยวัตถุรูปแล้ว ย่อมทำการงานหรือนึกคิดรู้เรื่องราวต่างๆ ไม่ได้เลย"
+    },
+    {
+      "id": "jivitindriya",
+      "thai": "ชีวิตินทรีย์",
+      "group": "jivita",
+      "order": 1,
+      "ongkhatham": "รูปที่รักษากัมมชรูปทั้งหลาย",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "ชีวนฺติ สหชาตธมฺมา เอเตนาติ = ชีวิตํ — เหตุให้สหชาตรูปทั้งหลายเป็นอยู่ได้",
+      "description": "ทำให้กัมมชรูปเกิดขึ้นติดต่อกันและตั้งอยู่ได้ (กรรมเองไม่อาจรักษา เพราะ เป็นอดีตล่วงไปแล้ว) ส่วนจิตตชรูป/อุตุชรูป/อาหารชรูปไม่ต้องมีรูปเฉพาะ รักษา เพราะมีสมุฏฐานของตนเองรักษาอยู่แล้ว"
+    },
+    {
+      "id": "kabalinkara-ahara",
+      "thai": "กพฬีการาหาร",
+      "group": "ahara",
+      "order": 1,
+      "ongkhatham": "รูปที่นำให้อาหารชรูปเกิด",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "กพฬีกาโร จ โส อาหาโร จาติ = กพฬีการาหาโร — โภชนะที่กระทำให้เป็นคำและกลืนกินได้",
+      "description": "ได้แก่โอชาที่อยู่ในอาหารต่างๆ เมื่อเข้าสู่ร่างกายแล้วทำให้อาหารชรูปเกิด ขึ้นทันที ทำให้ร่างกายมีกำลังและเติบโต หรือทำให้ร่างกายสมบูรณ์คงอยู่ได้ เมื่อเจริญเติบโตสุดขีดแล้ว"
+    },
+    {
+      "id": "akasadhatu",
+      "thai": "อากาสธาตุ",
+      "group": "pariccheda",
+      "order": 1,
+      "ongkhatham": "อากาสรูปที่คั่นระหว่างรูปกลาปต่อรูปกลาป",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "น กสฺสติ อกาโส, อกาโสเยว อากาโส — ที่ที่ขีดเขียนไม่ได้ ชื่อว่าอากาศ",
+      "description": "อากาศมี ๔ อย่าง: อัชฏากาศ (ว่างเปล่านอกร่างกาย), ปริจฉินนากาศ (ช่องมี ขอบเขต เช่น ช่องหู จมูก ปาก), กสิณุคฆาฏิมากาศ (เพิกจากกสิณ ๙), ปริจเฉทากาศ (คั่นระหว่างรูปกลาปต่อรูปกลาป คือปริจเฉทรูปนี้เอง) — หากไม่มี ปริจเฉทรูป จำนวนรูปกลาป ที่สุด และเขตแดนของรูปจะมีไม่ได้เลย"
+    },
+    {
+      "id": "kaya-vinnatti",
+      "thai": "กายวิญญัติ",
+      "group": "vinnatti",
+      "order": 1,
+      "ongkhatham": "การเคลื่อนไหวต่างๆ ของร่างกาย",
+      "thiKoet": "เกิดได้ในร่างกายทั่วไป",
+      "etymology": "กาเยน วิญฺญตฺติ = กายวิญฺญตฺติ — อาการพิเศษที่ทำให้รู้ความประสงค์ได้ด้วยการเคลื่อนไหว",
+      "description": "อาการพิเศษที่เกิดร่วมกับการเคลื่อนไหวร่างกาย ทำให้ผู้อื่นรู้ความประสงค์ แบ่งเป็นโพธนกายวิญญัติ (มุ่งให้ผู้อื่นรู้) และปวัตตนกายวิญญัติ (เคลื่อนไหว ตามปกติ ไม่มุ่งให้ผู้อื่นรู้)"
+    },
+    {
+      "id": "vaci-vinnatti",
+      "thai": "วจีวิญญัติ",
+      "group": "vinnatti",
+      "order": 2,
+      "ongkhatham": "การเคลื่อนไหวต่างๆ ของวาจา",
+      "thiKoet": "เกิดได้ที่ปาก",
+      "etymology": "วจิยา วิญฺญตฺติ = วจีวิญฺญตฺติ — อาการพิเศษที่ทำให้รู้ความประสงค์ได้ด้วยการพูด",
+      "description": "อาการพิเศษที่เกิดร่วมกับการพูด ทำให้ผู้อื่นรู้ความประสงค์ แบ่งเป็น โพธนวจีวิญญัติและปวัตตนวจีวิญญัติ เช่นเดียวกับกายวิญญัติ"
+    },
+    {
+      "id": "lahuta",
+      "thai": "ลหุตา",
+      "group": "vikara",
+      "order": 1,
+      "ongkhatham": "ความเบาของนิปผันนรูป",
+      "thiKoet": "เกิดได้ในร่างกายทั่วไป",
+      "etymology": "ลหุโน ภาโว = ลหุตา — อาการที่เบา",
+      "description": "อาการพิเศษของนิปผันนรูปที่เกิดเฉพาะในสิ่งมีชีวิต เกิดขึ้นพร้อมกับมุทุตา และกัมมัญญตาเสมอ ทำให้กิริยาอาการ การเคลื่อนไหว และการพูดเป็นไปโดย สะดวกสบาย ไม่ขัดข้อง"
+    },
+    {
+      "id": "muduta",
+      "thai": "มุทุตา",
+      "group": "vikara",
+      "order": 2,
+      "ongkhatham": "ความอ่อนของนิปผันนรูป",
+      "thiKoet": "เกิดได้ในร่างกายทั่วไป",
+      "etymology": "มุทุโน ภาโว = มุทุตา — อาการที่อ่อน",
+      "description": "อาการพิเศษของนิปผันนรูป เกิดขึ้นพร้อมกับลหุตาและกัมมัญญตาเสมอ"
+    },
+    {
+      "id": "kammannata",
+      "thai": "กัมมัญญตา",
+      "group": "vikara",
+      "order": 3,
+      "ongkhatham": "ความควรแก่การงานของนิปผันนรูป",
+      "thiKoet": "เกิดได้ในร่างกายทั่วไป",
+      "etymology": "กมฺมญฺญสฺส ภาโว = กมฺมญฺญตา — สภาพที่เป็นความดีในการงานต่างๆ",
+      "description": "อาการพิเศษของนิปผันนรูป เกิดขึ้นพร้อมกับลหุตาและมุทุตาเสมอ (ในอีกนัยหนึ่ง วิญญัติรูป ๒ ก็นับเข้าในวิการรูปด้วย ทำให้วิการรูปนับได้ ๕ หรือ ๓)"
+    },
+    {
+      "id": "upacaya",
+      "thai": "อุปจยะ",
+      "group": "lakkhana",
+      "order": 1,
+      "ongkhatham": "ความเกิดขึ้นครั้งแรกและเกิดขึ้นครั้งหลังๆ จนครบรูปที่ควรเกิดขึ้นได้ของนิปผันนรูป",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "อาทิโต อุปริโต จ จโยติ = อุปจโย",
+      "description": "การเกิดขึ้นครั้งแรกของกัมมชรูป (ปฏิสนธิขณะ) และการเกิดขึ้นครั้งหลังๆ จนครบบริบูรณ์ — สำหรับคัพภเสยยกสัตว์ครบบริบูรณ์ที่สัปดาห์ที่ ๑๑ ส่วน สังเสทชะ/โอปปาติกะครบตั้งแต่ปฏิสนธิขณะเลย"
+    },
+    {
+      "id": "santati",
+      "thai": "สันตติ",
+      "group": "lakkhana",
+      "order": 2,
+      "ongkhatham": "ความเกิดขึ้นสืบต่อกันของนิปผันนรูปจนถึงตาย",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "สมฺพนฺธา ตติ = สนฺตติ",
+      "description": "ความเกิดขึ้นติดต่อกันของกัมมชรูป (และจิตตชรูป/อุตุชรูป/อาหารชรูป) หลัง เกิดครบบริบูรณ์แล้ว ไปจนตลอดชีวิต — อุปมาเหมือนบ่อน้ำใกล้แม่น้ำ: อุปจยะ คือน้ำที่ไหลเข้าจนเต็มบ่อ สันตติคือน้ำที่ไหลล้นออกไปเรื่อยๆ"
+    },
+    {
+      "id": "jarata",
+      "thai": "ชรตา",
+      "group": "lakkhana",
+      "order": 3,
+      "ongkhatham": "ความแก่ของนิปผันนรูป",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "ชรานํ ภาโว = ชรตา",
+      "description": "ขณะตั้งอยู่ของรูป (ขณะที่ ๒ ถึง ๕๐ จากทั้งหมด ๕๑ ขณะเล็กที่เป็นอายุของ รูป) มีอยู่ตั้งแต่ปฏิสนธิขณะจนกระทั่งสัตว์นั้นตาย"
+    },
+    {
+      "id": "aniccata",
+      "thai": "อนิจจตา",
+      "group": "lakkhana",
+      "order": 4,
+      "ongkhatham": "ความดับของนิปผันนรูป",
+      "thiKoet": "เกิดอยู่ในร่างกายทั่วไป",
+      "etymology": "อนิจฺจานํ ภาโว = อนิจฺจตา",
+      "description": "ขณะดับของรูป คือขณะที่ ๕๑ อันเป็นขณะสุดท้ายของอายุรูป"
+    }
+  ],
+  "rupaLenses": {
+    "pathavi": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "apo": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "tejo": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "vayo": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "cakkhu-pasada": {
+      "ajjhattika": "อัชฌัตติกรูป",
+      "vatthu": "วัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "โคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "sota-pasada": {
+      "ajjhattika": "อัชฌัตติกรูป",
+      "vatthu": "วัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "โคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "ghana-pasada": {
+      "ajjhattika": "อัชฌัตติกรูป",
+      "vatthu": "วัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "โคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "jivha-pasada": {
+      "ajjhattika": "อัชฌัตติกรูป",
+      "vatthu": "วัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "โคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "kaya-pasada": {
+      "ajjhattika": "อัชฌัตติกรูป",
+      "vatthu": "วัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "โคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "rupa-rammana": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "สนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "sadda-rammana": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "gandha-rammana": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "rasa-rammana": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "โอฬาริกรูป",
+      "santike": "สันติเกรูป",
+      "sappatigha": "สัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "itthi-bhava": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "purisa-bhava": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "hadaya-vatthu": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "วัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "jivitindriya": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "kabalinkara-ahara": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "อวินิพโภครูป"
+    },
+    "akasadhatu": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "kaya-vinnatti": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "vaci-vinnatti": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "ทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "lahuta": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "muduta": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "kammannata": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "upacaya": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "santati": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "jarata": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    },
+    "aniccata": {
+      "ajjhattika": "พาหิรรูป",
+      "vatthu": "อวัตถุรูป",
+      "dvara": "อทวารรูป",
+      "indriya": "อนินทริยรูป",
+      "olarika": "สุขุมรูป",
+      "santike": "ทูเรรูป",
+      "sappatigha": "อัปปฏิฆรูป",
+      "upadinna": "อนุปาทินนรูป",
+      "sanidassana": "อนิทัสสนรูป",
+      "gocaraggahaka": "อโคจรัคคาหกรูป",
+      "avinibbhoga": "วินิพโภครูป"
+    }
+  },
+  "rupaSamutthana": {
+    "pathavi": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "apo": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "tejo": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "vayo": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "cakkhu-pasada": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "sota-pasada": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "ghana-pasada": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "jivha-pasada": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "kaya-pasada": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "rupa-rammana": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "sadda-rammana": {
+      "causes": [
+        "citta",
+        "utu"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "gandha-rammana": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "rasa-rammana": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "itthi-bhava": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "purisa-bhava": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "hadaya-vatthu": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "jivitindriya": {
+      "causes": [
+        "kamma"
+      ],
+      "class": "เอกันตะ"
+    },
+    "kabalinkara-ahara": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "akasadhatu": {
+      "causes": [
+        "kamma",
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "kaya-vinnatti": {
+      "causes": [
+        "citta"
+      ],
+      "class": "เอกันตะ"
+    },
+    "vaci-vinnatti": {
+      "causes": [
+        "citta"
+      ],
+      "class": "เอกันตะ"
+    },
+    "lahuta": {
+      "causes": [
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "muduta": {
+      "causes": [
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "kammannata": {
+      "causes": [
+        "citta",
+        "utu",
+        "ahara"
+      ],
+      "class": "อเนกันตะ"
+    },
+    "upacaya": {
+      "causes": [],
+      "class": "นกุโตจิ"
+    },
+    "santati": {
+      "causes": [],
+      "class": "นกุโตจิ"
+    },
+    "jarata": {
+      "causes": [],
+      "class": "นกุโตจิ"
+    },
+    "aniccata": {
+      "causes": [],
+      "class": "นกุโตจิ"
+    }
+  },
+  "rupaSamutthanaCauses": [
+    {
+      "key": "kamma",
+      "label": "กรรม"
+    },
+    {
+      "key": "citta",
+      "label": "จิต"
+    },
+    {
+      "key": "utu",
+      "label": "อุตุ"
+    },
+    {
+      "key": "ahara",
+      "label": "อาหาร"
+    },
+    {
+      "key": "nakutoci",
+      "label": "นกุโตจิสมุฏฐานิกรูป"
+    }
+  ],
+  "cittajaActivities": [
+    {
+      "key": "samanya",
+      "label": "จิตตชรูปสามัญ",
+      "cittaIds": [
+        "ahetuka-akusalavipaka-sampaticchana",
+        "ahetuka-akusalavipaka-upekkhasantirana",
+        "ahetuka-hasituppada",
+        "ahetuka-kusalavipaka-sampaticchana",
+        "ahetuka-kusalavipaka-somanassasantirana",
+        "ahetuka-kusalavipaka-upekkhasantirana",
+        "ahetuka-manodvaravajjana",
+        "ahetuka-pancadvaravajjana",
+        "anagami-magga-จตุตถฌาน",
+        "anagami-magga-ตติยฌาน",
+        "anagami-magga-ทุติยฌาน",
+        "anagami-magga-ปฐมฌาน",
+        "anagami-magga-ปัญจมฌาน",
+        "anagami-phala-จตุตถฌาน",
+        "anagami-phala-ตติยฌาน",
+        "anagami-phala-ทุติยฌาน",
+        "anagami-phala-ปฐมฌาน",
+        "anagami-phala-ปัญจมฌาน",
+        "arahatta-magga-จตุตถฌาน",
+        "arahatta-magga-ตติยฌาน",
+        "arahatta-magga-ทุติยฌาน",
+        "arahatta-magga-ปฐมฌาน",
+        "arahatta-magga-ปัญจมฌาน",
+        "arahatta-phala-จตุตถฌาน",
+        "arahatta-phala-ตติยฌาน",
+        "arahatta-phala-ทุติยฌาน",
+        "arahatta-phala-ปฐมฌาน",
+        "arahatta-phala-ปัญจมฌาน",
+        "arupa-akasanancayatana-kiriya",
+        "arupa-akasanancayatana-kusala",
+        "arupa-akincannayatana-kiriya",
+        "arupa-akincannayatana-kusala",
+        "arupa-nevasannanasannayatana-kiriya",
+        "arupa-nevasannanasannayatana-kusala",
+        "arupa-vinnanancayatana-kiriya",
+        "arupa-vinnanancayatana-kusala",
+        "dosamula-1",
+        "dosamula-2",
+        "lobhamula-1",
+        "lobhamula-2",
+        "lobhamula-3",
+        "lobhamula-4",
+        "lobhamula-5",
+        "lobhamula-6",
+        "lobhamula-7",
+        "lobhamula-8",
+        "mahakiriya-1",
+        "mahakiriya-2",
+        "mahakiriya-3",
+        "mahakiriya-4",
+        "mahakiriya-5",
+        "mahakiriya-6",
+        "mahakiriya-7",
+        "mahakiriya-8",
+        "mahakusala-1",
+        "mahakusala-2",
+        "mahakusala-3",
+        "mahakusala-4",
+        "mahakusala-5",
+        "mahakusala-6",
+        "mahakusala-7",
+        "mahakusala-8",
+        "mahavipaka-1",
+        "mahavipaka-2",
+        "mahavipaka-3",
+        "mahavipaka-4",
+        "mahavipaka-5",
+        "mahavipaka-6",
+        "mahavipaka-7",
+        "mahavipaka-8",
+        "mohamula-1",
+        "mohamula-2",
+        "rupa-จตุตถฌาน-kiriya",
+        "rupa-จตุตถฌาน-kusala",
+        "rupa-จตุตถฌาน-vipaka",
+        "rupa-ตติยฌาน-kiriya",
+        "rupa-ตติยฌาน-kusala",
+        "rupa-ตติยฌาน-vipaka",
+        "rupa-ทุติยฌาน-kiriya",
+        "rupa-ทุติยฌาน-kusala",
+        "rupa-ทุติยฌาน-vipaka",
+        "rupa-ปฐมฌาน-kiriya",
+        "rupa-ปฐมฌาน-kusala",
+        "rupa-ปฐมฌาน-vipaka",
+        "rupa-ปัญจมฌาน-kiriya",
+        "rupa-ปัญจมฌาน-kusala",
+        "rupa-ปัญจมฌาน-vipaka",
+        "sakadagami-magga-จตุตถฌาน",
+        "sakadagami-magga-ตติยฌาน",
+        "sakadagami-magga-ทุติยฌาน",
+        "sakadagami-magga-ปฐมฌาน",
+        "sakadagami-magga-ปัญจมฌาน",
+        "sakadagami-phala-จตุตถฌาน",
+        "sakadagami-phala-ตติยฌาน",
+        "sakadagami-phala-ทุติยฌาน",
+        "sakadagami-phala-ปฐมฌาน",
+        "sakadagami-phala-ปัญจมฌาน",
+        "sotapatti-magga-จตุตถฌาน",
+        "sotapatti-magga-ตติยฌาน",
+        "sotapatti-magga-ทุติยฌาน",
+        "sotapatti-magga-ปฐมฌาน",
+        "sotapatti-magga-ปัญจมฌาน",
+        "sotapatti-phala-จตุตถฌาน",
+        "sotapatti-phala-ตติยฌาน",
+        "sotapatti-phala-ทุติยฌาน",
+        "sotapatti-phala-ปฐมฌาน",
+        "sotapatti-phala-ปัญจมฌาน"
+      ]
+    },
+    {
+      "key": "hasa",
+      "label": "การหัวเราะ",
+      "cittaIds": [
+        "ahetuka-hasituppada",
+        "lobhamula-1",
+        "lobhamula-2",
+        "lobhamula-3",
+        "lobhamula-4",
+        "mahakiriya-1",
+        "mahakiriya-2",
+        "mahakiriya-3",
+        "mahakiriya-4",
+        "mahakusala-1",
+        "mahakusala-2",
+        "mahakusala-3",
+        "mahakusala-4"
+      ]
+    },
+    {
+      "key": "roditta",
+      "label": "การร้องไห้",
+      "cittaIds": [
+        "dosamula-1",
+        "dosamula-2"
+      ]
+    },
+    {
+      "key": "iriyapatha_noi",
+      "label": "อิริยาบถน้อย",
+      "cittaIds": [
+        "ahetuka-hasituppada",
+        "ahetuka-manodvaravajjana",
+        "dosamula-1",
+        "dosamula-2",
+        "lobhamula-1",
+        "lobhamula-2",
+        "lobhamula-3",
+        "lobhamula-4",
+        "lobhamula-5",
+        "lobhamula-6",
+        "lobhamula-7",
+        "lobhamula-8",
+        "mahakiriya-1",
+        "mahakiriya-2",
+        "mahakiriya-3",
+        "mahakiriya-4",
+        "mahakiriya-5",
+        "mahakiriya-6",
+        "mahakiriya-7",
+        "mahakiriya-8",
+        "mahakusala-1",
+        "mahakusala-2",
+        "mahakusala-3",
+        "mahakusala-4",
+        "mahakusala-5",
+        "mahakusala-6",
+        "mahakusala-7",
+        "mahakusala-8",
+        "mohamula-1",
+        "mohamula-2",
+        "rupa-ปัญจมฌาน-kiriya",
+        "rupa-ปัญจมฌาน-kusala"
+      ]
+    },
+    {
+      "key": "vaca",
+      "label": "การพูด",
+      "cittaIds": [
+        "ahetuka-hasituppada",
+        "ahetuka-manodvaravajjana",
+        "dosamula-1",
+        "dosamula-2",
+        "lobhamula-1",
+        "lobhamula-2",
+        "lobhamula-3",
+        "lobhamula-4",
+        "lobhamula-5",
+        "lobhamula-6",
+        "lobhamula-7",
+        "lobhamula-8",
+        "mahakiriya-1",
+        "mahakiriya-2",
+        "mahakiriya-3",
+        "mahakiriya-4",
+        "mahakiriya-5",
+        "mahakiriya-6",
+        "mahakiriya-7",
+        "mahakiriya-8",
+        "mahakusala-1",
+        "mahakusala-2",
+        "mahakusala-3",
+        "mahakusala-4",
+        "mahakusala-5",
+        "mahakusala-6",
+        "mahakusala-7",
+        "mahakusala-8",
+        "mohamula-1",
+        "mohamula-2",
+        "rupa-ปัญจมฌาน-kiriya",
+        "rupa-ปัญจมฌาน-kusala"
+      ]
+    },
+    {
+      "key": "iriyapatha_yai",
+      "label": "อิริยาบถใหญ่ทั้ง ๔",
+      "cittaIds": [
+        "ahetuka-hasituppada",
+        "ahetuka-manodvaravajjana",
+        "dosamula-1",
+        "dosamula-2",
+        "lobhamula-1",
+        "lobhamula-2",
+        "lobhamula-3",
+        "lobhamula-4",
+        "lobhamula-5",
+        "lobhamula-6",
+        "lobhamula-7",
+        "lobhamula-8",
+        "mahakiriya-1",
+        "mahakiriya-2",
+        "mahakiriya-3",
+        "mahakiriya-4",
+        "mahakiriya-5",
+        "mahakiriya-6",
+        "mahakiriya-7",
+        "mahakiriya-8",
+        "mahakusala-1",
+        "mahakusala-2",
+        "mahakusala-3",
+        "mahakusala-4",
+        "mahakusala-5",
+        "mahakusala-6",
+        "mahakusala-7",
+        "mahakusala-8",
+        "mohamula-1",
+        "mohamula-2",
+        "rupa-ปัญจมฌาน-kiriya",
+        "rupa-ปัญจมฌาน-kusala"
+      ]
+    },
+    {
+      "key": "iriyapatha_yai_tangman",
+      "label": "อิริยาบถใหญ่ทั้ง ๔ ตั้งมั่น",
+      "cittaIds": [
+        "ahetuka-hasituppada",
+        "ahetuka-manodvaravajjana",
+        "anagami-magga-จตุตถฌาน",
+        "anagami-magga-ตติยฌาน",
+        "anagami-magga-ทุติยฌาน",
+        "anagami-magga-ปฐมฌาน",
+        "anagami-magga-ปัญจมฌาน",
+        "anagami-phala-จตุตถฌาน",
+        "anagami-phala-ตติยฌาน",
+        "anagami-phala-ทุติยฌาน",
+        "anagami-phala-ปฐมฌาน",
+        "anagami-phala-ปัญจมฌาน",
+        "arahatta-magga-จตุตถฌาน",
+        "arahatta-magga-ตติยฌาน",
+        "arahatta-magga-ทุติยฌาน",
+        "arahatta-magga-ปฐมฌาน",
+        "arahatta-magga-ปัญจมฌาน",
+        "arahatta-phala-จตุตถฌาน",
+        "arahatta-phala-ตติยฌาน",
+        "arahatta-phala-ทุติยฌาน",
+        "arahatta-phala-ปฐมฌาน",
+        "arahatta-phala-ปัญจมฌาน",
+        "arupa-akasanancayatana-kiriya",
+        "arupa-akasanancayatana-kusala",
+        "arupa-akincannayatana-kiriya",
+        "arupa-akincannayatana-kusala",
+        "arupa-nevasannanasannayatana-kiriya",
+        "arupa-nevasannanasannayatana-kusala",
+        "arupa-vinnanancayatana-kiriya",
+        "arupa-vinnanancayatana-kusala",
+        "dosamula-1",
+        "dosamula-2",
+        "lobhamula-1",
+        "lobhamula-2",
+        "lobhamula-3",
+        "lobhamula-4",
+        "lobhamula-5",
+        "lobhamula-6",
+        "lobhamula-7",
+        "lobhamula-8",
+        "mahakiriya-1",
+        "mahakiriya-2",
+        "mahakiriya-3",
+        "mahakiriya-4",
+        "mahakiriya-5",
+        "mahakiriya-6",
+        "mahakiriya-7",
+        "mahakiriya-8",
+        "mahakusala-1",
+        "mahakusala-2",
+        "mahakusala-3",
+        "mahakusala-4",
+        "mahakusala-5",
+        "mahakusala-6",
+        "mahakusala-7",
+        "mahakusala-8",
+        "mohamula-1",
+        "mohamula-2",
+        "rupa-จตุตถฌาน-kiriya",
+        "rupa-จตุตถฌาน-kusala",
+        "rupa-ตติยฌาน-kiriya",
+        "rupa-ตติยฌาน-kusala",
+        "rupa-ทุติยฌาน-kiriya",
+        "rupa-ทุติยฌาน-kusala",
+        "rupa-ปฐมฌาน-kiriya",
+        "rupa-ปฐมฌาน-kusala",
+        "rupa-ปัญจมฌาน-kiriya",
+        "rupa-ปัญจมฌาน-kusala",
+        "sakadagami-magga-จตุตถฌาน",
+        "sakadagami-magga-ตติยฌาน",
+        "sakadagami-magga-ทุติยฌาน",
+        "sakadagami-magga-ปฐมฌาน",
+        "sakadagami-magga-ปัญจมฌาน",
+        "sakadagami-phala-จตุตถฌาน",
+        "sakadagami-phala-ตติยฌาน",
+        "sakadagami-phala-ทุติยฌาน",
+        "sakadagami-phala-ปฐมฌาน",
+        "sakadagami-phala-ปัญจมฌาน",
+        "sotapatti-magga-จตุตถฌาน",
+        "sotapatti-magga-ตติยฌาน",
+        "sotapatti-magga-ทุติยฌาน",
+        "sotapatti-magga-ปฐมฌาน",
+        "sotapatti-magga-ปัญจมฌาน",
+        "sotapatti-phala-จตุตถฌาน",
+        "sotapatti-phala-ตติยฌาน",
+        "sotapatti-phala-ทุติยฌาน",
+        "sotapatti-phala-ปฐมฌาน",
+        "sotapatti-phala-ปัญจมฌาน"
+      ]
+    }
+  ],
+  "cittaEligibility": {
+    "lobhamula-1": true,
+    "lobhamula-2": true,
+    "lobhamula-3": true,
+    "lobhamula-4": true,
+    "lobhamula-5": true,
+    "lobhamula-6": true,
+    "lobhamula-7": true,
+    "lobhamula-8": true,
+    "dosamula-1": true,
+    "dosamula-2": true,
+    "mohamula-1": true,
+    "mohamula-2": true,
+    "ahetuka-akusalavipaka-cakkhu": false,
+    "ahetuka-akusalavipaka-sota": false,
+    "ahetuka-akusalavipaka-ghana": false,
+    "ahetuka-akusalavipaka-jivha": false,
+    "ahetuka-akusalavipaka-kaya": false,
+    "ahetuka-akusalavipaka-sampaticchana": true,
+    "ahetuka-akusalavipaka-upekkhasantirana": true,
+    "ahetuka-kusalavipaka-cakkhu": false,
+    "ahetuka-kusalavipaka-sota": false,
+    "ahetuka-kusalavipaka-ghana": false,
+    "ahetuka-kusalavipaka-jivha": false,
+    "ahetuka-kusalavipaka-kaya": false,
+    "ahetuka-kusalavipaka-sampaticchana": true,
+    "ahetuka-kusalavipaka-upekkhasantirana": true,
+    "ahetuka-kusalavipaka-somanassasantirana": true,
+    "ahetuka-pancadvaravajjana": true,
+    "ahetuka-manodvaravajjana": true,
+    "ahetuka-hasituppada": true,
+    "mahakusala-1": true,
+    "mahakusala-2": true,
+    "mahakusala-3": true,
+    "mahakusala-4": true,
+    "mahakusala-5": true,
+    "mahakusala-6": true,
+    "mahakusala-7": true,
+    "mahakusala-8": true,
+    "mahavipaka-1": true,
+    "mahavipaka-2": true,
+    "mahavipaka-3": true,
+    "mahavipaka-4": true,
+    "mahavipaka-5": true,
+    "mahavipaka-6": true,
+    "mahavipaka-7": true,
+    "mahavipaka-8": true,
+    "mahakiriya-1": true,
+    "mahakiriya-2": true,
+    "mahakiriya-3": true,
+    "mahakiriya-4": true,
+    "mahakiriya-5": true,
+    "mahakiriya-6": true,
+    "mahakiriya-7": true,
+    "mahakiriya-8": true,
+    "rupa-ปฐมฌาน-kusala": true,
+    "rupa-ทุติยฌาน-kusala": true,
+    "rupa-ตติยฌาน-kusala": true,
+    "rupa-จตุตถฌาน-kusala": true,
+    "rupa-ปัญจมฌาน-kusala": true,
+    "rupa-ปฐมฌาน-vipaka": true,
+    "rupa-ทุติยฌาน-vipaka": true,
+    "rupa-ตติยฌาน-vipaka": true,
+    "rupa-จตุตถฌาน-vipaka": true,
+    "rupa-ปัญจมฌาน-vipaka": true,
+    "rupa-ปฐมฌาน-kiriya": true,
+    "rupa-ทุติยฌาน-kiriya": true,
+    "rupa-ตติยฌาน-kiriya": true,
+    "rupa-จตุตถฌาน-kiriya": true,
+    "rupa-ปัญจมฌาน-kiriya": true,
+    "arupa-akasanancayatana-kusala": true,
+    "arupa-vinnanancayatana-kusala": true,
+    "arupa-akincannayatana-kusala": true,
+    "arupa-nevasannanasannayatana-kusala": true,
+    "arupa-akasanancayatana-vipaka": false,
+    "arupa-vinnanancayatana-vipaka": false,
+    "arupa-akincannayatana-vipaka": false,
+    "arupa-nevasannanasannayatana-vipaka": false,
+    "arupa-akasanancayatana-kiriya": true,
+    "arupa-vinnanancayatana-kiriya": true,
+    "arupa-akincannayatana-kiriya": true,
+    "arupa-nevasannanasannayatana-kiriya": true,
+    "sotapatti-magga-ปฐมฌาน": true,
+    "sotapatti-magga-ทุติยฌาน": true,
+    "sotapatti-magga-ตติยฌาน": true,
+    "sotapatti-magga-จตุตถฌาน": true,
+    "sotapatti-magga-ปัญจมฌาน": true,
+    "sotapatti-phala-ปฐมฌาน": true,
+    "sotapatti-phala-ทุติยฌาน": true,
+    "sotapatti-phala-ตติยฌาน": true,
+    "sotapatti-phala-จตุตถฌาน": true,
+    "sotapatti-phala-ปัญจมฌาน": true,
+    "sakadagami-magga-ปฐมฌาน": true,
+    "sakadagami-magga-ทุติยฌาน": true,
+    "sakadagami-magga-ตติยฌาน": true,
+    "sakadagami-magga-จตุตถฌาน": true,
+    "sakadagami-magga-ปัญจมฌาน": true,
+    "sakadagami-phala-ปฐมฌาน": true,
+    "sakadagami-phala-ทุติยฌาน": true,
+    "sakadagami-phala-ตติยฌาน": true,
+    "sakadagami-phala-จตุตถฌาน": true,
+    "sakadagami-phala-ปัญจมฌาน": true,
+    "anagami-magga-ปฐมฌาน": true,
+    "anagami-magga-ทุติยฌาน": true,
+    "anagami-magga-ตติยฌาน": true,
+    "anagami-magga-จตุตถฌาน": true,
+    "anagami-magga-ปัญจมฌาน": true,
+    "anagami-phala-ปฐมฌาน": true,
+    "anagami-phala-ทุติยฌาน": true,
+    "anagami-phala-ตติยฌาน": true,
+    "anagami-phala-จตุตถฌาน": true,
+    "anagami-phala-ปัญจมฌาน": true,
+    "arahatta-magga-ปฐมฌาน": true,
+    "arahatta-magga-ทุติยฌาน": true,
+    "arahatta-magga-ตติยฌาน": true,
+    "arahatta-magga-จตุตถฌาน": true,
+    "arahatta-magga-ปัญจมฌาน": true,
+    "arahatta-phala-ปฐมฌาน": true,
+    "arahatta-phala-ทุติยฌาน": true,
+    "arahatta-phala-ตติยฌาน": true,
+    "arahatta-phala-จตุตถฌาน": true,
+    "arahatta-phala-ปัญจมฌาน": true
   }
 }

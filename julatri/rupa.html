@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>รูปปรมัตถ์ — อภิธรรมชั้นจูฬตรี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/rupa.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>รูปปรมัตถ์</h1>
+  <p class="subtitle">รูป ๒๘ (ปริจเฉทที่ ๖)</p>
+  <a class="site-nav-link" href="index.html">← ไปหน้าจิต-เจตสิก (จูฬตรี ปริจเฉทที่ ๑-๒)</a>
+</header>
+
+<nav class="mode-switch" role="tablist" aria-label="เลือกนัยที่ต้องการดู">
+  <button class="mode-btn active" data-mode="summary" role="tab" aria-selected="true">
+    รูปสมุทเทสนัย
+    <span class="mode-hint">รูป ๒๘</span>
+  </button>
+  <button class="mode-btn" data-mode="samutthana" role="tab" aria-selected="false">
+    รูปสมุฏฐานนัย
+    <span class="mode-hint">รูป → สมุฏฐาน</span>
+  </button>
+  <button class="mode-btn" data-mode="cittaja" role="tab" aria-selected="false">
+    จิตตชรูปนัย
+    <span class="mode-hint">จิต → จิตตชกิจ</span>
+  </button>
+</nav>
+
+<div class="lens-overlay" id="rupa-lens-overlay">
+  <label for="rupa-lens-select">เน้นตาม (รูปวิภาคนัย):</label>
+  <select id="rupa-lens-select">
+    <option value="">— ไม่เน้น —</option>
+  </select>
+  <select id="rupa-lens-category-select" disabled></select>
+  <button id="rupa-lens-clear" type="button" disabled>ล้าง</button>
+</div>
+
+<div class="lens-overlay" id="samutthana-legend" hidden>
+  <span>สี:</span>
+  <span class="legend-swatch samutthana-ekanta">เอกันตะ (๑๑) — เกิดจากสมุฏฐานเดียวเท่านั้น</span>
+  <span class="legend-swatch samutthana-anekanta">อเนกันตะ (๑๓) — เกิดได้จากหลายสมุฏฐาน</span>
+  <span class="legend-swatch samutthana-nakutoci">นกุโตจิ (๔) — ไม่มีสมุฏฐาน (ลักขณรูป)</span>
+</div>
+
+<main class="rupa-main">
+  <section class="panel" id="rupa-panel">
+    <h2>รูป <span class="panel-count" id="rupa-count"></span></h2>
+    <div id="rupa-groups"></div>
+  </section>
+
+  <section class="panel" id="samutthana-panel" hidden>
+    <h2>สมุฏฐาน</h2>
+    <div class="circle-row" id="samutthana-groups"></div>
+  </section>
+
+  <section class="panel" id="cittaja-activity-panel" hidden>
+    <h2>จิตตชรูป (กิจ)</h2>
+    <div class="circle-row" id="cittaja-activity-groups"></div>
+  </section>
+
+  <aside class="info-panel" id="info-panel">
+    <p class="info-placeholder">คลิกที่วงกลมรูป เพื่อดูรายละเอียด</p>
+  </aside>
+
+  <section class="panel" id="cittaja-citta-panel" hidden>
+    <h2>จิต <span class="panel-count" id="cittaja-citta-count"></span></h2>
+    <div id="cittaja-citta-groups"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>ข้อมูลอ้างอิงจาก ปรมัตถโชติกะ ปริจเฉทที่ ๖ (จูฬตรี) — รูปทั้งหมด ๒๘ รูป (แสดงเฉพาะรูปสมุทเทสนัย)</p>
+  <p class="ai-disclaimer">เว็บไซต์นี้สร้างขึ้นโดยใช้ AI เป็นส่วนใหญ่ (ทั้งเนื้อหาและโค้ด) จึงอาจมีข้อผิดพลาดเกิดขึ้นได้ โปรดตรวจสอบกับต้นฉบับก่อนนำไปใช้อ้างอิง</p>
+</footer>
+
+<script src="js/rupa.js"></script>
+</body>
+</html>

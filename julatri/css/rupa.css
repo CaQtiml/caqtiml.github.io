@@ -1,0 +1,102 @@
+main.rupa-main {
+  display: grid;
+  grid-template-columns: 1.4fr 280px 1fr;
+  gap: 1rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  align-items: start;
+}
+/* Explicit column AND row placement, since which panel is "left" vs "right"
+   changes per mode (summary: รูป only; samutthana: รูป left / causes right;
+   cittaja: activities left / จิต right) -- DOM order alone can't express
+   that, unlike index.html where content never swaps sides (see CONTEXT.md).
+   grid-row is pinned too, not just grid-column: auto-placement's row cursor
+   isn't guaranteed to land info-panel in row 1 alongside a definite-column
+   item that comes after it in DOM order (samutthana-panel) but before it
+   (cittaja-citta-panel, even display:none) -- observed landing info-panel
+   in row 2 without this. */
+#rupa-panel, #cittaja-activity-panel { grid-column: 1; grid-row: 1; }
+#info-panel { grid-column: 2; grid-row: 1; }
+#samutthana-panel, #cittaja-citta-panel { grid-column: 3; grid-row: 1; }
+
+/* cittaja mode's right panel (121 จิต, rows up to 8-wide) needs more room
+   than the default narrow 1fr track, but not the full remaining space --
+   1.4fr there ate up all the leftover width as dead space past the widest
+   row (~525px including padding). A fixed track sized to that content
+   fits it without the leftover gap. */
+main.rupa-main.mode-cittaja {
+  grid-template-columns: 260px 280px 560px;
+}
+
+@media (max-width: 860px) {
+  main.rupa-main { grid-template-columns: 1fr; }
+  #rupa-panel, #cittaja-activity-panel, #info-panel, #samutthana-panel, #cittaja-citta-panel {
+    grid-column: 1;
+  }
+  .info-panel { order: -1; position: static; }
+}
+
+/* Always-visible bounding box around the นิปผันน (18) / อนิปผันน (10) groups --
+   pure nested containers, no overlay/toggle state (see CONTEXT.md). */
+.rupa-bucket {
+  border: 2px dashed var(--accent);
+  border-radius: 12px;
+  padding: 0.75rem 0.75rem 0.25rem;
+  margin-bottom: 1rem;
+}
+.rupa-bucket:last-child { margin-bottom: 0; }
+.bucket-label {
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.rupa-group { margin-bottom: 1rem; }
+.rupa-group:last-child { margin-bottom: 0; }
+
+.rupa-node {
+  --node-color: var(--citta-color);
+  --node-soft: var(--citta-soft);
+  width: 4.4rem;
+  height: 4.4rem;
+  font-size: 0.72rem;
+}
+
+/* รูปสมุฏฐานนัย: always-on 3-way border coding (independent of click/highlight
+   state) -- see #samutthana-legend markup in rupa.html. Just overrides the
+   .node border color; no new CSS property needed. */
+.rupa-node.samutthana-ekanta { border-color: var(--accent); }
+.rupa-node.samutthana-anekanta { border-color: var(--cetasika-color); }
+.rupa-node.samutthana-nakutoci { border-color: var(--text-muted); }
+
+.legend-swatch { display: inline-flex; align-items: center; gap: 0.35rem; }
+.legend-swatch::before {
+  content: "";
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 3px solid;
+}
+.legend-swatch.samutthana-ekanta::before { border-color: var(--accent); }
+.legend-swatch.samutthana-anekanta::before { border-color: var(--cetasika-color); }
+.legend-swatch.samutthana-nakutoci::before { border-color: var(--text-muted); }
+
+/* Cause nodes (สมุฏฐานนัย right panel) and activity nodes (จิตตชรูปนัย left
+   panel) share a third node color, distinct from รูป (purple) and เจตสิก
+   (green). */
+.cause-node, .activity-node {
+  --node-color: var(--rupa-cause-color);
+  --node-soft: var(--rupa-cause-soft);
+  width: 4.4rem;
+  height: 4.4rem;
+  font-size: 0.72rem;
+}
+
+.node.is-ineligible {
+  opacity: var(--dim-opacity);
+  cursor: default;
+  pointer-events: none;
+}
