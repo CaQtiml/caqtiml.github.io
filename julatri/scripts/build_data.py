@@ -280,11 +280,89 @@ _EXPECTED_CITTAJA_TOTALS = {
     "iriyapatha_yai_tangman": 88,
 }
 
+# รูปกลาปนัย (ch.6, lines 936-1115, data/kalapas.yaml): 23 กลาป in 4 classes.
+# กลาป composition (rupaIds) is authored in kalapas.yaml; region membership
+# (อุปริมกาย/มัชฌิมกาย/เหฏฐิมกาย) is hardcoded here instead, same rationale as
+# _RUPA_SAMUTTHANA -- a small, fully-explicit set of source-stated exceptions,
+# not worth round-tripping through yaml.
+_KALAPA_CLASS_LABELS = {
+    "kamma": "กัมมชกลาป",
+    "citta": "จิตตชกลาป",
+    "utu": "อุตุชกลาป",
+    "ahara": "อาหารชกลาป",
+}
+_EXPECTED_KALAPA_CLASS_TOTALS = {"kamma": 9, "citta": 8, "utu": 4, "ahara": 2}
+
+# กัมมชกลาป (L1005-1015): explicit per-region lists. Both bhava-dasaka ids are
+# listed in every region the source's single "ภาวทสกกลาป" line appears in --
+# see kalapas.yaml's header comment for why (region totals 8/5/4 here, not the
+# source's own printed 7/4/3, confirmed with user 2026-08-25 session).
+_KALAPA_UPARIMAKAYA_KAMMA = {
+    "kamma-cakkhu-dasaka", "kamma-sota-dasaka", "kamma-ghana-dasaka", "kamma-jivha-dasaka",
+    "kamma-kaya-dasaka", "kamma-itthibhava-dasaka", "kamma-purisabhava-dasaka", "kamma-jivita-navaka",
+}
+_KALAPA_MAJJHIMAKAYA_KAMMA = {
+    "kamma-kaya-dasaka", "kamma-itthibhava-dasaka", "kamma-purisabhava-dasaka",
+    "kamma-vatthu-dasaka", "kamma-jivita-navaka",
+}
+_KALAPA_HETTHIMAKAYA_KAMMA = {
+    "kamma-kaya-dasaka", "kamma-itthibhava-dasaka", "kamma-purisabhava-dasaka", "kamma-jivita-navaka",
+}
+
+# จิตตชกลาป (L1055-1059): all 8 in อุปริมกาย; only the 4 non-speech/non-sound
+# ones (สุทธัฏฐก/กายวิญญัตินวก/ลหุตาทิเอกาทสก/กายวิญญัติลหุตาทิทวาทสก) in the
+# other 2 regions.
+_KALAPA_CITTA_LIMITED = {
+    "citta-suddhatthaka", "citta-kayavinnatti-navaka",
+    "citta-lahutadi-ekadasaka", "citta-kayavinnatti-lahutadi-dvadasaka",
+}
+
+# อุตุชกลาป (L1091-1093) and อาหารชกลาป (L1113): all occur in all 3 regions,
+# no restriction (the อุตุชกลาป source text notes a constant-vs-intermittent
+# timing distinction for 2 of the 4, but that's not a region gate -- left as
+# descriptive text only, not modeled here; confirmed with user 2026-08-25
+# session).
+_KALAPA_REGIONS = {
+    "upper": ("อุปริมกาย", lambda k: (
+        k["class"] == "kamma" and k["id"] in _KALAPA_UPARIMAKAYA_KAMMA
+        or k["class"] == "citta"
+        or k["class"] in ("utu", "ahara")
+    )),
+    "middle": ("มัชฌิมกาย", lambda k: (
+        k["class"] == "kamma" and k["id"] in _KALAPA_MAJJHIMAKAYA_KAMMA
+        or k["class"] == "citta" and k["id"] in _KALAPA_CITTA_LIMITED
+        or k["class"] in ("utu", "ahara")
+    )),
+    "lower": ("เหฏฐิมกาย", lambda k: (
+        k["class"] == "kamma" and k["id"] in _KALAPA_HETTHIMAKAYA_KAMMA
+        or k["class"] == "citta" and k["id"] in _KALAPA_CITTA_LIMITED
+        or k["class"] in ("utu", "ahara")
+    )),
+}
+_EXPECTED_KALAPA_REGION_TOTALS = {"upper": 8 + 8 + 4 + 2, "middle": 5 + 4 + 4 + 2, "lower": 4 + 4 + 4 + 2}
+
+# Per-กลาป รูป counts, per source lines 977-1099 -- cross-checked independently
+# of kalapas.yaml's authored rupaIds lists, so a copy-paste mistake in either
+# place fails loudly instead of silently agreeing with itself.
+_EXPECTED_KALAPA_COUNTS = {
+    "kamma-cakkhu-dasaka": 10, "kamma-sota-dasaka": 10, "kamma-ghana-dasaka": 10,
+    "kamma-jivha-dasaka": 10, "kamma-kaya-dasaka": 10, "kamma-itthibhava-dasaka": 10,
+    "kamma-purisabhava-dasaka": 10, "kamma-vatthu-dasaka": 10, "kamma-jivita-navaka": 9,
+    "citta-suddhatthaka": 8, "citta-sadda-navaka": 9, "citta-kayavinnatti-navaka": 9,
+    "citta-vacivinnatti-sadda-dasaka": 10, "citta-lahutadi-ekadasaka": 11,
+    "citta-sadda-lahutadi-dvadasaka": 12, "citta-kayavinnatti-lahutadi-dvadasaka": 12,
+    "citta-vacivinnatti-sadda-lahutadi-terasaka": 13,
+    "utu-suddhatthaka": 8, "utu-sadda-navaka": 9, "utu-lahutadi-ekadasaka": 11,
+    "utu-sadda-lahutadi-dvadasaka": 12,
+    "ahara-suddhatthaka": 8, "ahara-lahutadi-ekadasaka": 11,
+}
+
 
 def main():
     cittas = load("cittas.yaml")
     cetasikas = load("cetasikas.yaml")
     rupas = load("rupas.yaml")["rupas"]
+    kalapas = load("kalapas.yaml")["kalapas"]
     cetasika_ids = {c["id"] for c in cetasikas}
     cetasika_by_id = {c["id"]: c for c in cetasikas}
 
@@ -402,6 +480,41 @@ def main():
             if len(ids) != expected:
                 errors.append(f"จิตตชรูปนัย {key!r} ({label}): count {len(ids)} != expected {expected}")
 
+        kalapa_ids = [k["id"] for k in kalapas]
+        if len(kalapa_ids) != len(set(kalapa_ids)):
+            errors.append("kalapas.yaml: has duplicate กลาป ids")
+        if len(kalapas) != 23:
+            errors.append(f"รูปกลาป total {len(kalapas)} != expected 23")
+        for kalapa in kalapas:
+            unknown = set(kalapa["rupaIds"]) - set(rupa_ids)
+            if unknown:
+                errors.append(f"{kalapa['id']}: unknown รูป id(s) {unknown}")
+                continue
+            if len(kalapa["rupaIds"]) != len(set(kalapa["rupaIds"])):
+                errors.append(f"{kalapa['id']}: has duplicate รูป ids in its list")
+            expected_count = _EXPECTED_KALAPA_COUNTS.get(kalapa["id"])
+            if expected_count is None:
+                errors.append(f"{kalapa['id']}: no entry in _EXPECTED_KALAPA_COUNTS")
+            elif len(kalapa["rupaIds"]) != expected_count:
+                errors.append(
+                    f"{kalapa['id']}: รูป count {len(kalapa['rupaIds'])} != expected {expected_count}"
+                )
+
+        kalapa_class_totals = Counter(k["class"] for k in kalapas)
+        if dict(kalapa_class_totals) != _EXPECTED_KALAPA_CLASS_TOTALS:
+            errors.append(
+                f"รูปกลาปนัย class totals {dict(kalapa_class_totals)} != expected {_EXPECTED_KALAPA_CLASS_TOTALS}"
+            )
+
+        if not errors:
+            for region_key, (region_label, predicate) in _KALAPA_REGIONS.items():
+                actual = sum(1 for k in kalapas if predicate(k))
+                expected = _EXPECTED_KALAPA_REGION_TOTALS[region_key]
+                if actual != expected:
+                    errors.append(
+                        f"รูปกลาปนัย region {region_key!r} ({region_label}): count {actual} != expected {expected}"
+                    )
+
     if errors:
         print("Data validation failed:", file=sys.stderr)
         for e in errors:
@@ -480,6 +593,20 @@ def main():
     always_ineligible = _always_ineligible_citta_ids(cittas)
     citta_eligibility = {c["id"]: c["id"] not in always_ineligible for c in cittas}
 
+    # รูปกลาปนัย: per-กลาป region membership (for the rupa.html กลาปนัย tab's
+    # region filter) + reverse index รูป -> [กลาป ids] (for the bidirectional
+    # click, mirroring rupaSamutthana's shape).
+    kalapa_regions_out = {
+        k["id"]: [
+            region_key for region_key, (_, predicate) in _KALAPA_REGIONS.items() if predicate(k)
+        ]
+        for k in kalapas
+    }
+    rupa_to_kalapas = {r["id"]: [] for r in rupas}
+    for kalapa in kalapas:
+        for rid in kalapa["rupaIds"]:
+            rupa_to_kalapas[rid].append(kalapa["id"])
+
     output = {
         "cittas": cittas,
         "cetasikas": cetasikas,
@@ -492,6 +619,11 @@ def main():
         "rupaSamutthanaCauses": rupa_samutthana_causes,
         "cittajaActivities": cittaja_activities_out,
         "cittaEligibility": citta_eligibility,
+        "kalapas": kalapas,
+        "kalapaClassLabels": _KALAPA_CLASS_LABELS,
+        "kalapaRegions": kalapa_regions_out,
+        "kalapaRegionLabels": {k: v[0] for k, v in _KALAPA_REGIONS.items()},
+        "rupaToKalapas": rupa_to_kalapas,
     }
 
     out_path = DATA / "data.json"

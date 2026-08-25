@@ -12994,5 +12994,830 @@
     "arahatta-phala-ตติยฌาน": true,
     "arahatta-phala-จตุตถฌาน": true,
     "arahatta-phala-ปัญจมฌาน": true
+  },
+  "kalapas": [
+    {
+      "id": "kamma-cakkhu-dasaka",
+      "thai": "จักขุทสกกลาป",
+      "class": "kamma",
+      "order": 1,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "cakkhu-pasada"
+      ]
+    },
+    {
+      "id": "kamma-sota-dasaka",
+      "thai": "โสตทสกกลาป",
+      "class": "kamma",
+      "order": 2,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "sota-pasada"
+      ]
+    },
+    {
+      "id": "kamma-ghana-dasaka",
+      "thai": "ฆานทสกกลาป",
+      "class": "kamma",
+      "order": 3,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "ghana-pasada"
+      ]
+    },
+    {
+      "id": "kamma-jivha-dasaka",
+      "thai": "ชิวหาทสกกลาป",
+      "class": "kamma",
+      "order": 4,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "jivha-pasada"
+      ]
+    },
+    {
+      "id": "kamma-kaya-dasaka",
+      "thai": "กายทสกกลาป",
+      "class": "kamma",
+      "order": 5,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "kaya-pasada"
+      ]
+    },
+    {
+      "id": "kamma-itthibhava-dasaka",
+      "thai": "อิตถีภาวทสกกลาป",
+      "class": "kamma",
+      "order": 6,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "itthi-bhava"
+      ]
+    },
+    {
+      "id": "kamma-purisabhava-dasaka",
+      "thai": "ปุริสภาวทสกกลาป",
+      "class": "kamma",
+      "order": 7,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "purisa-bhava"
+      ]
+    },
+    {
+      "id": "kamma-vatthu-dasaka",
+      "thai": "วัตถุทสกกลาป",
+      "class": "kamma",
+      "order": 8,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya",
+        "hadaya-vatthu"
+      ]
+    },
+    {
+      "id": "kamma-jivita-navaka",
+      "thai": "ชีวิตนวกกลาป",
+      "class": "kamma",
+      "order": 9,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "jivitindriya"
+      ]
+    },
+    {
+      "id": "citta-suddhatthaka",
+      "thai": "สุทธัฏฐกกลาป",
+      "class": "citta",
+      "order": 1,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara"
+      ]
+    },
+    {
+      "id": "citta-sadda-navaka",
+      "thai": "สัททนวกกลาป",
+      "class": "citta",
+      "order": 2,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "sadda-rammana"
+      ],
+      "footnotes": [
+        {
+          "title": "จิตตชกลาป ๖ หรือ ๘",
+          "body": "จิตตชกลาป ๘ ที่แสดงนี้ตามวิสุทธิมรรคอรรถกถา ส่วนอภิธัมมัตถสังคหะแสดงเพียง ๖ กลาป โดยเว้นสัททนวกกลาปนี้และสัททลหุตาทิทวาทสกกลาป (2 กลาปที่มีสัททะร่วมด้วย)"
+        }
+      ]
+    },
+    {
+      "id": "citta-kayavinnatti-navaka",
+      "thai": "กายวิญญัตินวกกลาป",
+      "class": "citta",
+      "order": 3,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "kaya-vinnatti"
+      ]
+    },
+    {
+      "id": "citta-vacivinnatti-sadda-dasaka",
+      "thai": "วจีวิญญัติสัทททสกกลาป",
+      "class": "citta",
+      "order": 4,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "vaci-vinnatti",
+        "sadda-rammana"
+      ]
+    },
+    {
+      "id": "citta-lahutadi-ekadasaka",
+      "thai": "ลหุตาทิเอกาทสกกลาป",
+      "class": "citta",
+      "order": 5,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ]
+    },
+    {
+      "id": "citta-sadda-lahutadi-dvadasaka",
+      "thai": "สัททลหุตาทิทวาทสกกลาป",
+      "class": "citta",
+      "order": 6,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "sadda-rammana",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ],
+      "footnotes": [
+        {
+          "title": "จิตตชกลาป ๖ หรือ ๘",
+          "body": "จิตตชกลาป ๘ ที่แสดงนี้ตามวิสุทธิมรรคอรรถกถา ส่วนอภิธัมมัตถสังคหะแสดงเพียง ๖ กลาป โดยเว้นกลาปนี้และสัททนวกกลาป (2 กลาปที่มีสัททะร่วมด้วย)"
+        }
+      ]
+    },
+    {
+      "id": "citta-kayavinnatti-lahutadi-dvadasaka",
+      "thai": "กายวิญญัติลหุตาทิทวาทสกกลาป",
+      "class": "citta",
+      "order": 7,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "kaya-vinnatti",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ]
+    },
+    {
+      "id": "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "thai": "วจีวิญญัติสัททลหุตาทิเตรสกกลาป",
+      "class": "citta",
+      "order": 8,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "vaci-vinnatti",
+        "sadda-rammana",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ]
+    },
+    {
+      "id": "utu-suddhatthaka",
+      "thai": "สุทธัฏฐกกลาป",
+      "class": "utu",
+      "order": 1,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara"
+      ]
+    },
+    {
+      "id": "utu-sadda-navaka",
+      "thai": "สัททนวกกลาป",
+      "class": "utu",
+      "order": 2,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "sadda-rammana"
+      ]
+    },
+    {
+      "id": "utu-lahutadi-ekadasaka",
+      "thai": "ลหุตาทิเอกาทสกกลาป",
+      "class": "utu",
+      "order": 3,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ]
+    },
+    {
+      "id": "utu-sadda-lahutadi-dvadasaka",
+      "thai": "สัททลหุตาทิทวาทสกกลาป",
+      "class": "utu",
+      "order": 4,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "sadda-rammana",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ]
+    },
+    {
+      "id": "ahara-suddhatthaka",
+      "thai": "สุทธัฏฐกกลาป",
+      "class": "ahara",
+      "order": 1,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara"
+      ]
+    },
+    {
+      "id": "ahara-lahutadi-ekadasaka",
+      "thai": "ลหุตาทิเอกาทสกกลาป",
+      "class": "ahara",
+      "order": 2,
+      "rupaIds": [
+        "pathavi",
+        "apo",
+        "tejo",
+        "vayo",
+        "rupa-rammana",
+        "gandha-rammana",
+        "rasa-rammana",
+        "kabalinkara-ahara",
+        "lahuta",
+        "muduta",
+        "kammannata"
+      ]
+    }
+  ],
+  "kalapaClassLabels": {
+    "kamma": "กัมมชกลาป",
+    "citta": "จิตตชกลาป",
+    "utu": "อุตุชกลาป",
+    "ahara": "อาหารชกลาป"
+  },
+  "kalapaRegions": {
+    "kamma-cakkhu-dasaka": [
+      "upper"
+    ],
+    "kamma-sota-dasaka": [
+      "upper"
+    ],
+    "kamma-ghana-dasaka": [
+      "upper"
+    ],
+    "kamma-jivha-dasaka": [
+      "upper"
+    ],
+    "kamma-kaya-dasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "kamma-itthibhava-dasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "kamma-purisabhava-dasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "kamma-vatthu-dasaka": [
+      "middle"
+    ],
+    "kamma-jivita-navaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "citta-suddhatthaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "citta-sadda-navaka": [
+      "upper"
+    ],
+    "citta-kayavinnatti-navaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "citta-vacivinnatti-sadda-dasaka": [
+      "upper"
+    ],
+    "citta-lahutadi-ekadasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "citta-sadda-lahutadi-dvadasaka": [
+      "upper"
+    ],
+    "citta-kayavinnatti-lahutadi-dvadasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "citta-vacivinnatti-sadda-lahutadi-terasaka": [
+      "upper"
+    ],
+    "utu-suddhatthaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "utu-sadda-navaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "utu-lahutadi-ekadasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "utu-sadda-lahutadi-dvadasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "ahara-suddhatthaka": [
+      "upper",
+      "middle",
+      "lower"
+    ],
+    "ahara-lahutadi-ekadasaka": [
+      "upper",
+      "middle",
+      "lower"
+    ]
+  },
+  "kalapaRegionLabels": {
+    "upper": "อุปริมกาย",
+    "middle": "มัชฌิมกาย",
+    "lower": "เหฏฐิมกาย"
+  },
+  "rupaToKalapas": {
+    "pathavi": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "apo": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "tejo": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "vayo": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "cakkhu-pasada": [
+      "kamma-cakkhu-dasaka"
+    ],
+    "sota-pasada": [
+      "kamma-sota-dasaka"
+    ],
+    "ghana-pasada": [
+      "kamma-ghana-dasaka"
+    ],
+    "jivha-pasada": [
+      "kamma-jivha-dasaka"
+    ],
+    "kaya-pasada": [
+      "kamma-kaya-dasaka"
+    ],
+    "rupa-rammana": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "sadda-rammana": [
+      "citta-sadda-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-sadda-navaka",
+      "utu-sadda-lahutadi-dvadasaka"
+    ],
+    "gandha-rammana": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "rasa-rammana": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "itthi-bhava": [
+      "kamma-itthibhava-dasaka"
+    ],
+    "purisa-bhava": [
+      "kamma-purisabhava-dasaka"
+    ],
+    "hadaya-vatthu": [
+      "kamma-vatthu-dasaka"
+    ],
+    "jivitindriya": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka"
+    ],
+    "kabalinkara-ahara": [
+      "kamma-cakkhu-dasaka",
+      "kamma-sota-dasaka",
+      "kamma-ghana-dasaka",
+      "kamma-jivha-dasaka",
+      "kamma-kaya-dasaka",
+      "kamma-itthibhava-dasaka",
+      "kamma-purisabhava-dasaka",
+      "kamma-vatthu-dasaka",
+      "kamma-jivita-navaka",
+      "citta-suddhatthaka",
+      "citta-sadda-navaka",
+      "citta-kayavinnatti-navaka",
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-suddhatthaka",
+      "utu-sadda-navaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-suddhatthaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "akasadhatu": [],
+    "kaya-vinnatti": [
+      "citta-kayavinnatti-navaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka"
+    ],
+    "vaci-vinnatti": [
+      "citta-vacivinnatti-sadda-dasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka"
+    ],
+    "lahuta": [
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "muduta": [
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "kammannata": [
+      "citta-lahutadi-ekadasaka",
+      "citta-sadda-lahutadi-dvadasaka",
+      "citta-kayavinnatti-lahutadi-dvadasaka",
+      "citta-vacivinnatti-sadda-lahutadi-terasaka",
+      "utu-lahutadi-ekadasaka",
+      "utu-sadda-lahutadi-dvadasaka",
+      "ahara-lahutadi-ekadasaka"
+    ],
+    "upacaya": [],
+    "santati": [],
+    "jarata": [],
+    "aniccata": []
   }
 }

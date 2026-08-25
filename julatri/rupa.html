@@ -31,6 +31,10 @@
     จิตตชรูปนัย
     <span class="mode-hint">จิต → จิตตชกิจ</span>
   </button>
+  <button class="mode-btn" data-mode="kalapa" role="tab" aria-selected="false">
+    รูปกลาปนัย
+    <span class="mode-hint">รูป → กลาป</span>
+  </button>
 </nav>
 
 <div class="lens-overlay" id="rupa-lens-overlay">
@@ -47,6 +51,14 @@
   <span class="legend-swatch samutthana-ekanta">เอกันตะ (๑๑) — เกิดจากสมุฏฐานเดียวเท่านั้น</span>
   <span class="legend-swatch samutthana-anekanta">อเนกันตะ (๑๓) — เกิดได้จากหลายสมุฏฐาน</span>
   <span class="legend-swatch samutthana-nakutoci">นกุโตจิ (๔) — ไม่มีสมุฏฐาน (ลักขณรูป)</span>
+</div>
+
+<div class="lens-overlay" id="kalapa-region-filter" hidden>
+  <span>กรอง (กาย ๓ ส่วน):</span>
+  <button class="region-btn active" data-region="" type="button">ทั้งหมด</button>
+  <button class="region-btn" data-region="upper" type="button">อุปริมกาย</button>
+  <button class="region-btn" data-region="middle" type="button">มัชฌิมกาย</button>
+  <button class="region-btn" data-region="lower" type="button">เหฏฐิมกาย</button>
 </div>
 
 <main class="rupa-main">
@@ -72,6 +84,11 @@
   <section class="panel" id="cittaja-citta-panel" hidden>
     <h2>จิต <span class="panel-count" id="cittaja-citta-count"></span></h2>
     <div id="cittaja-citta-groups"></div>
+  </section>
+
+  <section class="panel" id="kalapa-panel" hidden>
+    <h2>กลาป <span class="panel-count" id="kalapa-count"></span></h2>
+    <div id="kalapa-groups"></div>
   </section>
 </main>
 

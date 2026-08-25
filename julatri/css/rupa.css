@@ -18,7 +18,7 @@ main.rupa-main {
    in row 2 without this. */
 #rupa-panel, #cittaja-activity-panel { grid-column: 1; grid-row: 1; }
 #info-panel { grid-column: 2; grid-row: 1; }
-#samutthana-panel, #cittaja-citta-panel { grid-column: 3; grid-row: 1; }
+#samutthana-panel, #cittaja-citta-panel, #kalapa-panel { grid-column: 3; grid-row: 1; }
 
 /* cittaja mode's right panel (121 จิต, rows up to 8-wide) needs more room
    than the default narrow 1fr track, but not the full remaining space --
@@ -31,7 +31,7 @@ main.rupa-main.mode-cittaja {
 
 @media (max-width: 860px) {
   main.rupa-main { grid-template-columns: 1fr; }
-  #rupa-panel, #cittaja-activity-panel, #info-panel, #samutthana-panel, #cittaja-citta-panel {
+  #rupa-panel, #cittaja-activity-panel, #info-panel, #samutthana-panel, #cittaja-citta-panel, #kalapa-panel {
     grid-column: 1;
   }
   .info-panel { order: -1; position: static; }
@@ -84,10 +84,10 @@ main.rupa-main.mode-cittaja {
 .legend-swatch.samutthana-anekanta::before { border-color: var(--cetasika-color); }
 .legend-swatch.samutthana-nakutoci::before { border-color: var(--text-muted); }
 
-/* Cause nodes (สมุฏฐานนัย right panel) and activity nodes (จิตตชรูปนัย left
-   panel) share a third node color, distinct from รูป (purple) and เจตสิก
-   (green). */
-.cause-node, .activity-node {
+/* Cause nodes (สมุฏฐานนัย right panel), activity nodes (จิตตชรูปนัย left
+   panel), and กลาป nodes (กลาปนัย right panel) share a third node color,
+   distinct from รูป (purple) and เจตสิก (green). */
+.cause-node, .activity-node, .kalapa-node {
   --node-color: var(--rupa-cause-color);
   --node-soft: var(--rupa-cause-soft);
   width: 4.4rem;
@@ -95,8 +95,41 @@ main.rupa-main.mode-cittaja {
   font-size: 0.72rem;
 }
 
+/* กลาป names run long (e.g. วจีวิญญัติสัททลหุตาทิเตรสกกลาป) -- a touch wider
+   than the other cause/activity nodes so the text doesn't overflow badly. */
+.kalapa-node {
+  width: 5.2rem;
+  height: 5.2rem;
+  font-size: 0.66rem;
+}
+
+/* รูปกลาปนัย's กาย ๓ ส่วน region filter -- reuses .lens-overlay's layout/
+   select/button base styling (see style.css), just needs its own active
+   state since it's a group of plain buttons, not a <select>. */
+.region-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .node.is-ineligible {
   opacity: var(--dim-opacity);
   cursor: default;
   pointer-events: none;
+}
+
+/* สมุฏฐานนัย's causes panel (5 items), จิตตชรูปนัย's activity panel (7
+   items), and กลาปนัย's กลาป panel (23 items) are the "selector" side next
+   to a long list (28 รูป / 121 จิต) -- without sticky they scroll out of
+   view while the long list is still being scrolled, unlike #info-panel
+   which already sticks. */
+#samutthana-panel, #cittaja-activity-panel, #kalapa-panel {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+@media (max-width: 860px) {
+  #samutthana-panel, #cittaja-activity-panel, #kalapa-panel { position: static; max-height: none; overflow-y: visible; }
 }

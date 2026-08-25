@@ -1,0 +1,181 @@
+# รูปกลาป ๒๓ — รูปกลาปนัย (หมวดที่ ๔ ของปริจเฉทที่ ๖)
+# Source: mainbookjultri/03-ปริจเฉทที่6-รูปปรมัตถ์.md, lines 936-1115.
+#
+# 4 classes, in source order: กัมมชกลาป๙ (L975-995) / จิตตชกลาป๘ (L1017-1033) /
+# อุตุชกลาป๔ (L1061-1073) / อาหารชกลาป๒ (L1095-1101). rupaIds reference the
+# existing 28 รูป ids in data/rupas.yaml (no new รูป entries needed -- a กลาป
+# is purely a bundling of existing รูป). Region membership (อุปริมกาย/
+# มัชฌิมกาย/เหฏฐิมกาย) is NOT stored per-entry here; it's a small enough,
+# fully-explicit set of exceptions (7 total across all 23 กลาป, mostly "all 3
+# regions") that it's hardcoded in scripts/build_data.py instead, mirroring
+# how _RUPA_SAMUTTHANA is hardcoded there rather than duplicated into yaml.
+#
+# จิตตชกลาป ๘ note (L1033): this book follows the Visuddhimagga Aṭṭhakathā's
+# count of 8. The Abhidhammatthasangaha itself lists only 6, omitting
+# citta-sadda-navaka and citta-sadda-lahutadi-dvadasaka (the 2 "sound" ones)
+# -- surfaced as a footnote in the UI, per the same book-is-primary/alt-noted
+# convention already used for the visaya (๗ หรือ ๔) and vikara (๕ หรือ ๓)
+# alt readings in rupas.yaml. Confirmed with user 2026-08-25 session.
+#
+# กัมมชกลาป bhava-dasaka note: อิตถีภาวทสกกลาป/ปุริสภาวทสกกลาป are modeled as
+# 2 full separate entries throughout (matching how rupas.yaml always keeps
+# อิตถีภาว/ปุริสภาวะ as 2 separate รูป, and matching this นัย's own 9-กลาป
+# total at L987-989) -- even though a source line explaining "at most 8 in one
+# person" exists (L995, mutual exclusivity by sex) and the region-breakdown
+# text later collapses them to one printed count. Confirmed with user
+# 2026-08-25 session; see build_data.py's _KALAPA_REGIONS comment for how this
+# makes the UI's region totals (8/5/4) diverge from the source's own printed
+# numbers (7/4/3) on purpose.
+
+kalapas:
+  # --- กัมมชกลาป ๙ (L975-995) ---
+  - id: kamma-cakkhu-dasaka
+    thai: จักขุทสกกลาป
+    class: kamma
+    order: 1
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, cakkhu-pasada]
+
+  - id: kamma-sota-dasaka
+    thai: โสตทสกกลาป
+    class: kamma
+    order: 2
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, sota-pasada]
+
+  - id: kamma-ghana-dasaka
+    thai: ฆานทสกกลาป
+    class: kamma
+    order: 3
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, ghana-pasada]
+
+  - id: kamma-jivha-dasaka
+    thai: ชิวหาทสกกลาป
+    class: kamma
+    order: 4
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, jivha-pasada]
+
+  - id: kamma-kaya-dasaka
+    thai: กายทสกกลาป
+    class: kamma
+    order: 5
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, kaya-pasada]
+
+  - id: kamma-itthibhava-dasaka
+    thai: อิตถีภาวทสกกลาป
+    class: kamma
+    order: 6
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, itthi-bhava]
+
+  - id: kamma-purisabhava-dasaka
+    thai: ปุริสภาวทสกกลาป
+    class: kamma
+    order: 7
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, purisa-bhava]
+
+  - id: kamma-vatthu-dasaka
+    thai: วัตถุทสกกลาป
+    class: kamma
+    order: 8
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya, hadaya-vatthu]
+
+  - id: kamma-jivita-navaka
+    thai: ชีวิตนวกกลาป
+    class: kamma
+    order: 9
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, jivitindriya]
+
+  # --- จิตตชกลาป ๘ (L1017-1033), มูลกลาป ๑-๔ / มูลีกลาป ๕-๘ ---
+  - id: citta-suddhatthaka
+    thai: สุทธัฏฐกกลาป
+    class: citta
+    order: 1
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara]
+
+  - id: citta-sadda-navaka
+    thai: สัททนวกกลาป
+    class: citta
+    order: 2
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, sadda-rammana]
+    footnotes:
+      - title: "จิตตชกลาป ๖ หรือ ๘"
+        body: >-
+          จิตตชกลาป ๘ ที่แสดงนี้ตามวิสุทธิมรรคอรรถกถา ส่วนอภิธัมมัตถสังคหะแสดงเพียง ๖
+          กลาป โดยเว้นสัททนวกกลาปนี้และสัททลหุตาทิทวาทสกกลาป (2 กลาปที่มีสัททะร่วมด้วย)
+
+  - id: citta-kayavinnatti-navaka
+    thai: กายวิญญัตินวกกลาป
+    class: citta
+    order: 3
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, kaya-vinnatti]
+
+  - id: citta-vacivinnatti-sadda-dasaka
+    thai: วจีวิญญัติสัทททสกกลาป
+    class: citta
+    order: 4
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, vaci-vinnatti, sadda-rammana]
+
+  - id: citta-lahutadi-ekadasaka
+    thai: ลหุตาทิเอกาทสกกลาป
+    class: citta
+    order: 5
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, lahuta, muduta, kammannata]
+
+  - id: citta-sadda-lahutadi-dvadasaka
+    thai: สัททลหุตาทิทวาทสกกลาป
+    class: citta
+    order: 6
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, sadda-rammana, lahuta, muduta, kammannata]
+    footnotes:
+      - title: "จิตตชกลาป ๖ หรือ ๘"
+        body: >-
+          จิตตชกลาป ๘ ที่แสดงนี้ตามวิสุทธิมรรคอรรถกถา ส่วนอภิธัมมัตถสังคหะแสดงเพียง ๖
+          กลาป โดยเว้นกลาปนี้และสัททนวกกลาป (2 กลาปที่มีสัททะร่วมด้วย)
+
+  - id: citta-kayavinnatti-lahutadi-dvadasaka
+    thai: กายวิญญัติลหุตาทิทวาทสกกลาป
+    class: citta
+    order: 7
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, kaya-vinnatti, lahuta, muduta, kammannata]
+
+  - id: citta-vacivinnatti-sadda-lahutadi-terasaka
+    thai: วจีวิญญัติสัททลหุตาทิเตรสกกลาป
+    class: citta
+    order: 8
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, vaci-vinnatti, sadda-rammana, lahuta, muduta, kammannata]
+
+  # --- อุตุชกลาป ๔ (L1061-1073), มูลกลาป ๑-๒ / มูลีกลาป ๓-๔ ---
+  - id: utu-suddhatthaka
+    thai: สุทธัฏฐกกลาป
+    class: utu
+    order: 1
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara]
+
+  - id: utu-sadda-navaka
+    thai: สัททนวกกลาป
+    class: utu
+    order: 2
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, sadda-rammana]
+
+  - id: utu-lahutadi-ekadasaka
+    thai: ลหุตาทิเอกาทสกกลาป
+    class: utu
+    order: 3
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, lahuta, muduta, kammannata]
+
+  - id: utu-sadda-lahutadi-dvadasaka
+    thai: สัททลหุตาทิทวาทสกกลาป
+    class: utu
+    order: 4
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, sadda-rammana, lahuta, muduta, kammannata]
+
+  # --- อาหารชกลาป ๒ (L1095-1101), มูลกลาป ๑ / มูลีกลาป ๒ ---
+  - id: ahara-suddhatthaka
+    thai: สุทธัฏฐกกลาป
+    class: ahara
+    order: 1
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara]
+
+  - id: ahara-lahutadi-ekadasaka
+    thai: ลหุตาทิเอกาทสกกลาป
+    class: ahara
+    order: 2
+    rupaIds: [pathavi, apo, tejo, vayo, rupa-rammana, gandha-rammana, rasa-rammana, kabalinkara-ahara, lahuta, muduta, kammannata]

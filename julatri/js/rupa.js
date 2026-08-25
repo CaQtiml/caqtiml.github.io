@@ -78,8 +78,9 @@ const CITTA_GROUPS = [
 
 let DATA = null;
 let selectedId = null;
-let rupaMode = "summary"; // 'summary' | 'samutthana' | 'cittaja'
-let pinned = null; // { type: 'rupa'|'cause'|'activity'|'citta', id: string } | null
+let rupaMode = "summary"; // 'summary' | 'samutthana' | 'cittaja' | 'kalapa'
+let pinned = null; // { type: 'rupa'|'cause'|'activity'|'citta'|'kalapa', id: string } | null
+let kalapaRegion = ""; // '' (all) | 'upper' | 'middle' | 'lower'
 
 const rupaGroupsEl = document.getElementById("rupa-groups");
 const infoPanel = document.getElementById("info-panel");
@@ -91,6 +92,9 @@ const cittajaActivityPanel = document.getElementById("cittaja-activity-panel");
 const cittajaActivityGroupsEl = document.getElementById("cittaja-activity-groups");
 const cittajaCittaPanel = document.getElementById("cittaja-citta-panel");
 const cittajaCittaGroupsEl = document.getElementById("cittaja-citta-groups");
+const kalapaPanel = document.getElementById("kalapa-panel");
+const kalapaGroupsEl = document.getElementById("kalapa-groups");
+const kalapaRegionFilter = document.getElementById("kalapa-region-filter");
 
 function byId(id) {
   return DATA.rupas.find((r) => r.id === id);
@@ -102,6 +106,25 @@ function groupDef(id) {
 
 function cittaById(id) {
   return DATA.cittas.find((c) => c.id === id);
+}
+
+function kalapaById(id) {
+  return DATA.kalapas.find((k) => k.id === id);
+}
+
+// อธิบายพิเศษ: duplicated from js/app.js's footnotesHtml (same
+// no-shared-module reason as CITTA_GROUPS above).
+function footnotesHtml(item) {
+  if (!item.footnotes || !item.footnotes.length) return "";
+  return item.footnotes
+    .map(
+      (fn) => `
+    <details class="info-footnote">
+      <summary>อธิบายเพิ่มเติม: ${fn.title}</summary>
+      <p>${fn.body}</p>
+    </details>`
+    )
+    .join("");
 }
 
 function render() {
@@ -157,6 +180,8 @@ function makeNode(rupa) {
       selectedId = selectedId === rupa.id ? null : rupa.id;
       applySelection();
     } else if (rupaMode === "samutthana") {
+      togglePinned("rupa", rupa.id);
+    } else if (rupaMode === "kalapa") {
       togglePinned("rupa", rupa.id);
     }
   });
@@ -232,6 +257,7 @@ function togglePinned(type, id) {
   pinned = pinned && pinned.type === type && pinned.id === id ? null : { type, id };
   if (rupaMode === "samutthana") applySamutthanaHighlight();
   else if (rupaMode === "cittaja") applyCittajaHighlight();
+  else if (rupaMode === "kalapa") applyKalapaHighlight();
 }
 
 // --- รูปสมุฏฐานนัย (causal origin, bidirectional) ---
@@ -440,6 +466,115 @@ function showCittajaCittaInfo(cittaId, activityKeys) {
   `;
 }
 
+// --- รูปกลาปนัย (bundling, bidirectional) ---
+
+const KALAPA_CLASS_ORDER = ["kamma", "citta", "utu", "ahara"];
+
+function renderKalapaPanel() {
+  const kalapas = DATA.kalapas
+    .filter((k) => !kalapaRegion || DATA.kalapaRegions[k.id].includes(kalapaRegion))
+    .slice()
+    .sort((a, b) => a.order - b.order);
+
+  document.getElementById("kalapa-count").textContent = `(${kalapas.length}/${DATA.kalapas.length})`;
+  kalapaGroupsEl.innerHTML = "";
+
+  KALAPA_CLASS_ORDER.forEach((cls) => {
+    const members = kalapas.filter((k) => k.class === cls);
+    if (!members.length) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "rupa-group";
+    const label = document.createElement("p");
+    label.className = "group-label";
+    label.textContent = `${DATA.kalapaClassLabels[cls]} (${members.length})`;
+    wrap.appendChild(label);
+
+    const row = document.createElement("div");
+    row.className = "circle-row";
+    members.forEach((k) => {
+      const el = document.createElement("div");
+      el.className = "node kalapa-node";
+      el.dataset.id = k.id;
+      el.title = k.thai;
+      el.textContent = k.thai;
+      el.addEventListener("click", () => togglePinned("kalapa", k.id));
+      row.appendChild(el);
+    });
+    wrap.appendChild(row);
+    kalapaGroupsEl.appendChild(wrap);
+  });
+
+  // A previously-pinned กลาป may have just been filtered out of view.
+  if (pinned && pinned.type === "kalapa" && !kalapas.some((k) => k.id === pinned.id)) {
+    pinned = null;
+  }
+}
+
+function applyKalapaHighlight() {
+  clearNodeStates(".rupa-node");
+  clearNodeStates(".kalapa-node");
+  if (!pinned) {
+    showInfoPlaceholder();
+    return;
+  }
+  const { type, id } = pinned;
+  if (type === "rupa") {
+    const kalapaIds = DATA.rupaToKalapas[id].filter(
+      (kid) => !kalapaRegion || DATA.kalapaRegions[kid].includes(kalapaRegion)
+    );
+    highlightSet(".rupa-node", [id], true);
+    highlightSet(".kalapa-node", kalapaIds, false);
+    dimUnrelated(".kalapa-node", kalapaIds);
+    dimUnrelated(".rupa-node", [id]);
+    showKalapaRupaInfo(id, kalapaIds);
+  } else if (type === "kalapa") {
+    const kalapa = kalapaById(id);
+    highlightSet(".kalapa-node", [id], true);
+    highlightSet(".rupa-node", kalapa.rupaIds, false);
+    dimUnrelated(".rupa-node", kalapa.rupaIds);
+    dimUnrelated(".kalapa-node", [id]);
+    showKalapaInfo(kalapa);
+  }
+}
+
+function showKalapaRupaInfo(rupaId, kalapaIds) {
+  const rupa = byId(rupaId);
+  const labels = kalapaIds.map((kid) => {
+    const k = kalapaById(kid);
+    return `${k.thai} (${DATA.kalapaClassLabels[k.class]})`;
+  });
+  infoPanel.innerHTML = `
+    <h3 class="info-title">${rupa.thai}</h3>
+    <p class="info-related-label">เป็นองค์ประกอบของรูปกลาป ${kalapaIds.length} กลาป:</p>
+    <ul class="info-related-list">${labels.map((l) => `<li>${l}</li>`).join("")}</ul>
+  `;
+}
+
+function showKalapaInfo(kalapa) {
+  const groups = summarizeByGroup(kalapa.rupaIds, RUPA_GROUPS, DATA.rupas);
+  const regions = DATA.kalapaRegions[kalapa.id].map((r) => DATA.kalapaRegionLabels[r]);
+  infoPanel.innerHTML = `
+    <h3 class="info-title">${kalapa.thai}</h3>
+    <p class="info-pali">${DATA.kalapaClassLabels[kalapa.class]}</p>
+    <p class="info-related-label">พบในกาย:</p>
+    <p class="info-meaning">${regions.join(", ")}</p>
+    <p class="info-related-label">ประกอบด้วยรูป ${kalapa.rupaIds.length} รูป (ตามหมวด):</p>
+    ${renderGroupList(groups)}
+    ${footnotesHtml(kalapa)}
+  `;
+}
+
+document.querySelectorAll(".region-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".region-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    kalapaRegion = btn.dataset.region;
+    renderKalapaPanel();
+    applyKalapaHighlight();
+  });
+});
+
 // --- mode switching ---
 
 function updateModeVisibility() {
@@ -447,8 +582,10 @@ function updateModeVisibility() {
   samutthanaPanel.hidden = rupaMode !== "samutthana";
   cittajaActivityPanel.hidden = rupaMode !== "cittaja";
   cittajaCittaPanel.hidden = rupaMode !== "cittaja";
+  kalapaPanel.hidden = rupaMode !== "kalapa";
   document.getElementById("rupa-lens-overlay").hidden = rupaMode !== "summary";
   samutthanaLegend.hidden = rupaMode !== "samutthana";
+  kalapaRegionFilter.hidden = rupaMode !== "kalapa";
   document.querySelector("main.rupa-main").classList.toggle("mode-cittaja", rupaMode === "cittaja");
 }
 
@@ -473,6 +610,9 @@ document.querySelectorAll(".mode-btn").forEach((btn) => {
       applySamutthanaHighlight();
     } else if (rupaMode === "cittaja") {
       applyCittajaHighlight();
+    } else if (rupaMode === "kalapa") {
+      renderKalapaPanel();
+      applyKalapaHighlight();
     }
   });
 });
@@ -538,6 +678,7 @@ fetch("data/data.json")
     applyVibhagaOverlay();
     renderSamutthanaPanel();
     renderCittajaPanels();
+    renderKalapaPanel();
     updateModeVisibility();
   })
   .catch((err) => {
