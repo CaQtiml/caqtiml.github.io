@@ -15,3 +15,7 @@ location: "Uppsala, Sweden"
     - Conducted Tutorials sessions to help students understand how to verify the programs formally using Axiomatic Semantics.
     - Conducted Dafny Lab sessions to help students learn program verification using the Dafny programming language and verifier.
     - Graded Lab Assignments: Using Dafny to write and verify programs from the instructions provided.
+
+![whiteboard1](/images/TA/PT1.jpg)
+
+![whiteboard2](/images/TA/PT2.jpg)

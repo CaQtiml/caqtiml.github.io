@@ -16,13 +16,18 @@ Apart from formal situations, no one in Thailand calls each other with their fir
 
 For any Swedes here, I know that "en/flera mil" means "one/several 10 kilometers". Some feel weird with my nickname, but I don't really want to change it or use another name. Thanks for your understanding!
 
-I am currently a second-year master student in Computer Science at Uppsala University, Sweden. My CS program allows me to choose the track(s) after being admitted to the program. I finally decide to pursue a "programming language" and a "concurrency and parallelism" track. These are some (chosen to be listed here) courses I have taken.
+I just finished my master's degree in Computer Science at Uppsala University, Sweden. My main study focus is on "programming language" and a "concurrency and parallelism". These are some (chosen to be listed here) courses I have taken.
 - [Functional Programming I](https://www.uu.se/en/study/course?query=1DL330) and [Advanced Functional Programming](https://www.uu.se/en/study/course?query=1DL450)
 - [Semantics of Programming Languages](https://www.uu.se/en/study/course?query=1DL311)
 - [Programming Theory](https://www.uu.se/en/study/course?query=1DT034)
 - [Low-Level Parallel Programming](https://www.uu.se/en/study/course?query=1DT116)
 - [Advanced Computer Architecture](https://www.uu.se/en/study/course?query=1DT024)
 - [Data Engineering I](https://www.uu.se/en/study/course?query=1TD169) and [Data Engineering II](https://www.uu.se/en/study/course?query=1TD076)
+- [Accelerating Systems with Programmable Logic Components](https://www.uu.se/en/study/course?query=1DT109)
+- [Modelling for Combinatorial Optimisation](https://www.uu.se/en/study/course?query=1DL451)
+- [Introduction to Image Analysis](https://www.uu.se/en/study/course?query=1MD110)
+
+I plan to add a dedicated page to explain my master thesis, but it is not done yet. For now, you can read my master thesis [here](http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-597391). My thesis is a part of Pyrona project, consisting of 3 master theses and 2 bachelor theses in VT2026. [This](/files/master/shared_presentation_pyrona.pdf) is our shared presentation deck that introduces the project background. [This](/files/master/msc_presentation_resource.pdf) is my presentation slide deck. This version includes more slides than the one I used in an actual presentation because I want to make it more understandable for the audience who are not familiar with this topic.
 
 My Former Study
 -----------------
@@ -43,7 +48,7 @@ I also have an interest in human behavior and psychology. I took two psychology 
 
 I am also studying Swedish language as well. To be honest, I am not that good language learner, but I am currently trying my best. Some of my friends ask me why I learn this language. Well, I now live in Sweden, so I guess I should, shouldn't I? I don't want to always use a Google Translate in my daily life, but it appears that I still always use it because there are still a lot of words I don't know. 
 
-I have already finished two basic Swedish courses offered by Uppsala University. De säger att min språknivå är [A2](/files/A2_SELang.pdf), men jag förstår fortfarande inte talad svenska. Den är för snabb. Om du vill testa min svenska, så är det bara att hälsa och fortsätta prata med mig på svenska! Jag utmanar dig att byt inte till engelska. Jag ser fram emot att, inte plåga utan, öva min svenska med dig. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
+I have already finished basic Swedish courses offered by Uppsala University. De säger att min språknivå är [B1-B2](/files/B1B2_SELang.pdf), men jag förstår fortfarande inte talad svenska. Den är för snabb. Om du vill testa min svenska, så är det bara att hälsa och fortsätta prata med mig på svenska! Jag utmanar dig att byt inte till engelska. Jag ser fram emot att, inte plåga utan, öva min svenska med dig. I am currently trying to watch [Bäst i Test](https://www.tv4play.se/program/656771bf6316036b7178/bast-i-test) with a Swedish subtitle. Well, not that bad, I would say!
 
 <!-- Support Me!
 --------------------
