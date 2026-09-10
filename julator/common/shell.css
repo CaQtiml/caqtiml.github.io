@@ -1,0 +1,449 @@
+/* Shared styles for the p3 / p7 tools -- layered on top of common/style.css.
+   Reuses .node / .is-dim / .is-related / .is-selected / .circle-row /
+   .group-label / .panel / .info-* from style.css. */
+
+:root {
+  /* --- เวทนา ๕ (vedana scheme) ---
+     สุข and โสมนัส are both "pleasant" (โสมนัส collapses into สุข in เวทนา ๓),
+     so both stay warm -- but separated on the orange (สุข, bodily) vs
+     yellow-gold (โสมนัส, mental) axis, and in lightness, so they don't read
+     as the same colour on the small nodes. */
+  --v-sukha: #c2611b;
+  --v-dukkha: #9c3b34;
+  --v-somanassa: #e6bb4c;
+  --v-domanassa: #7d5aa6;
+  --v-upekkha: #6b7280;
+  --v-sukha-soft: #f2ded0;
+  --v-dukkha-soft: #eddad8;
+  --v-somanassa-soft: #f9efd3;
+  --v-domanassa-soft: #e6dff1;
+  --v-upekkha-soft: #e3e5e8;
+
+  /* --- เหตุ ๖ (hetu scheme) ---
+     the 3 อกุศลเหตุ read warm/heavy, the 3 โสภณเหตุ read cool/clear;
+     distinct within each triad. */
+  --h-lobha: #b0345a;   /* โลภเหตุ  -- crimson-magenta */
+  --h-dosa: #c1442e;    /* โทสเหตุ  -- red */
+  --h-moha: #7a6a53;    /* โมหเหตุ  -- murky brown-grey */
+  --h-alobha: #2f8f6f;  /* อโลภเหตุ -- teal-green */
+  --h-adosa: #5a9e3d;   /* อโทสเหตุ -- leaf green */
+  --h-amoha: #3f7cc4;   /* อโมหเหตุ -- blue (ปัญญา) */
+  --h-lobha-soft: #f3d9e2;
+  --h-dosa-soft: #f4ddd6;
+  --h-moha-soft: #e9e4da;
+  --h-alobha-soft: #d5ece4;
+  --h-adosa-soft: #dcecd2;
+  --h-amoha-soft: #d9e6f4;
+
+  /* --- กิจ ๑๔ (kicca scheme) ---
+     grouped by phase: life-continuum trio (patisandhi/bhavanga/cuti) blue,
+     avajjana violet, the 5 ปัญจวิญญาณกิจ a warm ramp, sampaticchana/santirana/
+     votthapana green, javana a strong magenta (the karmic apex), tadarammana tan. */
+  --k-patisandhi: #3f6fc4;
+  --k-bhavanga: #4f8fbf;
+  --k-avajjana: #8a56b8;
+  --k-dassana: #c98a2e;
+  --k-savana: #cf6f3a;
+  --k-ghayana: #c1553f;
+  --k-sayana: #b34a63;
+  --k-phusana: #9c5347;
+  --k-sampaticchana: #4f9e6a;
+  --k-santirana: #3f9e8c;
+  --k-votthapana: #6f9e3d;
+  --k-javana: #b0345a;
+  --k-tadarammana: #8a7a4e;
+  --k-cuti: #5b5fa8;
+  --k-patisandhi-soft: #d9e2f4;
+  --k-bhavanga-soft: #dceaf2;
+  --k-avajjana-soft: #e7dcf1;
+  --k-dassana-soft: #f4e6cf;
+  --k-savana-soft: #f4e0d2;
+  --k-ghayana-soft: #f2dcd5;
+  --k-sayana-soft: #f0dae0;
+  --k-phusana-soft: #ecdcd7;
+  --k-sampaticchana-soft: #d7ece0;
+  --k-santirana-soft: #d5ece7;
+  --k-votthapana-soft: #e0ecd2;
+  --k-javana-soft: #f3d9e2;
+  --k-tadarammana-soft: #ebe6d5;
+  --k-cuti-soft: #dfdff0;
+
+  /* --- ทวาร ๖ (dvara scheme) ---
+     5 physical doors get vivid hues, มโนทวาร a neutral slate (the different one). */
+  --d-cakkhu: #3f7cc4;
+  --d-sota: #4f9e6a;
+  --d-ghana: #c98a2e;
+  --d-jivha: #b34a63;
+  --d-kaya: #8a56b8;
+  --d-mano: #64707e;
+  --d-cakkhu-soft: #d9e6f4;
+  --d-sota-soft: #d7ece0;
+  --d-ghana-soft: #f4e6cf;
+  --d-jivha-soft: #f0dae0;
+  --d-kaya-soft: #e7dcf1;
+  --d-mano-soft: #e2e5e9;
+
+  /* --- อารมณ์ ๖ (arammana scheme) ---
+     รูป/สัทท/คันธ/รส/โผฏฐัพพารมณ์ echo the 5 sense hues of ทวาร ๖ so
+     จักขุทวาร<->รูปารมณ์ etc. read as the same colour across the two tabs;
+     ธัมมารมณ์ gets a teal-grey (the wide "everything else" object). */
+  --am-rupa: #3f7cc4;
+  --am-satta: #4f9e6a;
+  --am-gandha: #c98a2e;
+  --am-rasa: #b34a63;
+  --am-photthabba: #8a56b8;
+  --am-dhamma: #5b8f8a;
+  --am-rupa-soft: #d9e6f4;
+  --am-satta-soft: #d7ece0;
+  --am-gandha-soft: #f4e6cf;
+  --am-rasa-soft: #f0dae0;
+  --am-photthabba-soft: #e7dcf1;
+  --am-dhamma-soft: #dde9e7;
+
+  /* --- วัตถุ ๖ (vatthu scheme) ---
+     the 5 ปสาทวัตถุ line up with the 5 sense doors -- reuse ทวาร's hues;
+     หทัยวัตถุ (the mind base) takes the same neutral slate as มโนทวาร. */
+  --vt-cakkhu: #3f7cc4;
+  --vt-sota: #4f9e6a;
+  --vt-ghana: #c98a2e;
+  --vt-jivha: #b34a63;
+  --vt-kaya: #8a56b8;
+  --vt-hadaya: #64707e;
+  --vt-cakkhu-soft: #d9e6f4;
+  --vt-sota-soft: #d7ece0;
+  --vt-ghana-soft: #f4e6cf;
+  --vt-jivha-soft: #f0dae0;
+  --vt-kaya-soft: #e7dcf1;
+  --vt-hadaya-soft: #e2e5e9;
+
+  --cat-neutral: #6b7280;
+  --cat-neutral-soft: #e3e5e8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --v-sukha: #e28a3e;
+    --v-dukkha: #d9776e;
+    --v-somanassa: #f0d179;
+    --v-domanassa: #b79ce0;
+    --v-upekkha: #a3abb8;
+    --v-sukha-soft: #3c2a1a;
+    --v-dukkha-soft: #3a2725;
+    --v-somanassa-soft: #3f3822;
+    --v-domanassa-soft: #2f2942;
+    --v-upekkha-soft: #2b2e33;
+
+    --h-lobha: #e0799b;
+    --h-dosa: #e58469;
+    --h-moha: #b3a488;
+    --h-alobha: #5cc4a0;
+    --h-adosa: #8fc873;
+    --h-amoha: #79ade6;
+    --h-lobha-soft: #3a2530;
+    --h-dosa-soft: #3a2823;
+    --h-moha-soft: #322e26;
+    --h-alobha-soft: #1f3730;
+    --h-adosa-soft: #263620;
+    --h-amoha-soft: #232f3e;
+
+    --k-patisandhi: #7ba0e0;
+    --k-bhavanga: #82b5d8;
+    --k-avajjana: #b48fe0;
+    --k-dassana: #dcb06a;
+    --k-savana: #e0a06a;
+    --k-ghayana: #d98a72;
+    --k-sayana: #dd8aa0;
+    --k-phusana: #c99184;
+    --k-sampaticchana: #6fc496;
+    --k-santirana: #5cc4b0;
+    --k-votthapana: #9fc873;
+    --k-javana: #e0799b;
+    --k-tadarammana: #c9b98a;
+    --k-cuti: #9296da;
+    --k-patisandhi-soft: #232d3e;
+    --k-bhavanga-soft: #23303a;
+    --k-avajjana-soft: #2f2942;
+    --k-dassana-soft: #3a301c;
+    --k-savana-soft: #3a2c1f;
+    --k-ghayana-soft: #3a2822;
+    --k-sayana-soft: #3a2530;
+    --k-phusana-soft: #342924;
+    --k-sampaticchana-soft: #1f3730;
+    --k-santirana-soft: #1f3733;
+    --k-votthapana-soft: #2a3620;
+    --k-javana-soft: #3a2530;
+    --k-tadarammana-soft: #332f22;
+    --k-cuti-soft: #2b2b42;
+
+    --d-cakkhu: #79ade6;
+    --d-sota: #5cc4a0;
+    --d-ghana: #e0b366;
+    --d-jivha: #e08aa0;
+    --d-kaya: #b79ce0;
+    --d-mano: #a3abb8;
+    --d-cakkhu-soft: #232f3e;
+    --d-sota-soft: #1f3730;
+    --d-ghana-soft: #3a301c;
+    --d-jivha-soft: #3a2530;
+    --d-kaya-soft: #2f2942;
+    --d-mano-soft: #2b2e33;
+
+    --am-rupa: #79ade6;
+    --am-satta: #5cc4a0;
+    --am-gandha: #e0b366;
+    --am-rasa: #e08aa0;
+    --am-photthabba: #b79ce0;
+    --am-dhamma: #7fb8b2;
+    --am-rupa-soft: #232f3e;
+    --am-satta-soft: #1f3730;
+    --am-gandha-soft: #3a301c;
+    --am-rasa-soft: #3a2530;
+    --am-photthabba-soft: #2f2942;
+    --am-dhamma-soft: #24332f;
+
+    --vt-cakkhu: #79ade6;
+    --vt-sota: #5cc4a0;
+    --vt-ghana: #e0b366;
+    --vt-jivha: #e08aa0;
+    --vt-kaya: #b79ce0;
+    --vt-hadaya: #a3abb8;
+    --vt-cakkhu-soft: #232f3e;
+    --vt-sota-soft: #1f3730;
+    --vt-ghana-soft: #3a301c;
+    --vt-jivha-soft: #3a2530;
+    --vt-kaya-soft: #2f2942;
+    --vt-hadaya-soft: #2b2e33;
+
+    --cat-neutral: #a3abb8;
+    --cat-neutral-soft: #2b2e33;
+  }
+}
+
+/* --- disabled scheme tabs (schemes not yet built) --- */
+.mode-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.mode-btn:disabled .mode-hint { font-style: italic; }
+
+/* --- เวทนา ๓ / ๕ sub-toggle --- */
+.subaxis-switch {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0 1rem 1rem;
+}
+.subaxis-btn {
+  font-family: inherit;
+  font-size: 0.82rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.subaxis-btn.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* --- natural จิต / เจตสิก groups (julatri layout) --- */
+.natgroup { margin-bottom: 1.1rem; }
+.natgroup:last-child { margin-bottom: 0; }
+.bucket-empty { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+
+/* A partition axis-block tints each node via inline --node-color / --node-soft
+   (app.js, from the scheme's palette). A matrix axis-block leaves the node
+   untinted and shows a strip of category dots instead. */
+.node { flex-direction: column; gap: 0.15rem; }
+.node-label { display: block; }
+.node .tagstrip { display: flex; gap: 2px; min-height: 5px; }
+.node .tagdot { width: 5px; height: 5px; border-radius: 50%; background: var(--dot, var(--v-upekkha)); }
+.node .tagstrip-none::before {
+  content: "";
+  width: 8px;
+  height: 2px;
+  background: var(--border);
+  display: block;
+}
+
+/* --- middle column: category rail + info --- */
+.cat-rail { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.cat-chip {
+  font-family: inherit;
+  text-align: left;
+  font-size: 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--chip, var(--v-upekkha));
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cat-chip .chip-count { color: var(--text-muted); font-size: 0.8rem; }
+.cat-chip.is-selected { background: var(--chip); border-color: var(--chip); color: #fff; }
+.cat-chip.is-selected .chip-count { color: #fff; opacity: 0.85; }
+.cat-chip.is-dim { opacity: var(--dim-opacity); }
+
+.info-gatha {
+  white-space: pre-line;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-left: 2px solid var(--border);
+  padding-left: 0.6rem;
+  margin: 0 0 0.7rem;
+}
+.info-note { font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0; }
+.info-notelist {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0;
+  padding-left: 1.15rem;
+}
+.info-notelist > li { list-style: disc; margin: 0.3rem 0; line-height: 1.5; }
+.info-notelist > li > strong { color: var(--text); }
+.info-notelist ul {
+  list-style: circle;
+  padding-left: 1.05rem;
+  margin: 0.2rem 0 0.1rem;
+}
+.info-notelist ul li { margin: 0.2rem 0; line-height: 1.45; }
+.info-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.4rem 0 0.2rem; }
+.info-chip {
+  font-size: 0.78rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--chip, var(--v-upekkha));
+  color: var(--text);
+}
+.info-chip::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--chip, var(--v-upekkha));
+  margin-right: 0.35rem;
+  vertical-align: -1px;
+}
+
+.clear-hint { font-size: 0.78rem; color: var(--text-muted); margin: 0.75rem 0 0; }
+
+/* --- middle column wrapper (cat rail + info panel) --- */
+.middle-col { display: flex; flex-direction: column; }
+@media (max-width: 860px) {
+  .middle-col { order: -1; }
+  #cetasika-panel { position: static; max-height: none; overflow-y: visible; }
+  .info-panel { position: static; max-height: none; }
+}
+
+/* ============================================================
+   ปริจเฉทที่ ๗ สมุจจยสังคหะ (body.p7) -- bidirectional set <-> ปรมัตถ์.
+   Left panel = dhamma-sets of the active สังคหะ (text-heavy -> chips, not
+   circles); right panel = every ปรมัตถ์ (reuses .node circles).
+   ============================================================ */
+:root {
+  --rupa-color: #2c6e8a;
+  --rupa-soft: #d9e9f0;
+  --nibbana-color: #7a6aa8;
+  --nibbana-soft: #e6e1f1;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rupa-color: #7ec3e0;
+    --rupa-soft: #223c48;
+    --nibbana-color: #b9a9e6;
+    --nibbana-soft: #322c46;
+  }
+}
+
+body.p7 main { grid-template-columns: 1.1fr 300px 1.5fr; }
+@media (max-width: 980px) { body.p7 main { grid-template-columns: 1fr; } }
+
+/* tab badges while a ปรมัตถ์ is selected */
+.mode-btn.has-match { border-color: var(--accent); }
+.mode-btn.has-match .mode-hint { color: var(--accent); }
+.mode-btn.active.has-match .mode-hint { color: #fff; }
+
+/* --- left: dhamma-set blocks --- */
+.p7-set { margin-bottom: 1rem; }
+.p7-set:last-child { margin-bottom: 0; }
+.p7-set-head {
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.p7-set-count { color: var(--text-muted); font-weight: normal; font-size: 0.85rem; }
+.p7-set-head.is-related { border-color: var(--accent); }
+.p7-set-head.is-selected { background: var(--accent); border-color: var(--accent); color: #fff; }
+.p7-set-head.is-selected .p7-set-count { color: #fff; opacity: 0.85; }
+.p7-set-head.is-dim { opacity: var(--dim-opacity); }
+
+.p7-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0 0.2rem;
+}
+.p7-member {
+  font-family: inherit;
+  font-size: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+.p7-member:hover { border-color: var(--accent); }
+.p7-member.is-related { background: var(--accent-soft); border-color: var(--accent); }
+.p7-member.is-selected { background: var(--accent); border-color: var(--accent); color: #fff; }
+.p7-member.is-dim { opacity: var(--dim-opacity); }
+
+/* --- right: ปรมัตถ์ sections --- */
+.p7-para-section { margin-bottom: 1.4rem; }
+.p7-para-section:last-child { margin-bottom: 0; }
+.p7-para-section-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+body.p7 .node.rupa { --node-color: var(--rupa-color); --node-soft: var(--rupa-soft); }
+body.p7 .node.nibbana { --node-color: var(--nibbana-color); --node-soft: var(--nibbana-soft); }
+
+/* info-panel org-ธรรม chips, tinted by ปรมัตถ์ kind */
+.info-chip-citta::before { background: var(--citta-color); }
+.info-chip-citta { border-color: var(--citta-color); }
+.info-chip-cetasika::before { background: var(--cetasika-color); }
+.info-chip-cetasika { border-color: var(--cetasika-color); }
+.info-chip-rupa::before { background: var(--rupa-color); }
+.info-chip-rupa { border-color: var(--rupa-color); }
+.info-chip-nibbana::before { background: var(--nibbana-color); }
+.info-chip-nibbana { border-color: var(--nibbana-color); }
+
+body.p7 #paramattha-panel { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; }
+@media (max-width: 980px) {
+  body.p7 .middle-col { order: -1; }
+  body.p7 #paramattha-panel { position: static; max-height: none; overflow-y: visible; }
+  body.p7 .info-panel { position: static; max-height: none; }
+}

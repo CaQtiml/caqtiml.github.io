@@ -1,0 +1,740 @@
+id: missaka
+thai: มิสสกสังคหะ
+gatha: ฉ เหตู ปญฺจ ฌานงฺคา มคฺคงฺคา นว วตฺถุโต / โสฬสินฺทฺริยธมฺมา จ พลธมฺมา นเวริตา ฯ / จตฺตาโรธิปตี
+  วุตฺตา ตถาหาราติ สตฺตธา / กุสลาทิสมากิณฺโณ วุตฺโต มิสฺสกสงฺคโห ฯ
+source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L483-L877
+note: รวม ๗ หมวดที่สงเคราะห์ธรรม กุศล อกุศล อพยากตะ ปะปนกัน. ว่าโดยประเภท (นับตามชื่อที่แจกแจง) มี ๖๔
+  ประเภท = เหตุ ๖ + ฌานังคะ ๗ + มัคคังคะ ๑๒ + อินทรีย์ ๒๒ + พละ ๙ + อธิบดี ๔ + อาหาร ๔ (L489-L491). ว่าโดยองค์ธรรมปรมัตถ์
+  (คาถา L656-L666) มี ๖ + ๕ + ๙ + ๑๖ + ๙ + ๔ + ๔. count_label ของแต่ละ set = จำนวนตามชื่อที่แจกแจง; expect
+  = จำนวนสมาชิกที่ลงไว้ = จำนวนตามชื่อ; การยุบเป็นองค์ธรรมปรมัตถ์อธิบายไว้ใน note ของ set (jhananga 7→5,
+  magganga 12→9, indriya 22→16). stub data/p7.yaml (hetu ๖, jhananga ๗, magganga ๑๒, indriya ๒๒, bala
+  ๙, adhipati ๔, ahara ๔) ตรงกับ reference ทุก set — ไม่มี discrepancy.
+sets:
+- id: hetu
+  thai: เหตุ
+  count_label: "๖"
+  gatha: หิโนติ วฑฺฒติ ผลํ เอเตหิ อิติ เหตุโว / ลทฺธเหตูหิ เต ถิรา รุฬฺหมูลาว ปาทปา ฯ
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L493-L507 (แจกแจง); คำอธิบาย L678-L687
+  note: 'องค์ธรรมปรมัตถ์ ๖ ตรงกับจำนวนที่แจกแจง (คาถา L664: ''ฉ เหตู''). รายละเอียดเหตุ ๖ อธิบายไว้แล้วในเหตุสังคหะ
+    (ป.๓) — ตำราไม่อธิบายซ้ำ (L687).'
+  expect: 6
+  members:
+  - id: lobha-hetu
+    thai: โลภเหตุ
+    ongkhatham:
+    - lobha
+    note: โลภเจตสิก ที่ใน โลภมูลจิต ๘ (ต้นฉบับพิมพ์ 'โลกเหตุ')
+  - id: dosa-hetu
+    thai: โทสเหตุ
+    ongkhatham:
+    - dosa
+    note: โทสเจตสิก ที่ใน โทสมูลจิต ๒
+  - id: moha-hetu
+    thai: โมหเหตุ
+    ongkhatham:
+    - moha
+    note: โมหเจตสิก ที่ใน อกุศลจิต ๑๒
+  - id: alobha-hetu
+    thai: อโลภเหตุ
+    ongkhatham:
+    - alobha
+    note: อโลภเจตสิก ที่ใน โสภณจิต ๕๙ หรือ ๙๑
+  - id: adosa-hetu
+    thai: อโทสเหตุ
+    ongkhatham:
+    - adosa
+    note: อโทสเจตสิก ที่ใน โสภณจิต ๕๙ หรือ ๙๑
+  - id: amoha-hetu
+    thai: อโมหเหตุ
+    ongkhatham:
+    - panna
+    note: อโมหเหตุ = ปัญญาเจตสิก ที่ใน ญาณสัมปยุตตจิต ๔๗ หรือ ๗๙
+- id: jhananga
+  thai: ฌานังคะ
+  count_label: "๗"
+  gatha: อารมฺมณุปนิชฺเฌนฺติ อิติ ฌานานิ วุจฺจเร / ฌาเปนฺติ วา ปจฺจนีเก อิติปิ ฌานสญฺญิตา ฯ
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L509-L525 (แจกแจง); คำอธิบาย L689-L716
+  note: 'แจกแจง ๗ องค์ แต่องค์ธรรมปรมัตถ์มี ๕ (คาถา L664: ''ปญฺจ ฌานงฺคา'') เพราะ โสมนัส โทมนัส อุเบกขา
+    ทั้ง ๓ มีองค์ธรรมเป็นเวทนาเจตสิกดวงเดียวกัน — จึงลงสมาชิกครบ ๗ (expect 7) และ ongkhatham ซ้ำที่ vedana.
+    ธรรมปฏิปักษ์ต่อองค์ฌาน (L704-L716): ถีนมิทธะ-วิตก, วิจิกิจฉา-วิจาร, พยาบาท-ปีติ, กามฉันทะ-เอกัคคตา,
+    อุทธัจจะ/กุกกุจจะ/โทมนัส-โสมนัส+อุเบกขา, ปีติ+โสมนัส-โทมนัส. คาถา L649-L655: ทวิปัญจวิญญาณจิต ๑๐ ย่อมไม่ได้องค์ฌาน
+    (เทียบ host ของเอกัคคตา ''จิต ๑๑๑ เว้นทวิปัญจวิญญาณ ๑๐'').'
+  expect: 7
+  members:
+  - id: vitakka
+    thai: วิตก
+    ongkhatham:
+    - vitakka
+    note: วิตกเจตสิก ที่ใน กามจิต ๔๔ ปฐมฌานจิต ๑๑
+  - id: vicara
+    thai: วิจาร
+    ongkhatham:
+    - vicara
+    note: วิจารเจตสิก ที่ใน กามจิต ๔๔ ปฐมฌานจิต ๑๑ ทุติยฌานจิต ๑๑
+  - id: piti
+    thai: ปีติ
+    ongkhatham:
+    - piti
+    note: ปีติเจตสิก ที่ใน กามโสมนัส ๑๘ ปฐม/ทุติย/ตติยฌานจิต อย่างละ ๑๑
+  - id: ekaggata
+    thai: เอกัคคตา
+    ongkhatham:
+    - ekaggata
+    note: เอกัคคตาเจตสิก ที่ใน จิต ๑๑๑ (เว้นทวิปัญจวิญญาณจิต ๑๐)
+  - id: somanassa
+    thai: โสมนัส
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (โสมนัสเวทนา) ที่ใน โสมนัสสหคตจิต ๖๒
+  - id: domanassa
+    thai: โทมนัส
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (โทมนัสเวทนา) ที่ใน โทสมูลจิต ๒
+  - id: upekkha
+    thai: อุเบกขา
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (อุเบกขาเวทนา) ที่ใน อุเบกขาสหคตจิต ๔๗ (เว้นทวิปัญจวิญญาณอุเบกขา ๘)
+- id: magganga
+  thai: มัคคังคะ
+  count_label: "๑๒"
+  gatha: สุคติยา จ ทุคฺคติยา จ นิพฺพานสฺส จ ปาปณา / เตสญฺจ ปฏิปตฺตตา มคฺคงฺคานีติ วุจฺจเร ฯ / มคฺคสฺส
+    วา องฺคานีติ มคฺคงฺคานิ สมฺมตา
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L527-L553 (แจกแจง); คำอธิบาย L718-L751
+  note: 'แจกแจง ๑๒ องค์ (สัมมา ๘ + มิจฉา ๔) แต่องค์ธรรมปรมัตถ์มี ๙ (คาถา L664: ''มคฺคงฺคา นว วตฺถุโต'')
+    เพราะ สัมมาสังกัปปะ/มิจฉาสังกัปปะ = วิตก, สัมมาวายามะ/มิจฉาวายามะ = วิริยะ, สัมมาสมาธิ/มิจฉาสมาธิ
+    = เอกัคคตา (แต่ละคู่เป็นเจตสิกดวงเดียว). ลงสมาชิกครบ ๑๒ (expect 12). องค์มรรคฝ่ายสุคติ+นิพพาน ๘, ฝ่ายทุคติ
+    ๔ (L733-L749). พระสูตรแสดงหนทางนอกจากองค์มรรค ๑๒ อีก ๔ คือ มิจฉาวาจา มิจฉากัมมันตะ มิจฉาอาชีวะ มิจฉาสติ
+    แต่ไม่มีองค์ธรรมปรมัตถ์โดยเฉพาะ (= อกุศลจิตตุปบาทที่เกี่ยวด้วยทุจริต) — ไม่ลงเป็นสมาชิก (L751). คาถา
+    L649-L655: อเหตุกจิต ๑๘ ย่อมไม่ได้องค์มรรค; เอกัคคตาในวิจิกิจฉาสัมปยุตตจิต ไม่ถึงมิจฉาสมาธิ.'
+  expect: 12
+  members:
+  - id: samma-ditthi
+    thai: สัมมาทิฏฐิ
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน ญาณสัมปยุตตจิต ๔๗ หรือ ๗๙
+  - id: samma-sankappa
+    thai: สัมมาสังกัปปะ
+    ongkhatham:
+    - vitakka
+    note: วิตกเจตสิก ที่ใน กามาวจรโสภณจิต ๒๔ ปฐมฌานจิต ๑๑
+  - id: samma-vaca
+    thai: สัมมาวาจา
+    ongkhatham:
+    - samma_vaca
+    note: สัมมาวาจาเจตสิก ที่ใน มหากุศลจิต ๘ โลกุตตรจิต ๔๐
+  - id: samma-kammanta
+    thai: สัมมากัมมันตะ
+    ongkhatham:
+    - samma_kammanta
+    note: สัมมากัมมันตะเจตสิก ที่ใน มหากุศลจิต ๘ โลกุตตรจิต ๔๐
+  - id: samma-ajiva
+    thai: สัมมาอาชีวะ
+    ongkhatham:
+    - samma_ajiva
+    note: สัมมาอาชีวะเจตสิก ที่ใน มหากุศลจิต ๘ โลกุตตรจิต ๔๐
+  - id: samma-vayama
+    thai: สัมมาวายามะ
+    ongkhatham:
+    - viriya
+    note: วิริยเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: samma-sati
+    thai: สัมมาสติ
+    ongkhatham:
+    - sati
+    note: สติเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: samma-samadhi
+    thai: สัมมาสมาธิ
+    ongkhatham:
+    - ekaggata
+    note: เอกัคคตาเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: miccha-ditthi
+    thai: มิจฉาทิฏฐิ
+    ongkhatham:
+    - ditthi
+    note: ทิฏฐิเจตสิก ที่ใน ทิฏฐิคตสัมปยุตตจิต ๔
+  - id: miccha-sankappa
+    thai: มิจฉาสังกัปปะ
+    ongkhatham:
+    - vitakka
+    note: วิตกเจตสิก ที่ใน อกุศลจิต ๑๒
+  - id: miccha-vayama
+    thai: มิจฉาวายามะ
+    ongkhatham:
+    - viriya
+    note: วิริยเจตสิก ที่ใน อกุศลจิต ๑๒
+  - id: miccha-samadhi
+    thai: มิจฉาสมาธิ
+    ongkhatham:
+    - ekaggata
+    note: เอกัคคตาเจตสิก ที่ใน อกุศลจิต ๑๑ (เว้นวิจิกิจฉาสัมปยุตตจิต ๑)
+- id: indriya
+  thai: อินทรีย์
+  count_label: "๒๒"
+  gatha: อินฺทนฺติ ปรมอิสฺสริยํ กโรนฺตีติ = อินฺทฺริยานิ
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L555-L601 (แจกแจง); คำอธิบาย L753-L773
+  note: 'แจกแจง ๒๒ อินทรีย์ แต่องค์ธรรมปรมัตถ์มี ๑๖ (คาถา L664-L666: ''โสฬสินฺทฺริยธมฺมา'') — เวทนา ๕
+    อินทรีย์ = เวทนาเจตสิกดวงเดียว; มนินทรีย์ = จิต (๑ ปรมัตถ์ประเภท); ปัญญินทรีย์+อนัญญาตัญญัสสามิตินทรีย์+อัญญินทรีย์+อัญญาตาวินทรีย์
+    = ปัญญาเจตสิก; ชีวิตินทรีย์ = ๒ ปรมัตถ์ (ชีวิตรูป + ชีวิตินทรียเจตสิก). ๕+๒+๒+๑+๑+สัทธา+วิริยะ+สติ+เอกัคคตา
+    = ๑๖. ลงสมาชิกครบ ๒๒ (expect 22). จำแนกโดยภูมิ (L765-L774, ไม่ทำเป็นโครงสร้าง): กามอินทรีย์ ๑๐ (จักขุ..กาย+อิตถี+ปุริส+สุข+ทุกข์+โทมนัส);
+    กาม-รูป-อรูป-โลกุตตรอินทรีย์ ๘ (ชีวิต มน อุเบกขา สัทธา วิริยะ สติ สมาธิ ปัญญา); กาม-รูป-โลกุตตรอินทรีย์
+    ๑ (โสมนัสสินทรีย์); โลกุตตรอินทรีย์ ๓ (อนัญญาตฯ อัญญินทรีย์ อัญญาตาวินทรีย์). คาถา L649-L655: เอกัคคตาเจตสิกที่ใน
+    อวีริยจิต ๑๖ ย่อมไม่ถึงสมาธินทรีย์.'
+  expect: 22
+  members:
+  - id: cakkhu
+    thai: จักขุนทรีย์
+    ongkhatham:
+    - cakkhu-pasada
+    note: จักขุปสาท (รูป)
+  - id: sota
+    thai: โสตินทรีย์
+    ongkhatham:
+    - sota-pasada
+    note: โสตปสาท (รูป)
+  - id: ghana
+    thai: ฆานินทรีย์
+    ongkhatham:
+    - ghana-pasada
+    note: ฆานปสาท (รูป)
+  - id: jivha
+    thai: ชิวหินทรีย์
+    ongkhatham:
+    - jivha-pasada
+    note: ชิวหาปสาท (รูป)
+  - id: kaya
+    thai: กายินทรีย์
+    ongkhatham:
+    - kaya-pasada
+    note: กายปสาท (รูป)
+  - id: itthi
+    thai: อิตถินทรีย์
+    ongkhatham:
+    - itthi-bhava
+    note: อิตถีภาวรูป (รูป; paramattha id itthi-bhava = อิตถีภาวะ)
+  - id: purisa
+    thai: ปุริสินทรีย์
+    ongkhatham:
+    - purisa-bhava
+    note: ปุริสภาวรูป (รูป; paramattha id purisa-bhava = ปุริสภาวะ)
+  - id: jivita
+    thai: ชีวิตินทรีย์
+    ongkhatham:
+    - jivitindriya
+    note: 'องค์ธรรม ๒ อย่าง: ชีวิตรูป (รูปปรมัตถ์) และ ชีวิตินทรียเจตสิก (เจตสิกปรมัตถ์). ทั้งสองมี id
+      เดียวกัน ''jivitindriya'' ในทะเบียน paramattha.yaml (id space แยกตาม kind) จึงระบุได้เพียงครั้งเดียวใน
+      ongkhatham; ในคาถานับเป็น ๒ ปรมัตถ์.'
+  - id: mano
+    thai: มนินทรีย์
+    ongkhatham:
+    - lobhamula-1
+    - lobhamula-2
+    - lobhamula-3
+    - lobhamula-4
+    - lobhamula-5
+    - lobhamula-6
+    - lobhamula-7
+    - lobhamula-8
+    - dosamula-1
+    - dosamula-2
+    - mohamula-1
+    - mohamula-2
+    - ahetuka-akusalavipaka-cakkhu
+    - ahetuka-akusalavipaka-sota
+    - ahetuka-akusalavipaka-ghana
+    - ahetuka-akusalavipaka-jivha
+    - ahetuka-akusalavipaka-kaya
+    - ahetuka-akusalavipaka-sampaticchana
+    - ahetuka-akusalavipaka-upekkhasantirana
+    - ahetuka-kusalavipaka-cakkhu
+    - ahetuka-kusalavipaka-sota
+    - ahetuka-kusalavipaka-ghana
+    - ahetuka-kusalavipaka-jivha
+    - ahetuka-kusalavipaka-kaya
+    - ahetuka-kusalavipaka-sampaticchana
+    - ahetuka-kusalavipaka-upekkhasantirana
+    - ahetuka-kusalavipaka-somanassasantirana
+    - ahetuka-pancadvaravajjana
+    - ahetuka-manodvaravajjana
+    - ahetuka-hasituppada
+    - mahakusala-1
+    - mahakusala-2
+    - mahakusala-3
+    - mahakusala-4
+    - mahakusala-5
+    - mahakusala-6
+    - mahakusala-7
+    - mahakusala-8
+    - mahavipaka-1
+    - mahavipaka-2
+    - mahavipaka-3
+    - mahavipaka-4
+    - mahavipaka-5
+    - mahavipaka-6
+    - mahavipaka-7
+    - mahavipaka-8
+    - mahakiriya-1
+    - mahakiriya-2
+    - mahakiriya-3
+    - mahakiriya-4
+    - mahakiriya-5
+    - mahakiriya-6
+    - mahakiriya-7
+    - mahakiriya-8
+    - rupa-ปฐมฌาน-kusala
+    - rupa-ทุติยฌาน-kusala
+    - rupa-ตติยฌาน-kusala
+    - rupa-จตุตถฌาน-kusala
+    - rupa-ปัญจมฌาน-kusala
+    - rupa-ปฐมฌาน-vipaka
+    - rupa-ทุติยฌาน-vipaka
+    - rupa-ตติยฌาน-vipaka
+    - rupa-จตุตถฌาน-vipaka
+    - rupa-ปัญจมฌาน-vipaka
+    - rupa-ปฐมฌาน-kiriya
+    - rupa-ทุติยฌาน-kiriya
+    - rupa-ตติยฌาน-kiriya
+    - rupa-จตุตถฌาน-kiriya
+    - rupa-ปัญจมฌาน-kiriya
+    - arupa-akasanancayatana-kusala
+    - arupa-vinnanancayatana-kusala
+    - arupa-akincannayatana-kusala
+    - arupa-nevasannanasannayatana-kusala
+    - arupa-akasanancayatana-vipaka
+    - arupa-vinnanancayatana-vipaka
+    - arupa-akincannayatana-vipaka
+    - arupa-nevasannanasannayatana-vipaka
+    - arupa-akasanancayatana-kiriya
+    - arupa-vinnanancayatana-kiriya
+    - arupa-akincannayatana-kiriya
+    - arupa-nevasannanasannayatana-kiriya
+    - sotapatti-magga-ปฐมฌาน
+    - sotapatti-magga-ทุติยฌาน
+    - sotapatti-magga-ตติยฌาน
+    - sotapatti-magga-จตุตถฌาน
+    - sotapatti-magga-ปัญจมฌาน
+    - sotapatti-phala-ปฐมฌาน
+    - sotapatti-phala-ทุติยฌาน
+    - sotapatti-phala-ตติยฌาน
+    - sotapatti-phala-จตุตถฌาน
+    - sotapatti-phala-ปัญจมฌาน
+    - sakadagami-magga-ปฐมฌาน
+    - sakadagami-magga-ทุติยฌาน
+    - sakadagami-magga-ตติยฌาน
+    - sakadagami-magga-จตุตถฌาน
+    - sakadagami-magga-ปัญจมฌาน
+    - sakadagami-phala-ปฐมฌาน
+    - sakadagami-phala-ทุติยฌาน
+    - sakadagami-phala-ตติยฌาน
+    - sakadagami-phala-จตุตถฌาน
+    - sakadagami-phala-ปัญจมฌาน
+    - anagami-magga-ปฐมฌาน
+    - anagami-magga-ทุติยฌาน
+    - anagami-magga-ตติยฌาน
+    - anagami-magga-จตุตถฌาน
+    - anagami-magga-ปัญจมฌาน
+    - anagami-phala-ปฐมฌาน
+    - anagami-phala-ทุติยฌาน
+    - anagami-phala-ตติยฌาน
+    - anagami-phala-จตุตถฌาน
+    - anagami-phala-ปัญจมฌาน
+    - arahatta-magga-ปฐมฌาน
+    - arahatta-magga-ทุติยฌาน
+    - arahatta-magga-ตติยฌาน
+    - arahatta-magga-จตุตถฌาน
+    - arahatta-magga-ปัญจมฌาน
+    - arahatta-phala-ปฐมฌาน
+    - arahatta-phala-ทุติยฌาน
+    - arahatta-phala-ตติยฌาน
+    - arahatta-phala-จตุตถฌาน
+    - arahatta-phala-ปัญจมฌาน
+    note: จิตทั้งหมด ๑๒๑ (แจกแจงครบทุก id)
+  - id: sukha
+    thai: สุขินทรีย์
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (สุขเวทนา) ที่ใน สุขสหคตกายวิญญาณจิต ๑
+  - id: dukkha
+    thai: ทุกขินทรีย์
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (ทุกขเวทนา) ที่ใน ทุกขสหคตกายวิญญาณจิต ๑
+  - id: somanassa
+    thai: โสมนัสสินทรีย์
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (โสมนัสเวทนา) ที่ใน โสมนัสสหคตจิต ๖๒
+  - id: domanassa
+    thai: โทมนัสสินทรีย์
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (โทมนัสเวทนา) ที่ใน โทสมูลจิต ๒
+  - id: upekkha
+    thai: อุเปกขินทรีย์
+    ongkhatham:
+    - vedana
+    note: เวทนาเจตสิก (อุเบกขาเวทนา) ที่ใน อุเบกขาสหคตจิต ๕๕
+  - id: saddha
+    thai: สัทธินทรีย์
+    ongkhatham:
+    - saddha
+    note: สัทธาเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: viriya
+    thai: วิริยินทรีย์
+    ongkhatham:
+    - viriya
+    note: วิริยเจตสิก ที่ใน วิริยสัมปยุตตจิต ๑๐๕
+  - id: sati
+    thai: สตินทรีย์
+    ongkhatham:
+    - sati
+    note: สติเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: samadhi
+    thai: สมาธินทรีย์
+    ongkhatham:
+    - ekaggata
+    note: เอกัคคตาเจตสิก ที่ใน จิต ๗๒ (เว้นอวีริยจิต ๑๖ วิจิกิจฉาสัมปยุตตจิต ๑)
+  - id: panna
+    thai: ปัญญินทรีย์
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน ญาณสัมปยุตตจิต ๔๗ หรือ ๗๙
+  - id: anannatannassamita
+    thai: อนัญญาตัญญัสสามิตินทรีย์
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน โสดาปัตติมรรคจิต ๑
+  - id: annindriya
+    thai: อัญญินทรีย์
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน มรรคจิตเบื้องบน ๓ และผลจิตเบื้องต่ำ ๓
+  - id: annatavindriya
+    thai: อัญญาตาวินทรีย์
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน อรหัตตผลจิต ๑
+- id: bala
+  thai: พละ
+  count_label: "๙"
+  gatha: อกมฺปนฏฺเฐน พลํ / พลียนฺติ อุปฺปนฺเน ปฏิปกฺขธมฺเม สหนฺติ มทฺทนฺตีติ = พลานิ
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L603-L623 (แจกแจง); คำอธิบาย L775-L803
+  note: 'แจกแจง ๙ พละ และองค์ธรรมปรมัตถ์ก็ ๙ (คาถา L666: ''พลธมฺมา นเวริตา'') — ไม่มีการยุบ. expect 9.
+    จำแนกโดยโสภณ/อโสภณ (โจทย์ L1766): ฝ่ายโสภณ ๗ (สัทธา วิริยะ สติ สมาธิ=เอกัคคตา ปัญญา หิริ โอตตัปปะ),
+    ฝ่ายอกุศล ๒ (อหิรีกะ อโนตตัปปะ); L803 หมายเหตุเพิ่มว่า วิริยะฝ่ายอกุศลก็ชื่อว่าพละได้ (เพราะไม่หวั่นไหวในสัมปยุตตธรรมเท่านั้น).
+    สาธกบาลี L795-L799 (อสทฺธิเย โกสชฺเช...). คาถา L649-L655: เอกัคคตาเจตสิกที่ใน อวีริยจิต ๑๖ ย่อมไม่ถึงสมาธิพละ.'
+  expect: 9
+  members:
+  - id: saddha
+    thai: สัทธาพละ
+    ongkhatham:
+    - saddha
+    note: สัทธาเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: viriya
+    thai: วิริยพละ
+    ongkhatham:
+    - viriya
+    note: วิริยเจตสิก ที่ใน วิริยสัมปยุตตจิต ๑๐๕
+  - id: sati
+    thai: สติพละ
+    ongkhatham:
+    - sati
+    note: สติเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: samadhi
+    thai: สมาธิพละ
+    ongkhatham:
+    - ekaggata
+    note: เอกัคคตาเจตสิก ที่ใน จิต ๑๐๔ (เว้นอวีริยจิต ๑๖ และวิจิกิจฉาสัมปยุตตจิต ๑)
+  - id: panna
+    thai: ปัญญาพละ
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน ญาณสัมปยุตตจิต ๗๙
+  - id: hiri
+    thai: หิรีพละ
+    ongkhatham:
+    - hiri
+    note: หิริเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: ottappa
+    thai: โอตตัปปพละ
+    ongkhatham:
+    - ottappa
+    note: โอตตัปปเจตสิก ที่ใน โสภณจิต ๙๑
+  - id: ahirika
+    thai: อหิรีกพละ
+    ongkhatham:
+    - ahirika
+    note: อหิรีกเจตสิก ที่ใน อกุศลจิต ๑๒
+  - id: anottappa
+    thai: อโนตตัปปพละ
+    ongkhatham:
+    - anottappa
+    note: อโนตตัปปเจตสิก ที่ใน อกุศลจิต ๑๒
+- id: adhipati
+  thai: อธิบดี
+  count_label: "๔"
+  gatha: อธินานํ ปติ = อธิปติ / อธิโก ปติ = อธิปติ / ทฺวิเหตุกติเหตุกชวเนสุว ยถาสมฺภวํ อธิปติเอโก ลพฺภติ
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L625-L635 (แจกแจง); คำอธิบาย L805-L838
+  note: 'แจกแจง ๔ และองค์ธรรมปรมัตถ์ก็ ๔ (คาถา L666: ''จตฺตาโรธิปตี''). expect 4. อธิบดีเกิดได้ทีละ ๑
+    เท่านั้นในคราวหนึ่งๆ (ต่างจากอินทรีย์ที่เกิดพร้อมกันหลายอินทรีย์ได้ — L819-L832) และเกิดได้เฉพาะในทวิเหตุกชวนะ/ติเหตุกชวนะ
+    (สาธก L836). จิตตาธิปติ องค์ธรรม = ทวิเหตุก+ติเหตุกชวนจิต ๕๒ (ระบบ ๘๙) / ๘๔ (ระบบ ๑๒๑) — แจกแจงครบ;
+    ฉันท/วิริย/วีมังสาธิปติ host = ทวิเหตุกชวนะ ๑๘ ติเหตุกชวนะ ๓๔ หรือ ๖๖ (วีมังสา เฉพาะติเหตุก ๓๔/๖๖).'
+  expect: 4
+  members:
+  - id: chanda
+    thai: ฉันทาธิปติ
+    ongkhatham:
+    - chanda
+    note: ฉันทเจตสิก ที่ใน ทวิเหตุกชวนะ ๑๘ ติเหตุกชวนะ ๓๔ หรือ ๖๖
+  - id: viriya
+    thai: วิริยาธิปติ
+    ongkhatham:
+    - viriya
+    note: วิริยเจตสิก ที่ใน ทวิเหตุกชวนะ ๑๘ ติเหตุกชวนะ ๓๔ หรือ ๖๖
+  - id: citta
+    thai: จิตตาธิปติ
+    ongkhatham:
+    - lobhamula-1
+    - lobhamula-2
+    - lobhamula-3
+    - lobhamula-4
+    - lobhamula-5
+    - lobhamula-6
+    - lobhamula-7
+    - lobhamula-8
+    - dosamula-1
+    - dosamula-2
+    - mahakusala-1
+    - mahakusala-2
+    - mahakusala-3
+    - mahakusala-4
+    - mahakusala-5
+    - mahakusala-6
+    - mahakusala-7
+    - mahakusala-8
+    - mahakiriya-1
+    - mahakiriya-2
+    - mahakiriya-3
+    - mahakiriya-4
+    - mahakiriya-5
+    - mahakiriya-6
+    - mahakiriya-7
+    - mahakiriya-8
+    - rupa-ปฐมฌาน-kusala
+    - rupa-ทุติยฌาน-kusala
+    - rupa-ตติยฌาน-kusala
+    - rupa-จตุตถฌาน-kusala
+    - rupa-ปัญจมฌาน-kusala
+    - rupa-ปฐมฌาน-kiriya
+    - rupa-ทุติยฌาน-kiriya
+    - rupa-ตติยฌาน-kiriya
+    - rupa-จตุตถฌาน-kiriya
+    - rupa-ปัญจมฌาน-kiriya
+    - arupa-akasanancayatana-kusala
+    - arupa-vinnanancayatana-kusala
+    - arupa-akincannayatana-kusala
+    - arupa-nevasannanasannayatana-kusala
+    - arupa-akasanancayatana-kiriya
+    - arupa-vinnanancayatana-kiriya
+    - arupa-akincannayatana-kiriya
+    - arupa-nevasannanasannayatana-kiriya
+    - sotapatti-magga-ปฐมฌาน
+    - sotapatti-magga-ทุติยฌาน
+    - sotapatti-magga-ตติยฌาน
+    - sotapatti-magga-จตุตถฌาน
+    - sotapatti-magga-ปัญจมฌาน
+    - sotapatti-phala-ปฐมฌาน
+    - sotapatti-phala-ทุติยฌาน
+    - sotapatti-phala-ตติยฌาน
+    - sotapatti-phala-จตุตถฌาน
+    - sotapatti-phala-ปัญจมฌาน
+    - sakadagami-magga-ปฐมฌาน
+    - sakadagami-magga-ทุติยฌาน
+    - sakadagami-magga-ตติยฌาน
+    - sakadagami-magga-จตุตถฌาน
+    - sakadagami-magga-ปัญจมฌาน
+    - sakadagami-phala-ปฐมฌาน
+    - sakadagami-phala-ทุติยฌาน
+    - sakadagami-phala-ตติยฌาน
+    - sakadagami-phala-จตุตถฌาน
+    - sakadagami-phala-ปัญจมฌาน
+    - anagami-magga-ปฐมฌาน
+    - anagami-magga-ทุติยฌาน
+    - anagami-magga-ตติยฌาน
+    - anagami-magga-จตุตถฌาน
+    - anagami-magga-ปัญจมฌาน
+    - anagami-phala-ปฐมฌาน
+    - anagami-phala-ทุติยฌาน
+    - anagami-phala-ตติยฌาน
+    - anagami-phala-จตุตถฌาน
+    - anagami-phala-ปัญจมฌาน
+    - arahatta-magga-ปฐมฌาน
+    - arahatta-magga-ทุติยฌาน
+    - arahatta-magga-ตติยฌาน
+    - arahatta-magga-จตุตถฌาน
+    - arahatta-magga-ปัญจมฌาน
+    - arahatta-phala-ปฐมฌาน
+    - arahatta-phala-ทุติยฌาน
+    - arahatta-phala-ตติยฌาน
+    - arahatta-phala-จตุตถฌาน
+    - arahatta-phala-ปัญจมฌาน
+    note: 'องค์ธรรม = จิต (ทวิเหตุกชวนะ และ ติเหตุกชวนะ ๕๒ หรือ ๘๔): อกุศลชวนจิต ๑๐ (เว้นโมหมูล ๒) + มหากุศล
+      ๘ + มหากิริยา ๘ + รูปฌานกุศล/กิริยา ๑๐ + อรูปกุศล/กิริยา ๘ + โลกุตตร ๔๐ = ๘๔ (แจกแจงครบ)'
+  - id: vimamsa
+    thai: วีมังสาธิปติ
+    ongkhatham:
+    - panna
+    note: ปัญญาเจตสิก ที่ใน ติเหตุกชวนะ ๓๔ หรือ ๖๖
+- id: ahara
+  thai: อาหาร
+  count_label: "๔"
+  gatha: อาหรนฺตีติ = อาหารา / โอชฏฺฐมกรูปญฺเจ เวทนา ปฏิสนฺธิกํ / นามรูปํ อาหรนฺติ ตสฺมา หาราติ วุจฺจเร
+    ฯ
+  source: reference/02-ปริจเฉทที่7-สมุจจยสังคหะ.md L637-L647 (แจกแจง); คำอธิบาย L840-L876
+  note: 'แจกแจง ๔ และองค์ธรรมปรมัตถ์ก็ ๔ (คาถา L666: ''ตถาหาราติ สตฺตธา ... มี ๔''). expect 4. สรุปความ
+    (L867-L876): กพฬีการาหาร→อาหารชสุทธัฏฐกกลาป, ผัสสาหาร→เวทนา, มโนสัญเจตนาหาร→ปฏิสนธิวิญญาณ+ปวัตติวิญญาณ,
+    วิญญาณาหาร→เจตสิก+กัมมชรูป.'
+  expect: 4
+  members:
+  - id: kabalinkara
+    thai: กพฬีการาหาร
+    ongkhatham:
+    - kabalinkara-ahara
+    note: โอชา (อาหารรูป) ที่อยู่ในอาหารต่างๆ; paramattha id kabalinkara-ahara (รูป)
+  - id: phassa
+    thai: ผัสสาหาร
+    ongkhatham:
+    - phassa
+    note: ผัสสเจตสิก ที่ใน จิตทั้งหมด (องค์ธรรมปรมัตถ์ = ผัสสเจตสิก ๑)
+  - id: manosancetana
+    thai: มโนสัญเจตนาหาร
+    ongkhatham:
+    - cetana
+    note: เจตนาเจตสิก ที่ใน จิตทั้งหมด (องค์ธรรมปรมัตถ์ = เจตนาเจตสิก ๑)
+  - id: vinnana
+    thai: วิญญาณาหาร
+    ongkhatham:
+    - lobhamula-1
+    - lobhamula-2
+    - lobhamula-3
+    - lobhamula-4
+    - lobhamula-5
+    - lobhamula-6
+    - lobhamula-7
+    - lobhamula-8
+    - dosamula-1
+    - dosamula-2
+    - mohamula-1
+    - mohamula-2
+    - ahetuka-akusalavipaka-cakkhu
+    - ahetuka-akusalavipaka-sota
+    - ahetuka-akusalavipaka-ghana
+    - ahetuka-akusalavipaka-jivha
+    - ahetuka-akusalavipaka-kaya
+    - ahetuka-akusalavipaka-sampaticchana
+    - ahetuka-akusalavipaka-upekkhasantirana
+    - ahetuka-kusalavipaka-cakkhu
+    - ahetuka-kusalavipaka-sota
+    - ahetuka-kusalavipaka-ghana
+    - ahetuka-kusalavipaka-jivha
+    - ahetuka-kusalavipaka-kaya
+    - ahetuka-kusalavipaka-sampaticchana
+    - ahetuka-kusalavipaka-upekkhasantirana
+    - ahetuka-kusalavipaka-somanassasantirana
+    - ahetuka-pancadvaravajjana
+    - ahetuka-manodvaravajjana
+    - ahetuka-hasituppada
+    - mahakusala-1
+    - mahakusala-2
+    - mahakusala-3
+    - mahakusala-4
+    - mahakusala-5
+    - mahakusala-6
+    - mahakusala-7
+    - mahakusala-8
+    - mahavipaka-1
+    - mahavipaka-2
+    - mahavipaka-3
+    - mahavipaka-4
+    - mahavipaka-5
+    - mahavipaka-6
+    - mahavipaka-7
+    - mahavipaka-8
+    - mahakiriya-1
+    - mahakiriya-2
+    - mahakiriya-3
+    - mahakiriya-4
+    - mahakiriya-5
+    - mahakiriya-6
+    - mahakiriya-7
+    - mahakiriya-8
+    - rupa-ปฐมฌาน-kusala
+    - rupa-ทุติยฌาน-kusala
+    - rupa-ตติยฌาน-kusala
+    - rupa-จตุตถฌาน-kusala
+    - rupa-ปัญจมฌาน-kusala
+    - rupa-ปฐมฌาน-vipaka
+    - rupa-ทุติยฌาน-vipaka
+    - rupa-ตติยฌาน-vipaka
+    - rupa-จตุตถฌาน-vipaka
+    - rupa-ปัญจมฌาน-vipaka
+    - rupa-ปฐมฌาน-kiriya
+    - rupa-ทุติยฌาน-kiriya
+    - rupa-ตติยฌาน-kiriya
+    - rupa-จตุตถฌาน-kiriya
+    - rupa-ปัญจมฌาน-kiriya
+    - arupa-akasanancayatana-kusala
+    - arupa-vinnanancayatana-kusala
+    - arupa-akincannayatana-kusala
+    - arupa-nevasannanasannayatana-kusala
+    - arupa-akasanancayatana-vipaka
+    - arupa-vinnanancayatana-vipaka
+    - arupa-akincannayatana-vipaka
+    - arupa-nevasannanasannayatana-vipaka
+    - arupa-akasanancayatana-kiriya
+    - arupa-vinnanancayatana-kiriya
+    - arupa-akincannayatana-kiriya
+    - arupa-nevasannanasannayatana-kiriya
+    - sotapatti-magga-ปฐมฌาน
+    - sotapatti-magga-ทุติยฌาน
+    - sotapatti-magga-ตติยฌาน
+    - sotapatti-magga-จตุตถฌาน
+    - sotapatti-magga-ปัญจมฌาน
+    - sotapatti-phala-ปฐมฌาน
+    - sotapatti-phala-ทุติยฌาน
+    - sotapatti-phala-ตติยฌาน
+    - sotapatti-phala-จตุตถฌาน
+    - sotapatti-phala-ปัญจมฌาน
+    - sakadagami-magga-ปฐมฌาน
+    - sakadagami-magga-ทุติยฌาน
+    - sakadagami-magga-ตติยฌาน
+    - sakadagami-magga-จตุตถฌาน
+    - sakadagami-magga-ปัญจมฌาน
+    - sakadagami-phala-ปฐมฌาน
+    - sakadagami-phala-ทุติยฌาน
+    - sakadagami-phala-ตติยฌาน
+    - sakadagami-phala-จตุตถฌาน
+    - sakadagami-phala-ปัญจมฌาน
+    - anagami-magga-ปฐมฌาน
+    - anagami-magga-ทุติยฌาน
+    - anagami-magga-ตติยฌาน
+    - anagami-magga-จตุตถฌาน
+    - anagami-magga-ปัญจมฌาน
+    - anagami-phala-ปฐมฌาน
+    - anagami-phala-ทุติยฌาน
+    - anagami-phala-ตติยฌาน
+    - anagami-phala-จตุตถฌาน
+    - anagami-phala-ปัญจมฌาน
+    - arahatta-magga-ปฐมฌาน
+    - arahatta-magga-ทุติยฌาน
+    - arahatta-magga-ตติยฌาน
+    - arahatta-magga-จตุตถฌาน
+    - arahatta-magga-ปัญจมฌาน
+    - arahatta-phala-ปฐมฌาน
+    - arahatta-phala-ทุติยฌาน
+    - arahatta-phala-ตติยฌาน
+    - arahatta-phala-จตุตถฌาน
+    - arahatta-phala-ปัญจมฌาน
+    note: จิตทั้งหมด ๑๒๑ (แจกแจงครบทุก id)

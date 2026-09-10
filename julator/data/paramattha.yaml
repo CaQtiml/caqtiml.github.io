@@ -1,0 +1,788 @@
+# ปรมัตถ์ id + label registry -- the shared key space for the p3 and p7 tools.
+# SEEDED from ../../julatri/abhidhamma-julatri/data/{cittas,cetasikas,rupas}.yaml
+# by scripts/seed_paramattha.py. This repo owns this copy -- see docs/adr/0001
+# for why it is a copy and not a live import.
+# Counts: citta 121, cetasika 52, rupa 28, nibbana 1.
+citta:
+- id: lobhamula-1
+  thai: โลภมูลจิต ดวงที่ ๑
+  group: lobha-mula
+  pali: โสมนัสสสหคตัง ทิฏฐิคตสัมปยุตตัง อสังขาริกัง
+- id: lobhamula-2
+  thai: โลภมูลจิต ดวงที่ ๒
+  group: lobha-mula
+  pali: โสมนัสสสหคตัง ทิฏฐิคตสัมปยุตตัง สสังขาริกัง
+- id: lobhamula-3
+  thai: โลภมูลจิต ดวงที่ ๓
+  group: lobha-mula
+  pali: โสมนัสสสหคตัง ทิฏฐิคตวิปปยุตตัง อสังขาริกัง
+- id: lobhamula-4
+  thai: โลภมูลจิต ดวงที่ ๔
+  group: lobha-mula
+  pali: โสมนัสสสหคตัง ทิฏฐิคตวิปปยุตตัง สสังขาริกัง
+- id: lobhamula-5
+  thai: โลภมูลจิต ดวงที่ ๕
+  group: lobha-mula
+  pali: อุเบกขาสหคตัง ทิฏฐิคตสัมปยุตตัง อสังขาริกัง
+- id: lobhamula-6
+  thai: โลภมูลจิต ดวงที่ ๖
+  group: lobha-mula
+  pali: อุเบกขาสหคตัง ทิฏฐิคตสัมปยุตตัง สสังขาริกัง
+- id: lobhamula-7
+  thai: โลภมูลจิต ดวงที่ ๗
+  group: lobha-mula
+  pali: อุเบกขาสหคตัง ทิฏฐิคตวิปปยุตตัง อสังขาริกัง
+- id: lobhamula-8
+  thai: โลภมูลจิต ดวงที่ ๘
+  group: lobha-mula
+  pali: อุเบกขาสหคตัง ทิฏฐิคตวิปปยุตตัง สสังขาริกัง
+- id: dosamula-1
+  thai: โทสมูลจิต ดวงที่ ๑
+  group: dosa-mula
+  pali: โทมนัสสสหคตัง ปฏิฆสัมปยุตตัง อสังขาริกัง
+- id: dosamula-2
+  thai: โทสมูลจิต ดวงที่ ๒
+  group: dosa-mula
+  pali: โทมนัสสสหคตัง ปฏิฆสัมปยุตตัง สสังขาริกัง
+- id: mohamula-1
+  thai: โมหมูลจิต ดวงที่ ๑
+  group: moha-mula
+  pali: อุเบกขาสหคตัง วิจิกิจฉาสัมปยุตตัง
+- id: mohamula-2
+  thai: โมหมูลจิต ดวงที่ ๒
+  group: moha-mula
+  pali: อุเบกขาสหคตัง อุทธัจจสัมปยุตตัง
+- id: ahetuka-akusalavipaka-cakkhu
+  thai: อกุศลวิปากจักขุวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (อกุศลวิบาก)
+- id: ahetuka-akusalavipaka-sota
+  thai: อกุศลวิปากโสตวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (อกุศลวิบาก)
+- id: ahetuka-akusalavipaka-ghana
+  thai: อกุศลวิปากฆานวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (อกุศลวิบาก)
+- id: ahetuka-akusalavipaka-jivha
+  thai: อกุศลวิปากชิวหาวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (อกุศลวิบาก)
+- id: ahetuka-akusalavipaka-kaya
+  thai: อกุศลวิปากกายวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (อกุศลวิบาก)
+- id: ahetuka-akusalavipaka-sampaticchana
+  thai: อกุศลวิปากสัมปฏิจฉนจิต
+  group: ahetuka
+  pali: สัมปฏิจฉนะ (อกุศลวิบาก)
+- id: ahetuka-akusalavipaka-upekkhasantirana
+  thai: อกุศลวิปากอุเบกขาสันตีรณจิต
+  group: ahetuka
+  pali: สันตีรณะ อุเบกขา (อกุศลวิบาก)
+- id: ahetuka-kusalavipaka-cakkhu
+  thai: กุศลวิปากจักขุวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-sota
+  thai: กุศลวิปากโสตวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-ghana
+  thai: กุศลวิปากฆานวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-jivha
+  thai: กุศลวิปากชิวหาวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-kaya
+  thai: กุศลวิปากกายวิญญาณจิต
+  group: ahetuka
+  pali: ทวิปัญจวิญญาณ (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-sampaticchana
+  thai: กุศลวิปากสัมปฏิจฉนจิต
+  group: ahetuka
+  pali: สัมปฏิจฉนะ (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-upekkhasantirana
+  thai: กุศลวิปากอุเบกขาสันตีรณจิต
+  group: ahetuka
+  pali: สันตีรณะ อุเบกขา (กุศลวิบาก)
+- id: ahetuka-kusalavipaka-somanassasantirana
+  thai: กุศลวิปากโสมนัสสันตีรณจิต
+  group: ahetuka
+  pali: สันตีรณะ โสมนัส (กุศลวิบาก)
+- id: ahetuka-pancadvaravajjana
+  thai: ปัญจทวาราวัชชนจิต
+  group: ahetuka
+  pali: อาวัชชนะ ทางปัญจทวาร (กิริยา)
+- id: ahetuka-manodvaravajjana
+  thai: มโนทวาราวัชชนจิต
+  group: ahetuka
+  pali: อาวัชชนะ ทางมโนทวาร (กิริยา)
+- id: ahetuka-hasituppada
+  thai: หสิตุปปาทจิต
+  group: ahetuka
+  pali: จิตยิ้มของพระอรหันต์ (กิริยา)
+- id: mahakusala-1
+  thai: มหากุศลจิต ดวงที่ ๑
+  group: mahakusala
+  pali: โสมนัสสหคตัง ญาณสัมปยุตตัง อสังขาริกัง
+- id: mahakusala-2
+  thai: มหากุศลจิต ดวงที่ ๒
+  group: mahakusala
+  pali: โสมนัสสหคตัง ญาณสัมปยุตตัง สสังขาริกัง
+- id: mahakusala-3
+  thai: มหากุศลจิต ดวงที่ ๓
+  group: mahakusala
+  pali: โสมนัสสหคตัง ญาณวิปปยุตตัง อสังขาริกัง
+- id: mahakusala-4
+  thai: มหากุศลจิต ดวงที่ ๔
+  group: mahakusala
+  pali: โสมนัสสหคตัง ญาณวิปปยุตตัง สสังขาริกัง
+- id: mahakusala-5
+  thai: มหากุศลจิต ดวงที่ ๕
+  group: mahakusala
+  pali: อุเบกขาสหคตัง ญาณสัมปยุตตัง อสังขาริกัง
+- id: mahakusala-6
+  thai: มหากุศลจิต ดวงที่ ๖
+  group: mahakusala
+  pali: อุเบกขาสหคตัง ญาณสัมปยุตตัง สสังขาริกัง
+- id: mahakusala-7
+  thai: มหากุศลจิต ดวงที่ ๗
+  group: mahakusala
+  pali: อุเบกขาสหคตัง ญาณวิปปยุตตัง อสังขาริกัง
+- id: mahakusala-8
+  thai: มหากุศลจิต ดวงที่ ๘
+  group: mahakusala
+  pali: อุเบกขาสหคตัง ญาณวิปปยุตตัง สสังขาริกัง
+- id: mahavipaka-1
+  thai: มหาวิปากจิต ดวงที่ ๑
+  group: mahavipaka
+  pali: โสมนัสสหคตัง ญาณสัมปยุตตัง อสังขาริกัง
+- id: mahavipaka-2
+  thai: มหาวิปากจิต ดวงที่ ๒
+  group: mahavipaka
+  pali: โสมนัสสหคตัง ญาณสัมปยุตตัง สสังขาริกัง
+- id: mahavipaka-3
+  thai: มหาวิปากจิต ดวงที่ ๓
+  group: mahavipaka
+  pali: โสมนัสสหคตัง ญาณวิปปยุตตัง อสังขาริกัง
+- id: mahavipaka-4
+  thai: มหาวิปากจิต ดวงที่ ๔
+  group: mahavipaka
+  pali: โสมนัสสหคตัง ญาณวิปปยุตตัง สสังขาริกัง
+- id: mahavipaka-5
+  thai: มหาวิปากจิต ดวงที่ ๕
+  group: mahavipaka
+  pali: อุเบกขาสหคตัง ญาณสัมปยุตตัง อสังขาริกัง
+- id: mahavipaka-6
+  thai: มหาวิปากจิต ดวงที่ ๖
+  group: mahavipaka
+  pali: อุเบกขาสหคตัง ญาณสัมปยุตตัง สสังขาริกัง
+- id: mahavipaka-7
+  thai: มหาวิปากจิต ดวงที่ ๗
+  group: mahavipaka
+  pali: อุเบกขาสหคตัง ญาณวิปปยุตตัง อสังขาริกัง
+- id: mahavipaka-8
+  thai: มหาวิปากจิต ดวงที่ ๘
+  group: mahavipaka
+  pali: อุเบกขาสหคตัง ญาณวิปปยุตตัง สสังขาริกัง
+- id: mahakiriya-1
+  thai: มหากิริยาจิต ดวงที่ ๑
+  group: mahakiriya
+  pali: โสมนัสสหคตัง ญาณสัมปยุตตัง อสังขาริกัง
+- id: mahakiriya-2
+  thai: มหากิริยาจิต ดวงที่ ๒
+  group: mahakiriya
+  pali: โสมนัสสหคตัง ญาณสัมปยุตตัง สสังขาริกัง
+- id: mahakiriya-3
+  thai: มหากิริยาจิต ดวงที่ ๓
+  group: mahakiriya
+  pali: โสมนัสสหคตัง ญาณวิปปยุตตัง อสังขาริกัง
+- id: mahakiriya-4
+  thai: มหากิริยาจิต ดวงที่ ๔
+  group: mahakiriya
+  pali: โสมนัสสหคตัง ญาณวิปปยุตตัง สสังขาริกัง
+- id: mahakiriya-5
+  thai: มหากิริยาจิต ดวงที่ ๕
+  group: mahakiriya
+  pali: อุเบกขาสหคตัง ญาณสัมปยุตตัง อสังขาริกัง
+- id: mahakiriya-6
+  thai: มหากิริยาจิต ดวงที่ ๖
+  group: mahakiriya
+  pali: อุเบกขาสหคตัง ญาณสัมปยุตตัง สสังขาริกัง
+- id: mahakiriya-7
+  thai: มหากิริยาจิต ดวงที่ ๗
+  group: mahakiriya
+  pali: อุเบกขาสหคตัง ญาณวิปปยุตตัง อสังขาริกัง
+- id: mahakiriya-8
+  thai: มหากิริยาจิต ดวงที่ ๘
+  group: mahakiriya
+  pali: อุเบกขาสหคตัง ญาณวิปปยุตตัง สสังขาริกัง
+- id: rupa-ปฐมฌาน-kusala
+  thai: ปฐมฌานจิต (กุศล)
+  group: rupa-jhana
+  pali: รูปาวจร ปฐมฌาน
+- id: rupa-ทุติยฌาน-kusala
+  thai: ทุติยฌานจิต (กุศล)
+  group: rupa-jhana
+  pali: รูปาวจร ทุติยฌาน
+- id: rupa-ตติยฌาน-kusala
+  thai: ตติยฌานจิต (กุศล)
+  group: rupa-jhana
+  pali: รูปาวจร ตติยฌาน
+- id: rupa-จตุตถฌาน-kusala
+  thai: จตุตถฌานจิต (กุศล)
+  group: rupa-jhana
+  pali: รูปาวจร จตุตถฌาน
+- id: rupa-ปัญจมฌาน-kusala
+  thai: ปัญจมฌานจิต (กุศล)
+  group: rupa-jhana
+  pali: รูปาวจร ปัญจมฌาน
+- id: rupa-ปฐมฌาน-vipaka
+  thai: ปฐมฌานจิต (วิบาก)
+  group: rupa-jhana
+  pali: รูปาวจร ปฐมฌาน
+- id: rupa-ทุติยฌาน-vipaka
+  thai: ทุติยฌานจิต (วิบาก)
+  group: rupa-jhana
+  pali: รูปาวจร ทุติยฌาน
+- id: rupa-ตติยฌาน-vipaka
+  thai: ตติยฌานจิต (วิบาก)
+  group: rupa-jhana
+  pali: รูปาวจร ตติยฌาน
+- id: rupa-จตุตถฌาน-vipaka
+  thai: จตุตถฌานจิต (วิบาก)
+  group: rupa-jhana
+  pali: รูปาวจร จตุตถฌาน
+- id: rupa-ปัญจมฌาน-vipaka
+  thai: ปัญจมฌานจิต (วิบาก)
+  group: rupa-jhana
+  pali: รูปาวจร ปัญจมฌาน
+- id: rupa-ปฐมฌาน-kiriya
+  thai: ปฐมฌานจิต (กิริยา)
+  group: rupa-jhana
+  pali: รูปาวจร ปฐมฌาน
+- id: rupa-ทุติยฌาน-kiriya
+  thai: ทุติยฌานจิต (กิริยา)
+  group: rupa-jhana
+  pali: รูปาวจร ทุติยฌาน
+- id: rupa-ตติยฌาน-kiriya
+  thai: ตติยฌานจิต (กิริยา)
+  group: rupa-jhana
+  pali: รูปาวจร ตติยฌาน
+- id: rupa-จตุตถฌาน-kiriya
+  thai: จตุตถฌานจิต (กิริยา)
+  group: rupa-jhana
+  pali: รูปาวจร จตุตถฌาน
+- id: rupa-ปัญจมฌาน-kiriya
+  thai: ปัญจมฌานจิต (กิริยา)
+  group: rupa-jhana
+  pali: รูปาวจร ปัญจมฌาน
+- id: arupa-akasanancayatana-kusala
+  thai: อากาสานัญจายตนะจิต (กุศล)
+  group: arupa-jhana
+  pali: อรูปาวจร (อากาสานัญจายตนะ)
+- id: arupa-vinnanancayatana-kusala
+  thai: วิญญาณัญจายตนะจิต (กุศล)
+  group: arupa-jhana
+  pali: อรูปาวจร (วิญญาณัญจายตนะ)
+- id: arupa-akincannayatana-kusala
+  thai: อากิญจัญญายตนะจิต (กุศล)
+  group: arupa-jhana
+  pali: อรูปาวจร (อากิญจัญญายตนะ)
+- id: arupa-nevasannanasannayatana-kusala
+  thai: เนวสัญญานาสัญญายตนะจิต (กุศล)
+  group: arupa-jhana
+  pali: อรูปาวจร (เนวสัญญานาสัญญายตนะ)
+- id: arupa-akasanancayatana-vipaka
+  thai: อากาสานัญจายตนะจิต (วิบาก)
+  group: arupa-jhana
+  pali: อรูปาวจร (อากาสานัญจายตนะ)
+- id: arupa-vinnanancayatana-vipaka
+  thai: วิญญาณัญจายตนะจิต (วิบาก)
+  group: arupa-jhana
+  pali: อรูปาวจร (วิญญาณัญจายตนะ)
+- id: arupa-akincannayatana-vipaka
+  thai: อากิญจัญญายตนะจิต (วิบาก)
+  group: arupa-jhana
+  pali: อรูปาวจร (อากิญจัญญายตนะ)
+- id: arupa-nevasannanasannayatana-vipaka
+  thai: เนวสัญญานาสัญญายตนะจิต (วิบาก)
+  group: arupa-jhana
+  pali: อรูปาวจร (เนวสัญญานาสัญญายตนะ)
+- id: arupa-akasanancayatana-kiriya
+  thai: อากาสานัญจายตนะจิต (กิริยา)
+  group: arupa-jhana
+  pali: อรูปาวจร (อากาสานัญจายตนะ)
+- id: arupa-vinnanancayatana-kiriya
+  thai: วิญญาณัญจายตนะจิต (กิริยา)
+  group: arupa-jhana
+  pali: อรูปาวจร (วิญญาณัญจายตนะ)
+- id: arupa-akincannayatana-kiriya
+  thai: อากิญจัญญายตนะจิต (กิริยา)
+  group: arupa-jhana
+  pali: อรูปาวจร (อากิญจัญญายตนะ)
+- id: arupa-nevasannanasannayatana-kiriya
+  thai: เนวสัญญานาสัญญายตนะจิต (กิริยา)
+  group: arupa-jhana
+  pali: อรูปาวจร (เนวสัญญานาสัญญายตนะ)
+- id: sotapatti-magga-ปฐมฌาน
+  thai: โสดาปัตติมัคคจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: โสดาปัตติมรรค ปฐมฌาน
+- id: sotapatti-magga-ทุติยฌาน
+  thai: โสดาปัตติมัคคจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: โสดาปัตติมรรค ทุติยฌาน
+- id: sotapatti-magga-ตติยฌาน
+  thai: โสดาปัตติมัคคจิต (ตติยฌาน)
+  group: lokuttara
+  pali: โสดาปัตติมรรค ตติยฌาน
+- id: sotapatti-magga-จตุตถฌาน
+  thai: โสดาปัตติมัคคจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: โสดาปัตติมรรค จตุตถฌาน
+- id: sotapatti-magga-ปัญจมฌาน
+  thai: โสดาปัตติมัคคจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: โสดาปัตติมรรค ปัญจมฌาน
+- id: sotapatti-phala-ปฐมฌาน
+  thai: โสดาปัตติผลจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: โสดาปัตติผล ปฐมฌาน
+- id: sotapatti-phala-ทุติยฌาน
+  thai: โสดาปัตติผลจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: โสดาปัตติผล ทุติยฌาน
+- id: sotapatti-phala-ตติยฌาน
+  thai: โสดาปัตติผลจิต (ตติยฌาน)
+  group: lokuttara
+  pali: โสดาปัตติผล ตติยฌาน
+- id: sotapatti-phala-จตุตถฌาน
+  thai: โสดาปัตติผลจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: โสดาปัตติผล จตุตถฌาน
+- id: sotapatti-phala-ปัญจมฌาน
+  thai: โสดาปัตติผลจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: โสดาปัตติผล ปัญจมฌาน
+- id: sakadagami-magga-ปฐมฌาน
+  thai: สกทาคามิมัคคจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: สกทาคามิมรรค ปฐมฌาน
+- id: sakadagami-magga-ทุติยฌาน
+  thai: สกทาคามิมัคคจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: สกทาคามิมรรค ทุติยฌาน
+- id: sakadagami-magga-ตติยฌาน
+  thai: สกทาคามิมัคคจิต (ตติยฌาน)
+  group: lokuttara
+  pali: สกทาคามิมรรค ตติยฌาน
+- id: sakadagami-magga-จตุตถฌาน
+  thai: สกทาคามิมัคคจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: สกทาคามิมรรค จตุตถฌาน
+- id: sakadagami-magga-ปัญจมฌาน
+  thai: สกทาคามิมัคคจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: สกทาคามิมรรค ปัญจมฌาน
+- id: sakadagami-phala-ปฐมฌาน
+  thai: สกทาคามิผลจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: สกทาคามิผล ปฐมฌาน
+- id: sakadagami-phala-ทุติยฌาน
+  thai: สกทาคามิผลจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: สกทาคามิผล ทุติยฌาน
+- id: sakadagami-phala-ตติยฌาน
+  thai: สกทาคามิผลจิต (ตติยฌาน)
+  group: lokuttara
+  pali: สกทาคามิผล ตติยฌาน
+- id: sakadagami-phala-จตุตถฌาน
+  thai: สกทาคามิผลจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: สกทาคามิผล จตุตถฌาน
+- id: sakadagami-phala-ปัญจมฌาน
+  thai: สกทาคามิผลจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: สกทาคามิผล ปัญจมฌาน
+- id: anagami-magga-ปฐมฌาน
+  thai: อนาคามิมัคคจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: อนาคามิมรรค ปฐมฌาน
+- id: anagami-magga-ทุติยฌาน
+  thai: อนาคามิมัคคจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: อนาคามิมรรค ทุติยฌาน
+- id: anagami-magga-ตติยฌาน
+  thai: อนาคามิมัคคจิต (ตติยฌาน)
+  group: lokuttara
+  pali: อนาคามิมรรค ตติยฌาน
+- id: anagami-magga-จตุตถฌาน
+  thai: อนาคามิมัคคจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: อนาคามิมรรค จตุตถฌาน
+- id: anagami-magga-ปัญจมฌาน
+  thai: อนาคามิมัคคจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: อนาคามิมรรค ปัญจมฌาน
+- id: anagami-phala-ปฐมฌาน
+  thai: อนาคามิผลจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: อนาคามิผล ปฐมฌาน
+- id: anagami-phala-ทุติยฌาน
+  thai: อนาคามิผลจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: อนาคามิผล ทุติยฌาน
+- id: anagami-phala-ตติยฌาน
+  thai: อนาคามิผลจิต (ตติยฌาน)
+  group: lokuttara
+  pali: อนาคามิผล ตติยฌาน
+- id: anagami-phala-จตุตถฌาน
+  thai: อนาคามิผลจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: อนาคามิผล จตุตถฌาน
+- id: anagami-phala-ปัญจมฌาน
+  thai: อนาคามิผลจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: อนาคามิผล ปัญจมฌาน
+- id: arahatta-magga-ปฐมฌาน
+  thai: อรหัตตมัคคจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: อรหัตตมรรค ปฐมฌาน
+- id: arahatta-magga-ทุติยฌาน
+  thai: อรหัตตมัคคจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: อรหัตตมรรค ทุติยฌาน
+- id: arahatta-magga-ตติยฌาน
+  thai: อรหัตตมัคคจิต (ตติยฌาน)
+  group: lokuttara
+  pali: อรหัตตมรรค ตติยฌาน
+- id: arahatta-magga-จตุตถฌาน
+  thai: อรหัตตมัคคจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: อรหัตตมรรค จตุตถฌาน
+- id: arahatta-magga-ปัญจมฌาน
+  thai: อรหัตตมัคคจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: อรหัตตมรรค ปัญจมฌาน
+- id: arahatta-phala-ปฐมฌาน
+  thai: อรหัตตผลจิต (ปฐมฌาน)
+  group: lokuttara
+  pali: อรหัตตผล ปฐมฌาน
+- id: arahatta-phala-ทุติยฌาน
+  thai: อรหัตตผลจิต (ทุติยฌาน)
+  group: lokuttara
+  pali: อรหัตตผล ทุติยฌาน
+- id: arahatta-phala-ตติยฌาน
+  thai: อรหัตตผลจิต (ตติยฌาน)
+  group: lokuttara
+  pali: อรหัตตผล ตติยฌาน
+- id: arahatta-phala-จตุตถฌาน
+  thai: อรหัตตผลจิต (จตุตถฌาน)
+  group: lokuttara
+  pali: อรหัตตผล จตุตถฌาน
+- id: arahatta-phala-ปัญจมฌาน
+  thai: อรหัตตผลจิต (ปัญจมฌาน)
+  group: lokuttara
+  pali: อรหัตตผล ปัญจมฌาน
+cetasika:
+- id: phassa
+  thai: ผัสสะ
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่กระทบอารมณ์
+- id: vedana
+  thai: เวทนา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่เสวยอารมณ์
+- id: sanna
+  thai: สัญญา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่จำอารมณ์
+- id: cetana
+  thai: เจตนา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่กระตุ้นเตือนและชักชวนสัมปยุตตธรรมในอารมณ์เพื่อให้ทำหน้าที่ของตนๆ
+- id: ekaggata
+  thai: เอกัคคตา
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่สงบและให้สัมปยุตตธรรมตั้งอยู่ในอารมณ์เดียว
+- id: jivitindriya
+  thai: ชีวิตินทรีย์
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่รักษาสัมปยุตตธรรม
+- id: manasikara
+  thai: มนสิการ
+  group: sabbacitta-sadharana
+  meaning: ธรรมชาติที่มุ่งและนำสัมปยุตตธรรมสู่อารมณ์
+- id: vitakka
+  thai: วิตก
+  group: pakinnaka
+  meaning: ธรรมชาติที่ยกสัมปยุตตธรรมขึ้นสู่อารมณ์ คือคิดอารมณ์
+- id: vicara
+  thai: วิจาร
+  group: pakinnaka
+  meaning: ธรรมชาติที่มีการเคล้าคลึงอารมณ์
+- id: adhimokkha
+  thai: อธิโมกข์
+  group: pakinnaka
+  meaning: ธรรมชาติที่ตัดสินอารมณ์
+- id: viriya
+  thai: วิริยะ
+  group: pakinnaka
+  meaning: ธรรมชาติที่มีความพยายามในอารมณ์
+- id: piti
+  thai: ปีติ
+  group: pakinnaka
+  meaning: ธรรมชาติที่มีความชื่นชมยินดีในอารมณ์
+- id: chanda
+  thai: ฉันทะ
+  group: pakinnaka
+  meaning: ธรรมชาติที่ปรารถนาอารมณ์
+- id: moha
+  thai: โมหะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่บังสภาพตามความเป็นจริงของอารมณ์ไว้ คือ หลง
+- id: ahirika
+  thai: อหิริกะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่ไม่มีความละอายต่อทุจริต
+- id: anottappa
+  thai: อโนตตัปปะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่ไม่กลัวต่อทุจริต
+- id: uddhacca
+  thai: อุทธัจจะ
+  group: moha-catuka
+  meaning: ธรรมชาติที่ฟุ้งซ่าน คือรับอารมณ์ไม่มั่น
+- id: lobha
+  thai: โลภะ
+  group: lobha-tika
+  meaning: ธรรมชาติที่มีความต้องการ และติดใจในกามคุณอารมณ์
+- id: ditthi
+  thai: ทิฏฐิ
+  group: lobha-tika
+  meaning: ธรรมชาติที่มีความเห็นผิดในอารมณ์
+- id: mana
+  thai: มานะ
+  group: lobha-tika
+  meaning: ธรรมชาติที่มีความเย่อหยิ่ง ถือตัว
+- id: dosa
+  thai: โทสะ
+  group: dosa-catuka
+  meaning: ธรรมชาติที่ประทุษร้ายในอารมณ์
+- id: issa
+  thai: อิสสา
+  group: dosa-catuka
+  meaning: ธรรมชาติที่มีความไม่พอใจในสมบัติหรือคุณความดีของผู้อื่น
+- id: macchariya
+  thai: มัจฉริยะ
+  group: dosa-catuka
+  meaning: ธรรมชาติที่มีความหวงแหนทรัพย์สมบัติหรือคุณความดีของตน
+- id: kukkucca
+  thai: กุกกุจจะ
+  group: dosa-catuka
+  meaning: ธรรมชาติที่มีความรำคาญใจในทุจริตที่ได้ทำไปแล้ว และในสุจริตที่ยังไม่ได้ทำ
+- id: thina
+  thai: ถีนะ
+  group: thina-duka
+  meaning: ธรรมชาติที่ทำให้จิตเซื่องซึม ท้อถอยจากอารมณ์
+- id: middha
+  thai: มิทธะ
+  group: thina-duka
+  meaning: ธรรมชาติที่ทำให้เจตสิกเซื่องซึม ท้อถอยจากอารมณ์
+- id: vicikiccha
+  thai: วิจิกิจฉา
+  group: vicikiccha
+  meaning: ธรรมชาติที่มีความสงสัย ไม่ตกลงใจ คือวิพากษ์วิจารณ์ในคุณพระพุทธ พระธรรม พระสงฆ์ เป็นต้น
+- id: saddha
+  thai: ศรัทธา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่มีความเชื่อและเลื่อมใสในพระพุทธ พระธรรม พระสงฆ์ ตามความเป็นจริง เชื่อในกรรมและผลของกรรม
+- id: sati
+  thai: สติ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่มีความระลึกในอารมณ์ที่เกี่ยวด้วยกุศลธรรม มีคุณของพระพุทธ พระธรรม พระสงฆ์ เป็นต้น
+- id: hiri
+  thai: หิริ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่มีความเกลียด และละอายต่อการงานอันเป็นทุจริต
+- id: ottappa
+  thai: โอตตัปปะ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่สะดุ้งกลัวต่อการงานอันเป็นทุจริต
+- id: alobha
+  thai: อโลภะ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่ไม่อยากได้ และไม่ติดอยู่ในกามคุณอารมณ์
+- id: adosa
+  thai: อโทสะ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่ไม่ประทุษร้ายในอารมณ์
+- id: tatramajjhattata
+  thai: ตัตรมัชฌัตตตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่ทำให้จิต เจตสิกสม่ำเสมอในกิจของตนๆ ไม่ให้มีการยิ่งหย่อน
+- id: kayapassaddhi
+  thai: กายปัสสัทธิ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความสงบของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+- id: cittapassaddhi
+  thai: จิตตปัสสัทธิ
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความสงบของจิต ในการงานอันเป็นกุศล
+- id: kayalahuta
+  thai: กายลหุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความเบาของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+- id: cittalahuta
+  thai: จิตตลหุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความเบาของจิต ในการงานอันเป็นกุศล
+- id: kayamuduta
+  thai: กายมุทุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความอ่อนของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+- id: cittamuduta
+  thai: จิตตมุทุตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความอ่อนของจิต ในการงานอันเป็นกุศล
+- id: kayakammannata
+  thai: กายกัมมัญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความควรของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+- id: cittakammannata
+  thai: จิตตกัมมัญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความควรของจิต ในการงานอันเป็นกุศล
+- id: kayapagunnata
+  thai: กายปาคุญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความคล่องแคล่วของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+- id: cittapagunnata
+  thai: จิตตปาคุญญตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความคล่องแคล่วของจิต ในการงานอันเป็นกุศล
+- id: kayujukata
+  thai: กายุชุกตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความซื่อตรงของเจตสิกขันธ์ ๓ ในการงานอันเป็นกุศล
+- id: cittujukata
+  thai: จิตตุชุกตา
+  group: sobhana-sadharana
+  meaning: ธรรมชาติที่เป็นความซื่อตรงของจิต ในการงานอันเป็นกุศล
+- id: samma_vaca
+  thai: สัมมาวาจา
+  group: virati
+  meaning: การกล่าววาจาที่เว้นจากวจีทุจริต ๔ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ
+- id: samma_kammanta
+  thai: สัมมากัมมันตะ
+  group: virati
+  meaning: การกระทำที่เว้นจากกายทุจริต ๓ ซึ่งไม่เกี่ยวกับการงานอันเป็นอาชีพ
+- id: samma_ajiva
+  thai: สัมมาอาชีวะ
+  group: virati
+  meaning: การประกอบอาชีพที่เว้นจากวจีทุจริต ๔ กายทุจริต ๓
+- id: karuna
+  thai: กรุณา
+  group: appamanna
+  meaning: ธรรมชาติที่มีความสงสารต่อทุกขิตสัตว์ คือผู้ที่กำลังได้รับความลำบากอยู่ หรือ จะได้รับความลำบากในกาลข้างหน้า
+- id: mudita
+  thai: มุทิตา
+  group: appamanna
+  meaning: ธรรมชาติที่มีความยินดีต่อสุขิตสัตว์ คือ ผู้ที่กำลังได้รับความสุข หรือ ผู้ที่จะได้รับความสุขในกาลข้างหน้า
+- id: panna
+  thai: ปัญญา
+  group: pannindriya
+  meaning: ธรรมชาติที่รู้สภาพธรรมโดยทั่วๆ ไป ตามความเป็นจริง
+rupa:
+- id: pathavi
+  thai: ปถวี
+  group: mahabhuta
+- id: apo
+  thai: อาโป
+  group: mahabhuta
+- id: tejo
+  thai: เตโช
+  group: mahabhuta
+- id: vayo
+  thai: วาโย
+  group: mahabhuta
+- id: cakkhu-pasada
+  thai: จักขุปสาท
+  group: pasada
+- id: sota-pasada
+  thai: โสตปสาท
+  group: pasada
+- id: ghana-pasada
+  thai: ฆานปสาท
+  group: pasada
+- id: jivha-pasada
+  thai: ชิวหาปสาท
+  group: pasada
+- id: kaya-pasada
+  thai: กายปสาท
+  group: pasada
+- id: rupa-rammana
+  thai: รูปารมณ์
+  group: visaya
+- id: sadda-rammana
+  thai: สัททารมณ์
+  group: visaya
+- id: gandha-rammana
+  thai: คันธารมณ์
+  group: visaya
+- id: rasa-rammana
+  thai: รสารมณ์
+  group: visaya
+- id: itthi-bhava
+  thai: อิตถีภาวะ
+  group: bhava
+- id: purisa-bhava
+  thai: ปุริสภาวะ
+  group: bhava
+- id: hadaya-vatthu
+  thai: หทยวัตถุ
+  group: hadaya
+- id: jivitindriya
+  thai: ชีวิตินทรีย์
+  group: jivita
+- id: kabalinkara-ahara
+  thai: กพฬีการาหาร
+  group: ahara
+- id: akasadhatu
+  thai: อากาสธาตุ
+  group: pariccheda
+- id: kaya-vinnatti
+  thai: กายวิญญัติ
+  group: vinnatti
+- id: vaci-vinnatti
+  thai: วจีวิญญัติ
+  group: vinnatti
+- id: lahuta
+  thai: ลหุตา
+  group: vikara
+- id: muduta
+  thai: มุทุตา
+  group: vikara
+- id: kammannata
+  thai: กัมมัญญตา
+  group: vikara
+- id: upacaya
+  thai: อุปจยะ
+  group: lakkhana
+- id: santati
+  thai: สันตติ
+  group: lakkhana
+- id: jarata
+  thai: ชรตา
+  group: lakkhana
+- id: aniccata
+  thai: อนิจจตา
+  group: lakkhana
+nibbana:
+- id: nibbana
+  thai: นิพพาน
+  group: nibbana
