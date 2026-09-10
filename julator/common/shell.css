@@ -335,8 +335,32 @@
 
 /* --- middle column wrapper (cat rail + info panel) --- */
 .middle-col { display: flex; flex-direction: column; }
+
+/* p3: keep the filter rail + explanation box in view while the long
+   จิต / เจตสิก columns scroll. The whole middle column is pinned and
+   scrolls internally when its own content outgrows the viewport, so both
+   the .cat-rail filter and the .info-panel travel with the scroll. */
+#p3-middle {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+#p3-middle .info-panel {
+  position: static;
+  max-height: none;
+  overflow-y: visible;
+}
+
 @media (max-width: 860px) {
   .middle-col { order: -1; }
+  #p3-middle {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
   #cetasika-panel { position: static; max-height: none; overflow-y: visible; }
   .info-panel { position: static; max-height: none; }
 }
