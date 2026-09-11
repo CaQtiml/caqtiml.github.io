@@ -19,3 +19,9 @@ location: "Uppsala, Sweden"
 ![whiteboard1](/images/TA/PT1.jpg)
 
 ![whiteboard2](/images/TA/PT2.jpg)
+
+### Dafny Lecture Notes
+
+This is a sample file, partially taken from the slides I used in the tutorial.
+
+<iframe src="/files/dafny_lecture_partial.pdf" width="100%" height="800px" style="border:none;"></iframe>
