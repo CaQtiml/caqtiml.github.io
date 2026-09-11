@@ -24,4 +24,6 @@ location: "Uppsala, Sweden"
 
 This is a sample file, partially taken from the slides I used in the tutorial.
 
-<iframe src="/files/dafny_lecture_partial.pdf" width="100%" height="800px" style="border:none;"></iframe>
+<iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://sivakornl.com/files/dafny_lecture_partial.pdf" width="100%" height="800px" style="border:none;"></iframe>
+
+[Open PDF directly](/files/dafny_lecture_partial.pdf)
