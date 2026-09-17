@@ -27,7 +27,7 @@ I just finished my master's degree in Computer Science at Uppsala University, Sw
 - [Modelling for Combinatorial Optimisation](https://www.uu.se/en/study/course?query=1DL451)
 - [Introduction to Image Analysis](https://www.uu.se/en/study/course?query=1MD110)
 
-My master thesis is titled "Integrating Dynamic Region-Based Ownership into CPython and NumPy", done as part of the Pyrona project. You can read about it in detail, including a link to the full thesis, the paper it builds on, and my presentation slides, on [its dedicated portfolio page](/portfolio/master_thesis/).
+My master thesis is titled "Integrating Dynamic Region-Based Ownership into CPython and NumPy", done as part of the [Pyrona project](https://microsoft.github.io/verona/pyrona.html). You can read about it in detail, including a link to the full thesis, the paper it builds on, and my presentation slides, on [its dedicated portfolio page](/portfolio/master_thesis/).
 
 My Former Study
 -----------------
