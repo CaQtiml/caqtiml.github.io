@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An interactive model of the torque, bite angle, and edge geometry that decide whether bolt cutters shear a padlock shackle.">
+<title>Shackle Mechanics</title>
+<style>
+  :root{
+    --ink:#1a1d21;
+    --ink-soft:#4a5058;
+    --paper:#eef1f4;
+    --surface:#ffffff;
+    --surface-2:#f4f6f8;
+    --line:#c9ced4;
+    --line-strong:#9aa2ab;
+    --accent-force:#c85a1a;
+    --accent-force-soft:#f0d9c6;
+    --accent-structure:#1c6fb0;
+    --accent-structure-soft:#d3e3ee;
+    --good:#2f8f5b;
+    --good-soft:#d6ecdf;
+    --warn:#c23b3b;
+    --warn-soft:#f3d7d7;
+    --radius:10px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#e8eaed;
+      --ink-soft:#a7aeb6;
+      --paper:#14171b;
+      --surface:#1b1f24;
+      --surface-2:#20252b;
+      --line:#333941;
+      --line-strong:#4a515a;
+      --accent-force:#d9691f;
+      --accent-force-soft:#4a3020;
+      --accent-structure:#4c9bda;
+      --accent-structure-soft:#203b4c;
+      --good:#57d193;
+      --good-soft:#1d3a2a;
+      --warn:#ff7373;
+      --warn-soft:#3d2222;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#e8eaed;
+    --ink-soft:#a7aeb6;
+    --paper:#14171b;
+    --surface:#1b1f24;
+    --surface-2:#20252b;
+    --line:#333941;
+    --line-strong:#4a515a;
+    --accent-force:#d9691f;
+    --accent-force-soft:#4a3020;
+    --accent-structure:#4c9bda;
+    --accent-structure-soft:#203b4c;
+    --good:#57d193;
+    --good-soft:#1d3a2a;
+    --warn:#ff7373;
+    --warn-soft:#3d2222;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding-inline:16px;
+    padding-block: 32px 64px;
+  }
+  header.hero{ max-width: 760px; margin-bottom: 28px; }
+  .kicker{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent-force);
+    margin:0 0 10px;
+  }
+  h1{
+    font-size:clamp(28px,5vw,40px);
+    line-height:1.08;
+    margin:0 0 12px;
+    text-wrap:balance;
+    letter-spacing:-.01em;
+  }
+  .lede{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:62ch;
+    margin:0;
+  }
+  h2{
+    font-size:21px;
+    margin:0 0 4px;
+    letter-spacing:-.005em;
+  }
+  .section{ margin-top:56px; }
+  .section-head{ max-width:70ch; margin-bottom:18px; }
+  .section-head p{ color:var(--ink-soft); margin:6px 0 0; font-size:15px; max-width:62ch;}
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 20px;
+  }
+
+  .formula{
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 20px;
+    overflow-x:auto;
+  }
+  .formula + .card{ margin-top:18px; }
+
+  /* --- math typesetting --- */
+  .eq{
+    display:inline-flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.16em;
+    font-family:"STIX Two Text", "IBM Plex Sans", serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--ink);
+  }
+  .eq .rm{ font-style:normal; }
+  .eq .op{ font-style:normal; color:var(--ink-soft); margin-inline:.14em; }
+  .eq sub{ font-style:normal; font-size:.62em; }
+  .eq .frac{
+    display:inline-flex; flex-direction:column; align-items:center;
+    vertical-align:middle; margin-inline:.22em; font-size:.84em; line-height:1.2;
+  }
+  .eq .frac .num{ padding:0 .22em 3px; border-bottom:1.4px solid currentColor; }
+  .eq .frac .den{ padding:3px .22em 0; }
+  .eq-hero{ font-size:22px; }
+  .eq-hero .frac{ font-size:.8em; }
+  .eq-result{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); }
+  .eq-stack{ display:flex; flex-direction:column; gap:2px; }
+  .eq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:520px){ .eq-grid{ grid-template-columns:1fr; } }
+  .eq-item{ display:flex; flex-direction:column; gap:6px; }
+  .eq-cap{ margin:0; font-size:12.5px; color:var(--ink-soft); font-family:"IBM Plex Sans", sans-serif; font-style:normal; }
+
+  .proof-step{ padding:14px 0; border-top:1px dashed var(--line); }
+  .proof-step:first-child{ padding-top:0; border-top:none; }
+  .proof-label{
+    font-family:"IBM Plex Mono", monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--accent-structure); margin:0 0 8px;
+  }
+  .proof-step .eq-cap{ margin-top:8px; }
+  .proof-step.is-result .eq{ font-size:20px; }
+
+  /* --- illustration --- */
+  figure.illustration{ margin:0 0 28px; }
+  figure.illustration svg{ width:100%; height:auto; display:block; }
+  figure.illustration figcaption{
+    font-size:12.5px; color:var(--ink-soft); margin-top:12px; text-align:center;
+  }
+
+  /* --- simulator layout --- */
+  .sim{
+    display:grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap:18px;
+    align-items:start;
+  }
+  @media (max-width:760px){ .sim{ grid-template-columns: 1fr; } }
+
+  .diagram-card svg{ width:100%; height:auto; display:block; }
+  .diagram-caption{
+    font-size:12.5px; color:var(--ink-soft); margin-top:10px; border-top:1px dashed var(--line); padding-top:10px;
+  }
+
+  .controls{ display:flex; flex-direction:column; gap:14px; }
+  .control label{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:13px; font-weight:500; margin-bottom:6px;
+  }
+  .control label .v{
+    font-family:"IBM Plex Mono", monospace; color:var(--accent-force); font-weight:600;
+  }
+  .control .hint{ font-size:11.5px; color:var(--ink-soft); margin-top:4px; }
+  input[type=range]{
+    -webkit-appearance:none; appearance:none;
+    width:100%; height:4px; border-radius:2px;
+    background:var(--line-strong);
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none;
+    width:16px; height:16px; border-radius:50%;
+    background:var(--accent-force);
+    border:2px solid var(--surface);
+    box-shadow:0 0 0 1px var(--accent-force);
+    cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:16px; height:16px; border-radius:50%;
+    background:var(--accent-force);
+    border:2px solid var(--surface);
+    box-shadow:0 0 0 1px var(--accent-force);
+    cursor:pointer;
+  }
+
+  .readouts{ display:grid; grid-template-columns:1fr; gap:10px; margin-top:4px;}
+  .readout-row{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:13px; padding:6px 0; border-bottom:1px solid var(--line);
+  }
+  .readout-row:last-child{ border-bottom:none; }
+  .readout-row .k{ color:var(--ink-soft); }
+  .readout-row .n{ font-family:"IBM Plex Mono", monospace; font-weight:600; }
+
+  .headline-force{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:30px; font-weight:600; color:var(--accent-force);
+    margin:2px 0 0;
+  }
+  .headline-force .u{ font-size:14px; color:var(--ink-soft); font-weight:500; margin-left:4px;}
+
+  .kappa-bar-track{ height:8px; border-radius:4px; background:var(--surface-2); border:1px solid var(--line); overflow:hidden; margin-top:8px;}
+  .kappa-bar-fill{ height:100%; background:var(--accent-structure); border-radius:4px 0 0 4px; }
+
+  .matbtns{ display:flex; gap:8px; margin-top:6px; }
+  .matbtn{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12.5px;
+    border:1px solid var(--line);
+    background:var(--surface-2);
+    color:var(--ink);
+    padding:7px 12px;
+    border-radius:7px;
+    cursor:pointer;
+  }
+  .matbtn.active{ border-color:var(--accent-force); background:var(--accent-force-soft); color:var(--ink); font-weight:600;}
+
+  .verdict{
+    margin-top:14px; padding:12px 14px; border-radius:8px;
+    font-size:13.5px; border:1px solid var(--line); background:var(--surface-2);
+  }
+  .verdict strong{ display:block; margin-bottom:2px; font-size:14px;}
+  .verdict.state-good{ border-color: color-mix(in srgb, var(--good) 50%, var(--line)); background:var(--good-soft); }
+  .verdict.state-warn{ border-color: color-mix(in srgb, var(--warn) 50%, var(--line)); background:var(--warn-soft); }
+
+  .chart-card svg{ width:100%; height:auto; display:block; overflow:visible; }
+  .legend{ display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:12.5px; color:var(--ink-soft);}
+  .legend .item{ display:flex; align-items:center; gap:6px;}
+  .legend .swatch{ width:16px; height:2px; border-radius:1px; display:inline-block; }
+
+  .takeaways{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  .takeaways .card{ font-size:13.5px; }
+  .takeaways .card b{ display:block; font-size:13px; color:var(--accent-structure); margin-bottom:4px; font-family:"IBM Plex Mono", monospace; text-transform:uppercase; letter-spacing:.03em;}
+
+  footer.note{
+    margin-top:56px; padding-top:18px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--ink-soft); max-width:70ch;
+  }
+
+  .tt{ pointer-events:none; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="kicker">Applied statics &middot; padlock shackle</p>
+    <h1>Whether the shackle shears comes down to three angles.</h1>
+    <p class="lede">Bolt cutters are a two-stage lever. Every squeeze of the handle loses some effort to geometry before it ever reaches the steel &mdash; here's where, modeled as torque and resolved force, with the numbers you can move yourself.</p>
+  </header>
+
+  <figure class="illustration card">
+    <svg viewBox="0 0 640 300" role="img" aria-label="A bolt cutter with a central pivot, two long handles, and two short tapered jaws, closing around one leg of a padlock shackle just above the lock body, with the cut point marked.">
+      <defs>
+        <marker id="arrIll" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-force)"/>
+        </marker>
+      </defs>
+
+      <!-- shackle -->
+      <path d="M400,178 L400,132 A32,32 0 0 1 464,132 L464,178" fill="none" stroke="var(--ink)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- lock body -->
+      <rect x="386" y="178" width="92" height="78" rx="13" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="3"/>
+      <circle cx="432" cy="211" r="7" fill="var(--ink)"/>
+      <rect x="428.5" y="216" width="7" height="13" fill="var(--ink)"/>
+      <text x="432" y="274" text-anchor="middle" font-size="12" fill="var(--ink-soft)" font-family="IBM Plex Mono, monospace">padlock</text>
+      <line x1="464" y1="134" x2="498" y2="112" stroke="var(--line-strong)" stroke-width="1"/>
+      <text x="502" y="110" font-size="12" fill="var(--ink-soft)" font-family="IBM Plex Mono, monospace">shackle</text>
+
+      <!-- handles -->
+      <line x1="300" y1="130" x2="60" y2="60" stroke="var(--accent-structure)" stroke-width="11" stroke-linecap="round"/>
+      <line x1="300" y1="130" x2="60" y2="205" stroke="var(--accent-structure)" stroke-width="11" stroke-linecap="round"/>
+
+      <!-- jaws (tapered blades) -->
+      <polygon points="300,120 300,133 400,150 400,143" fill="var(--accent-structure)"/>
+      <polygon points="300,127 300,140 400,171 400,164" fill="var(--accent-structure)"/>
+
+      <!-- pivot -->
+      <circle cx="300" cy="130" r="9" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"/>
+
+      <!-- cut point -->
+      <circle cx="400" cy="157" r="15" fill="none" stroke="var(--accent-force)" stroke-width="1.6" stroke-dasharray="3 3"/>
+      <line x1="415" y1="157" x2="452" y2="157" stroke="var(--line-strong)" stroke-width="1"/>
+      <text x="456" y="161" font-size="12" fill="var(--accent-force)" font-family="IBM Plex Mono, monospace" font-weight="600">cut point</text>
+
+      <!-- squeeze arrows -->
+      <path d="M45,46 A22,22 0 0 1 66,30" fill="none" stroke="var(--accent-force)" stroke-width="2" marker-end="url(#arrIll)"/>
+      <path d="M45,219 A22,22 0 0 0 66,235" fill="none" stroke="var(--accent-force)" stroke-width="2" marker-end="url(#arrIll)"/>
+      <text x="16" y="40" font-size="12" fill="var(--ink-soft)" font-family="IBM Plex Mono, monospace">bolt cutters</text>
+    </svg>
+    <figcaption>What the model below is built from &mdash; bolt-cutter jaws closing on one leg of a padlock shackle at the cut point.</figcaption>
+  </figure>
+
+  <section class="section" id="sim-section">
+    <div class="sim">
+      <div class="card diagram-card">
+        <svg id="diagram" viewBox="0 0 720 380" role="img" aria-label="Bolt cutter lever diagram showing the pivot, handle arm, jaw arm, and the force applied at the hand decomposed into a tangential component that produces torque and a radial component that is wasted, with a detail view of the jaw meeting the shackle at the bite angle.">
+            <defs>
+              <marker id="arrF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-force)"/>
+              </marker>
+              <marker id="arrS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-structure)"/>
+              </marker>
+            </defs>
+
+            <!-- pivot -->
+            <circle cx="250" cy="140" r="6" fill="var(--ink)"/>
+            <circle cx="250" cy="140" r="10" fill="none" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <text x="250" y="120" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">O</text>
+
+            <!-- handle bar -->
+            <line id="d-handleBar" x1="250" y1="140" x2="154" y2="140" stroke="var(--accent-structure)" stroke-width="6" stroke-linecap="round"/>
+
+            <!-- force 1 decomposition -->
+            <line id="d-rad1" x1="154" y1="140" x2="154" y2="140" stroke="var(--line-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+            <line id="d-tan1" x1="154" y1="140" x2="154" y2="140" stroke="var(--accent-structure)" stroke-width="2" stroke-dasharray="3 3"/>
+            <line id="d-force1" x1="154" y1="140" x2="154" y2="140" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrF)"/>
+            <path id="d-arc1" d="" fill="none" stroke="var(--ink-soft)" stroke-width="1.3"/>
+            <text id="d-lab-th1" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+            <text id="d-lab-fh" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600"></text>
+
+            <!-- L1 dimension -->
+            <line id="d-dimL1" x1="154" y1="172" x2="250" y2="172" stroke="var(--line)" stroke-width="1"/>
+            <text id="d-dimL1text" x="200" y="188" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+
+            <!-- stub + leader to inset -->
+            <line x1="250" y1="140" x2="292" y2="140" stroke="var(--accent-structure)" stroke-width="6" stroke-linecap="round"/>
+            <line x1="292" y1="126" x2="430" y2="60" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+            <line x1="292" y1="154" x2="430" y2="248" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+
+            <!-- inset box -->
+            <rect x="430" y="30" width="270" height="230" rx="8" fill="var(--surface-2)" stroke="var(--line)" stroke-dasharray="4 3"/>
+            <text x="440" y="48" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">JAW &middot; SHACKLE CONTACT (detail, not to scale)</text>
+
+            <!-- jaw pivot analog -->
+            <circle id="d-O2" cx="470" cy="215" r="4" fill="var(--ink)"/>
+            <text x="470" y="233" text-anchor="middle" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">O&prime;</text>
+
+            <line id="d-jawBar" x1="470" y1="215" x2="513" y2="215" stroke="var(--accent-structure)" stroke-width="5" stroke-linecap="round"/>
+
+            <line id="d-rad2" x1="513" y1="215" x2="513" y2="215" stroke="var(--line-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+            <line id="d-tan2" x1="513" y1="215" x2="513" y2="215" stroke="var(--accent-structure)" stroke-width="2" stroke-dasharray="3 3"/>
+            <line id="d-force2" x1="513" y1="215" x2="513" y2="215" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrF)"/>
+            <path id="d-arc2" d="" fill="none" stroke="var(--ink-soft)" stroke-width="1.3"/>
+            <text id="d-lab-th2" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+            <text id="d-lab-fb" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600"></text>
+
+            <line id="d-dimL2" x1="470" y1="235" x2="513" y2="235" stroke="var(--line)" stroke-width="1"/>
+            <text id="d-dimL2text" x="490" y="250" text-anchor="middle" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+        </svg>
+        <p class="diagram-caption">Orange = applied / contact force. Dashed blue = the useful (tangential) component that produces torque. Dashed grey = the wasted (radial) component. The right-hand box is a schematic close-up of the jaw tip &mdash; real jaw arms are a few centimetres against a half-metre handle, which is the whole point.</p>
+      </div>
+
+      <div class="controls">
+        <div class="card">
+          <div class="control">
+            <label>Hand force per handle, F<sub>h</sub> <span class="v" id="val-fh"></span></label>
+            <input type="range" id="range-fh" min="50" max="400" step="5" value="220">
+          </div>
+          <div class="control">
+            <label>Handle length, L<sub>1</sub> <span class="v" id="val-l1"></span></label>
+            <input type="range" id="range-l1" min="300" max="700" step="10" value="500">
+          </div>
+          <div class="control">
+            <label>Insertion depth, L<sub>2</sub> <span class="v" id="val-l2"></span></label>
+            <input type="range" id="range-l2" min="10" max="80" step="1" value="25">
+            <div class="hint">Distance from the pivot to where the shackle sits in the jaw &mdash; smaller is deeper.</div>
+          </div>
+          <div class="control">
+            <label>Grip angle, &theta;<sub>1</sub> <span class="v" id="val-th1"></span></label>
+            <input type="range" id="range-th1" min="30" max="90" step="1" value="85">
+            <div class="hint">Angle between your pull and the handle. 90&deg; = perfectly perpendicular.</div>
+          </div>
+          <div class="control">
+            <label>Bite angle, &theta;<sub>2</sub> <span class="v" id="val-th2"></span></label>
+            <input type="range" id="range-th2" min="20" max="90" step="1" value="75">
+            <div class="hint">Angle the blade edge meets the round shackle. 90&deg; = square bite.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="readout-row"><span class="k">sin&nbsp;&theta;<sub>1</sub></span><span class="n" id="out-s1"></span></div>
+          <div class="readout-row"><span class="k">L<sub>1</sub> / L<sub>2</sub></span><span class="n" id="out-ratio"></span></div>
+          <div class="readout-row"><span class="k">sin&nbsp;&theta;<sub>2</sub></span><span class="n" id="out-s2"></span></div>
+          <p class="headline-force" id="out-fshear">&mdash;<span class="u">N delivered to the shackle</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="kicker">01 &mdash; torque as a cross product</p>
+      <h2>Only the perpendicular slice of your force counts</h2>
+      <p>Torque about the pivot is <span class="eq"><span class="v">&tau;</span><span class="op">=</span><span class="v">r</span><span class="op">&times;</span><span class="v">F</span><span class="op">=</span><span class="v">r</span><span class="op">&middot;</span><span class="v">F</span><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span></span>, where &theta; is the angle between the lever arm and the force. Pull the handle in-line with the bar and sin&theta;&rarr;0: your force is real, your torque is nearly zero.</p>
+    </div>
+    <div class="formula">
+      <div class="eq-grid">
+        <div class="eq-item">
+          <span class="eq"><span class="v">F</span><sub>t</sub><span class="op">=</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub></span>
+          <p class="eq-cap">drives rotation</p>
+        </div>
+        <div class="eq-item">
+          <span class="eq"><span class="v">F</span><sub>r</sub><span class="op">=</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">cos</span><span class="v">&theta;</span><sub>1</sub></span>
+          <p class="eq-cap">loads the pivot pin, does nothing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card diagram-card" style="margin-top:18px;">
+      <svg id="real01" viewBox="0 0 480 230" role="img" aria-label="Close-up of a hand gripping a bolt cutter handle, with the applied hand force drawn at the grip angle and split into a tangential component that turns the tool and a radial component that is wasted against the pivot.">
+        <defs>
+          <marker id="arrR1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-force)"/>
+          </marker>
+        </defs>
+        <!-- handle bar -->
+        <line x1="120" y1="120" x2="392" y2="120" stroke="var(--accent-structure)" stroke-width="20" stroke-linecap="round"/>
+        <!-- grip ridges -->
+        <g stroke="var(--surface)" stroke-width="2.5" opacity="0.8">
+          <line x1="102" y1="106" x2="94" y2="134"/>
+          <line x1="112" y1="106" x2="104" y2="134"/>
+          <line x1="122" y1="106" x2="114" y2="134"/>
+          <line x1="132" y1="106" x2="124" y2="134"/>
+          <line x1="142" y1="106" x2="134" y2="134"/>
+        </g>
+        <!-- continuation toward pivot -->
+        <line x1="392" y1="120" x2="424" y2="120" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <circle cx="428" cy="120" r="5" fill="none" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <text x="428" y="141" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">to pivot</text>
+
+        <line id="r1-rad" x1="122" y1="120" x2="122" y2="120" stroke="var(--line-strong)" stroke-width="2.2" stroke-dasharray="3 3"/>
+        <line id="r1-tan" x1="122" y1="120" x2="122" y2="120" stroke="var(--accent-structure)" stroke-width="2.2" stroke-dasharray="3 3"/>
+        <line id="r1-force" x1="122" y1="120" x2="122" y2="120" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrR1)"/>
+        <path id="r1-arc" d="" fill="none" stroke="var(--ink-soft)" stroke-width="1.3"/>
+        <text id="r1-lab-th" font-size="12.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+        <text id="r1-lab-fh" font-size="12.5" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600"></text>
+        <text id="r1-lab-ft" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-structure)" font-weight="600">F&#8348; (useful)</text>
+        <text id="r1-lab-fr" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">Fr (wasted)</text>
+      </svg>
+      <p class="diagram-caption">The grip end of one handle. Orange is the force your hand actually applies; blue is the slice of it that turns the tool; grey is the slice that just loads the pivot pin.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="kicker">02 &mdash; the two-stage lever</p>
+      <h2>Handle torque in equals jaw torque out</h2>
+      <p>Setting the input and output moments equal about the pivot gives the jaw's tangential force directly &mdash; this is the real, physical force in newtons the tool delivers at the blade, before the shackle's own geometry is even considered.</p>
+    </div>
+    <div class="formula">
+      <div class="eq-stack">
+        <span class="eq"><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub><span class="op">&middot;</span><span class="v">L</span><sub>1</sub><span class="op">=</span><span class="v">F</span><sub>jaw</sub><span class="op">&middot;</span><span class="v">L</span><sub>2</sub></span>
+        <span class="eq eq-result"><span class="v">F</span><sub>jaw</sub><span class="op">=</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub><span class="op">&middot;</span><span class="frac"><span class="num"><span class="v">L</span><sub>1</sub></span><span class="den"><span class="v">L</span><sub>2</sub></span></span></span>
+      </div>
+    </div>
+
+    <div class="card diagram-card" style="margin-top:18px;">
+      <svg id="real02" viewBox="0 0 640 300" role="img" aria-label="A full bolt cutter, handle and jaw lengths scaled to the current settings, closing on a padlock shackle, with dimension lines for the handle length and insertion depth and force arrows for the hand force and the resulting jaw force.">
+        <defs>
+          <marker id="arrR2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-force)"/>
+          </marker>
+        </defs>
+
+        <!-- shackle + lock -->
+        <path d="M400,178 L400,132 A32,32 0 0 1 464,132 L464,178" fill="none" stroke="var(--ink)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="386" y="178" width="92" height="78" rx="13" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="432" cy="211" r="6.5" fill="var(--ink)"/>
+        <rect x="428.8" y="216" width="6.5" height="12" fill="var(--ink)"/>
+        <text x="432" y="273" text-anchor="middle" font-size="12" fill="var(--ink-soft)" font-family="IBM Plex Mono, monospace">padlock</text>
+
+        <!-- handle bar -->
+        <line id="r2-handle" x1="260" y1="150" x2="90" y2="150" stroke="var(--accent-structure)" stroke-width="15" stroke-linecap="round"/>
+        <g id="r2-ridges" stroke="var(--surface)" stroke-width="2" opacity="0.8"></g>
+
+        <!-- jaw (tapered) -->
+        <polygon id="r2-jaw" points="260,143 260,157 260,157 260,143" fill="var(--accent-structure)"/>
+
+        <!-- pivot -->
+        <circle cx="260" cy="150" r="9" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"/>
+        <text x="260" y="130" text-anchor="middle" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">O</text>
+
+        <!-- L1 dimension -->
+        <line id="r2-dimL1" x1="90" y1="182" x2="260" y2="182" stroke="var(--line)" stroke-width="1"/>
+        <text id="r2-dimL1text" x="175" y="198" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+
+        <!-- L2 dimension -->
+        <line id="r2-dimL2" x1="260" y1="118" x2="340" y2="118" stroke="var(--line)" stroke-width="1"/>
+        <text id="r2-dimL2text" x="300" y="106" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+
+        <!-- F_h decomposition at handle end -->
+        <line id="r2-rad" x1="90" y1="150" x2="90" y2="150" stroke="var(--line-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+        <line id="r2-tan" x1="90" y1="150" x2="90" y2="150" stroke="var(--accent-structure)" stroke-width="2" stroke-dasharray="3 3"/>
+        <line id="r2-force1" x1="90" y1="150" x2="90" y2="150" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrR2)"/>
+        <path id="r2-arc1" d="" fill="none" stroke="var(--ink-soft)" stroke-width="1.3"/>
+        <text id="r2-lab-th1" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+        <text id="r2-lab-fh" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600"></text>
+
+        <!-- F_jaw at jaw tip -->
+        <line id="r2-force2" x1="260" y1="150" x2="260" y2="150" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrR2)"/>
+        <text id="r2-lab-fjaw" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600"></text>
+      </svg>
+      <p class="diagram-caption">The whole tool at your current settings &mdash; handle length L<sub>1</sub>, insertion depth L<sub>2</sub>, hand force F<sub>h</sub> at the grip, and the resulting jaw force F<sub>jaw</sub> at the blade. Shrink L<sub>2</sub> and watch the jaw tip close the gap to the shackle.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="kicker">03 &mdash; the second sin factor</p>
+      <h2>The bite angle taxes it again</h2>
+      <p>F<sub>jaw</sub> meets the shackle at the bite angle &theta;<sub>2</sub>. Only its component perpendicular to the shackle surface actually shears metal; an oblique bite lets the blade slide rather than cut. Below is the full proof, from the definition of torque to the final formula.</p>
+    </div>
+
+    <div class="formula">
+      <div class="proof-step">
+        <p class="proof-label">Base formula &mdash; torque about a pivot (definition)</p>
+        <span class="eq"><span class="v">&tau;</span><span class="op">=</span><span class="v">r</span><span class="op">&times;</span><span class="v">F</span><span class="op">=</span><span class="v">r</span><span class="op">&middot;</span><span class="v">F</span><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span></span>
+        <p class="eq-cap">&theta; is the angle between the position vector r (pivot &rarr; point of application) and the force F. Nothing to derive here &mdash; this is where torque comes from.</p>
+      </div>
+
+      <div class="proof-step">
+        <p class="proof-label">Step 1 &mdash; torque the hand delivers to the tool</p>
+        <span class="eq"><span class="v">&tau;</span><sub>in</sub><span class="op">=</span><span class="v">L</span><sub>1</sub><span class="op">&middot;</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub></span>
+        <p class="eq-cap">Substitute r = L<sub>1</sub> (handle length) and F = F<sub>h</sub> at angle &theta;<sub>1</sub> into the base formula.</p>
+      </div>
+
+      <div class="proof-step">
+        <p class="proof-label">Step 2 &mdash; torque the jaw must deliver</p>
+        <span class="eq"><span class="v">&tau;</span><sub>out</sub><span class="op">=</span><span class="v">L</span><sub>2</sub><span class="op">&middot;</span><span class="v">F</span><sub>jaw</sub></span>
+        <p class="eq-cap">F<sub>jaw</sub> is defined as the jaw's tangential force &mdash; already perpendicular to L<sub>2</sub>, so its own sin factor is sin 90&deg; = 1.</p>
+      </div>
+
+      <div class="proof-step">
+        <p class="proof-label">Step 3 &mdash; equilibrium: &tau;<sub>in</sub> = &tau;<sub>out</sub></p>
+        <span class="eq"><span class="v">L</span><sub>1</sub><span class="op">&middot;</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub><span class="op">=</span><span class="v">L</span><sub>2</sub><span class="op">&middot;</span><span class="v">F</span><sub>jaw</sub> &nbsp;&nbsp;&rArr;&nbsp;&nbsp; <span class="v">F</span><sub>jaw</sub><span class="op">=</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub><span class="op">&middot;</span><span class="frac"><span class="num"><span class="v">L</span><sub>1</sub></span><span class="den"><span class="v">L</span><sub>2</sub></span></span></span>
+        <p class="eq-cap">A rigid lever with no net angular acceleration has zero net torque about its pivot &mdash; this is the result section 02 used.</p>
+      </div>
+
+      <div class="proof-step">
+        <p class="proof-label">Step 4 &mdash; project F<sub>jaw</sub> onto the shackle surface</p>
+        <span class="eq"><span class="v">F</span><sub>shear</sub><span class="op">=</span><span class="v">F</span><sub>jaw</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>2</sub></span>
+        <p class="eq-cap">Same rule as the base formula, applied again at the blade&ndash;shackle contact: &theta;<sub>2</sub> is the angle between the jaw's line of action and the shackle's local surface tangent.</p>
+      </div>
+
+      <div class="proof-step is-result">
+        <p class="proof-label">Step 5 &mdash; substitute step 3 into step 4</p>
+        <span class="eq eq-hero"><span class="v">F</span><sub>shear</sub><span class="op">=</span><span class="v">F</span><sub>h</sub><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>1</sub><span class="op">&middot;</span><span class="frac"><span class="num"><span class="v">L</span><sub>1</sub></span><span class="den"><span class="v">L</span><sub>2</sub></span></span><span class="op">&middot;</span><span class="rm">sin</span><span class="v">&theta;</span><sub>2</sub></span>
+        <p class="eq-cap">&#8718; &mdash; two independent sin-projections (steps 1 and 4) chained through one lever ratio (step 3).</p>
+      </div>
+    </div>
+
+    <div class="card diagram-card" style="margin-top:18px;">
+      <svg id="real03" viewBox="0 0 480 260" role="img" aria-label="Close-up of a blade edge meeting the round cross-section of the shackle, with the jaw force split into a shear component along the surface normal and a sliding component along the surface tangent, at the bite angle.">
+        <defs>
+          <marker id="arrR3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-force)"/>
+          </marker>
+        </defs>
+        <circle cx="300" cy="130" r="66" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="7"/>
+        <text x="300" y="222" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">shackle (cross-section)</text>
+
+        <!-- blade wedge approaching the contact point -->
+        <polygon points="150,110 150,150 234,132 234,128" fill="var(--accent-structure)"/>
+        <text x="150" y="100" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">blade</text>
+
+        <!-- reference tangent + normal at contact point -->
+        <line x1="234" y1="90" x2="234" y2="170" stroke="var(--line)" stroke-width="1.3" stroke-dasharray="3 3"/>
+        <line x1="234" y1="130" x2="300" y2="130" stroke="var(--line)" stroke-width="1.3" stroke-dasharray="2 3"/>
+        <text x="234" y="82" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">tangent</text>
+
+        <line id="r3-slide" x1="234" y1="130" x2="234" y2="130" stroke="var(--line-strong)" stroke-width="2.2" stroke-dasharray="3 3"/>
+        <line id="r3-shear" x1="234" y1="130" x2="234" y2="130" stroke="var(--accent-structure)" stroke-width="2.2" stroke-dasharray="3 3"/>
+        <line id="r3-force" x1="234" y1="130" x2="234" y2="130" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrR3)"/>
+        <path id="r3-arc" d="" fill="none" stroke="var(--ink-soft)" stroke-width="1.3"/>
+        <text id="r3-lab-th" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+        <text id="r3-lab-fjaw" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600"></text>
+        <text id="r3-lab-shear" font-size="11.5" font-family="IBM Plex Mono, monospace" fill="var(--accent-structure)" font-weight="600"></text>
+        <text id="r3-lab-slide" font-size="11.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">slide (wasted)</text>
+      </svg>
+      <p class="diagram-caption">A square bite (&theta;<sub>2</sub>&rarr;90&deg;) points F<sub>jaw</sub> straight down the normal into F<sub>shear</sub>; an oblique bite bleeds it into the sliding component instead.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="kicker">04 &mdash; edge geometry</p>
+      <h2>A sharp edge is its own multiplier</h2>
+      <p>The blade edge is a wedge of included angle &beta;. Squeezing a wedge into a surface concentrates the jaw force onto a much smaller contact area, roughly multiplying the local cutting stress by the factor below. This is independent of everything above &mdash; it doesn't change F<sub>shear</sub> itself, it changes how effectively that force turns into stress at the steel.</p>
+    </div>
+    <div class="formula">
+      <span class="eq"><span class="v">&kappa;</span><span class="op">=</span><span class="frac"><span class="num">1</span><span class="den">2<span class="rm">&nbsp;sin</span>(<span class="v">&beta;</span>&frasl;2)</span></span></span>
+    </div>
+    <div class="card">
+      <div class="control" style="margin-bottom:4px;">
+        <label>Edge angle, &beta; <span class="v" id="val-beta"></span></label>
+        <input type="range" id="range-beta" min="10" max="60" step="1" value="20">
+        <div class="hint">A fresh, sharp edge runs small; a rolled or nicked edge runs large.</div>
+      </div>
+      <div class="readout-row"><span class="k">edge concentration factor, &kappa;</span><span class="n" id="out-kappa"></span></div>
+      <div class="kappa-bar-track"><div class="kappa-bar-fill" id="kappa-bar" style="width:0%"></div></div>
+    </div>
+
+    <div class="card diagram-card" style="margin-top:18px;">
+      <svg id="real04" viewBox="0 0 480 240" role="img" aria-label="Cross-section of the blade edge as a wedge pressing into the steel, with the applied shear force at the top and the two normal forces on each face of the wedge, magnified by the edge concentration factor.">
+        <defs>
+          <marker id="arrR4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-structure)"/>
+          </marker>
+          <marker id="arrR4f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent-force)"/>
+          </marker>
+        </defs>
+        <rect x="80" y="190" width="320" height="36" rx="4" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="3"/>
+        <text x="392" y="213" text-anchor="end" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)">steel</text>
+
+        <polygon id="r4-wedge" points="240,190 240,190 240,190" fill="var(--accent-structure)"/>
+        <path id="r4-arc" d="" fill="none" stroke="var(--ink-soft)" stroke-width="1.3"/>
+        <text id="r4-lab-beta" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--ink-soft)"></text>
+
+        <line id="r4-fshear" x1="240" y1="58" x2="240" y2="96" stroke="var(--accent-force)" stroke-width="3" marker-end="url(#arrR4f)"/>
+        <text x="248" y="70" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600">F_shear (from Step 5)</text>
+
+        <line id="r4-nleft" x1="240" y1="145" x2="240" y2="145" stroke="var(--accent-structure)" stroke-width="2.5" marker-end="url(#arrR4)"/>
+        <line id="r4-nright" x1="240" y1="145" x2="240" y2="145" stroke="var(--accent-structure)" stroke-width="2.5" marker-end="url(#arrR4)"/>
+        <text id="r4-lab-n" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-structure)" font-weight="600"></text>
+      </svg>
+      <p class="diagram-caption">F<sub>shear</sub> presses the wedge down; each face pushes back with a normal force N, magnified by &kappa;. A narrower &beta; means a bigger &kappa; and a bigger N for the same F<sub>shear</sub>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="kicker">05 &mdash; does it cut?</p>
+      <h2>Put F<sub>shear</sub> next to the shackle</h2>
+      <p>The bands below are illustrative order-of-magnitude ranges, not a spec sheet, but the gap between them is the real story: hardened boron-steel shackles need several times the force a mild-steel shackle needs, which is exactly why they're marketed as bolt-cutter resistant.</p>
+    </div>
+    <div class="card">
+      <div class="matbtns">
+        <button class="matbtn active" id="btn-mild" type="button">Mild steel shackle</button>
+        <button class="matbtn" id="btn-hard" type="button">Hardened shackle</button>
+      </div>
+      <svg id="verdictbar" viewBox="0 0 460 100" role="img" aria-label="Bar comparing the delivered shear force against illustrative force ranges needed to cut a mild steel shackle versus a hardened steel shackle.">
+        <rect id="v-mild" y="18" height="18" rx="3" fill="var(--good-soft)" stroke="var(--good)"/>
+        <rect id="v-hard" y="46" height="18" rx="3" fill="var(--warn-soft)" stroke="var(--warn)"/>
+        <text x="8" y="31" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--good)">mild</text>
+        <text x="8" y="59" font-size="11" font-family="IBM Plex Mono, monospace" fill="var(--warn)">hardened</text>
+        <line id="v-marker" y1="8" y2="80" stroke="var(--accent-force)" stroke-width="2.5"/>
+        <text id="v-markerlabel" y="90" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--accent-force)" font-weight="600" text-anchor="middle"></text>
+      </svg>
+      <div class="verdict" id="verdict-box">
+        <strong id="verdict-title">&mdash;</strong>
+        <span id="verdict-body"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="kicker">summary</p>
+      <h2>Four levers you actually control</h2>
+    </div>
+    <div class="takeaways">
+      <div class="card"><b>Insertion depth</b>Push the shackle deep into the jaw throat &mdash; small L<sub>2</sub> is the single biggest multiplier available to you.</div>
+      <div class="card"><b>Grip angle</b>Pull perpendicular to the handles. Off-axis pulling burns effort as cos&theta;<sub>1</sub> with nothing to show for it.</div>
+      <div class="card"><b>Bite angle</b>Square the jaws to the shackle rather than cutting on a slant, and re-seat mid-stroke if the angle drifts.</div>
+      <div class="card"><b>Edge condition</b>A dull or chipped edge loses the wedge multiplier and spreads force over more area &mdash; sharpness is not cosmetic.</div>
+    </div>
+  </section>
+
+  <footer class="note">
+    Model simplifies bolt cutters to a single first-class lever and treats the bite angle and edge wedge as independent multiplicative factors; real tools use a compound linkage and the true failure mode blends shear and local fracture. The force bands in step 05 are order-of-magnitude teaching values, not manufacturer ratings. If your shackle shows no bite mark at all after real effort in the right spot, that's the practical signature of a hardened shackle &mdash; reach for an angle grinder or a locksmith rather than a bigger squeeze.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  const state = { fh:220, l1:500, l2:25, th1:85, th2:75, beta:20, material:'mild' };
+
+  const el = id => document.getElementById(id);
+  const d2r = d => d*Math.PI/180;
+
+  function compute(f1,l1,l2,t1,t2){
+    const s1 = Math.sin(d2r(t1));
+    const s2 = Math.sin(d2r(t2));
+    const ratio = l1/l2;
+    return { s1, s2, ratio, fjaw: f1*s1*ratio, fshear: f1*s1*ratio*s2 };
+  }
+
+  function polar(cx,cy,r,a){ return [cx+r*Math.cos(a), cy+r*Math.sin(a)]; }
+  function arcPath(cx,cy,r,a0,a1){
+    const [x0,y0]=polar(cx,cy,r,a0), [x1,y1]=polar(cx,cy,r,a1);
+    const large = Math.abs(a1-a0) > Math.PI ? 1 : 0;
+    const sweep = a1>a0 ? 1 : 0;
+    return `M ${x0.toFixed(1)} ${y0.toFixed(1)} A ${r} ${r} 0 ${large} ${sweep} ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+  }
+  function setLine(id,x1,y1,x2,y2){ const e=el(id); e.setAttribute('x1',x1); e.setAttribute('y1',y1); e.setAttribute('x2',x2); e.setAttribute('y2',y2); }
+
+  function renderDiagram(c){
+    const O = {x:250,y:140};
+    const L1px = 60 + (state.l1-300)*0.42;
+    const P1 = {x:O.x-L1px, y:O.y};
+    setLine('d-handleBar', O.x,O.y, P1.x,P1.y);
+
+    const len1 = 15 + state.fh*0.30;
+    const t1 = d2r(state.th1);
+    const f1x = P1.x + len1*Math.cos(t1), f1y = P1.y - len1*Math.sin(t1);
+    setLine('d-force1', P1.x,P1.y, f1x,f1y);
+    setLine('d-rad1', P1.x,P1.y, P1.x+len1*Math.cos(t1), P1.y);
+    setLine('d-tan1', P1.x,P1.y, P1.x, P1.y-len1*Math.sin(t1));
+    el('d-arc1').setAttribute('d', arcPath(P1.x,P1.y,22,0,-t1));
+    const midA1 = -t1/2;
+    const [lx1,ly1] = polar(P1.x,P1.y,34,midA1);
+    el('d-lab-th1').setAttribute('x',lx1); el('d-lab-th1').setAttribute('y',ly1);
+    el('d-lab-th1').textContent = 'θ₁=' + state.th1 + '°';
+    el('d-lab-fh').setAttribute('x', f1x+6); el('d-lab-fh').setAttribute('y', f1y-4);
+    el('d-lab-fh').textContent = 'Fh';
+
+    setLine('d-dimL1', P1.x,172, O.x,172);
+    el('d-dimL1text').setAttribute('x', (P1.x+O.x)/2);
+    el('d-dimL1text').textContent = 'L₁ = ' + state.l1 + ' mm';
+
+    const O2 = {x:470,y:215};
+    const L2px = 30 + state.l2*1.25;
+    const P2 = {x:O2.x+L2px, y:O2.y};
+    setLine('d-jawBar', O2.x,O2.y, P2.x,P2.y);
+
+    const len2 = Math.min(140, 15 + Math.sqrt(c.fshear)*1.05);
+    const t2 = d2r(state.th2);
+    const f2x = P2.x - len2*Math.cos(t2), f2y = P2.y - len2*Math.sin(t2);
+    setLine('d-force2', P2.x,P2.y, f2x,f2y);
+    setLine('d-rad2', P2.x,P2.y, P2.x-len2*Math.cos(t2), P2.y);
+    setLine('d-tan2', P2.x,P2.y, P2.x, P2.y-len2*Math.sin(t2));
+    el('d-arc2').setAttribute('d', arcPath(P2.x,P2.y,20,Math.PI,Math.PI+t2));
+    const midA2 = Math.PI + t2/2;
+    const [lx2,ly2] = polar(P2.x,P2.y,32,midA2);
+    el('d-lab-th2').setAttribute('x',lx2); el('d-lab-th2').setAttribute('y',ly2);
+    el('d-lab-th2').textContent = 'θ₂=' + state.th2 + '°';
+    el('d-lab-fb').setAttribute('x', f2x-6); el('d-lab-fb').setAttribute('y', f2y-4);
+    el('d-lab-fb').setAttribute('text-anchor','end');
+    el('d-lab-fb').textContent = 'F_shear';
+
+    setLine('d-dimL2', O2.x,235, P2.x,235);
+    el('d-dimL2text').setAttribute('x', (O2.x+P2.x)/2);
+    el('d-dimL2text').textContent = 'L₂ = ' + state.l2 + ' mm';
+  }
+
+  function renderReal03(c){
+    const P = {x:234,y:130};
+    const len = 20 + Math.sqrt(c.fjaw)*1.0;
+    const t2 = d2r(state.th2);
+    const ex = P.x + len*Math.sin(t2), ey = P.y - len*Math.cos(t2);
+    setLine('r3-slide', P.x,P.y, P.x, P.y-len*Math.cos(t2));
+    setLine('r3-shear', P.x,P.y, P.x+len*Math.sin(t2), P.y);
+    setLine('r3-force', P.x,P.y, ex,ey);
+    el('r3-arc').setAttribute('d', arcPath(P.x,P.y,26,-Math.PI/2,-Math.PI/2+t2));
+    const [ax,ay] = polar(P.x,P.y,40,-Math.PI/2+t2/2);
+    el('r3-lab-th').setAttribute('x',ax); el('r3-lab-th').setAttribute('y',ay);
+    el('r3-lab-th').textContent = 'θ₂ = ' + state.th2 + '°';
+    el('r3-lab-fjaw').setAttribute('x', ex+6); el('r3-lab-fjaw').setAttribute('y', ey-6);
+    el('r3-lab-fjaw').textContent = 'F_jaw';
+    el('r3-lab-shear').setAttribute('x', P.x+len*Math.sin(t2)+6); el('r3-lab-shear').setAttribute('y', P.y+16);
+    el('r3-lab-shear').textContent = 'F_shear = ' + Math.round(c.fshear).toLocaleString() + ' N';
+    el('r3-lab-slide').setAttribute('x', P.x-8); el('r3-lab-slide').setAttribute('y', P.y-len*Math.cos(t2)-8);
+    el('r3-lab-slide').setAttribute('text-anchor','end');
+  }
+
+  function renderReal01(){
+    const P = {x:122,y:120};
+    const len = 26 + state.fh*0.34;
+    const t1 = d2r(state.th1);
+    setLine('r1-rad', P.x,P.y, P.x+len*Math.cos(t1), P.y);
+    setLine('r1-tan', P.x,P.y, P.x, P.y-len*Math.sin(t1));
+    setLine('r1-force', P.x,P.y, P.x+len*Math.cos(t1), P.y-len*Math.sin(t1));
+    el('r1-arc').setAttribute('d', arcPath(P.x,P.y,30,0,-t1));
+    const [ax,ay] = polar(P.x,P.y,44,-t1/2);
+    el('r1-lab-th').setAttribute('x',ax); el('r1-lab-th').setAttribute('y',ay);
+    el('r1-lab-th').textContent = 'θ₁ = ' + state.th1 + '°';
+    el('r1-lab-fh').setAttribute('x', P.x+len*Math.cos(t1)+8); el('r1-lab-fh').setAttribute('y', P.y-len*Math.sin(t1)-6);
+    el('r1-lab-fh').textContent = 'Fh = ' + Math.round(state.fh) + ' N';
+    el('r1-lab-ft').setAttribute('x', P.x+8); el('r1-lab-ft').setAttribute('y', P.y-len*Math.sin(t1)-6);
+    el('r1-lab-fr').setAttribute('x', P.x+len*Math.cos(t1)*0.5); el('r1-lab-fr').setAttribute('y', P.y+18);
+  }
+
+  function renderReal02(c){
+    const O = {x:260,y:150};
+    const L1px = 55 + (state.l1-300)*0.35;
+    const P1 = {x:O.x-L1px, y:O.y};
+    setLine('r2-handle', O.x,O.y, P1.x,P1.y);
+
+    const ridges = el('r2-ridges'); ridges.innerHTML='';
+    for(let i=0;i<5;i++){
+      const rx = P1.x + 6 + i*10;
+      ridges.innerHTML += `<line x1="${(rx+8).toFixed(1)}" y1="${O.y-14}" x2="${rx.toFixed(1)}" y2="${O.y+14}"/>`;
+    }
+
+    const L2px = 28 + state.l2*1.32;
+    const P2 = {x:O.x+L2px, y:O.y};
+    el('r2-jaw').setAttribute('points', `${O.x},${O.y-7} ${O.x},${O.y+7} ${P2.x},${P2.y+3} ${P2.x},${P2.y-3}`);
+
+    setLine('r2-dimL1', P1.x,182, O.x,182);
+    el('r2-dimL1text').setAttribute('x',(P1.x+O.x)/2);
+    el('r2-dimL1text').textContent = 'L₁ = ' + state.l1 + ' mm';
+
+    setLine('r2-dimL2', O.x,118, P2.x,118);
+    el('r2-dimL2text').setAttribute('x',(O.x+P2.x)/2);
+    el('r2-dimL2text').textContent = 'L₂ = ' + state.l2 + ' mm';
+
+    const len1 = 12 + state.fh*0.24;
+    const t1 = d2r(state.th1);
+    setLine('r2-rad', P1.x,P1.y, P1.x+len1*Math.cos(t1), P1.y);
+    setLine('r2-tan', P1.x,P1.y, P1.x, P1.y-len1*Math.sin(t1));
+    setLine('r2-force1', P1.x,P1.y, P1.x+len1*Math.cos(t1), P1.y-len1*Math.sin(t1));
+    el('r2-arc1').setAttribute('d', arcPath(P1.x,P1.y,20,0,-t1));
+    const [bx,by] = polar(P1.x,P1.y,32,-t1/2);
+    el('r2-lab-th1').setAttribute('x',bx); el('r2-lab-th1').setAttribute('y',by);
+    el('r2-lab-th1').textContent = 'θ₁=' + state.th1 + '°';
+    el('r2-lab-fh').setAttribute('x', P1.x+len1*Math.cos(t1)+6); el('r2-lab-fh').setAttribute('y', P1.y-len1*Math.sin(t1)-4);
+    el('r2-lab-fh').textContent = 'Fh';
+
+    const lenJ = Math.min(120, 12 + Math.sqrt(c.fjaw)*1.05);
+    setLine('r2-force2', P2.x,P2.y, P2.x, P2.y-lenJ);
+    el('r2-lab-fjaw').setAttribute('x', P2.x+6); el('r2-lab-fjaw').setAttribute('y', P2.y-lenJ-4);
+    el('r2-lab-fjaw').textContent = 'F_jaw = ' + Math.round(c.fjaw).toLocaleString() + ' N';
+  }
+
+  function renderReal04(){
+    const apex = {x:240,y:190};
+    const height = 90;
+    const halfW = height*Math.tan(d2r(state.beta/2));
+    const baseL = {x:apex.x-halfW, y:apex.y-height};
+    const baseR = {x:apex.x+halfW, y:apex.y-height};
+    el('r4-wedge').setAttribute('points', `${apex.x},${apex.y} ${baseL.x.toFixed(1)},${baseL.y} ${baseR.x.toFixed(1)},${baseR.y}`);
+
+    el('r4-arc').setAttribute('d', arcPath(apex.x,apex.y,34, -Math.PI/2-d2r(state.beta/2), -Math.PI/2+d2r(state.beta/2)));
+    const [lx,ly] = polar(apex.x,apex.y,50,-Math.PI/2);
+    el('r4-lab-beta').setAttribute('x',lx); el('r4-lab-beta').setAttribute('y',ly);
+    el('r4-lab-beta').setAttribute('text-anchor','middle');
+    el('r4-lab-beta').textContent = 'β = ' + state.beta + '°';
+
+    const kappa = 1/(2*Math.sin(d2r(state.beta/2)));
+    const nLen = Math.min(100, 22*kappa);
+
+    const dirL = {x: baseL.x-apex.x, y: baseL.y-apex.y};
+    const magL = Math.hypot(dirL.x,dirL.y);
+    const uL = {x:dirL.x/magL, y:dirL.y/magL};
+    let nL = {x:-uL.y, y:uL.x};
+    if(nL.x>0){ nL = {x:-nL.x,y:-nL.y}; }
+    const midL = {x:(apex.x+baseL.x)/2, y:(apex.y+baseL.y)/2};
+    setLine('r4-nleft', midL.x, midL.y, midL.x+nL.x*nLen, midL.y+nL.y*nLen);
+
+    const dirR = {x: baseR.x-apex.x, y: baseR.y-apex.y};
+    const magR = Math.hypot(dirR.x,dirR.y);
+    const uR = {x:dirR.x/magR, y:dirR.y/magR};
+    let nR = {x:uR.y, y:-uR.x};
+    if(nR.x<0){ nR = {x:-nR.x,y:-nR.y}; }
+    const midR = {x:(apex.x+baseR.x)/2, y:(apex.y+baseR.y)/2};
+    setLine('r4-nright', midR.x, midR.y, midR.x+nR.x*nLen, midR.y+nR.y*nLen);
+
+    el('r4-lab-n').setAttribute('x', midR.x+nR.x*nLen+8);
+    el('r4-lab-n').setAttribute('y', midR.y+nR.y*nLen);
+    el('r4-lab-n').textContent = 'N ≈ ×' + kappa.toFixed(2);
+  }
+
+  function renderVerdict(c){
+    const domainMax = 45000;
+    const xMin=10,xMax=440;
+    const pos = v => xMin + Math.sqrt(Math.max(0,v))/Math.sqrt(domainMax)*(xMax-xMin);
+    const mild=[2000,6000], hard=[15000,40000];
+    const vm = el('v-mild'); vm.setAttribute('x',pos(mild[0])); vm.setAttribute('width', pos(mild[1])-pos(mild[0]));
+    const vh = el('v-hard'); vh.setAttribute('x',pos(hard[0])); vh.setAttribute('width', pos(hard[1])-pos(hard[0]));
+    vm.setAttribute('stroke-width', state.material==='mild' ? 2.5 : 1);
+    vh.setAttribute('stroke-width', state.material==='hard' ? 2.5 : 1);
+
+    const mx = pos(c.fshear);
+    el('v-marker').setAttribute('x1',mx); el('v-marker').setAttribute('x2',mx);
+    el('v-markerlabel').setAttribute('x',mx);
+    el('v-markerlabel').textContent = Math.round(c.fshear).toLocaleString() + ' N';
+
+    const box = el('verdict-box');
+    const title = el('verdict-title'), body = el('verdict-body');
+    const band = state.material==='mild' ? mild : hard;
+    box.classList.remove('state-good','state-warn');
+    if(c.fshear >= band[0]){
+      box.classList.add('state-good');
+      title.textContent = state.material==='mild' ? 'Shears the mild-steel shackle.' : 'Shears even the hardened shackle.';
+      body.textContent = state.material==='mild'
+        ? 'Delivered force clears the mild-steel range at this angle and depth.'
+        : 'That is well above typical hardened-shackle resistance — unusually strong geometry or leverage.';
+    } else {
+      box.classList.add('state-warn');
+      title.textContent = state.material==='mild' ? 'Short of the mild-steel range.' : 'Short of the hardened-shackle range.';
+      body.textContent = state.material==='mild'
+        ? 'Push the shackle deeper into the jaw (lower L₂) or square up θ₁/θ₂ before adding more force.'
+        : 'Hardened shackles are built to resist exactly this; an angle grinder or locksmith will beat this every time.';
+    }
+  }
+
+  function renderReadouts(c){
+    el('val-fh').textContent = state.fh + ' N';
+    el('val-l1').textContent = state.l1 + ' mm';
+    el('val-l2').textContent = state.l2 + ' mm';
+    el('val-th1').textContent = state.th1 + '°';
+    el('val-th2').textContent = state.th2 + '°';
+    el('val-beta').textContent = state.beta + '°';
+    el('out-s1').textContent = c.s1.toFixed(2);
+    el('out-ratio').textContent = c.ratio.toFixed(1) + '×';
+    el('out-s2').textContent = c.s2.toFixed(2);
+    el('out-fshear').innerHTML = Math.round(c.fshear).toLocaleString() + '<span class="u">N delivered to the shackle</span>';
+
+    const kappa = 1/(2*Math.sin(d2r(state.beta/2)));
+    el('out-kappa').textContent = '×' + kappa.toFixed(2);
+    el('kappa-bar').style.width = Math.min(100, (kappa/6)*100) + '%';
+  }
+
+  function render(){
+    const c = compute(state.fh, state.l1, state.l2, state.th1, state.th2);
+    renderDiagram(c);
+    renderReal01();
+    renderReal02(c);
+    renderReal03(c);
+    renderReal04();
+    renderVerdict(c);
+    renderReadouts(c);
+  }
+
+  [['range-fh','fh'],['range-l1','l1'],['range-l2','l2'],['range-th1','th1'],['range-th2','th2'],['range-beta','beta']]
+    .forEach(([id,key])=>{
+      el(id).addEventListener('input', e=>{ state[key] = Number(e.target.value); render(); });
+    });
+
+  el('btn-mild').addEventListener('click', ()=>{ state.material='mild'; el('btn-mild').classList.add('active'); el('btn-hard').classList.remove('active'); render(); });
+  el('btn-hard').addEventListener('click', ()=>{ state.material='hard'; el('btn-hard').classList.add('active'); el('btn-mild').classList.remove('active'); render(); });
+
+  render();
+})();
+</script>
+</body>
+</html>
